@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    .hd-header {
+      background: var(--hd-white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+.hd-header .tapestry {
+  background-color: var(--hd-white);
+  background-image: url("/assets/images/header-tapestry-placeholder.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.hd-header .tapestry-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hd-header .bar {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.hd-header .left,
+.hd-header .right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hd-header .left {
+  justify-content: flex-start;
+}
+
+.hd-header .right {
+  justify-content: flex-end;
+}
+
+.hd-header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hd-header .logo a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.hd-header .logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.hd-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hd-nav a {
+  text-decoration: none;
+  color: var(--hd-burgundy);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  padding: 10px 12px;
+  border-radius: 14px;
+  line-height: 1;
+}
+
+.hd-nav a:hover,
+.hd-nav a:focus {
+  outline: none;
+  background: rgba(249, 230, 195, 0.65);
+}
+
+.hd-nav a[aria-current="page"] {
+  background: rgba(249, 230, 195, 0.85);
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(101, 11, 50, 0.18);
+  border-radius: 999px;
+  padding: 6px;
+  background: var(--hd-white);
+}
+
+.lang-switch a {
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: var(--hd-burgundy);
+  line-height: 1;
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus {
+  outline: none;
+  background: rgba(249, 230, 195, 0.65);
+}
+
+.lang-switch a.is-active {
+  background: var(--hd-burgundy);
+  color: var(--hd-white);
+}
+
+/* Mobile */
+.hd-mobile {
+  display: none;
+}
+
+.hd-mobile-toggle {
+  display: none;
+}
+
+.hd-burger {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(101, 11, 50, 0.18);
+  background: var(--hd-white);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hd-burger span {
+  width: 18px;
+  height: 2px;
+  background: var(--hd-burgundy);
+  display: block;
+  position: relative;
+}
+
+.hd-burger span::before,
+.hd-burger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--hd-burgundy);
+}
+
+.hd-burger span::before {
+  top: -6px;
+}
+
+.hd-burger span::after {
+  top: 6px;
+}
+
+.hd-mobile-panel {
+  display: none;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: var(--hd-white);
+}
+
+.hd-mobile-panel .inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 12px 20px 18px;
+}
+
+.hd-mobile-panel nav {
+  display: grid;
+  gap: 8px;
+}
+
+.hd-mobile-panel a {
+  text-decoration: none;
+  color: var(--hd-burgundy);
+  font-weight: 900;
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(249, 230, 195, 0.35);
+}
+
+.hd-mobile-panel a:hover,
+.hd-mobile-panel a:focus {
+  outline: none;
+  background: rgba(249, 230, 195, 0.65);
+}
+
+.hd-mobile-panel .lang-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hd-mobile-toggle:checked ~ .hd-mobile-panel {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hd-header .bar {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .hd-desktop {
+    display: none;
+  }
+
+  .hd-mobile {
+    display: inline-flex;
+  }
+
+  .hd-header .logo {
+    justify-content: center;
+  }
+
+  .hd-header .left {
+    justify-content: flex-start;
+  }
+
+  .hd-header .right {
+    justify-content: flex-end;
+  }
+}
+  </style>
+</head>
+<body>
+  <header class="hd-header" aria-label="Site header">
+    <div class="tapestry" aria-hidden="true">
+      <div class="tapestry-inner"></div>
+    </div>
+<div class="bar">
+  <div class="left">
+    <label class="hd-mobile" for="hdMobileToggle" aria-label="Open menu">
+      <span class="hd-burger"><span></span></span>
+    </label>
+
+    <nav class="hd-nav hd-desktop" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/north-miami">North Miami</a>
+      <a href="/miami-beach">Miami Beach</a>
+      <a href="/menu">Menu</a>
+    </nav>
+  </div>
+
+  <div class="logo">
+    <a href="/" aria-label="Home">
+      <img src="/assets/images/hd_logo_transparent.png" alt="Haagen-Dazs">
+    </a>
+  </div>
+
+  <div class="right">
+    <nav class="hd-nav hd-desktop" aria-label="Secondary navigation">
+      <a href="/cakes">Cakes</a>
+      <a href="/specials">Specials</a>
+      <a href="/reviews">Reviews</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="lang-switch hd-desktop" aria-label="Language switch">
+      <a class="is-active" href="/">EN</a>
+      <a href="/es/" lang="es">ES</a>
+    </div>
+  </div>
+</div>
+
+<input class="hd-mobile-toggle" type="checkbox" id="hdMobileToggle" aria-hidden="true">
+
+<div class="hd-mobile-panel" aria-label="Mobile menu">
+  <div class="inner">
+    <nav aria-label="Mobile navigation">
+      <a href="/">Home</a>
+      <a href="/north-miami">North Miami</a>
+      <a href="/miami-beach">Miami Beach</a>
+      <a href="/menu">Menu</a>
+      <a href="/cakes">Cakes</a>
+      <a href="/specials">Specials</a>
+      <a href="/reviews">Reviews</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="lang-row">
+      <div class="lang-switch" aria-label="Language switch">
+        <a class="is-active" href="/">EN</a>
+        <a href="/es/" lang="es">ES</a>
+      </div>
+    </div>
+  </div>
+</div>
+  </header>
+</body>
+</html>
