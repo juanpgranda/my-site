@@ -1,0 +1,674 @@
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Haagen-Dazs Miami</title>
+  <meta name="description" content="Visit Haagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
+  <link rel="canonical" href="https://www.hdicecream.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Haagen-Dazs Miami">
+  <meta property="og:title" content="Home | Haagen-Dazs Miami">
+  <meta property="og:description" content="Visit Haagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
+  <meta property="og:url" content="https://www.hdicecream.com/">
+  <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
+  <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Haagen-Dazs Miami - North Miami and Miami Beach shop locations.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Home | Haagen-Dazs Miami">
+  <meta name="twitter:description" content="Visit Haagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
+  <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/images/site.webmanifest">
+  <meta name="theme-color" content="#650B32">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    :root {
+      --container: 1120px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+      --border-soft: 1px solid rgba(0,0,0,0.08);
+      --text-muted: rgba(101, 11, 50, 0.72);
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+      padding: 10px 12px;
+      border-radius: 10px;
+      z-index: 9999;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .skip-link:focus {
+      left: 10px;
+    }
+
+    /* Header mount: placeholder tapestry strip (image is loaded by header include later).
+       This page provides a placeholder slot behind the header area so layout is ready. */
+    .header-tapestry-slot {
+      background-color: var(--hd-white);
+      background-image: url("/assets/images/header-tapestry-placeholder.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-bottom: var(--border-soft);
+    }
+    .header-tapestry-slot-inner {
+      min-height: 86px;
+    }
+
+    /* Hero / Carousel */
+    .hero {
+      background: linear-gradient(180deg, var(--hd-gold-light), var(--hd-white));
+      padding: 26px 0 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 22px 0 10px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 46px;
+      line-height: 1.04;
+    }
+
+    .hero p {
+      margin: 0 0 18px;
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 56ch;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+      user-select: none;
+      font-family: var(--font-body);
+    }
+
+    .btn-primary {
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+    }
+
+    .btn-secondary {
+      background: var(--hd-gold);
+      color: var(--hd-white);
+    }
+
+    .carousel {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: var(--border-soft);
+      background: var(--hd-white);
+      min-height: 320px;
+    }
+
+    .carousel-viewport {
+      position: relative;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 400ms ease;
+      display: grid;
+      align-items: stretch;
+    }
+
+    .slide.is-active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .slide figure {
+      margin: 0;
+      height: 100%;
+      min-height: 320px;
+      background: var(--hd-gold-light);
+      display: grid;
+      place-items: center;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      right: 18px;
+      background: rgba(101, 11, 50, 0.72);
+      color: var(--hd-white);
+      padding: 14px 16px;
+      border-radius: 14px;
+      backdrop-filter: blur(6px);
+    }
+
+    .slide-overlay .kicker {
+      font-family: var(--font-body);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      opacity: 0.95;
+      margin-bottom: 6px;
+    }
+
+    .slide-overlay .headline {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(255,255,255,0.86);
+      color: var(--hd-burgundy);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.16);
+    }
+
+    .carousel-btn:hover,
+    .carousel-btn:focus {
+      outline: none;
+      background: rgba(255,255,255,0.98);
+    }
+
+    .carousel-btn.prev { left: 12px; }
+    .carousel-btn.next { right: 12px; }
+
+    .carousel-dots {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      pointer-events: auto;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,0.9);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .dot.is-active {
+      background: var(--hd-gold);
+      border-color: rgba(255,255,255,0.95);
+    }
+
+    /* Sections */
+    .section {
+      padding: 44px 0;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 34px;
+    }
+
+    .section p.lead {
+      margin: 0 0 20px;
+      color: var(--text-muted);
+      max-width: 80ch;
+    }
+
+    /* Locations cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: var(--border-soft);
+      border-radius: var(--radius-lg);
+      background: var(--hd-white);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .meta {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .meta strong {
+      color: var(--hd-burgundy);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: rgba(249, 230, 195, 0.45);
+      color: var(--hd-burgundy);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .chip:hover,
+    .chip:focus {
+      background: rgba(249, 230, 195, 0.78);
+      outline: none;
+    }
+
+    /* Icon rows */
+    .icon-block {
+      margin-top: 16px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 14px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .icon-row-title {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(101, 11, 50, 0.68);
+    }
+
+    .icon-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 11, 50, 0.22);
+      background: var(--hd-white);
+      text-decoration: none;
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+    }
+
+    .icon-link:hover,
+    .icon-link:focus {
+      outline: none;
+      background: rgba(249, 230, 195, 0.55);
+      border-color: rgba(210, 153, 55, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .icon-link img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Delivery row as branded pills (cleaner, less clutter than 3 more circles) */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: var(--hd-white);
+      color: var(--hd-burgundy);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    .pill:hover,
+    .pill:focus {
+      outline: none;
+      background: rgba(249, 230, 195, 0.55);
+      border-color: rgba(210, 153, 55, 0.6);
+    }
+
+    /* Footer mount spacing */
+    #siteFooter {
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="header-tapestry-slot" aria-hidden="true">
+    <div class="container header-tapestry-slot-inner"></div>
+  </div>
+  <div id="siteHeader"></div>
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <h1>Simply extraordinary, served locally</h1>
+            <p>
+              Visit our two Miami-area Haagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
+              Find hours, directions, and ordering links in seconds.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#locations">Find a location</a>
+              <a class="btn btn-secondary" href="#menu">View menu</a>
+            </div>
+          </div>
+      <div class="carousel" aria-label="Homepage featured carousel">
+        <div class="carousel-viewport" id="carouselViewport">
+          <div class="slide is-active" data-index="0">
+            <figure>
+              <img src="/assets/images/hero-1-placeholder.jpg" alt="Featured image placeholder 1">
+            </figure>
+            <div class="slide-overlay">
+              <div class="kicker">Featured</div>
+              <p class="headline">Cakes and desserts made to celebrate</p>
+            </div>
+          </div>
+
+          <div class="slide" data-index="1">
+            <figure>
+              <img src="/assets/images/hero-2-placeholder.jpg" alt="Featured image placeholder 2">
+            </figure>
+            <div class="slide-overlay">
+              <div class="kicker">Delivery</div>
+              <p class="headline">Get your favorites delivered fast</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn prev" type="button" aria-label="Previous slide" id="carouselPrev">
+          &#8249;
+        </button>
+        <button class="carousel-btn next" type="button" aria-label="Next slide" id="carouselNext">
+          &#8250;
+        </button>
+
+        <div class="carousel-dots" role="tablist" aria-label="Carousel pagination">
+          <button class="dot is-active" type="button" aria-label="Go to slide 1" id="dot0"></button>
+          <button class="dot" type="button" aria-label="Go to slide 2" id="dot1"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="locations">
+  <div class="container">
+    <h2>Locations</h2>
+    <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
+
+    <div class="cards">
+      <article class="card" aria-label="Haagen-Dazs North Miami location">
+        <h3>Haagen-Dazs North Miami (Causeway Square)</h3>
+        <p class="meta">
+          <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
+          <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a><br>
+          <strong>Hours:</strong> Mon-Thu 10am - 10pm, Fri-Sat 10am - 11pm, Sun 11am - 8pm
+        </p>
+
+        <div class="actions">
+          <a class="chip" href="https://www.google.com/maps?q=1809+NE+123rd+St,+North+Miami,+FL+33181" target="_blank" rel="noopener noreferrer">Directions</a>
+          <a class="chip" href="tel:+17869638203">Call</a>
+          <a class="chip" href="#menu">Menu</a>
+        </div>
+
+        <div class="icon-block">
+          <div>
+            <div class="icon-row-title">Community and reviews</div>
+            <div class="icon-row">
+              <a class="icon-link" href="#" aria-label="Instagram" title="Instagram">
+                <img src="/assets/images/icons/hd_ig_g.png" alt="Instagram">
+              </a>
+              <a class="icon-link" href="#" aria-label="Facebook" title="Facebook">
+                <img src="/assets/images/icons/hd_fb_g.png" alt="Facebook">
+              </a>
+              <a class="icon-link" href="#" aria-label="Google reviews" title="Google Reviews">
+                <img src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="icon-row-title">Delivery and discovery</div>
+            <div class="pill-row">
+              <a class="pill" href="#" aria-label="Uber Eats">Uber Eats</a>
+              <a class="pill" href="#" aria-label="DoorDash">DoorDash</a>
+              <a class="pill" href="#" aria-label="Yelp">Yelp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" aria-label="Haagen-Dazs Collins North Beach location">
+        <h3>Haagen-Dazs Collins North Beach</h3>
+        <p class="meta">
+          <strong>Address:</strong> 6978 Collins Avenue, Miami Beach, FL 33141<br>
+          <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a><br>
+          <strong>Hours:</strong> Mon-Thu 10am - 10pm, Fri-Sat 10am - 11pm, Sun 11am - 8pm
+        </p>
+
+        <div class="actions">
+          <a class="chip" href="https://www.google.com/maps?q=6978+Collins+Ave,+Miami+Beach,+FL+33141" target="_blank" rel="noopener noreferrer">Directions</a>
+          <a class="chip" href="tel:+17866336485">Call</a>
+          <a class="chip" href="#menu">Menu</a>
+        </div>
+
+        <div class="icon-block">
+          <div>
+            <div class="icon-row-title">Community and reviews</div>
+            <div class="icon-row">
+              <a class="icon-link" href="#" aria-label="Instagram" title="Instagram">
+                <img src="/assets/images/icons/hd_ig_g.png" alt="Instagram">
+              </a>
+              <a class="icon-link" href="#" aria-label="Facebook" title="Facebook">
+                <img src="/assets/images/icons/hd_fb_g.png" alt="Facebook">
+              </a>
+              <a class="icon-link" href="#" aria-label="Google reviews" title="Google Reviews">
+                <img src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="icon-row-title">Delivery and discovery</div>
+            <div class="pill-row">
+              <a class="pill" href="#" aria-label="Uber Eats">Uber Eats</a>
+              <a class="pill" href="#" aria-label="DoorDash">DoorDash</a>
+              <a class="pill" href="#" aria-label="Yelp">Yelp</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu">
+  <div class="container">
+    <h2>Menu</h2>
+    <p class="lead">Add your shared menu page here. This section will link to /menu once that page exists.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/menu">Go to menu</a>
+      <a class="btn btn-secondary" href="/cakes">Cakes</a>
+    </div>
+  </div>
+</section>
+  </main>
+  <div id="siteFooter"></div>
+  <script>
+    (function () {
+      function loadInto(id, url) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        fetch(url, { cache: "no-cache" })
+          .then(function (r) { return r.text(); })
+          .then(function (html) { el.innerHTML = html; })
+          .catch(function () { el.innerHTML = ""; });
+      }
+
+      var docLang = document.documentElement.getAttribute("lang") || "en";
+      var isEs = docLang.toLowerCase().indexOf("es") === 0;
+
+      var headerUrl = isEs ? "/assets/includes/header-es.html" : "/assets/includes/header.html";
+      var footerUrl = isEs ? "/assets/includes/footer-es.html" : "/assets/includes/footer.html";
+
+      loadInto("siteHeader", headerUrl);
+      loadInto("siteFooter", footerUrl);
+    })();
+  </script>
+  <script>
+    (function () {
+      var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+      var dots = [document.getElementById("dot0"), document.getElementById("dot1")];
+      var prevBtn = document.getElementById("carouselPrev");
+      var nextBtn = document.getElementById("carouselNext");
+      var idx = 0;
+      var timer = null;
+      var intervalMs = 3000;
+
+      function setActive(next) {
+        idx = next;
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].classList.toggle("is-active", i === idx);
+          if (dots[i]) dots[i].classList.toggle("is-active", i === idx);
+        }
+      }
+
+      function next() {
+        setActive((idx + 1) % slides.length);
+      }
+
+      function prev() {
+        setActive((idx - 1 + slides.length) % slides.length);
+      }
+
+      function start() {
+        stop();
+        timer = window.setInterval(next, intervalMs);
+      }
+
+      function stop() {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+      }
+
+      if (nextBtn) nextBtn.addEventListener("click", function () { stop(); next(); start(); });
+      if (prevBtn) prevBtn.addEventListener("click", function () { stop(); prev(); start(); });
+
+      if (dots[0]) dots[0].addEventListener("click", function () { stop(); setActive(0); start(); });
+      if (dots[1]) dots[1].addEventListener("click", function () { stop(); setActive(1); start(); });
+
+      var carousel = document.querySelector(".carousel");
+      if (carousel) {
+        carousel.addEventListener("mouseenter", stop);
+        carousel.addEventListener("mouseleave", start);
+        carousel.addEventListener("focusin", stop);
+        carousel.addEventListener("focusout", start);
+      }
+
+      setActive(0);
+      start();
+    })();
+  </script>
+</body>
+</html>
