@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    .hd-footer {
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+    }
+.hd-footer .wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 26px 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.hd-footer .brand {
+  display: grid;
+  gap: 10px;
+}
+
+.hd-footer .brand .title {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+  color: var(--hd-white);
+}
+
+.hd-footer .brand p {
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.95;
+  font-size: 13px;
+}
+
+.hd-footer .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.hd-footer .col h4 {
+  margin: 0 0 10px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.92);
+}
+
+.hd-footer .links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.hd-footer .links a {
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  display: inline-flex;
+}
+
+.hd-footer .links a:hover,
+.hd-footer .links a:focus {
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  color: var(--hd-white);
+}
+
+.hd-footer .bottom {
+  border-top: 1px solid rgba(255,255,255,0.14);
+  padding: 16px 20px;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+.hd-footer .legal {
+  max-width: 780px;
+  line-height: 1.5;
+}
+
+@media (max-width: 860px) {
+  .hd-footer .wrap {
+    grid-template-columns: 1fr;
+  }
+  .hd-footer .cols {
+    grid-template-columns: 1fr;
+  }
+  .hd-footer .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+  </style>
+</head>
+<body>
+  <footer class="hd-footer" aria-label="Site footer">
+    <div class="wrap">
+      <div class="brand">
+        <p class="title">Haagen-Dazs Miami</p>
+        <p>These Haagen-Dazs Shops are independently owned and operated under a franchise granted by The Haagen-Dazs Shoppe Company, Inc.</p>
+        <p>Haagen-Dazs is a trademark of HDIP, Inc.; used by permission.</p>
+      </div>
+  <div class="cols">
+    <div class="col">
+      <h4>Locations</h4>
+      <ul class="links">
+        <li><a href="/north-miami">North Miami</a></li>
+        <li><a href="/miami-beach">Miami Beach</a></li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h4>Explore</h4>
+      <ul class="links">
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/cakes">Cakes</a></li>
+        <li><a href="/specials">Specials and Offers</a></li>
+        <li><a href="/reviews">Reviews and Community</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bottom">
+  <div class="legal">Haagen-Dazs DC © 2026. All rights reserved.</div>
+</div>
+  </footer>
+</body>
+</html>
+
+
+
