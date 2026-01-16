@@ -2,26 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Font Comparison | HD Ice Cream</title>
+  <title>Font Comparison | Häagen-Dazs Franchise</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Outfit (current site font) -->
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- DM Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Roboto -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --container: 960px;
+      --burgundy: #650B32;
       --bg: #f6f8fb;
       --card: #ffffff;
-      --text: #3b0a1a;
-      --muted: rgba(59,10,26,0.7);
       --radius: 18px;
       --shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
@@ -33,32 +40,29 @@
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--burgundy);
+      padding: 40px 20px 80px;
       line-height: 1.6;
-      padding: 40px 20px;
     }
 
     .container {
-      max-width: var(--container);
+      max-width: 1100px;
       margin: 0 auto;
       display: grid;
       gap: 32px;
     }
 
-    header {
-      text-align: center;
-    }
-
-    header h1 {
+    h1.page-title {
       font-size: 42px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
-    header p {
-      color: var(--muted);
+    p.page-lead {
+      max-width: 75ch;
       font-size: 16px;
+      opacity: 0.85;
     }
 
     .font-card {
@@ -67,52 +71,39 @@
       padding: 28px;
       box-shadow: var(--shadow);
       display: grid;
-      gap: 16px;
+      gap: 14px;
+    }
+
+    .label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.8;
     }
 
     .font-name {
-      font-size: 28px;
+      font-size: 36px;
       font-weight: 700;
     }
 
-    .font-meta {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .sample-text {
-      font-size: 16px;
+    .font-sample {
+      font-size: 18px;
       max-width: 75ch;
     }
 
-    /* Font samples */
-    .font-outfit {
-      font-family: "Outfit", sans-serif;
-    }
-
-    .font-roboto {
-      font-family: "Roboto", sans-serif;
-    }
-
-    .font-system {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 20px;
-    }
+    /* Font bindings */
+    .inter { font-family: "Inter", sans-serif; }
+    .outfit { font-family: "Outfit", sans-serif; }
+    .dm-sans { font-family: "DM Sans", sans-serif; }
+    .poppins { font-family: "Poppins", sans-serif; }
+    .roboto { font-family: "Roboto", sans-serif; }
+    .system { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
 
     @media (max-width: 640px) {
-      header h1 {
-        font-size: 34px;
-      }
-
-      .font-name {
-        font-size: 24px;
-      }
+      h1.page-title { font-size: 34px; }
+      .font-name { font-size: 28px; }
+      .font-sample { font-size: 16px; }
     }
   </style>
 </head>
@@ -121,40 +112,72 @@
   <main class="container">
 
     <header>
-      <h1>Font Comparison</h1>
-      <p>Visual reference for selecting typography for HD Ice Cream</p>
+      <h1 class="page-title">Font Reference & Comparison</h1>
+      <p class="page-lead">
+        Visual comparison of production-safe fonts against the Häagen-Dazs look.
+        Each section shows the font name as a heading with body copy below.
+      </p>
     </header>
 
-    <!-- Outfit -->
-    <section class="font-card font-outfit">
-      <div class="font-name">Outfit (Current Site Font)</div>
-      <div class="font-meta">Google Fonts · Free · Used on current site</div>
-      <p class="sample-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <section class="font-card inter">
+      <div class="label">Recommended Closest Match</div>
+      <div class="font-name">Inter</div>
+      <p class="font-sample">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
       </p>
     </section>
 
-    <!-- Roboto -->
-    <section class="font-card font-roboto">
+    <section class="font-card outfit">
+      <div class="label">Current Site Font</div>
+      <div class="font-name">Outfit</div>
+      <p class="font-sample">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+    </section>
+
+    <section class="font-card dm-sans">
+      <div class="label">Alternative – Softer / Editorial</div>
+      <div class="font-name">DM Sans</div>
+      <p class="font-sample">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+    </section>
+
+    <section class="font-card poppins">
+      <div class="label">Alternative – Rounder / Playful</div>
+      <div class="font-name">Poppins</div>
+      <p class="font-sample">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+    </section>
+
+    <section class="font-card roboto">
+      <div class="label">Corporate / Free Standard</div>
       <div class="font-name">Roboto</div>
-      <div class="font-meta">Google Fonts · Free · Apache License 2.0</div>
-      <p class="sample-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      <p class="font-sample">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
       </p>
     </section>
 
-    <!-- System Sans -->
-    <section class="font-card font-system">
-      <div class="font-name">System Sans-Serif</div>
-      <div class="font-meta">OS Default · No download · Maximum performance</div>
-      <p class="sample-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <section class="font-card system">
+      <div class="label">System Fallback</div>
+      <div class="font-name">System UI / Sans-Serif</div>
+      <p class="font-sample">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
       </p>
     </section>
-
-    <footer>
-      Typography reference only. No production fonts loaded beyond Google Fonts.
-    </footer>
 
   </main>
 
