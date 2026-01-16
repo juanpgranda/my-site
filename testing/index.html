@@ -27,6 +27,14 @@
   <link rel="manifest" href="/assets/images/site.webmanifest">
   <meta name="theme-color" content="#650B32">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ3XB37TBM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-JJ3XB37TBM");
+  </script>
   <style>
     :root {
       --container: 1120px;
@@ -60,6 +68,19 @@
 
     .skip-link:focus {
       left: 10px;
+    }
+
+    /* Hero background placeholder ABOVE the header/menu */
+    .hero-top-bg {
+      background-image: url("/assets/images/placeholders/hd_home_hero_placeholder.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .hero-top-bg .spacer {
+      min-height: 86px;
     }
 
     .hero {
@@ -263,7 +284,6 @@
       max-width: 80ch;
     }
 
-    /* Screenshot 2: add padding/background behind location boxes */
     .locations-wrap {
       background: rgba(249, 230, 195, 0.45);
       border-top: 1px solid rgba(0,0,0,0.06);
@@ -297,6 +317,16 @@
     }
 
     .meta strong {
+      color: var(--hd-burgundy);
+    }
+
+    .hours-block {
+      margin-top: 6px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .hours-block strong {
       color: var(--hd-burgundy);
     }
 
@@ -350,7 +380,6 @@
       align-items: center;
     }
 
-    /* Rollover icons: gold default, burgundy on hover */
     .icon-link {
       display: inline-flex;
       align-items: center;
@@ -390,59 +419,60 @@
       transition: opacity 120ms ease;
     }
 
-    .icon-swap img.burgundy {
-      opacity: 0;
-    }
-
+    .icon-swap img.burgundy { opacity: 0; }
     .icon-link:hover .icon-swap img.burgundy,
-    .icon-link:focus .icon-swap img.burgundy {
-      opacity: 1;
-    }
-
+    .icon-link:focus .icon-swap img.burgundy { opacity: 1; }
     .icon-link:hover .icon-swap img.gold,
-    .icon-link:focus .icon-swap img.gold {
-      opacity: 0;
-    }
+    .icon-link:focus .icon-swap img.gold { opacity: 0; }
 
-    /* Delivery row as pills */
-    .pill-row {
+    .delivery-row {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
     }
 
-    .pill {
+    .delivery-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 11, 50, 0.22);
+      background: var(--hd-white);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      background: var(--hd-white);
-      color: var(--hd-burgundy);
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
       text-decoration: none;
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 0.02em;
     }
 
-    .pill:hover,
-    .pill:focus {
+    .delivery-icon:hover,
+    .delivery-icon:focus {
       outline: none;
       background: rgba(249, 230, 195, 0.55);
       border-color: rgba(210, 153, 55, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .delivery-icon img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      display: block;
     }
 
     @media (max-width: 960px) {
       .hero-grid { grid-template-columns: 1fr; }
       .cards { grid-template-columns: 1fr; }
       .hero h1 { font-size: 40px; }
+      .hero-top-bg .spacer { min-height: 64px; }
     }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="hero-top-bg" aria-hidden="true">
+    <div class="spacer"></div>
+  </div>
   <div id="siteHeader"></div>
   <main id="main">
     <section class="hero">
@@ -473,7 +503,7 @@
 
           <div class="slide" data-index="1">
             <figure>
-              <img src="/assets/images/placeholders/hd_home_carousel_placeholder_01.jpg" alt="Featured image placeholder 2">
+              <img src="/assets/images/placeholders/hd_home_carousel_placeholder_02.jpg" alt="Featured image placeholder 2">
             </figure>
             <div class="slide-overlay">
               <div class="kicker">Featured</div>
@@ -490,6 +520,7 @@
           <button class="dot" type="button" aria-label="Go to slide 2" id="dot1"></button>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -505,9 +536,14 @@
           <h3>Häagen-Dazs North Miami (Causeway Square)</h3>
           <p class="meta">
             <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
-            <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a><br>
-            <strong>Hours:</strong> Mon-Thu 10am - 10pm, Fri-Sat 10am - 11pm, Sun 11am - 8pm
+            <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a>
           </p>
+          <div class="hours-block">
+            <strong>Hours:</strong><br>
+            Mon-Thu 10am - 10pm<br>
+            Fri-Sat 10am - 11pm<br>
+            Sun 11am - 8pm
+          </div>
 
           <div class="actions">
             <a class="chip" href="https://www.google.com/maps?q=1809+NE+123rd+St,+North+Miami,+FL+33181" target="_blank" rel="noopener noreferrer">Directions</a>
@@ -539,10 +575,16 @@
 
             <div>
               <div class="icon-row-title">Delivery and discovery</div>
-              <div class="pill-row">
-                <a class="pill" href="#" aria-label="Uber Eats">Uber Eats</a>
-                <a class="pill" href="#" aria-label="DoorDash">DoorDash</a>
-                <a class="pill" href="#" aria-label="Yelp">Yelp</a>
+              <div class="delivery-row">
+                <a class="delivery-icon" href="#" aria-label="Uber Eats" title="Uber Eats">
+                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
+                </a>
+                <a class="delivery-icon" href="#" aria-label="DoorDash" title="DoorDash">
+                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
+                </a>
+                <a class="delivery-icon" href="#" aria-label="Yelp" title="Yelp">
+                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
+                </a>
               </div>
             </div>
           </div>
@@ -552,9 +594,14 @@
           <h3>Häagen-Dazs Collins North Beach</h3>
           <p class="meta">
             <strong>Address:</strong> 6978 Collins Avenue, Miami Beach, FL 33141<br>
-            <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a><br>
-            <strong>Hours:</strong> Mon-Thu 10am - 10pm, Fri-Sat 10am - 11pm, Sun 11am - 8pm
+            <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a>
           </p>
+          <div class="hours-block">
+            <strong>Hours:</strong><br>
+            Mon-Thu 10am - 10pm<br>
+            Fri-Sat 10am - 11pm<br>
+            Sun 11am - 8pm
+          </div>
 
           <div class="actions">
             <a class="chip" href="https://www.google.com/maps?q=6978+Collins+Ave,+Miami+Beach,+FL+33141" target="_blank" rel="noopener noreferrer">Directions</a>
@@ -586,10 +633,16 @@
 
             <div>
               <div class="icon-row-title">Delivery and discovery</div>
-              <div class="pill-row">
-                <a class="pill" href="#" aria-label="Uber Eats">Uber Eats</a>
-                <a class="pill" href="#" aria-label="DoorDash">DoorDash</a>
-                <a class="pill" href="#" aria-label="Yelp">Yelp</a>
+              <div class="delivery-row">
+                <a class="delivery-icon" href="#" aria-label="Uber Eats" title="Uber Eats">
+                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
+                </a>
+                <a class="delivery-icon" href="#" aria-label="DoorDash" title="DoorDash">
+                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
+                </a>
+                <a class="delivery-icon" href="#" aria-label="Yelp" title="Yelp">
+                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
+                </a>
               </div>
             </div>
           </div>
