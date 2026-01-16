@@ -7,7 +7,7 @@
       background: var(--hd-white);
       border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-/* Reduce excessive whitespace under tapestry */
+/* Tapestry */
 .hd-header .tapestry {
   background-color: var(--hd-white);
   background-image: url("/assets/images/header-tapestry-placeholder.svg");
@@ -26,7 +26,7 @@
   align-items: center;
 }
 
-/* Logo left, menu to the right, EN/ES aligned with menu */
+/* Desktop layout: logo left, menu right (to the left of language switch) */
 .hd-header .bar {
   max-width: 1120px;
   margin: 0 auto;
@@ -60,7 +60,7 @@
   align-items: center;
   gap: 10px;
   flex: 1 1 auto;
-  justify-content: flex-start;
+  justify-content: flex-end;
   flex-wrap: wrap;
 }
 
@@ -73,6 +73,7 @@
   padding: 10px 12px;
   border-radius: 14px;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .hd-nav a:hover,
@@ -119,7 +120,7 @@
   color: var(--hd-white);
 }
 
-/* Mobile */
+/* Mobile: logo left, hamburger right */
 .hd-mobile {
   display: none;
 }
@@ -203,6 +204,59 @@
   display: block;
 }
 
+/* Desktop dropdown for Locations */
+.hd-nav .has-sub {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hd-nav .has-sub > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hd-nav .caret {
+  font-size: 10px;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.hd-nav .submenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 220px;
+  background: var(--hd-white);
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  padding: 8px;
+  display: none;
+  z-index: 9999;
+}
+
+.hd-nav .submenu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 900;
+  color: var(--hd-burgundy);
+  background: rgba(249, 230, 195, 0.20);
+}
+
+.hd-nav .submenu a:hover,
+.hd-nav .submenu a:focus {
+  background: rgba(249, 230, 195, 0.65);
+  outline: none;
+}
+
+.hd-nav .has-sub:hover .submenu,
+.hd-nav .has-sub:focus-within .submenu {
+  display: block;
+}
+
 @media (max-width: 960px) {
   .hd-nav,
   .hd-right {
@@ -229,10 +283,6 @@
       <div class="tapestry-inner"></div>
     </div>
 <div class="bar">
-  <label class="hd-mobile" for="hdMobileToggle" aria-label="Open menu">
-    <span class="hd-burger"><span></span></span>
-  </label>
-
   <div class="logo">
     <a href="/" aria-label="Home">
       <img src="/assets/images/hd_logo_transparent.png" alt="Haagen-Dazs">
@@ -241,7 +291,17 @@
 
   <nav class="hd-nav" aria-label="Primary navigation">
     <a href="/">Home</a>
-    <a href="#locations">Locations</a>
+
+    <div class="has-sub">
+      <a href="#locations" aria-haspopup="true" aria-expanded="false">
+        Locations <span class="caret">&#9662;</span>
+      </a>
+      <div class="submenu" role="menu" aria-label="Locations submenu">
+        <a href="/north-miami" role="menuitem">North Miami</a>
+        <a href="/north-beach" role="menuitem">North Beach</a>
+      </div>
+    </div>
+
     <a href="/menu">Menu</a>
     <a href="/cakes">Cakes</a>
     <a href="/reviews">Reviews</a>
@@ -255,6 +315,10 @@
       <a href="/es/" lang="es">ES</a>
     </div>
   </div>
+
+  <label class="hd-mobile" for="hdMobileToggle" aria-label="Open menu">
+    <span class="hd-burger"><span></span></span>
+  </label>
 </div>
 
 <input class="hd-mobile-toggle" type="checkbox" id="hdMobileToggle" aria-hidden="true">
@@ -263,7 +327,8 @@
   <div class="inner">
     <nav aria-label="Mobile navigation">
       <a href="/">Home</a>
-      <a href="#locations">Locations</a>
+      <a href="/north-miami">North Miami</a>
+      <a href="/north-beach">North Beach</a>
       <a href="/menu">Menu</a>
       <a href="/cakes">Cakes</a>
       <a href="/reviews">Reviews</a>
