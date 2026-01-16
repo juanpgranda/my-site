@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -7,6 +7,7 @@
       background: var(--hd-white);
       border-bottom: 1px solid rgba(0,0,0,0.08);
     }
+/* Reduce excessive whitespace under tapestry */
 .hd-header .tapestry {
   background-color: var(--hd-white);
   background-image: url("/assets/images/header-tapestry-placeholder.svg");
@@ -20,52 +21,36 @@
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 20px;
-  min-height: 78px;
+  min-height: 48px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
+/* Logo left, menu to the right, EN/ES aligned with menu */
 .hd-header .bar {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 12px 20px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 12px;
-}
-
-.hd-header .left,
-.hd-header .right {
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  gap: 12px;
-}
-
-.hd-header .left {
-  justify-content: flex-start;
-}
-
-.hd-header .right {
-  justify-content: flex-end;
+  gap: 14px;
 }
 
 .hd-header .logo {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 auto;
 }
 
 .hd-header .logo a {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   text-decoration: none;
 }
 
 .hd-header .logo img {
-  height: 40px;
+  height: 52px;
   width: auto;
   display: block;
 }
@@ -73,14 +58,16 @@
 .hd-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
+  flex: 1 1 auto;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 .hd-nav a {
   text-decoration: none;
   color: var(--hd-burgundy);
-  font-weight: 800;
+  font-weight: 900;
   font-size: 13px;
   letter-spacing: 0.02em;
   padding: 10px 12px;
@@ -94,8 +81,11 @@
   background: rgba(249, 230, 195, 0.65);
 }
 
-.hd-nav a[aria-current="page"] {
-  background: rgba(249, 230, 195, 0.85);
+.hd-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
 }
 
 .lang-switch {
@@ -168,13 +158,8 @@
   background: var(--hd-burgundy);
 }
 
-.hd-burger span::before {
-  top: -6px;
-}
-
-.hd-burger span::after {
-  top: 6px;
-}
+.hd-burger span::before { top: -6px; }
+.hd-burger span::after { top: 6px; }
 
 .hd-mobile-panel {
   display: none;
@@ -218,12 +203,9 @@
   display: block;
 }
 
-@media (max-width: 900px) {
-  .hd-header .bar {
-    grid-template-columns: auto 1fr auto;
-  }
-
-  .hd-desktop {
+@media (max-width: 960px) {
+  .hd-nav,
+  .hd-right {
     display: none;
   }
 
@@ -231,16 +213,12 @@
     display: inline-flex;
   }
 
-  .hd-header .logo {
-    justify-content: center;
+  .hd-header .bar {
+    justify-content: space-between;
   }
 
-  .hd-header .left {
-    justify-content: flex-start;
-  }
-
-  .hd-header .right {
-    justify-content: flex-end;
+  .hd-header .logo img {
+    height: 48px;
   }
 }
   </style>
@@ -251,18 +229,9 @@
       <div class="tapestry-inner"></div>
     </div>
 <div class="bar">
-  <div class="left">
-    <label class="hd-mobile" for="hdMobileToggle" aria-label="Open menu">
-      <span class="hd-burger"><span></span></span>
-    </label>
-
-    <nav class="hd-nav hd-desktop" aria-label="Primary navigation">
-      <a href="/">Home</a>
-      <a href="/north-miami">North Miami</a>
-      <a href="/miami-beach">Miami Beach</a>
-      <a href="/menu">Menu</a>
-    </nav>
-  </div>
+  <label class="hd-mobile" for="hdMobileToggle" aria-label="Open menu">
+    <span class="hd-burger"><span></span></span>
+  </label>
 
   <div class="logo">
     <a href="/" aria-label="Home">
@@ -270,16 +239,18 @@
     </a>
   </div>
 
-  <div class="right">
-    <nav class="hd-nav hd-desktop" aria-label="Secondary navigation">
-      <a href="/cakes">Cakes</a>
-      <a href="/specials">Specials</a>
-      <a href="/reviews">Reviews</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
+  <nav class="hd-nav" aria-label="Primary navigation">
+    <a href="/">Home</a>
+    <a href="#locations">Locations</a>
+    <a href="/menu">Menu</a>
+    <a href="/cakes">Cakes</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
 
-    <div class="lang-switch hd-desktop" aria-label="Language switch">
+  <div class="hd-right">
+    <div class="lang-switch" aria-label="Language switch">
       <a class="is-active" href="/">EN</a>
       <a href="/es/" lang="es">ES</a>
     </div>
@@ -292,11 +263,9 @@
   <div class="inner">
     <nav aria-label="Mobile navigation">
       <a href="/">Home</a>
-      <a href="/north-miami">North Miami</a>
-      <a href="/miami-beach">Miami Beach</a>
+      <a href="#locations">Locations</a>
       <a href="/menu">Menu</a>
       <a href="/cakes">Cakes</a>
-      <a href="/specials">Specials</a>
       <a href="/reviews">Reviews</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
