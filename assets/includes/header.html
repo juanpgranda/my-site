@@ -6,24 +6,26 @@
     .hd-header {
       background: var(--hd-white);
       border-bottom: 1px solid rgba(0,0,0,0.08);
+      margin: 0;
+      padding: 0;
     }
-/* Tapestry */
+/* Remove the extra "tapestry band" space entirely */
 .hd-header .tapestry {
-  background-color: var(--hd-white);
-  background-image: url("/assets/images/header-tapestry-placeholder.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  display: none;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
 }
 
 .hd-header .tapestry-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 20px;
-  min-height: 48px;
-  display: flex;
-  align-items: center;
+  display: none;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /* Desktop layout: logo left, menu right (to the left of language switch) */
