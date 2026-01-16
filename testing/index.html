@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cakes | Häagen-Dazs DC</title>
-  <meta name="description" content="Order Häagen-Dazs cakes for celebrations, birthdays, and special moments. Browse cake options and start your order from our North Miami and North Beach shops.">
-  <link rel="canonical" href="https://www.hdicecream.com/cakes">
+  <title>About Us | Hagaan-Dazs DC</title>
+  <meta name="description" content="Meet the team behind Hagaan-Dazs DC and discover our two Miami-area shops, our story, and how we serve the community with premium ice cream and desserts.">
+  <link rel="canonical" href="https://www.hdicecream.com/about">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Häagen-Dazs DC">
-  <meta property="og:title" content="Cakes | Häagen-Dazs DC">
-  <meta property="og:description" content="Order Häagen-Dazs cakes for celebrations, birthdays, and special moments. Browse cake options and start your order from our North Miami and North Beach shops.">
-  <meta property="og:url" content="https://www.hdicecream.com/cakes">
+  <meta property="og:site_name" content="Hagaan-Dazs DC">
+  <meta property="og:title" content="About Us | Hagaan-Dazs DC">
+  <meta property="og:description" content="Meet the team behind Hagaan-Dazs DC and discover our two Miami-area shops, our story, and how we serve the community with premium ice cream and desserts.">
+  <meta property="og:url" content="https://www.hdicecream.com/about">
   <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Häagen-Dazs DC cakes and celebrations.">
+  <meta property="og:image:alt" content="Hagaan-Dazs DC - About our shops in North Miami and North Beach.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cakes | Häagen-Dazs DC">
-  <meta name="twitter:description" content="Order Häagen-Dazs cakes for celebrations, birthdays, and special moments. Browse cake options and start your order from our North Miami and North Beach shops.">
+  <meta name="twitter:title" content="About Us | Hagaan-Dazs DC">
+  <meta name="twitter:description" content="Meet the team behind Hagaan-Dazs DC and discover our two Miami-area shops, our story, and how we serve the community with premium ice cream and desserts.">
   <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <link rel="icon" href="/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
@@ -79,10 +79,17 @@
     }
     .hero-top-bg .spacer { min-height: 54px; display: block; }
 
-    /* Match screenshot 1: clean white page header section (no big tinted block) */
+    /* Page header area (keep clean like Cakes screenshot 1 style) */
     .page-hero {
       background: var(--hd-white);
-      padding: 28px 0 12px;
+      padding: 28px 0 14px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: start;
     }
 
     .kicker {
@@ -111,51 +118,118 @@
       max-width: 95ch;
     }
 
-    .section {
-      padding: 18px 0 30px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    /* Match screenshot 1: square image blocks with text below (no rounded-corner image cards) */
-    .card {
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      border-radius: 0;
-      overflow: visible;
-      display: grid;
-      grid-template-rows: 240px auto;
-      min-height: 0;
-    }
-
-    .card figure {
+    .hero-media {
       margin: 0;
-      height: 240px;
+      height: 260px;
       background: #efe8db;
       overflow: hidden;
       border-radius: 0;
     }
 
-    .card figure img {
+    .hero-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .card .body {
-      padding: 10px 0 0;
-      display: grid;
-      gap: 8px;
-      align-content: start;
+    .hero-caption {
+      margin-top: 10px;
+      color: rgba(101, 11, 50, 0.65);
+      font-size: 12px;
+      line-height: 1.45;
     }
 
-    .card h3 {
+    .section {
+      padding: 18px 0 30px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .rule {
+      height: 1px;
+      background: rgba(101, 11, 50, 0.22);
+      margin: 10px 0 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .block {
+      background: rgba(255,255,255,0.85);
+      border: var(--border-soft);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .block h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--hd-burgundy);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .block p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: rgba(255,255,255,0.92);
+      color: var(--hd-burgundy);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .pill:hover, .pill:focus {
+      outline: none;
+      background: rgba(249, 230, 195, 0.85);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mini-card {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      border-radius: 0;
+      overflow: visible;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mini-card h3 {
       margin: 0;
       font-size: 14px;
       font-weight: 900;
@@ -163,18 +237,14 @@
       line-height: 1.2;
     }
 
-    .card p {
+    .mini-card .meta {
       margin: 0;
       color: var(--text-muted);
-      font-size: 12px;
-      line-height: 1.5;
+      font-size: 13px;
+      line-height: 1.55;
     }
 
-    .rule {
-      height: 1px;
-      background: rgba(101, 11, 50, 0.22);
-      margin: 8px 0 0;
-    }
+    .mini-card .meta strong { color: var(--hd-burgundy); }
 
     .cta {
       display: flex;
@@ -204,26 +274,19 @@
       background: rgba(101, 11, 50, 0.92);
     }
 
-    .note {
-      margin-top: 12px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 12px;
-    }
-
     @media (max-width: 980px) {
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-media { height: 240px; }
       h1 { font-size: 40px; }
-      .card { grid-template-rows: 240px auto; }
-      .card figure { height: 240px; }
+      .content-grid { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
-      .grid { grid-template-columns: 1fr; }
       h1 { font-size: 36px; }
       .hero-top-bg .spacer { min-height: 46px; }
-      .card { grid-template-rows: 260px auto; }
-      .card figure { height: 260px; }
+      .hero-media { height: 220px; }
+      .block { padding: 14px; }
     }
   </style>
 </head>
@@ -236,105 +299,85 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <div class="kicker">Cakes</div>
-        <h1>Ordering is easy!</h1>
-        <p class="lead">
-          Choose from our signature cake designs or create a custom masterpiece of your own, guided by our cake specialists.
-          Together, we will craft a dessert that reflects your style, taste, and occasion.
+        <div class="hero-grid">
+          <div>
+            <div class="kicker">About</div>
+            <h1>Made for Miami, served with a smile</h1>
+            <p class="lead">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="rule"></div>
+            <div class="pill-row" aria-label="About quick links">
+              <a class="pill" href="/menu">Explore the menu</a>
+              <a class="pill" href="/cakes">Order cakes</a>
+              <a class="pill" href="/contact">Contact us</a>
+            </div>
+          </div>
+      <div>
+        <figure class="hero-media" aria-label="About image">
+          <img src="/assets/images/placeholders/hd_about_image_placeholder.jpg" alt="About Hagaan-Dazs DC placeholder image">
+        </figure>
+        <div class="hero-caption">Replace this image later: /assets/images/placeholders/hd_about_image_placeholder.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section panel" aria-label="About content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="block">
+        <h2>Our story</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Vitae ultricies leo integer malesuada nunc vel. Id faucibus nisl tincidunt eget nullam non nisi est sit.
         </p>
       </div>
-    </section>
-<section class="section">
-  <div class="container">
-    <div class="grid" aria-label="Cakes grid">
-      <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_cakes_01.png" alt="Cake placeholder 1"></figure>
-        <div class="body">
-          <h3>Ribbon Cake</h3>
-          <div class="rule"></div>
-          <p>Placeholder description. Swap this image and text with your official cake details.</p>
-        </div>
-      </article>
 
-      <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_cakes_01.png" alt="Cake placeholder 2"></figure>
-        <div class="body">
-          <h3>Dulce de Leche Cake</h3>
-          <div class="rule"></div>
-          <p>Placeholder description. Swap this image and text with your official cake details.</p>
-        </div>
-      </article>
+      <div class="block">
+        <h2>What we serve</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet volutpat consequat mauris nunc congue nisi vitae.
+          Egestas sed sed risus pretium quam vulputate dignissim suspendisse.
+        </p>
+      </div>
 
-      <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_cakes_01.png" alt="Cake placeholder 3"></figure>
-        <div class="body">
-          <h3>Coffee Crunch Cake</h3>
-          <div class="rule"></div>
-          <p>Placeholder description. Swap this image and text with your official cake details.</p>
-        </div>
-      </article>
+      <div class="block">
+        <h2>Community first</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus id interdum velit laoreet id donec ultrices.
+          Non curabitur gravida arcu ac tortor dignissim convallis aenean et.
+        </p>
+      </div>
 
-      <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_cakes_01.png" alt="Cake placeholder 4"></figure>
-        <div class="body">
-          <h3>Rose's Birthday Cake</h3>
-          <div class="rule"></div>
-          <p>Placeholder description. Swap this image and text with your official cake details.</p>
+      <div class="block">
+        <h2>Visit our two locations</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. We have two Miami-area shops so you can grab your favorites fast.
+        </p>
+        <div style="height: 12px;"></div>
+        <div class="two-col" aria-label="Locations summary">
+          <div class="mini-card">
+            <h3>North Miami</h3>
+            <p class="meta">
+              <strong>Address:</strong> Lorem ipsum dolor sit amet, FL 33181<br>
+              <strong>Hours:</strong> Lorem ipsum Mon-Thu, Fri-Sat, Sun
+            </p>
+          </div>
+          <div class="mini-card">
+            <h3>North Beach</h3>
+            <p class="meta">
+              <strong>Address:</strong> Lorem ipsum dolor sit amet, FL 33141<br>
+              <strong>Hours:</strong> Lorem ipsum Mon-Thu, Fri-Sat, Sun
+            </p>
+          </div>
         </div>
-      </article>
-
-      <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_cakes_01.png" alt="Cake placeholder 5"></figure>
-        <div class="body">
-          <h3>Reuben's Birthday Cake</h3>
-          <div class="rule"></div>
-          <p>Placeholder description. Swap this image and text with your official cake details.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_cakes_01.png" alt="Cake placeholder 6"></figure>
-        <div class="body">
-          <h3>Cookies and Cream Cake</h3>
-          <div class="rule"></div>
-          <p>Placeholder description. Swap this image and text with your official cake details.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_cakes_01.png" alt="Cake placeholder 7"></figure>
-        <div class="body">
-          <h3>Triple Chocolate Cake</h3>
-          <div class="rule"></div>
-          <p>Placeholder description. Swap this image and text with your official cake details.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_cakes_01.png" alt="Cake placeholder 8"></figure>
-        <div class="body">
-          <h3>Just Because Cake</h3>
-          <div class="rule"></div>
-          <p>Placeholder description. Swap this image and text with your official cake details.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_cakes_01.png" alt="Cake placeholder 9"></figure>
-        <div class="body">
-          <h3>Custom Celebration Cake</h3>
-          <div class="rule"></div>
-          <p>Placeholder description. Swap this image and text with your official cake details.</p>
-        </div>
-      </article>
+      </div>
     </div>
 
     <div class="cta">
-      <a class="btn" href="/contact" aria-label="Start your order">Start Your Order</a>
-    </div>
-
-    <div class="note">
-      Tip: Replace placeholder images in /assets/images/placeholders/ and update the titles and descriptions as you get final cake names.
+      <a class="btn" href="/contact" aria-label="Contact Hagaan-Dazs DC">Contact Us</a>
     </div>
   </div>
 </section>
