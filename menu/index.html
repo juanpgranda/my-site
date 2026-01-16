@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Menu | Häagen-Dazs DC</title>
-  <meta name="description" content="Explore the Häagen-Dazs DC menu for our North Miami and North Beach shops, including ice cream, cones, milkshakes, frozen drinks, and Dazzler sundaes.">
+  <meta name="description" content="Explore the Häagen-Dazs DC menu for our North Miami and North Beach shops, including cones, cups, Dazzler sundaes, milkshakes, frozen drinks, and pints.">
   <link rel="canonical" href="https://www.hdicecream.com/menu">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Häagen-Dazs DC">
   <meta property="og:title" content="Menu | Häagen-Dazs DC">
-  <meta property="og:description" content="Explore the Häagen-Dazs DC menu for our North Miami and North Beach shops, including ice cream, cones, milkshakes, frozen drinks, and Dazzler sundaes.">
+  <meta property="og:description" content="Explore the Häagen-Dazs DC menu for our North Miami and North Beach shops, including cones, cups, Dazzler sundaes, milkshakes, frozen drinks, and pints.">
   <meta property="og:url" content="https://www.hdicecream.com/menu">
   <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Häagen-Dazs DC menu featuring cones, milkshakes, frozen drinks, and sundaes.">
+  <meta property="og:image:alt" content="Häagen-Dazs DC menu featuring cones, cups, milkshakes, frozen drinks, and sundaes.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Menu | Häagen-Dazs DC">
-  <meta name="twitter:description" content="Explore the Häagen-Dazs DC menu for our North Miami and North Beach shops, including ice cream, cones, milkshakes, frozen drinks, and Dazzler sundaes.">
+  <meta name="twitter:description" content="Explore the Häagen-Dazs DC menu for our North Miami and North Beach shops, including cones, cups, Dazzler sundaes, milkshakes, frozen drinks, and pints.">
   <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <link rel="icon" href="/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
@@ -27,7 +27,6 @@
   <link rel="manifest" href="/assets/images/site.webmanifest">
   <meta name="theme-color" content="#650B32">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ3XB37TBM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -138,7 +137,6 @@
       font-size: 13px;
       white-space: nowrap;
     }
-
     .chip:hover, .chip:focus {
       outline: none;
       background: rgba(249, 230, 195, 0.78);
@@ -196,9 +194,38 @@
       color: var(--hd-gold-light);
     }
 
-    .section {
-      padding: 26px 0;
+    .panel {
+      background: var(--panel);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px 0;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: var(--hd-burgundy);
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: rgba(255,255,255,0.85);
+      white-space: nowrap;
+    }
+
+    .toc a:hover, .toc a:focus {
+      outline: none;
+      background: rgba(249, 230, 195, 0.78);
+    }
+
+    .section { padding: 26px 0; }
 
     .section-head {
       display: flex;
@@ -226,6 +253,7 @@
       gap: 16px;
     }
 
+    /* FIX: prevent image from covering text by enforcing a fixed media area + overflow hidden */
     .card {
       border: var(--border-soft);
       border-radius: var(--radius-lg);
@@ -233,16 +261,15 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       overflow: hidden;
       display: grid;
-      grid-template-rows: auto 1fr;
-      min-height: 320px;
+      grid-template-rows: 210px 1fr;
+      min-height: 330px;
     }
 
     .card figure {
       margin: 0;
       height: 210px;
       background: #efe8db;
-      display: grid;
-      place-items: center;
+      overflow: hidden;
       position: relative;
     }
 
@@ -253,11 +280,19 @@
       display: block;
     }
 
+    /* Optional: if a placeholder image is transparent/odd aspect, keep it centered without spilling */
+    .card figure img.is-contain {
+      object-fit: contain;
+      padding: 14px;
+      background: #efe8db;
+    }
+
     .card .body {
       padding: 12px 12px 14px;
       display: grid;
       gap: 8px;
       align-content: start;
+      background: var(--hd-white);
     }
 
     .card h3 {
@@ -296,37 +331,6 @@
       white-space: nowrap;
     }
 
-    .panel {
-      background: var(--panel);
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .toc {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 14px 0;
-    }
-
-    .toc a {
-      text-decoration: none;
-      color: var(--hd-burgundy);
-      font-weight: 900;
-      font-size: 12px;
-      letter-spacing: 0.02em;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      background: rgba(255,255,255,0.85);
-      white-space: nowrap;
-    }
-
-    .toc a:hover, .toc a:focus {
-      outline: none;
-      background: rgba(249, 230, 195, 0.78);
-    }
-
     .top {
       display: flex;
       justify-content: center;
@@ -356,12 +360,16 @@
       .hero-card figure { height: 200px; }
       .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .h1 { font-size: 40px; }
+      .card { grid-template-rows: 200px 1fr; }
+      .card figure { height: 200px; }
     }
 
     @media (max-width: 640px) {
       .grid { grid-template-columns: 1fr; }
       .h1 { font-size: 36px; }
       .hero-top-bg .spacer { min-height: 46px; }
+      .card { grid-template-rows: 220px 1fr; }
+      .card figure { height: 220px; }
     }
   </style>
 </head>
@@ -386,6 +394,7 @@
               <a class="chip" href="#dazzlers">Dazzler sundaes</a>
               <a class="chip" href="#milkshakes">Milkshakes</a>
               <a class="chip" href="#drinks">Frozen drinks</a>
+              <a class="chip" href="#pints">Pints and sorbet</a>
             </div>
           </div>
       <div class="hero-card" aria-label="Featured menu preview">
@@ -426,9 +435,7 @@
         <div class="body">
           <h3>White Chocolate Raspberry Truffle</h3>
           <p>Sweet white chocolate and bright raspberry ribbons for an unforgettable bite.</p>
-          <div class="badge-row">
-            <span class="badge">Cones</span><span class="badge">Cups</span>
-          </div>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
         </div>
       </article>
 
@@ -437,9 +444,7 @@
         <div class="body">
           <h3>Belgian Chocolate</h3>
           <p>Deep cocoa richness crafted for chocolate lovers who like it bold.</p>
-          <div class="badge-row">
-            <span class="badge">Cones</span><span class="badge">Cups</span>
-          </div>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
         </div>
       </article>
 
@@ -448,9 +453,7 @@
         <div class="body">
           <h3>Butter Pecan</h3>
           <p>Buttery, nutty, and smooth. A timeless shop favorite that never misses.</p>
-          <div class="badge-row">
-            <span class="badge">Cones</span><span class="badge">Cups</span>
-          </div>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
         </div>
       </article>
 
@@ -459,9 +462,7 @@
         <div class="body">
           <h3>Caramel Cone</h3>
           <p>Sweet caramel notes with a crunchy finish that feels like a celebration.</p>
-          <div class="badge-row">
-            <span class="badge">Cones</span><span class="badge">Cups</span>
-          </div>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
         </div>
       </article>
 
@@ -470,9 +471,7 @@
         <div class="body">
           <h3>Coffee</h3>
           <p>Rich roasted coffee flavor, smooth and satisfying from first spoon to last.</p>
-          <div class="badge-row">
-            <span class="badge">Cones</span><span class="badge">Cups</span>
-          </div>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
         </div>
       </article>
 
@@ -481,9 +480,7 @@
         <div class="body">
           <h3>Cookie Dough</h3>
           <p>Classic cookie dough goodness mixed into creamy ice cream for easy joy.</p>
-          <div class="badge-row">
-            <span class="badge">Cones</span><span class="badge">Cups</span>
-          </div>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
         </div>
       </article>
     </div>
@@ -505,9 +502,7 @@
         <div class="body">
           <h3>Banana Split Dazzler</h3>
           <p>Classic banana split vibes with whipped cream and rich toppings.</p>
-          <div class="badge-row">
-            <span class="badge">Dazzler</span><span class="badge">Signature</span>
-          </div>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Signature</span></div>
         </div>
       </article>
 
@@ -516,9 +511,7 @@
         <div class="body">
           <h3>Cookies and Cream Dazzler</h3>
           <p>Cookie crunch meets creamy goodness in a sundae you will crave.</p>
-          <div class="badge-row">
-            <span class="badge">Dazzler</span><span class="badge">Fan favorite</span>
-          </div>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Fan favorite</span></div>
         </div>
       </article>
 
@@ -527,20 +520,16 @@
         <div class="body">
           <h3>Dulce de Leche Dazzler</h3>
           <p>Caramel warmth, whipped cream, and a sweet finish that lingers.</p>
-          <div class="badge-row">
-            <span class="badge">Dazzler</span><span class="badge">Caramel</span>
-          </div>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Caramel</span></div>
         </div>
       </article>
 
       <article class="card">
-        <figure><img src="/assets/images/placeholders/hd_menu_01.png alt="Midnight Cookies and Cream Dazzler placeholder"></figure>
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Midnight Cookies and Cream Dazzler placeholder"></figure>
         <div class="body">
           <h3>Midnight Cookies and Cream Dazzler</h3>
           <p>Dark and dreamy, layered with cookie bites and chocolate flair.</p>
-          <div class="badge-row">
-            <span class="badge">Dazzler</span><span class="badge">Chocolate</span>
-          </div>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Chocolate</span></div>
         </div>
       </article>
 
@@ -549,9 +538,7 @@
         <div class="body">
           <h3>Mint Chip Dazzler</h3>
           <p>Refreshing mint and chocolate chip goodness topped for maximum wow.</p>
-          <div class="badge-row">
-            <span class="badge">Dazzler</span><span class="badge">Mint</span>
-          </div>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Mint</span></div>
         </div>
       </article>
 
@@ -560,9 +547,7 @@
         <div class="body">
           <h3>Rocky Road Dazzler</h3>
           <p>Chocolate, crunch, and that classic rocky road energy in every bite.</p>
-          <div class="badge-row">
-            <span class="badge">Dazzler</span><span class="badge">Crunchy</span>
-          </div>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Crunchy</span></div>
         </div>
       </article>
     </div>
@@ -584,9 +569,7 @@
         <div class="body">
           <h3>Belgian Chocolate Shake</h3>
           <p>Chocolate on chocolate with a whipped finish that feels like dessert.</p>
-          <div class="badge-row">
-            <span class="badge">Shake</span><span class="badge">Chocolate</span>
-          </div>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Chocolate</span></div>
         </div>
       </article>
 
@@ -595,9 +578,7 @@
         <div class="body">
           <h3>Cookies and Cream Shake</h3>
           <p>Cookie crumble blended into creamy perfection, topped for extra joy.</p>
-          <div class="badge-row">
-            <span class="badge">Shake</span><span class="badge">Crunchy</span>
-          </div>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Crunchy</span></div>
         </div>
       </article>
 
@@ -606,9 +587,7 @@
         <div class="body">
           <h3>Dulce de Leche Shake</h3>
           <p>Sweet caramel notes blended smooth, finished with a drizzle.</p>
-          <div class="badge-row">
-            <span class="badge">Shake</span><span class="badge">Caramel</span>
-          </div>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Caramel</span></div>
         </div>
       </article>
 
@@ -617,9 +596,7 @@
         <div class="body">
           <h3>Coffee Shake</h3>
           <p>Roasted coffee flavor blended thick and creamy, perfect for an afternoon treat.</p>
-          <div class="badge-row">
-            <span class="badge">Shake</span><span class="badge">Coffee</span>
-          </div>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Coffee</span></div>
         </div>
       </article>
 
@@ -628,9 +605,7 @@
         <div class="body">
           <h3>Mocha Shake</h3>
           <p>Chocolate and coffee meet in a silky shake that always hits the spot.</p>
-          <div class="badge-row">
-            <span class="badge">Shake</span><span class="badge">Mocha</span>
-          </div>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Mocha</span></div>
         </div>
       </article>
 
@@ -639,9 +614,7 @@
         <div class="body">
           <h3>Caramel Coffee Shake</h3>
           <p>Sweet caramel with coffee depth, blended smooth and topped with style.</p>
-          <div class="badge-row">
-            <span class="badge">Shake</span><span class="badge">Caramel</span>
-          </div>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Caramel</span></div>
         </div>
       </article>
     </div>
@@ -663,9 +636,7 @@
         <div class="body">
           <h3>Aloha Mango Smoothie</h3>
           <p>Juicy mango blended smooth for a tropical sip you will keep coming back to.</p>
-          <div class="badge-row">
-            <span class="badge">Smoothie</span><span class="badge">Fruit</span>
-          </div>
+          <div class="badge-row"><span class="badge">Smoothie</span><span class="badge">Fruit</span></div>
         </div>
       </article>
 
@@ -674,9 +645,7 @@
         <div class="body">
           <h3>Strawberry Banana Smoothie</h3>
           <p>Classic combo, creamy and bright, with that perfect strawberry finish.</p>
-          <div class="badge-row">
-            <span class="badge">Smoothie</span><span class="badge">Classic</span>
-          </div>
+          <div class="badge-row"><span class="badge">Smoothie</span><span class="badge">Classic</span></div>
         </div>
       </article>
 
@@ -685,9 +654,7 @@
         <div class="body">
           <h3>Strawberry Mango Smoothie</h3>
           <p>Strawberry sweetness meets mango sunshine for a bold, refreshing sip.</p>
-          <div class="badge-row">
-            <span class="badge">Smoothie</span><span class="badge">Tropical</span>
-          </div>
+          <div class="badge-row"><span class="badge">Smoothie</span><span class="badge">Tropical</span></div>
         </div>
       </article>
 
@@ -696,9 +663,7 @@
         <div class="body">
           <h3>Pomegranate Berry Smoothie</h3>
           <p>Berry-forward with a tangy pomegranate lift, balanced and refreshing.</p>
-          <div class="badge-row">
-            <span class="badge">Smoothie</span><span class="badge">Berry</span>
-          </div>
+          <div class="badge-row"><span class="badge">Smoothie</span><span class="badge">Berry</span></div>
         </div>
       </article>
 
@@ -707,20 +672,16 @@
         <div class="body">
           <h3>Strawberry Frozen Lemonade</h3>
           <p>Tart lemonade blended with strawberry for a bright, icy favorite.</p>
-          <div class="badge-row">
-            <span class="badge">Frozen</span><span class="badge">Citrus</span>
-          </div>
+          <div class="badge-row"><span class="badge">Frozen</span><span class="badge">Citrus</span></div>
         </div>
       </article>
 
       <article class="card">
-        <figure><img src="/aassets/images/placeholders/hd_menu_01.png" alt="Raspberry Frozen Lemonade placeholder"></figure>
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Raspberry Frozen Lemonade placeholder"></figure>
         <div class="body">
           <h3>Raspberry Frozen Lemonade</h3>
           <p>Raspberry tang and lemonade sparkle in a frozen sip made for summer.</p>
-          <div class="badge-row">
-            <span class="badge">Frozen</span><span class="badge">Berry</span>
-          </div>
+          <div class="badge-row"><span class="badge">Frozen</span><span class="badge">Berry</span></div>
         </div>
       </article>
     </div>
@@ -742,9 +703,7 @@
         <div class="body">
           <h3>Strawberry</h3>
           <p>Sweet strawberry flavor that stays smooth and satisfying from first scoop to last.</p>
-          <div class="badge-row">
-            <span class="badge">Pint</span><span class="badge">Classic</span>
-          </div>
+          <div class="badge-row"><span class="badge">Pint</span><span class="badge">Classic</span></div>
         </div>
       </article>
 
@@ -753,9 +712,7 @@
         <div class="body">
           <h3>Vanilla</h3>
           <p>Velvety and timeless. A perfect base for toppings or enjoyed as is.</p>
-          <div class="badge-row">
-            <span class="badge">Pint</span><span class="badge">Classic</span>
-          </div>
+          <div class="badge-row"><span class="badge">Pint</span><span class="badge">Classic</span></div>
         </div>
       </article>
 
@@ -764,9 +721,7 @@
         <div class="body">
           <h3>Mango Sorbet</h3>
           <p>Bright, fruity, and refreshing. A clean finish with bold mango flavor.</p>
-          <div class="badge-row">
-            <span class="badge">Sorbet</span><span class="badge">Dairy-free</span>
-          </div>
+          <div class="badge-row"><span class="badge">Sorbet</span><span class="badge">Dairy-free</span></div>
         </div>
       </article>
 
@@ -775,9 +730,7 @@
         <div class="body">
           <h3>Raspberry Sorbet</h3>
           <p>Vibrant raspberry flavor with a refreshing bite that feels light and bright.</p>
-          <div class="badge-row">
-            <span class="badge">Sorbet</span><span class="badge">Dairy-free</span>
-          </div>
+          <div class="badge-row"><span class="badge">Sorbet</span><span class="badge">Dairy-free</span></div>
         </div>
       </article>
 
@@ -786,9 +739,7 @@
         <div class="body">
           <h3>Sea Salt Caramel Truffle</h3>
           <p>Sweet caramel with a touch of salt for a rich, slow-savoring finish.</p>
-          <div class="badge-row">
-            <span class="badge">Pint</span><span class="badge">Caramel</span>
-          </div>
+          <div class="badge-row"><span class="badge">Pint</span><span class="badge">Caramel</span></div>
         </div>
       </article>
 
@@ -797,9 +748,7 @@
         <div class="body">
           <h3>Rocky Road</h3>
           <p>Chocolate, crunchy mix-ins, and that classic rocky road texture you love.</p>
-          <div class="badge-row">
-            <span class="badge">Pint</span><span class="badge">Crunchy</span>
-          </div>
+          <div class="badge-row"><span class="badge">Pint</span><span class="badge">Crunchy</span></div>
         </div>
       </article>
     </div>
