@@ -27,7 +27,6 @@
   <link rel="manifest" href="/assets/images/site.webmanifest">
   <meta name="theme-color" content="#650B32">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ3XB37TBM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -45,6 +44,14 @@
       --text-muted: rgba(101, 11, 50, 0.72);
       --overlay-kicker: #F9D79C;
       --overlay-text: #F9E6C3;
+      --hero-ink: #ffffff;
+      --hero-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     }
 
     .container {
@@ -65,8 +72,9 @@
       text-decoration: none;
       font-weight: 700;
     }
-
     .skip-link:focus { left: 10px; }
+
+    #siteHeader, #siteFooter { margin: 0; padding: 0; }
 
     .hero-top-bg {
       background-image: url("/assets/images/placeholders/hd_home_hero_placeholder.jpg");
@@ -78,138 +86,146 @@
       margin: 0;
       padding: 0;
     }
+    .hero-top-bg .spacer { min-height: 68px; display: block; }
 
-    .hero-top-bg .spacer {
-      min-height: 68px;
-      display: block;
-    }
-
-    #siteHeader {
-      margin: 0;
-      padding: 0;
-    }
-
-    .hero {
+    /* FULL-WIDTH HERO CAROUSEL */
+    .hero-full {
+      position: relative;
+      width: 100%;
       background: linear-gradient(180deg, var(--hd-gold-light), var(--hd-white));
-      padding: 18px 0 22px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 22px;
-      align-items: center;
       padding: 18px 0 10px;
     }
 
-    .hero h1 {
+    .hero-shell {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px 12px;
+    }
+
+    .hero-title {
       margin: 0 0 10px;
-      font-size: 46px;
-      line-height: 1.04;
+      font-size: 42px;
+      line-height: 1.06;
+      color: var(--hd-burgundy);
     }
 
-    .hero p {
-      margin: 0 0 18px;
-      font-size: 18px;
+    .hero-lead {
+      margin: 0;
+      font-size: 16px;
       color: var(--text-muted);
-      max-width: 56ch;
+      max-width: 75ch;
     }
 
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
-    }
+    /* hide CTA buttons per request */
+    .cta-row { display: none !important; }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 800;
-      border: 0;
-      cursor: pointer;
-      user-select: none;
-      font-family: var(--font-body);
-    }
-
-    .btn-primary { background: var(--hd-burgundy); color: var(--hd-white); }
-    .btn-secondary { background: var(--hd-gold); color: var(--hd-white); }
-
-    .carousel {
+    .hero-carousel {
       position: relative;
-      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 100%;
+      margin: 16px 0 0;
+      border-radius: 0;
       overflow: hidden;
       box-shadow: var(--shadow-soft);
-      border: var(--border-soft);
-      background: var(--hd-white);
-      min-height: 320px;
+      border-top: var(--border-soft);
+      border-bottom: var(--border-soft);
+      background: #000;
     }
 
-    .carousel-viewport { position: relative; height: 100%; }
+    .hero-carousel-viewport {
+      position: relative;
+      width: 100%;
+      height: 420px;
+    }
 
-    .slide {
+    .hero-slide {
       position: absolute;
       inset: 0;
       opacity: 0;
       transition: opacity 400ms ease;
-      display: grid;
-      align-items: stretch;
+      pointer-events: none;
     }
 
-    .slide.is-active { opacity: 1; position: relative; }
-
-    .slide figure {
-      margin: 0;
-      height: 100%;
-      min-height: 320px;
-      background: var(--hd-gold-light);
-      display: grid;
-      place-items: center;
+    .hero-slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
     }
 
-    .slide img {
+    .hero-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .slide-overlay {
+    .hero-overlay {
       position: absolute;
-      left: 18px;
-      bottom: 18px;
-      right: 18px;
-      background: rgba(101, 11, 50, 0.78);
-      padding: 14px 16px;
-      border-radius: 14px;
-      backdrop-filter: blur(6px);
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 560px;
+      color: var(--hero-ink);
+      text-shadow: var(--hero-shadow);
+      padding: 0;
     }
 
-    .slide-overlay .kicker {
-      font-family: var(--font-body);
+    .hero-overlay .kicker {
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 12px;
-      color: var(--overlay-kicker);
-      margin-bottom: 6px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 10px;
     }
 
-    .slide-overlay .headline {
-      font-family: var(--font-headline);
-      font-weight: 700;
-      font-size: 22px;
-      line-height: 1.1;
+    .hero-overlay h2 {
+      margin: 0 0 10px;
+      font-size: 36px;
+      line-height: 1.05;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .hero-overlay p {
       margin: 0;
-      color: var(--overlay-text);
+      font-size: 16px;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.92);
+      max-width: 60ch;
     }
 
-    .carousel-btn {
+    /* Animation timing per 3s cycle:
+       - Title appears/fades in at 1s
+       - Subtitle slides in from right at 2s
+    */
+    .hero-slide .hero-overlay h2,
+    .hero-slide .hero-overlay p {
+      opacity: 0;
+      transform: translateX(0);
+    }
+
+    .hero-slide.anim .hero-overlay h2 {
+      animation: hdFadeIn 0.5s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .hero-slide.anim .hero-overlay p {
+      animation: hdSlideInRight 0.5s ease forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes hdFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes hdSlideInRight {
+      from { opacity: 0; transform: translateX(24px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .hero-carousel-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -217,60 +233,62 @@
       height: 44px;
       border-radius: 999px;
       border: 0;
-      background: rgba(255,255,255,0.86);
+      background: rgba(255,255,255,0.88);
       color: var(--hd-burgundy);
       display: grid;
       place-items: center;
       cursor: pointer;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.16);
-      z-index: 2;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+      z-index: 3;
     }
 
-    .carousel-btn:hover,
-    .carousel-btn:focus { outline: none; background: rgba(255,255,255,0.98); }
+    .hero-carousel-btn:hover,
+    .hero-carousel-btn:focus { outline: none; background: rgba(255,255,255,0.98); }
 
-    .carousel-btn.prev { left: 12px; }
-    .carousel-btn.next { right: 12px; }
+    .hero-carousel-btn.prev { left: 16px; }
+    .hero-carousel-btn.next { right: 16px; }
 
-    .carousel-dots {
+    .hero-carousel-dots {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 10px;
+      bottom: 14px;
       display: flex;
       justify-content: center;
       gap: 8px;
-      pointer-events: auto;
-      z-index: 2;
+      z-index: 3;
     }
 
-    .dot {
+    .hero-dot {
       width: 10px;
       height: 10px;
       border-radius: 999px;
-      border: 2px solid rgba(255,255,255,0.9);
+      border: 2px solid rgba(255,255,255,0.95);
       background: transparent;
       cursor: pointer;
       padding: 0;
     }
-
-    .dot.is-active { background: var(--hd-gold); border-color: rgba(255,255,255,0.95); }
-
-    .section { padding: 44px 0; }
-
-    .section h2 { margin: 0 0 14px; font-size: 34px; }
-
-    .section p.lead {
-      margin: 0 0 20px;
-      color: var(--text-muted);
-      max-width: 80ch;
+    .hero-dot.is-active {
+      background: var(--hd-gold);
+      border-color: rgba(255,255,255,0.98);
     }
 
+    /* LOCATIONS */
     .locations-wrap {
       background: rgba(249, 230, 195, 0.45);
       border-top: 1px solid rgba(0,0,0,0.06);
       border-bottom: 1px solid rgba(0,0,0,0.06);
       padding: 26px 0;
+    }
+
+    .section { padding: 18px 0 0; }
+
+    .section h2 { margin: 0 0 14px; font-size: 34px; color: var(--hd-burgundy); }
+
+    .section p.lead {
+      margin: 0 0 20px;
+      color: var(--text-muted);
+      max-width: 80ch;
     }
 
     .cards {
@@ -287,14 +305,13 @@
       padding: 18px;
     }
 
-    .card h3 { margin: 0 0 8px; font-size: 22px; }
+    .card h3 { margin: 0 0 8px; font-size: 22px; color: var(--hd-burgundy); }
 
     .meta {
       margin: 0;
       color: var(--text-muted);
       line-height: 1.6;
     }
-
     .meta strong { color: var(--hd-burgundy); }
 
     .hours-block {
@@ -302,7 +319,6 @@
       color: var(--text-muted);
       line-height: 1.55;
     }
-
     .hours-block strong { color: var(--hd-burgundy); }
 
     .actions {
@@ -345,12 +361,14 @@
       color: rgba(101, 11, 50, 0.68);
     }
 
+    /* Even spacing per request */
     .icon-row,
     .delivery-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
       align-items: center;
+      justify-content: space-evenly;
+      gap: 0;
+      width: 100%;
     }
 
     .icon-link,
@@ -358,15 +376,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: auto;
-      height: auto;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-      box-shadow: none;
-      padding: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(101, 11, 50, 0.14);
+      background: rgba(255,255,255,0.65);
       text-decoration: none;
-      transform: none;
     }
 
     .icon-link:hover,
@@ -374,21 +389,20 @@
     .delivery-icon:hover,
     .delivery-icon:focus {
       outline: none;
-      background: transparent;
-      border: 0;
-      transform: none;
+      background: rgba(249, 230, 195, 0.70);
+      border-color: rgba(101, 11, 50, 0.22);
     }
 
     .icon-swap {
-      width: 25px;
-      height: 25px;
+      width: 24px;
+      height: 24px;
       display: block;
       position: relative;
     }
 
     .icon-swap img {
-      width: 25px;
-      height: 25px;
+      width: 24px;
+      height: 24px;
       object-fit: contain;
       display: block;
       position: absolute;
@@ -403,87 +417,86 @@
     .icon-link:focus .icon-swap img.gold { opacity: 0; }
 
     .google-icon {
-      width: 25px;
-      height: 25px;
+      width: 24px;
+      height: 24px;
       display: block;
       object-fit: contain;
     }
 
     .delivery-icon img {
-      width: 25px;
-      height: 25px;
+      width: 24px;
+      height: 24px;
       object-fit: contain;
       display: block;
     }
 
+    /* Responsive */
     @media (max-width: 960px) {
-      .hero-grid { grid-template-columns: 1fr; }
       .cards { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 40px; }
+      .hero-title { font-size: 36px; }
+      .hero-carousel-viewport { height: 360px; }
+      .hero-overlay { left: 18px; right: 18px; max-width: none; }
+      .hero-overlay h2 { font-size: 30px; }
       .hero-top-bg .spacer { min-height: 54px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-carousel-viewport { height: 300px; }
+      .hero-overlay h2 { font-size: 24px; }
+      .hero-overlay p { font-size: 14px; }
+      .hero-carousel-btn { width: 40px; height: 40px; }
+      .hero-top-bg .spacer { min-height: 46px; }
+      .icon-link, .delivery-icon { width: 42px; height: 42px; }
     }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <div class="hero-top-bg" aria-hidden="true">
-    <div class="spacer"></div>
-  </div>
+  <div class="hero-top-bg" aria-hidden="true"><div class="spacer"></div></div>
   <div id="siteHeader"></div>
   <main id="main">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <h1>Simply extraordinary, served locally</h1>
-            <p>
-              Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
-              Find hours, directions, and ordering links in seconds.
-            </p>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="#locations">Find a location</a>
-              <a class="btn btn-secondary" href="#menu">View menu</a>
-            </div>
-          </div>
-      <div class="carousel" aria-label="Homepage featured carousel">
-        <div class="carousel-viewport" id="carouselViewport">
-          <div class="slide is-active" data-index="0">
-            <figure>
-              <img src="/assets/images/placeholders/hd_home_carousel_placeholder_01.jpg" alt="Featured image placeholder 1">
-            </figure>
-            <div class="slide-overlay">
-              <div class="kicker">Featured</div>
-              <p class="headline">Cakes and desserts made to celebrate</p>
-            </div>
-          </div>
-
-          <div class="slide" data-index="1">
-            <figure>
-              <img src="/assets/images/placeholders/hd_home_carousel_placeholder_02.jpg" alt="Featured image placeholder 2">
-            </figure>
-            <div class="slide-overlay">
-              <div class="kicker">Featured</div>
-              <p class="headline">Get your favorites delivered fast</p>
-            </div>
-          </div>
-        </div>
-
-        <button class="carousel-btn prev" type="button" aria-label="Previous slide" id="carouselPrev">&#8249;</button>
-        <button class="carousel-btn next" type="button" aria-label="Next slide" id="carouselNext">&#8250;</button>
-
-        <div class="carousel-dots" role="tablist" aria-label="Carousel pagination">
-          <button class="dot is-active" type="button" aria-label="Go to slide 1" id="dot0"></button>
-          <button class="dot" type="button" aria-label="Go to slide 2" id="dot1"></button>
+    <section class="hero-full" aria-label="Hero">
+      <div class="hero-shell">
+        <h1 class="hero-title">Simply extraordinary, served locally</h1>
+        <p class="hero-lead">
+          Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
+          Find hours, directions, and ordering links in seconds.
+        </p>
+      </div>
+  <div class="hero-carousel" aria-label="Homepage hero carousel">
+    <div class="hero-carousel-viewport" id="heroCarouselViewport">
+      <div class="hero-slide is-active anim" data-index="0" aria-hidden="false">
+        <img src="/assets/images/placeholders/hd_dulce.jpeg" alt="Order online hero image">
+        <div class="hero-overlay">
+          <div class="kicker">Haagen-Dazs</div>
+          <h2>ORDER ONLINE</h2>
+          <p>Enjoy your favorite desserts at home.</p>
         </div>
       </div>
 
+      <div class="hero-slide" data-index="1" aria-hidden="true">
+        <img src="/assets/images/placeholders/hd_strawberry.jpeg" alt="Sundae catering hero image">
+        <div class="hero-overlay">
+          <div class="kicker">Haagen-Dazs</div>
+          <h2>SUNDAE CATERING</h2>
+          <p>Perfect for showers, weddings, office parties any other celebration!</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="hero-carousel-btn prev" type="button" aria-label="Previous slide" id="heroPrev">&#8249;</button>
+    <button class="hero-carousel-btn next" type="button" aria-label="Next slide" id="heroNext">&#8250;</button>
+
+    <div class="hero-carousel-dots" role="tablist" aria-label="Hero carousel pagination">
+      <button class="hero-dot is-active" type="button" aria-label="Go to slide 1" id="heroDot0"></button>
+      <button class="hero-dot" type="button" aria-label="Go to slide 2" id="heroDot1"></button>
     </div>
   </div>
 </section>
 
 <section class="locations-wrap" id="locations">
   <div class="container">
-    <div class="section" style="padding: 18px 0 0;">
+    <div class="section">
       <h2>Locations</h2>
       <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
 
@@ -505,7 +518,6 @@
           <div class="actions">
             <a class="chip" href="https://www.google.com/maps?q=1809+NE+123rd+St,+North+Miami,+FL+33181" target="_blank" rel="noopener noreferrer">Directions</a>
             <a class="chip" href="tel:+17869638203">Call</a>
-            <a class="chip" href="/menu">Menu</a>
           </div>
 
           <div class="icon-block">
@@ -533,13 +545,13 @@
             <div>
               <div class="icon-row-title">Delivery and discovery</div>
               <div class="delivery-row">
-                <a class="delivery-icon" href="#" aria-label="Uber Eats" title="Uber Eats">
+                <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
                   <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
                 </a>
-                <a class="delivery-icon" href="#" aria-label="DoorDash" title="DoorDash">
+                <a class="delivery-icon" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
                   <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
                 </a>
-                <a class="delivery-icon" href="#" aria-label="Yelp" title="Yelp">
+                <a class="delivery-icon" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
                   <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
                 </a>
               </div>
@@ -564,7 +576,6 @@
           <div class="actions">
             <a class="chip" href="https://www.google.com/maps?q=6978+Collins+Ave,+Miami+Beach,+FL+33141" target="_blank" rel="noopener noreferrer">Directions</a>
             <a class="chip" href="tel:+17866336485">Call</a>
-            <a class="chip" href="/menu">Menu</a>
           </div>
 
           <div class="icon-block">
@@ -592,13 +603,13 @@
             <div>
               <div class="icon-row-title">Delivery and discovery</div>
               <div class="delivery-row">
-                <a class="delivery-icon" href="#" aria-label="Uber Eats" title="Uber Eats">
+                <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
                   <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
                 </a>
-                <a class="delivery-icon" href="#" aria-label="DoorDash" title="DoorDash">
+                <a class="delivery-icon" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
                   <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
                 </a>
-                <a class="delivery-icon" href="#" aria-label="Yelp" title="Yelp">
+                <a class="delivery-icon" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
                   <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
                 </a>
               </div>
@@ -612,16 +623,7 @@
   </div>
 </section>
 
-<section class="section" id="menu">
-  <div class="container">
-    <h2>Menu</h2>
-    <p class="lead">Explore our menu and discover cakes, shakes, sundaes, and seasonal favorites.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="/menu">Go to menu</a>
-      <a class="btn btn-secondary" href="/cakes">Cakes</a>
-    </div>
-  </div>
-</section>
+<!-- Menu section intentionally removed/hidden per request -->
   </main>
   <div id="siteFooter"></div>
   <script>
@@ -647,19 +649,30 @@
   </script>
   <script>
     (function () {
-      var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
-      var dots = [document.getElementById("dot0"), document.getElementById("dot1")];
-      var prevBtn = document.getElementById("carouselPrev");
-      var nextBtn = document.getElementById("carouselNext");
+      var slides = Array.prototype.slice.call(document.querySelectorAll(".hero-slide"));
+      var dots = [document.getElementById("heroDot0"), document.getElementById("heroDot1")];
+      var prevBtn = document.getElementById("heroPrev");
+      var nextBtn = document.getElementById("heroNext");
+
       var idx = 0;
       var timer = null;
       var intervalMs = 3000;
 
-      function setActive(next) {
-        idx = next;
+      function restartAnim(slideEl) {
+        slideEl.classList.remove("anim");
+        void slideEl.offsetWidth;
+        slideEl.classList.add("anim");
+      }
+
+      function setActive(nextIdx) {
+        idx = nextIdx;
+
         for (var i = 0; i < slides.length; i++) {
-          slides[i].classList.toggle("is-active", i === idx);
-          if (dots[i]) dots[i].classList.toggle("is-active", i === idx);
+          var active = i === idx;
+          slides[i].classList.toggle("is-active", active);
+          slides[i].setAttribute("aria-hidden", active ? "false" : "true");
+          if (dots[i]) dots[i].classList.toggle("is-active", active);
+          if (active) restartAnim(slides[i]);
         }
       }
 
@@ -682,7 +695,7 @@
       if (dots[0]) dots[0].addEventListener("click", function () { stop(); setActive(0); start(); });
       if (dots[1]) dots[1].addEventListener("click", function () { stop(); setActive(1); start(); });
 
-      var carousel = document.querySelector(".carousel");
+      var carousel = document.querySelector(".hero-carousel");
       if (carousel) {
         carousel.addEventListener("mouseenter", stop);
         carousel.addEventListener("mouseleave", start);
