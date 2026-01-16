@@ -85,9 +85,8 @@ body {
 }
 .hero-top-bg .spacer { min-height: 68px; display: block; }
 
-/* HERO: full-bleed and no extra spacing */
+/* HERO (CONTAINED, like reference) */
 .hero-full {
-  position: relative;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -104,8 +103,13 @@ body {
   border-radius: 0;
   overflow: hidden;
   background: #000;
-  border: 0;
-  box-shadow: none;
+  border: var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Make the hero sit within the normal page width (not full-bleed) */
+.hero-carousel-wrap {
+  padding: 0 0 18px;
 }
 
 .hero-carousel-viewport {
@@ -335,6 +339,7 @@ body {
   font-size: 12px;
   color: rgba(101, 11, 50, 0.68);
   display: inline-block;
+  margin: 0 0 8px;
 }
 
 /* Icons should sit under the label width, not spread full-card */
@@ -420,6 +425,7 @@ body {
   .hero-overlay { left: 18px; right: 18px; max-width: none; }
   .hero-overlay h2 { font-size: 30px; }
   .hero-top-bg .spacer { min-height: 54px; }
+  .hero-carousel { border-left: 0; border-right: 0; border-radius: 0; }
 }
 
 @media (max-width: 640px) {
@@ -431,6 +437,7 @@ body {
   .icon-link, .delivery-icon { width: 42px; height: 42px; }
   .delivery-icon.is-dd img,
   .delivery-icon.is-yelp img { width: 26px; height: 26px; }
+  .hero-carousel { border-radius: 0; }
 }
   </style>
 </head>
@@ -440,37 +447,34 @@ body {
   <div id="siteHeader"></div>
   <main id="main">
     <section class="hero-full" aria-label="Hero">
-      <div class="hero-shell">
-        <h1>Simply extraordinary, served locally</h1>
-        <p>Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery. Find hours, directions, and ordering links in seconds.</p>
-      </div>
-  <div class="hero-carousel" aria-label="Homepage hero carousel">
-    <div class="hero-carousel-viewport" id="heroCarouselViewport">
-      <div class="hero-slide is-active anim" data-index="0" aria-hidden="false">
-        <img src="/assets/images/placeholders/hd_dulce.jpeg" alt="Order online hero image">
-        <div class="hero-overlay">
-          <div class="kicker">Häagen-Dazs</div>
-          <h2>ORDER ONLINE</h2>
-          <p>Enjoy your favorite desserts at home.</p>
+      <div class="container hero-carousel-wrap">
+        <div class="hero-carousel" aria-label="Homepage hero carousel">
+          <div class="hero-carousel-viewport" id="heroCarouselViewport">
+            <div class="hero-slide is-active anim" data-index="0" aria-hidden="false">
+              <img src="/assets/images/placeholders/hd_dulce.jpeg" alt="Order online hero image">
+              <div class="hero-overlay">
+                <div class="kicker">Häagen-Dazs</div>
+                <h2>ORDER ONLINE</h2>
+                <p>Enjoy your favorite desserts at home.</p>
+              </div>
+            </div>
+        <div class="hero-slide" data-index="1" aria-hidden="true">
+          <img src="/assets/images/placeholders/hd_strawberry.jpeg" alt="Sundae catering hero image">
+          <div class="hero-overlay">
+            <div class="kicker">Häagen-Dazs</div>
+            <h2>SUNDAE CATERING</h2>
+            <p>Perfect for showers, weddings, office parties any other celebration!</p>
+          </div>
         </div>
       </div>
 
-      <div class="hero-slide" data-index="1" aria-hidden="true">
-        <img src="/assets/images/placeholders/hd_strawberry.jpeg" alt="Sundae catering hero image">
-        <div class="hero-overlay">
-          <div class="kicker">Häagen-Dazs</div>
-          <h2>SUNDAE CATERING</h2>
-          <p>Perfect for showers, weddings, office parties any other celebration!</p>
-        </div>
+      <button class="hero-carousel-btn prev" type="button" aria-label="Previous slide" id="heroPrev">&#8249;</button>
+      <button class="hero-carousel-btn next" type="button" aria-label="Next slide" id="heroNext">&#8250;</button>
+
+      <div class="hero-carousel-dots" role="tablist" aria-label="Hero carousel pagination">
+        <button class="hero-dot is-active" type="button" aria-label="Go to slide 1" id="heroDot0"></button>
+        <button class="hero-dot" type="button" aria-label="Go to slide 2" id="heroDot1"></button>
       </div>
-    </div>
-
-    <button class="hero-carousel-btn prev" type="button" aria-label="Previous slide" id="heroPrev">&#8249;</button>
-    <button class="hero-carousel-btn next" type="button" aria-label="Next slide" id="heroNext">&#8250;</button>
-
-    <div class="hero-carousel-dots" role="tablist" aria-label="Hero carousel pagination">
-      <button class="hero-dot is-active" type="button" aria-label="Go to slide 1" id="heroDot0"></button>
-      <button class="hero-dot" type="button" aria-label="Go to slide 2" id="heroDot1"></button>
     </div>
   </div>
 </section>
@@ -503,7 +507,7 @@ body {
 
           <div class="icon-block">
             <div>
-              <div class="icon-row-title">Community and reviews</div><br>
+              <div class="icon-row-title">Community and reviews</div>
               <div class="icon-row">
                 <a class="icon-link" href="https://www.instagram.com/haagendazs_north_miami" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
                   <span class="icon-swap">
@@ -524,7 +528,7 @@ body {
             </div>
 
             <div>
-              <div class="icon-row-title">Delivery and discovery</div><br>
+              <div class="icon-row-title">Delivery and discovery</div>
               <div class="delivery-row">
                 <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
                   <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
@@ -561,7 +565,7 @@ body {
 
           <div class="icon-block">
             <div>
-              <div class="icon-row-title">Community and reviews</div><br>
+              <div class="icon-row-title">Community and reviews</div>
               <div class="icon-row">
                 <a class="icon-link" href="https://www.instagram.com/haagendazs_northbeach" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
                   <span class="icon-swap">
@@ -582,7 +586,7 @@ body {
             </div>
 
             <div>
-              <div class="icon-row-title">Delivery and discovery</div><br>
+              <div class="icon-row-title">Delivery and discovery</div>
               <div class="delivery-row">
                 <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
                   <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
