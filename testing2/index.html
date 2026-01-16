@@ -42,412 +42,396 @@
       --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
       --border-soft: 1px solid rgba(0,0,0,0.08);
       --text-muted: rgba(101, 11, 50, 0.72);
-      --overlay-kicker: #F9D79C;
-      --overlay-text: #F9E6C3;
       --hero-ink: #ffffff;
       --hero-shadow: 0 10px 30px rgba(0,0,0,0.28);
     }
+* { box-sizing: border-box; }
 
-    * { box-sizing: border-box; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    }
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    .container {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: var(--hd-burgundy);
+  color: var(--hd-white);
+  padding: 10px 12px;
+  border-radius: 10px;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: 700;
+}
+.skip-link:focus { left: 10px; }
 
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 10px;
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
-      padding: 10px 12px;
-      border-radius: 10px;
-      z-index: 9999;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .skip-link:focus { left: 10px; }
+#siteHeader, #siteFooter { margin: 0; padding: 0; }
 
-    #siteHeader, #siteFooter { margin: 0; padding: 0; }
+.hero-top-bg {
+  background-image: url("/assets/images/placeholders/hd_tapestry_placeholder_white.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+.hero-top-bg .spacer { min-height: 68px; display: block; }
 
-    .hero-top-bg {
-      background-image: url("/assets/images/placeholders/hd_tapestry_placeholder_white.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      border-bottom: 0;
-      line-height: 0;
-      margin: 0;
-      padding: 0;
-    }
-    .hero-top-bg .spacer { min-height: 68px; display: block; }
+/* HERO: full-bleed and no extra spacing */
+.hero-full {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
 
-    /* FULL-WIDTH HERO CAROUSEL */
-    .hero-full {
-      position: relative;
-      width: 100%;
-      background: linear-gradient(180deg, var(--hd-gold-light), var(--hd-white));
-      padding: 18px 0 10px;
-    }
+/* Hide the hero text block per request */
+.hero-shell { display: none !important; }
 
-    .hero-shell {
-      width: 100%;
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 20px 12px;
-    }
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background: #000;
+  border: 0;
+  box-shadow: none;
+}
 
-    .hero-title {
-      margin: 0 0 10px;
-      font-size: 42px;
-      line-height: 1.06;
-      color: var(--hd-burgundy);
-    }
+.hero-carousel-viewport {
+  position: relative;
+  width: 100%;
+  height: 520px;
+}
 
-    .hero-lead {
-      margin: 0;
-      font-size: 16px;
-      color: var(--text-muted);
-      max-width: 75ch;
-    }
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
 
-    /* hide CTA buttons per request */
-    .cta-row { display: none !important; }
+.hero-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-    .hero-carousel {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      margin: 16px 0 0;
-      border-radius: 0;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      border-top: var(--border-soft);
-      border-bottom: var(--border-soft);
-      background: #000;
-    }
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .hero-carousel-viewport {
-      position: relative;
-      width: 100%;
-      height: 420px;
-    }
+.hero-overlay {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 560px;
+  color: var(--hero-ink);
+  text-shadow: var(--hero-shadow);
+  padding: 0;
+}
 
-    .hero-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 400ms ease;
-      pointer-events: none;
-    }
+.hero-overlay .kicker {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 10px;
+}
 
-    .hero-slide.is-active {
-      opacity: 1;
-      pointer-events: auto;
-    }
+.hero-overlay h2 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  line-height: 1.05;
+  font-weight: 900;
+  color: #ffffff;
+}
 
-    .hero-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+.hero-overlay p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.92);
+  max-width: 60ch;
+}
 
-    .hero-overlay {
-      position: absolute;
-      left: 24px;
-      top: 50%;
-      transform: translateY(-50%);
-      max-width: 560px;
-      color: var(--hero-ink);
-      text-shadow: var(--hero-shadow);
-      padding: 0;
-    }
+/* Animation timing per 3s cycle:
+   - Title fade in at 1s
+   - Subtitle slide in at 2s
+*/
+.hero-slide .hero-overlay h2,
+.hero-slide .hero-overlay p {
+  opacity: 0;
+  transform: translateX(0);
+}
 
-    .hero-overlay .kicker {
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 10px;
-    }
+.hero-slide.anim .hero-overlay h2 {
+  animation: hdFadeIn 0.5s ease forwards;
+  animation-delay: 1s;
+}
 
-    .hero-overlay h2 {
-      margin: 0 0 10px;
-      font-size: 36px;
-      line-height: 1.05;
-      font-weight: 900;
-      color: #ffffff;
-    }
+.hero-slide.anim .hero-overlay p {
+  animation: hdSlideInRight 0.5s ease forwards;
+  animation-delay: 2s;
+}
 
-    .hero-overlay p {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.45;
-      color: rgba(255,255,255,0.92);
-      max-width: 60ch;
-    }
+@keyframes hdFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-    /* Animation timing per 3s cycle:
-       - Title appears/fades in at 1s
-       - Subtitle slides in from right at 2s
-    */
-    .hero-slide .hero-overlay h2,
-    .hero-slide .hero-overlay p {
-      opacity: 0;
-      transform: translateX(0);
-    }
+@keyframes hdSlideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
 
-    .hero-slide.anim .hero-overlay h2 {
-      animation: hdFadeIn 0.5s ease forwards;
-      animation-delay: 1s;
-    }
+.hero-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255,255,255,0.88);
+  color: var(--hd-burgundy);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  z-index: 3;
+}
 
-    .hero-slide.anim .hero-overlay p {
-      animation: hdSlideInRight 0.5s ease forwards;
-      animation-delay: 2s;
-    }
+.hero-carousel-btn:hover,
+.hero-carousel-btn:focus { outline: none; background: rgba(255,255,255,0.98); }
 
-    @keyframes hdFadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+.hero-carousel-btn.prev { left: 16px; }
+.hero-carousel-btn.next { right: 16px; }
 
-    @keyframes hdSlideInRight {
-      from { opacity: 0; transform: translateX(24px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
+.hero-carousel-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 3;
+}
 
-    .hero-carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 0;
-      background: rgba(255,255,255,0.88);
-      color: var(--hd-burgundy);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-      z-index: 3;
-    }
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.95);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.hero-dot.is-active {
+  background: var(--hd-gold);
+  border-color: rgba(255,255,255,0.98);
+}
 
-    .hero-carousel-btn:hover,
-    .hero-carousel-btn:focus { outline: none; background: rgba(255,255,255,0.98); }
+/* LOCATIONS */
+.locations-wrap {
+  background: rgba(249, 230, 195, 0.45);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 26px 0;
+}
 
-    .hero-carousel-btn.prev { left: 16px; }
-    .hero-carousel-btn.next { right: 16px; }
+.section { padding: 18px 0 0; }
 
-    .hero-carousel-dots {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 14px;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      z-index: 3;
-    }
+.section h2 { margin: 0 0 14px; font-size: 34px; color: var(--hd-burgundy); }
 
-    .hero-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      border: 2px solid rgba(255,255,255,0.95);
-      background: transparent;
-      cursor: pointer;
-      padding: 0;
-    }
-    .hero-dot.is-active {
-      background: var(--hd-gold);
-      border-color: rgba(255,255,255,0.98);
-    }
+.section p.lead {
+  margin: 0 0 20px;
+  color: var(--text-muted);
+  max-width: 80ch;
+}
 
-    /* LOCATIONS */
-    .locations-wrap {
-      background: rgba(249, 230, 195, 0.45);
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      padding: 26px 0;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
 
-    .section { padding: 18px 0 0; }
+.card {
+  border: var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--hd-white);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  padding: 18px;
+}
 
-    .section h2 { margin: 0 0 14px; font-size: 34px; color: var(--hd-burgundy); }
+.card h3 { margin: 0 0 8px; font-size: 22px; color: var(--hd-burgundy); }
 
-    .section p.lead {
-      margin: 0 0 20px;
-      color: var(--text-muted);
-      max-width: 80ch;
-    }
+.meta {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.meta strong { color: var(--hd-burgundy); }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
+.hours-block {
+  margin-top: 6px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.hours-block strong { color: var(--hd-burgundy); }
 
-    .card {
-      border: var(--border-soft);
-      border-radius: var(--radius-lg);
-      background: var(--hd-white);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      padding: 18px;
-    }
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
 
-    .card h3 { margin: 0 0 8px; font-size: 22px; color: var(--hd-burgundy); }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(101, 11, 50, 0.18);
+  background: rgba(249, 230, 195, 0.45);
+  color: var(--hd-burgundy);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+}
 
-    .meta {
-      margin: 0;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-    .meta strong { color: var(--hd-burgundy); }
+.chip:hover,
+.chip:focus { background: rgba(249, 230, 195, 0.78); outline: none; }
 
-    .hours-block {
-      margin-top: 6px;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-    .hours-block strong { color: var(--hd-burgundy); }
+.icon-block {
+  margin-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 14px;
+  display: grid;
+  gap: 12px;
+}
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
+.icon-row-title {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(101, 11, 50, 0.68);
+  display: inline-block;
+}
 
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      background: rgba(249, 230, 195, 0.45);
-      color: var(--hd-burgundy);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 14px;
-    }
+/* Icons should sit under the label width, not spread full-card */
+.icon-row,
+.delivery-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  width: auto;
+  max-width: 100%;
+}
 
-    .chip:hover,
-    .chip:focus { background: rgba(249, 230, 195, 0.78); outline: none; }
+.icon-link,
+.delivery-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(101, 11, 50, 0.14);
+  background: rgba(255,255,255,0.65);
+  text-decoration: none;
+}
 
-    .icon-block {
-      margin-top: 16px;
-      border-top: 1px solid rgba(0,0,0,0.08);
-      padding-top: 14px;
-      display: grid;
-      gap: 12px;
-    }
+.icon-link:hover,
+.icon-link:focus,
+.delivery-icon:hover,
+.delivery-icon:focus {
+  outline: none;
+  background: rgba(249, 230, 195, 0.70);
+  border-color: rgba(101, 11, 50, 0.22);
+}
 
-    .icon-row-title {
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: rgba(101, 11, 50, 0.68);
-    }
+.icon-swap {
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: relative;
+}
 
-    /* Even spacing per request */
-    .icon-row,
-    .delivery-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      gap: 0;
-      width: 100%;
-    }
+.icon-swap img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  position: absolute;
+  inset: 0;
+  transition: opacity 120ms ease;
+}
 
-    .icon-link,
-    .delivery-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      border: 1px solid rgba(101, 11, 50, 0.14);
-      background: rgba(255,255,255,0.65);
-      text-decoration: none;
-    }
+.icon-swap img.burgundy { opacity: 0; }
+.icon-link:hover .icon-swap img.burgundy,
+.icon-link:focus .icon-swap img.burgundy { opacity: 1; }
+.icon-link:hover .icon-swap img.gold,
+.icon-link:focus .icon-swap img.gold { opacity: 0; }
 
-    .icon-link:hover,
-    .icon-link:focus,
-    .delivery-icon:hover,
-    .delivery-icon:focus {
-      outline: none;
-      background: rgba(249, 230, 195, 0.70);
-      border-color: rgba(101, 11, 50, 0.22);
-    }
+.google-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
 
-    .icon-swap {
-      width: 24px;
-      height: 24px;
-      display: block;
-      position: relative;
-    }
+.delivery-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
 
-    .icon-swap img {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      display: block;
-      position: absolute;
-      inset: 0;
-      transition: opacity 120ms ease;
-    }
+/* +2px for DoorDash and Yelp icons */
+.delivery-icon.is-dd img,
+.delivery-icon.is-yelp img {
+  width: 26px;
+  height: 26px;
+}
 
-    .icon-swap img.burgundy { opacity: 0; }
-    .icon-link:hover .icon-swap img.burgundy,
-    .icon-link:focus .icon-swap img.burgundy { opacity: 1; }
-    .icon-link:hover .icon-swap img.gold,
-    .icon-link:focus .icon-swap img.gold { opacity: 0; }
+@media (max-width: 960px) {
+  .cards { grid-template-columns: 1fr; }
+  .hero-carousel-viewport { height: 420px; }
+  .hero-overlay { left: 18px; right: 18px; max-width: none; }
+  .hero-overlay h2 { font-size: 30px; }
+  .hero-top-bg .spacer { min-height: 54px; }
+}
 
-    .google-icon {
-      width: 24px;
-      height: 24px;
-      display: block;
-      object-fit: contain;
-    }
-
-    .delivery-icon img {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* Responsive */
-    @media (max-width: 960px) {
-      .cards { grid-template-columns: 1fr; }
-      .hero-title { font-size: 36px; }
-      .hero-carousel-viewport { height: 360px; }
-      .hero-overlay { left: 18px; right: 18px; max-width: none; }
-      .hero-overlay h2 { font-size: 30px; }
-      .hero-top-bg .spacer { min-height: 54px; }
-    }
-
-    @media (max-width: 640px) {
-      .hero-carousel-viewport { height: 300px; }
-      .hero-overlay h2 { font-size: 24px; }
-      .hero-overlay p { font-size: 14px; }
-      .hero-carousel-btn { width: 40px; height: 40px; }
-      .hero-top-bg .spacer { min-height: 46px; }
-      .icon-link, .delivery-icon { width: 42px; height: 42px; }
-    }
+@media (max-width: 640px) {
+  .hero-carousel-viewport { height: 340px; }
+  .hero-overlay h2 { font-size: 24px; }
+  .hero-overlay p { font-size: 14px; }
+  .hero-carousel-btn { width: 40px; height: 40px; }
+  .hero-top-bg .spacer { min-height: 46px; }
+  .icon-link, .delivery-icon { width: 42px; height: 42px; }
+  .delivery-icon.is-dd img,
+  .delivery-icon.is-yelp img { width: 26px; height: 26px; }
+}
   </style>
 </head>
 <body>
@@ -457,11 +441,8 @@
   <main id="main">
     <section class="hero-full" aria-label="Hero">
       <div class="hero-shell">
-        <h1 class="hero-title">Simply extraordinary, served locally</h1>
-        <p class="hero-lead">
-          Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
-          Find hours, directions, and ordering links in seconds.
-        </p>
+        <h1>Simply extraordinary, served locally</h1>
+        <p>Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery. Find hours, directions, and ordering links in seconds.</p>
       </div>
   <div class="hero-carousel" aria-label="Homepage hero carousel">
     <div class="hero-carousel-viewport" id="heroCarouselViewport">
@@ -522,7 +503,7 @@
 
           <div class="icon-block">
             <div>
-              <div class="icon-row-title">Community and reviews</div>
+              <div class="icon-row-title">Community and reviews</div><br>
               <div class="icon-row">
                 <a class="icon-link" href="https://www.instagram.com/haagendazs_north_miami" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
                   <span class="icon-swap">
@@ -543,15 +524,15 @@
             </div>
 
             <div>
-              <div class="icon-row-title">Delivery and discovery</div>
+              <div class="icon-row-title">Delivery and discovery</div><br>
               <div class="delivery-row">
                 <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
                   <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
                 </a>
-                <a class="delivery-icon" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
+                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
                   <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
                 </a>
-                <a class="delivery-icon" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
+                <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
                   <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
                 </a>
               </div>
@@ -580,7 +561,7 @@
 
           <div class="icon-block">
             <div>
-              <div class="icon-row-title">Community and reviews</div>
+              <div class="icon-row-title">Community and reviews</div><br>
               <div class="icon-row">
                 <a class="icon-link" href="https://www.instagram.com/haagendazs_northbeach" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
                   <span class="icon-swap">
@@ -601,15 +582,15 @@
             </div>
 
             <div>
-              <div class="icon-row-title">Delivery and discovery</div>
+              <div class="icon-row-title">Delivery and discovery</div><br>
               <div class="delivery-row">
                 <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
                   <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
                 </a>
-                <a class="delivery-icon" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
+                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
                   <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
                 </a>
-                <a class="delivery-icon" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
+                <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
                   <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
                 </a>
               </div>
@@ -622,8 +603,6 @@
     </div>
   </div>
 </section>
-
-<!-- Menu section intentionally removed/hidden per request -->
   </main>
   <div id="siteFooter"></div>
   <script>
