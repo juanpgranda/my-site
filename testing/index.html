@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Häagen-Dazs DC</title>
-  <meta name="description" content="Visit Häagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
-  <link rel="canonical" href="https://www.hdicecream.com/">
+  <title>Menu | Häagen-Dazs DC</title>
+  <meta name="description" content="Explore the Häagen-Dazs DC menu for our North Miami and North Beach shops, including cones, cups, Dazzler sundaes, milkshakes, frozen drinks, and pints.">
+  <link rel="canonical" href="https://www.hdicecream.com/menu">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Häagen-Dazs">
-  <meta property="og:title" content="Home | Häagen-Dazs">
-  <meta property="og:description" content="Visit Häagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
-  <meta property="og:url" content="https://www.hdicecream.com/">
+  <meta property="og:site_name" content="Häagen-Dazs DC">
+  <meta property="og:title" content="Menu | Häagen-Dazs DC">
+  <meta property="og:description" content="Explore the Häagen-Dazs DC menu for our North Miami and North Beach shops, including cones, cups, Dazzler sundaes, milkshakes, frozen drinks, and pints.">
+  <meta property="og:url" content="https://www.hdicecream.com/menu">
   <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Häagen-Dazs - North Miami and Miami Beach shop locations.">
+  <meta property="og:image:alt" content="Häagen-Dazs DC menu featuring cones, cups, milkshakes, frozen drinks, and sundaes.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Home | Häagen-Dazs">
-  <meta name="twitter:description" content="Visit Häagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
+  <meta name="twitter:title" content="Menu | Häagen-Dazs DC">
+  <meta name="twitter:description" content="Explore the Häagen-Dazs DC menu for our North Miami and North Beach shops, including cones, cups, Dazzler sundaes, milkshakes, frozen drinks, and pints.">
   <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <link rel="icon" href="/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
@@ -27,7 +27,6 @@
   <link rel="manifest" href="/assets/images/site.webmanifest">
   <meta name="theme-color" content="#650B32">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ3XB37TBM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -43,8 +42,7 @@
       --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
       --border-soft: 1px solid rgba(0,0,0,0.08);
       --text-muted: rgba(101, 11, 50, 0.72);
-      --overlay-kicker: #F9D79C;
-      --overlay-text: #F9E6C3;
+      --panel: rgba(249, 230, 195, 0.45);
     }
 
     .container {
@@ -65,276 +63,64 @@
       text-decoration: none;
       font-weight: 700;
     }
+    .skip-link:focus { left: 10px; }
 
-    .skip-link:focus {
-      left: 10px;
-    }
+    #siteHeader, #siteFooter { margin: 0; padding: 0; }
 
-    /* Hero background placeholder ABOVE the header/menu */
     .hero-top-bg {
       background-image: url("/assets/images/placeholders/hd_home_hero_placeholder.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 0;
+      line-height: 0;
+      margin: 0;
+      padding: 0;
     }
+    .hero-top-bg .spacer { min-height: 54px; display: block; }
 
-    .hero-top-bg .spacer {
-      min-height: 86px;
-    }
-
-    .hero {
+    .page-hero {
       background: linear-gradient(180deg, var(--hd-gold-light), var(--hd-white));
-      padding: 18px 0 22px;
+      padding: 26px 0 12px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 22px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
       align-items: center;
-      padding: 18px 0 10px;
     }
 
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 46px;
-      line-height: 1.04;
-    }
-
-    .hero p {
-      margin: 0 0 18px;
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 56ch;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .btn {
+    .kicker {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 800;
-      border: 0;
-      cursor: pointer;
-      user-select: none;
-      font-family: var(--font-body);
-    }
-
-    .btn-primary {
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
-    }
-
-    .btn-secondary {
-      background: var(--hd-gold);
-      color: var(--hd-white);
-    }
-
-    .carousel {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      border: var(--border-soft);
-      background: var(--hd-white);
-      min-height: 320px;
-    }
-
-    .carousel-viewport {
-      position: relative;
-      height: 100%;
-    }
-
-    .slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 400ms ease;
-      display: grid;
-      align-items: stretch;
-    }
-
-    .slide.is-active {
-      opacity: 1;
-      position: relative;
-    }
-
-    .slide figure {
-      margin: 0;
-      height: 100%;
-      min-height: 320px;
-      background: var(--hd-gold-light);
-      display: grid;
-      place-items: center;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .slide-overlay {
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      right: 18px;
-      background: rgba(101, 11, 50, 0.78);
-      padding: 14px 16px;
-      border-radius: 14px;
-      backdrop-filter: blur(6px);
-    }
-
-    .slide-overlay .kicker {
-      font-family: var(--font-body);
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 12px;
-      color: var(--overlay-kicker);
-      margin-bottom: 6px;
+      color: rgba(101, 11, 50, 0.75);
+      margin-bottom: 10px;
     }
 
-    .slide-overlay .headline {
-      font-family: var(--font-headline);
-      font-weight: 700;
-      font-size: 22px;
-      line-height: 1.1;
-      margin: 0;
-      color: var(--overlay-text);
+    .h1 {
+      margin: 0 0 10px;
+      font-size: 44px;
+      line-height: 1.06;
     }
 
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 0;
-      background: rgba(255,255,255,0.86);
-      color: var(--hd-burgundy);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.16);
-      z-index: 2;
-    }
-
-    .carousel-btn:hover,
-    .carousel-btn:focus {
-      outline: none;
-      background: rgba(255,255,255,0.98);
-    }
-
-    .carousel-btn.prev { left: 12px; }
-    .carousel-btn.next { right: 12px; }
-
-    .carousel-dots {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      pointer-events: auto;
-      z-index: 2;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      border: 2px solid rgba(255,255,255,0.9);
-      background: transparent;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    .dot.is-active {
-      background: var(--hd-gold);
-      border-color: rgba(255,255,255,0.95);
-    }
-
-    .section {
-      padding: 44px 0;
-    }
-
-    .section h2 {
+    .lead {
       margin: 0 0 14px;
-      font-size: 34px;
-    }
-
-    .section p.lead {
-      margin: 0 0 20px;
       color: var(--text-muted);
-      max-width: 80ch;
+      font-size: 16px;
+      max-width: 70ch;
     }
 
-    .locations-wrap {
-      background: rgba(249, 230, 195, 0.45);
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      padding: 26px 0;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      border: var(--border-soft);
-      border-radius: var(--radius-lg);
-      background: var(--hd-white);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      padding: 18px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 22px;
-    }
-
-    .meta {
-      margin: 0;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .meta strong {
-      color: var(--hd-burgundy);
-    }
-
-    .hours-block {
-      margin-top: 6px;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    .hours-block strong {
-      color: var(--hd-burgundy);
-    }
-
-    .actions {
+    .quicklinks {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: 8px;
     }
 
     .chip {
@@ -347,124 +133,243 @@
       background: rgba(249, 230, 195, 0.45);
       color: var(--hd-burgundy);
       text-decoration: none;
-      font-weight: 800;
-      font-size: 14px;
+      font-weight: 900;
+      font-size: 13px;
+      white-space: nowrap;
     }
-
-    .chip:hover,
-    .chip:focus {
-      background: rgba(249, 230, 195, 0.78);
+    .chip:hover, .chip:focus {
       outline: none;
+      background: rgba(249, 230, 195, 0.78);
     }
 
-    .icon-block {
-      margin-top: 16px;
-      border-top: 1px solid rgba(0,0,0,0.08);
-      padding-top: 14px;
-      display: grid;
-      gap: 12px;
+    .hero-card {
+      border: var(--border-soft);
+      border-radius: var(--radius-lg);
+      background: var(--hd-white);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
     }
 
-    .icon-row-title {
+    .hero-card figure {
+      margin: 0;
+      height: 220px;
+      background: #f3efe6;
+      position: relative;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-card .overlay {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      background: rgba(101, 11, 50, 0.78);
+      color: var(--hd-white);
+      border-radius: 14px;
+      padding: 12px 14px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-card .overlay .tag {
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      font-size: 11px;
+      color: var(--hd-gold-medium);
+      margin-bottom: 6px;
+    }
+
+    .hero-card .overlay .title {
+      margin: 0;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.15;
+      color: var(--hd-gold-light);
+    }
+
+    .panel {
+      background: var(--panel);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px 0;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: var(--hd-burgundy);
+      font-weight: 900;
       font-size: 12px;
-      color: rgba(101, 11, 50, 0.68);
-    }
-
-    .icon-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .icon-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
+      letter-spacing: 0.02em;
+      padding: 10px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(101, 11, 50, 0.22);
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: rgba(255,255,255,0.85);
+      white-space: nowrap;
+    }
+
+    .toc a:hover, .toc a:focus {
+      outline: none;
+      background: rgba(249, 230, 195, 0.78);
+    }
+
+    .section { padding: 26px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--text-muted);
+      max-width: 70ch;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    /* FIX: prevent image from covering text by enforcing a fixed media area + overflow hidden */
+    .card {
+      border: var(--border-soft);
+      border-radius: var(--radius-lg);
       background: var(--hd-white);
-      text-decoration: none;
-      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 210px 1fr;
+      min-height: 330px;
+    }
+
+    .card figure {
+      margin: 0;
+      height: 210px;
+      background: #efe8db;
+      overflow: hidden;
       position: relative;
     }
 
-    .icon-link:hover,
-    .icon-link:focus {
-      outline: none;
-      background: rgba(249, 230, 195, 0.55);
-      border-color: rgba(210, 153, 55, 0.6);
-      transform: translateY(-1px);
-    }
-
-    .icon-swap {
-      width: 22px;
-      height: 22px;
+    .card figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      position: relative;
     }
 
-    .icon-swap img {
-      width: 22px;
-      height: 22px;
+    /* Optional: if a placeholder image is transparent/odd aspect, keep it centered without spilling */
+    .card figure img.is-contain {
       object-fit: contain;
-      display: block;
-      position: absolute;
-      inset: 0;
-      transition: opacity 120ms ease;
+      padding: 14px;
+      background: #efe8db;
     }
 
-    .icon-swap img.burgundy { opacity: 0; }
-    .icon-link:hover .icon-swap img.burgundy,
-    .icon-link:focus .icon-swap img.burgundy { opacity: 1; }
-    .icon-link:hover .icon-swap img.gold,
-    .icon-link:focus .icon-swap img.gold { opacity: 0; }
+    .card .body {
+      padding: 12px 12px 14px;
+      display: grid;
+      gap: 8px;
+      align-content: start;
+      background: var(--hd-white);
+    }
 
-    .delivery-row {
+    .card h3 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--hd-burgundy);
+      line-height: 1.2;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .badge-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
     }
 
-    .delivery-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      border: 1px solid rgba(101, 11, 50, 0.22);
-      background: var(--hd-white);
+    .badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 11, 50, 0.14);
+      background: rgba(249, 230, 195, 0.35);
+      color: rgba(101, 11, 50, 0.85);
+      font-weight: 900;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .top {
+      display: flex;
+      justify-content: center;
+      padding: 18px 0 0;
+    }
+
+    .top a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 12px;
       text-decoration: none;
+      font-weight: 900;
+      color: var(--hd-white);
+      background: var(--hd-burgundy);
+      border: 0;
     }
 
-    .delivery-icon:hover,
-    .delivery-icon:focus {
+    .top a:hover, .top a:focus {
       outline: none;
-      background: rgba(249, 230, 195, 0.55);
-      border-color: rgba(210, 153, 55, 0.6);
-      transform: translateY(-1px);
+      background: rgba(101, 11, 50, 0.92);
     }
 
-    .delivery-icon img {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-      display: block;
-    }
-
-    @media (max-width: 960px) {
+    @media (max-width: 980px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .cards { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 40px; }
-      .hero-top-bg .spacer { min-height: 64px; }
+      .hero-card figure { height: 200px; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .h1 { font-size: 40px; }
+      .card { grid-template-rows: 200px 1fr; }
+      .card figure { height: 200px; }
+    }
+
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      .h1 { font-size: 36px; }
+      .hero-top-bg .spacer { min-height: 46px; }
+      .card { grid-template-rows: 220px 1fr; }
+      .card figure { height: 220px; }
     }
   </style>
 </head>
@@ -475,193 +380,380 @@
   </div>
   <div id="siteHeader"></div>
   <main id="main">
-    <section class="hero">
+    <section class="page-hero">
       <div class="container">
         <div class="hero-grid">
           <div>
-            <h1>Simply extraordinary, served locally</h1>
-            <p>
-              Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
-              Find hours, directions, and ordering links in seconds.
+            <div class="kicker">Menu</div>
+            <h1 class="h1">Quality ingredients, irresistible creations</h1>
+            <p class="lead">
+              Step into a Häagen-Dazs shop and indulge in creations made with premium ice cream and sorbet. Browse categories below and plan your order in seconds.
             </p>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="#locations">Find a location</a>
-              <a class="btn btn-secondary" href="#menu">View menu</a>
+            <div class="quicklinks" aria-label="Quick links">
+              <a class="chip" href="#cones">Cones and cups</a>
+              <a class="chip" href="#dazzlers">Dazzler sundaes</a>
+              <a class="chip" href="#milkshakes">Milkshakes</a>
+              <a class="chip" href="#drinks">Frozen drinks</a>
+              <a class="chip" href="#pints">Pints and sorbet</a>
             </div>
           </div>
-      <div class="carousel" aria-label="Homepage featured carousel">
-        <div class="carousel-viewport" id="carouselViewport">
-          <div class="slide is-active" data-index="0">
-            <figure>
-              <img src="/assets/images/placeholders/hd_home_carousel_placeholder_01.jpg" alt="Featured image placeholder 1">
-            </figure>
-            <div class="slide-overlay">
-              <div class="kicker">Featured</div>
-              <p class="headline">Cakes and desserts made to celebrate</p>
-            </div>
+      <div class="hero-card" aria-label="Featured menu preview">
+        <figure>
+          <img src="/assets/images/placeholders/hd_home_carousel_placeholder_01.jpg" alt="Menu hero placeholder image">
+          <div class="overlay">
+            <div class="tag">Featured</div>
+            <p class="title">Our most loved picks for cones, shakes, and sundaes</p>
           </div>
-
-          <div class="slide" data-index="1">
-            <figure>
-              <img src="/assets/images/placeholders/hd_home_carousel_placeholder_02.jpg" alt="Featured image placeholder 2">
-            </figure>
-            <div class="slide-overlay">
-              <div class="kicker">Featured</div>
-              <p class="headline">Get your favorites delivered fast</p>
-            </div>
-          </div>
-        </div>
-
-        <button class="carousel-btn prev" type="button" aria-label="Previous slide" id="carouselPrev">&#8249;</button>
-        <button class="carousel-btn next" type="button" aria-label="Next slide" id="carouselNext">&#8250;</button>
-
-        <div class="carousel-dots" role="tablist" aria-label="Carousel pagination">
-          <button class="dot is-active" type="button" aria-label="Go to slide 1" id="dot0"></button>
-          <button class="dot" type="button" aria-label="Go to slide 2" id="dot1"></button>
-        </div>
+        </figure>
       </div>
-
     </div>
   </div>
 </section>
 
-<section class="locations-wrap" id="locations">
+<section class="panel" aria-label="Menu navigation">
   <div class="container">
-    <div class="section" style="padding: 18px 0 0;">
-      <h2>Locations</h2>
-      <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
-
-      <div class="cards">
-        <article class="card" aria-label="Häagen-Dazs North Miami location">
-          <h3>Häagen-Dazs North Miami (Causeway Square)</h3>
-          <p class="meta">
-            <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
-            <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a>
-          </p>
-          <div class="hours-block">
-            <strong>Hours:</strong><br>
-            Mon-Thu 10am - 10pm<br>
-            Fri-Sat 10am - 11pm<br>
-            Sun 11am - 8pm
-          </div>
-
-          <div class="actions">
-            <a class="chip" href="https://www.google.com/maps?q=1809+NE+123rd+St,+North+Miami,+FL+33181" target="_blank" rel="noopener noreferrer">Directions</a>
-            <a class="chip" href="tel:+17869638203">Call</a>
-            <a class="chip" href="/menu">Menu</a>
-          </div>
-
-          <div class="icon-block">
-            <div>
-              <div class="icon-row-title">Community and reviews</div>
-              <div class="icon-row">
-                <a class="icon-link" href="#" aria-label="Instagram" title="Instagram">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="#" aria-label="Facebook" title="Facebook">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="#" aria-label="Google reviews" title="Google Reviews">
-                  <img src="/assets/images/icons/hd_gr.png" alt="" style="width:22px;height:22px;display:block;">
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <div class="icon-row-title">Delivery and discovery</div>
-              <div class="delivery-row">
-                <a class="delivery-icon" href="#" aria-label="Uber Eats" title="Uber Eats">
-                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                </a>
-                <a class="delivery-icon" href="#" aria-label="DoorDash" title="DoorDash">
-                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                </a>
-                <a class="delivery-icon" href="#" aria-label="Yelp" title="Yelp">
-                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" aria-label="Häagen-Dazs Collins North Beach location">
-          <h3>Häagen-Dazs Collins North Beach</h3>
-          <p class="meta">
-            <strong>Address:</strong> 6978 Collins Avenue, Miami Beach, FL 33141<br>
-            <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a>
-          </p>
-          <div class="hours-block">
-            <strong>Hours:</strong><br>
-            Mon-Thu 10am - 10pm<br>
-            Fri-Sat 10am - 11pm<br>
-            Sun 11am - 8pm
-          </div>
-
-          <div class="actions">
-            <a class="chip" href="https://www.google.com/maps?q=6978+Collins+Ave,+Miami+Beach,+FL+33141" target="_blank" rel="noopener noreferrer">Directions</a>
-            <a class="chip" href="tel:+17866336485">Call</a>
-            <a class="chip" href="/menu">Menu</a>
-          </div>
-
-          <div class="icon-block">
-            <div>
-              <div class="icon-row-title">Community and reviews</div>
-              <div class="icon-row">
-                <a class="icon-link" href="#" aria-label="Instagram" title="Instagram">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="#" aria-label="Facebook" title="Facebook">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="#" aria-label="Google reviews" title="Google Reviews">
-                  <img src="/assets/images/icons/hd_gr.png" alt="" style="width:22px;height:22px;display:block;">
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <div class="icon-row-title">Delivery and discovery</div>
-              <div class="delivery-row">
-                <a class="delivery-icon" href="#" aria-label="Uber Eats" title="Uber Eats">
-                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                </a>
-                <a class="delivery-icon" href="#" aria-label="DoorDash" title="DoorDash">
-                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                </a>
-                <a class="delivery-icon" href="#" aria-label="Yelp" title="Yelp">
-                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div style="height: 18px;"></div>
-    </div>
+    <nav class="toc" aria-label="Menu categories">
+      <a href="#cones">Ice Cream Cones and Cups</a>
+      <a href="#dazzlers">Dazzler Sundaes</a>
+      <a href="#milkshakes">Milkshakes</a>
+      <a href="#drinks">Frozen Drinks</a>
+      <a href="#pints">Pints and Sorbet</a>
+    </nav>
   </div>
 </section>
 
-<section class="section" id="menu">
+<section class="section" id="cones">
   <div class="container">
-    <h2>Menu</h2>
-    <p class="lead">Explore our menu and discover cakes, shakes, sundaes, and seasonal favorites.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="/menu">Go to menu</a>
-      <a class="btn btn-secondary" href="/cakes">Cakes</a>
+    <div class="section-head">
+      <h2>Ice Cream Cones and Cups</h2>
+      <p>Classic shop favorites. Choose a flavor, pick a cone or cup, and make it yours.</p>
     </div>
+
+    <div class="grid">
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="White Chocolate Raspberry Truffle placeholder"></figure>
+        <div class="body">
+          <h3>White Chocolate Raspberry Truffle</h3>
+          <p>Sweet white chocolate and bright raspberry ribbons for an unforgettable bite.</p>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Belgian Chocolate placeholder"></figure>
+        <div class="body">
+          <h3>Belgian Chocolate</h3>
+          <p>Deep cocoa richness crafted for chocolate lovers who like it bold.</p>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Butter Pecan placeholder"></figure>
+        <div class="body">
+          <h3>Butter Pecan</h3>
+          <p>Buttery, nutty, and smooth. A timeless shop favorite that never misses.</p>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Caramel Cone placeholder"></figure>
+        <div class="body">
+          <h3>Caramel Cone</h3>
+          <p>Sweet caramel notes with a crunchy finish that feels like a celebration.</p>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Coffee placeholder"></figure>
+        <div class="body">
+          <h3>Coffee</h3>
+          <p>Rich roasted coffee flavor, smooth and satisfying from first spoon to last.</p>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Cookie Dough placeholder"></figure>
+        <div class="body">
+          <h3>Cookie Dough</h3>
+          <p>Classic cookie dough goodness mixed into creamy ice cream for easy joy.</p>
+          <div class="badge-row"><span class="badge">Cones</span><span class="badge">Cups</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="top"><a href="#main" aria-label="Back to top">Go to top</a></div>
+  </div>
+</section>
+
+<section class="section panel" id="dazzlers">
+  <div class="container">
+    <div class="section-head">
+      <h2>Dazzler Sundaes</h2>
+      <p>Layered, loaded, and made for photos. Big flavor, bigger smiles.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Banana Split Dazzler placeholder"></figure>
+        <div class="body">
+          <h3>Banana Split Dazzler</h3>
+          <p>Classic banana split vibes with whipped cream and rich toppings.</p>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Signature</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Cookies and Cream Dazzler placeholder"></figure>
+        <div class="body">
+          <h3>Cookies and Cream Dazzler</h3>
+          <p>Cookie crunch meets creamy goodness in a sundae you will crave.</p>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Fan favorite</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Dulce de Leche Dazzler placeholder"></figure>
+        <div class="body">
+          <h3>Dulce de Leche Dazzler</h3>
+          <p>Caramel warmth, whipped cream, and a sweet finish that lingers.</p>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Caramel</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Midnight Cookies and Cream Dazzler placeholder"></figure>
+        <div class="body">
+          <h3>Midnight Cookies and Cream Dazzler</h3>
+          <p>Dark and dreamy, layered with cookie bites and chocolate flair.</p>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Chocolate</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Mint Chip Dazzler placeholder"></figure>
+        <div class="body">
+          <h3>Mint Chip Dazzler</h3>
+          <p>Refreshing mint and chocolate chip goodness topped for maximum wow.</p>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Mint</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Rocky Road Dazzler placeholder"></figure>
+        <div class="body">
+          <h3>Rocky Road Dazzler</h3>
+          <p>Chocolate, crunch, and that classic rocky road energy in every bite.</p>
+          <div class="badge-row"><span class="badge">Dazzler</span><span class="badge">Crunchy</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="top"><a href="#main" aria-label="Back to top">Go to top</a></div>
+  </div>
+</section>
+
+<section class="section" id="milkshakes">
+  <div class="container">
+    <div class="section-head">
+      <h2>Milkshakes</h2>
+      <p>Thick, smooth, and made to sip slowly. Upgrade with whipped cream and toppings.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Belgian Chocolate Shake placeholder"></figure>
+        <div class="body">
+          <h3>Belgian Chocolate Shake</h3>
+          <p>Chocolate on chocolate with a whipped finish that feels like dessert.</p>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Chocolate</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Cookies and Cream Shake placeholder"></figure>
+        <div class="body">
+          <h3>Cookies and Cream Shake</h3>
+          <p>Cookie crumble blended into creamy perfection, topped for extra joy.</p>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Crunchy</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Dulce de Leche Shake placeholder"></figure>
+        <div class="body">
+          <h3>Dulce de Leche Shake</h3>
+          <p>Sweet caramel notes blended smooth, finished with a drizzle.</p>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Caramel</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Coffee Shake placeholder"></figure>
+        <div class="body">
+          <h3>Coffee Shake</h3>
+          <p>Roasted coffee flavor blended thick and creamy, perfect for an afternoon treat.</p>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Coffee</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Mocha Shake placeholder"></figure>
+        <div class="body">
+          <h3>Mocha Shake</h3>
+          <p>Chocolate and coffee meet in a silky shake that always hits the spot.</p>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Mocha</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Caramel Coffee Shake placeholder"></figure>
+        <div class="body">
+          <h3>Caramel Coffee Shake</h3>
+          <p>Sweet caramel with coffee depth, blended smooth and topped with style.</p>
+          <div class="badge-row"><span class="badge">Shake</span><span class="badge">Caramel</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="top"><a href="#main" aria-label="Back to top">Go to top</a></div>
+  </div>
+</section>
+
+<section class="section panel" id="drinks">
+  <div class="container">
+    <div class="section-head">
+      <h2>Frozen Drinks</h2>
+      <p>Bright, refreshing, and made to cool you down. Great for sunny Miami days.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Aloha Mango Smoothie placeholder"></figure>
+        <div class="body">
+          <h3>Aloha Mango Smoothie</h3>
+          <p>Juicy mango blended smooth for a tropical sip you will keep coming back to.</p>
+          <div class="badge-row"><span class="badge">Smoothie</span><span class="badge">Fruit</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Strawberry Banana Smoothie placeholder"></figure>
+        <div class="body">
+          <h3>Strawberry Banana Smoothie</h3>
+          <p>Classic combo, creamy and bright, with that perfect strawberry finish.</p>
+          <div class="badge-row"><span class="badge">Smoothie</span><span class="badge">Classic</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Strawberry Mango Smoothie placeholder"></figure>
+        <div class="body">
+          <h3>Strawberry Mango Smoothie</h3>
+          <p>Strawberry sweetness meets mango sunshine for a bold, refreshing sip.</p>
+          <div class="badge-row"><span class="badge">Smoothie</span><span class="badge">Tropical</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Pomegranate Berry Smoothie placeholder"></figure>
+        <div class="body">
+          <h3>Pomegranate Berry Smoothie</h3>
+          <p>Berry-forward with a tangy pomegranate lift, balanced and refreshing.</p>
+          <div class="badge-row"><span class="badge">Smoothie</span><span class="badge">Berry</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Strawberry Frozen Lemonade placeholder"></figure>
+        <div class="body">
+          <h3>Strawberry Frozen Lemonade</h3>
+          <p>Tart lemonade blended with strawberry for a bright, icy favorite.</p>
+          <div class="badge-row"><span class="badge">Frozen</span><span class="badge">Citrus</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Raspberry Frozen Lemonade placeholder"></figure>
+        <div class="body">
+          <h3>Raspberry Frozen Lemonade</h3>
+          <p>Raspberry tang and lemonade sparkle in a frozen sip made for summer.</p>
+          <div class="badge-row"><span class="badge">Frozen</span><span class="badge">Berry</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="top"><a href="#main" aria-label="Back to top">Go to top</a></div>
+  </div>
+</section>
+
+<section class="section" id="pints">
+  <div class="container">
+    <div class="section-head">
+      <h2>Pints and Sorbet</h2>
+      <p>Take-home favorites for the freezer. Perfect for movie night or a sweet weekend.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Strawberry pint placeholder"></figure>
+        <div class="body">
+          <h3>Strawberry</h3>
+          <p>Sweet strawberry flavor that stays smooth and satisfying from first scoop to last.</p>
+          <div class="badge-row"><span class="badge">Pint</span><span class="badge">Classic</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Vanilla pint placeholder"></figure>
+        <div class="body">
+          <h3>Vanilla</h3>
+          <p>Velvety and timeless. A perfect base for toppings or enjoyed as is.</p>
+          <div class="badge-row"><span class="badge">Pint</span><span class="badge">Classic</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Mango sorbet placeholder"></figure>
+        <div class="body">
+          <h3>Mango Sorbet</h3>
+          <p>Bright, fruity, and refreshing. A clean finish with bold mango flavor.</p>
+          <div class="badge-row"><span class="badge">Sorbet</span><span class="badge">Dairy-free</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Raspberry sorbet placeholder"></figure>
+        <div class="body">
+          <h3>Raspberry Sorbet</h3>
+          <p>Vibrant raspberry flavor with a refreshing bite that feels light and bright.</p>
+          <div class="badge-row"><span class="badge">Sorbet</span><span class="badge">Dairy-free</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Sea Salt Caramel Truffle placeholder"></figure>
+        <div class="body">
+          <h3>Sea Salt Caramel Truffle</h3>
+          <p>Sweet caramel with a touch of salt for a rich, slow-savoring finish.</p>
+          <div class="badge-row"><span class="badge">Pint</span><span class="badge">Caramel</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure><img src="/assets/images/placeholders/hd_menu_01.png" alt="Rocky Road pint placeholder"></figure>
+        <div class="body">
+          <h3>Rocky Road</h3>
+          <p>Chocolate, crunchy mix-ins, and that classic rocky road texture you love.</p>
+          <div class="badge-row"><span class="badge">Pint</span><span class="badge">Crunchy</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="top"><a href="#main" aria-label="Back to top">Go to top</a></div>
   </div>
 </section>
   </main>
@@ -685,60 +777,6 @@
 
       loadInto("siteHeader", headerUrl);
       loadInto("siteFooter", footerUrl);
-    })();
-  </script>
-  <script>
-    (function () {
-      var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
-      var dots = [document.getElementById("dot0"), document.getElementById("dot1")];
-      var prevBtn = document.getElementById("carouselPrev");
-      var nextBtn = document.getElementById("carouselNext");
-      var idx = 0;
-      var timer = null;
-      var intervalMs = 3000;
-
-      function setActive(next) {
-        idx = next;
-        for (var i = 0; i < slides.length; i++) {
-          slides[i].classList.toggle("is-active", i === idx);
-          if (dots[i]) dots[i].classList.toggle("is-active", i === idx);
-        }
-      }
-
-      function next() {
-        setActive((idx + 1) % slides.length);
-      }
-
-      function prev() {
-        setActive((idx - 1 + slides.length) % slides.length);
-      }
-
-      function start() {
-        stop();
-        timer = window.setInterval(next, intervalMs);
-      }
-
-      function stop() {
-        if (timer) window.clearInterval(timer);
-        timer = null;
-      }
-
-      if (nextBtn) nextBtn.addEventListener("click", function () { stop(); next(); start(); });
-      if (prevBtn) prevBtn.addEventListener("click", function () { stop(); prev(); start(); });
-
-      if (dots[0]) dots[0].addEventListener("click", function () { stop(); setActive(0); start(); });
-      if (dots[1]) dots[1].addEventListener("click", function () { stop(); setActive(1); start(); });
-
-      var carousel = document.querySelector(".carousel");
-      if (carousel) {
-        carousel.addEventListener("mouseenter", stop);
-        carousel.addEventListener("mouseleave", start);
-        carousel.addEventListener("focusin", stop);
-        carousel.addEventListener("focusout", start);
-      }
-
-      setActive(0);
-      start();
     })();
   </script>
 </body>
