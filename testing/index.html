@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Haagen-Dazs Miami</title>
+  <title>Home | Haagen-Dazs DC</title>
   <meta name="description" content="Visit Haagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
   <link rel="canonical" href="https://www.hdicecream.com/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Haagen-Dazs Miami">
-  <meta property="og:title" content="Home | Haagen-Dazs Miami">
+  <meta property="og:site_name" content="Haagen-Dazs DC">
+  <meta property="og:title" content="Home | Haagen-Dazs DC">
   <meta property="og:description" content="Visit Haagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
   <meta property="og:url" content="https://www.hdicecream.com/">
   <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Haagen-Dazs Miami - North Miami and Miami Beach shop locations.">
+  <meta property="og:image:alt" content="Haagen-Dazs DC - North Miami and Miami Beach shop locations.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Home | Haagen-Dazs Miami">
+  <meta name="twitter:title" content="Home | Haagen-Dazs DC">
   <meta name="twitter:description" content="Visit Haagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
   <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <link rel="icon" href="/assets/images/favicon.ico">
@@ -35,6 +35,8 @@
       --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
       --border-soft: 1px solid rgba(0,0,0,0.08);
       --text-muted: rgba(101, 11, 50, 0.72);
+      --overlay-kicker: #F9D79C;
+      --overlay-text: #F9E6C3;
     }
 
     .container {
@@ -55,28 +57,14 @@
       text-decoration: none;
       font-weight: 700;
     }
+
     .skip-link:focus {
       left: 10px;
     }
 
-    /* Header mount: placeholder tapestry strip (image is loaded by header include later).
-       This page provides a placeholder slot behind the header area so layout is ready. */
-    .header-tapestry-slot {
-      background-color: var(--hd-white);
-      background-image: url("/assets/images/placeholders/hd_home_hero_placeholder.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      border-bottom: var(--border-soft);
-    }
-    .header-tapestry-slot-inner {
-      min-height: 86px;
-    }
-
-    /* Hero / Carousel */
     .hero {
       background: linear-gradient(180deg, var(--hd-gold-light), var(--hd-white));
-      padding: 26px 0 18px;
+      padding: 18px 0 22px;
     }
 
     .hero-grid {
@@ -84,7 +72,7 @@
       grid-template-columns: 1.2fr 1fr;
       gap: 22px;
       align-items: center;
-      padding: 22px 0 10px;
+      padding: 18px 0 10px;
     }
 
     .hero h1 {
@@ -182,8 +170,7 @@
       left: 18px;
       bottom: 18px;
       right: 18px;
-      background: rgba(101, 11, 50, 0.72);
-      color: var(--hd-white);
+      background: rgba(101, 11, 50, 0.78);
       padding: 14px 16px;
       border-radius: 14px;
       backdrop-filter: blur(6px);
@@ -192,10 +179,10 @@
     .slide-overlay .kicker {
       font-family: var(--font-body);
       font-weight: 900;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: 12px;
-      opacity: 0.95;
+      color: var(--overlay-kicker);
       margin-bottom: 6px;
     }
 
@@ -205,6 +192,7 @@
       font-size: 22px;
       line-height: 1.1;
       margin: 0;
+      color: var(--overlay-text);
     }
 
     .carousel-btn {
@@ -221,6 +209,7 @@
       place-items: center;
       cursor: pointer;
       box-shadow: 0 6px 16px rgba(0,0,0,0.16);
+      z-index: 2;
     }
 
     .carousel-btn:hover,
@@ -241,6 +230,7 @@
       justify-content: center;
       gap: 8px;
       pointer-events: auto;
+      z-index: 2;
     }
 
     .dot {
@@ -258,7 +248,6 @@
       border-color: rgba(255,255,255,0.95);
     }
 
-    /* Sections */
     .section {
       padding: 44px 0;
     }
@@ -274,7 +263,14 @@
       max-width: 80ch;
     }
 
-    /* Locations cards */
+    /* Screenshot 2: add padding/background behind location boxes */
+    .locations-wrap {
+      background: rgba(249, 230, 195, 0.45);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 26px 0;
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -331,7 +327,6 @@
       outline: none;
     }
 
-    /* Icon rows */
     .icon-block {
       margin-top: 16px;
       border-top: 1px solid rgba(0,0,0,0.08);
@@ -355,6 +350,7 @@
       align-items: center;
     }
 
+    /* Rollover icons: gold default, burgundy on hover */
     .icon-link {
       display: inline-flex;
       align-items: center;
@@ -366,6 +362,7 @@
       background: var(--hd-white);
       text-decoration: none;
       transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+      position: relative;
     }
 
     .icon-link:hover,
@@ -376,14 +373,38 @@
       transform: translateY(-1px);
     }
 
-    .icon-link img {
+    .icon-swap {
+      width: 22px;
+      height: 22px;
+      display: block;
+      position: relative;
+    }
+
+    .icon-swap img {
       width: 22px;
       height: 22px;
       object-fit: contain;
       display: block;
+      position: absolute;
+      inset: 0;
+      transition: opacity 120ms ease;
     }
 
-    /* Delivery row as branded pills (cleaner, less clutter than 3 more circles) */
+    .icon-swap img.burgundy {
+      opacity: 0;
+    }
+
+    .icon-link:hover .icon-swap img.burgundy,
+    .icon-link:focus .icon-swap img.burgundy {
+      opacity: 1;
+    }
+
+    .icon-link:hover .icon-swap img.gold,
+    .icon-link:focus .icon-swap img.gold {
+      opacity: 0;
+    }
+
+    /* Delivery row as pills */
     .pill-row {
       display: flex;
       flex-wrap: wrap;
@@ -413,31 +434,15 @@
       border-color: rgba(210, 153, 55, 0.6);
     }
 
-    /* Footer mount spacing */
-    #siteFooter {
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
-    }
-
-    /* Responsive */
     @media (max-width: 960px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-      .cards {
-        grid-template-columns: 1fr;
-      }
-      .hero h1 {
-        font-size: 40px;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 40px; }
     }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <div class="header-tapestry-slot" aria-hidden="true">
-    <div class="container header-tapestry-slot-inner"></div>
-  </div>
   <div id="siteHeader"></div>
   <main id="main">
     <section class="hero">
@@ -458,7 +463,7 @@
         <div class="carousel-viewport" id="carouselViewport">
           <div class="slide is-active" data-index="0">
             <figure>
-              <img src="/assets/images/placeholders/hd_home_carousel_placeholder_01.jpg" alt="Featured image placeholder 1">
+              <img src="/assets/images/hero-1-placeholder.jpg" alt="Featured image placeholder 1">
             </figure>
             <div class="slide-overlay">
               <div class="kicker">Featured</div>
@@ -468,21 +473,17 @@
 
           <div class="slide" data-index="1">
             <figure>
-              <img src="/assets/images/placeholders/hd_home_carousel_placeholder_02.jpg" alt="Featured image placeholder 2">
+              <img src="/assets/images/hero-2-placeholder.jpg" alt="Featured image placeholder 2">
             </figure>
             <div class="slide-overlay">
-              <div class="kicker">Delivery</div>
+              <div class="kicker">Featured</div>
               <p class="headline">Get your favorites delivered fast</p>
             </div>
           </div>
         </div>
 
-        <button class="carousel-btn prev" type="button" aria-label="Previous slide" id="carouselPrev">
-          &#8249;
-        </button>
-        <button class="carousel-btn next" type="button" aria-label="Next slide" id="carouselNext">
-          &#8250;
-        </button>
+        <button class="carousel-btn prev" type="button" aria-label="Previous slide" id="carouselPrev">&#8249;</button>
+        <button class="carousel-btn next" type="button" aria-label="Next slide" id="carouselNext">&#8250;</button>
 
         <div class="carousel-dots" role="tablist" aria-label="Carousel pagination">
           <button class="dot is-active" type="button" aria-label="Go to slide 1" id="dot0"></button>
@@ -493,93 +494,109 @@
   </div>
 </section>
 
-<section class="section" id="locations">
+<section class="locations-wrap" id="locations">
   <div class="container">
-    <h2>Locations</h2>
-    <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
+    <div class="section" style="padding: 18px 0 0;">
+      <h2>Locations</h2>
+      <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
 
-    <div class="cards">
-      <article class="card" aria-label="Haagen-Dazs North Miami location">
-        <h3>Haagen-Dazs North Miami (Causeway Square)</h3>
-        <p class="meta">
-          <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
-          <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a><br>
-          <strong>Hours:</strong> Mon-Thu 10am - 10pm, Fri-Sat 10am - 11pm, Sun 11am - 8pm
-        </p>
+      <div class="cards">
+        <article class="card" aria-label="Haagen-Dazs North Miami location">
+          <h3>Haagen-Dazs North Miami (Causeway Square)</h3>
+          <p class="meta">
+            <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
+            <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a><br>
+            <strong>Hours:</strong> Mon-Thu 10am - 10pm, Fri-Sat 10am - 11pm, Sun 11am - 8pm
+          </p>
 
-        <div class="actions">
-          <a class="chip" href="https://www.google.com/maps?q=1809+NE+123rd+St,+North+Miami,+FL+33181" target="_blank" rel="noopener noreferrer">Directions</a>
-          <a class="chip" href="tel:+17869638203">Call</a>
-          <a class="chip" href="#menu">Menu</a>
-        </div>
-
-        <div class="icon-block">
-          <div>
-            <div class="icon-row-title">Community and reviews</div>
-            <div class="icon-row">
-              <a class="icon-link" href="#" aria-label="Instagram" title="Instagram">
-                <img src="/assets/images/icons/hd_ig_g.png" alt="Instagram">
-              </a>
-              <a class="icon-link" href="#" aria-label="Facebook" title="Facebook">
-                <img src="/assets/images/icons/hd_fb_g.png" alt="Facebook">
-              </a>
-              <a class="icon-link" href="#" aria-label="Google reviews" title="Google Reviews">
-                <img src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-              </a>
-            </div>
+          <div class="actions">
+            <a class="chip" href="https://www.google.com/maps?q=1809+NE+123rd+St,+North+Miami,+FL+33181" target="_blank" rel="noopener noreferrer">Directions</a>
+            <a class="chip" href="tel:+17869638203">Call</a>
+            <a class="chip" href="/menu">Menu</a>
           </div>
 
-          <div>
-            <div class="icon-row-title">Delivery and discovery</div>
-            <div class="pill-row">
-              <a class="pill" href="#" aria-label="Uber Eats">Uber Eats</a>
-              <a class="pill" href="#" aria-label="DoorDash">DoorDash</a>
-              <a class="pill" href="#" aria-label="Yelp">Yelp</a>
+          <div class="icon-block">
+            <div>
+              <div class="icon-row-title">Community and reviews</div>
+              <div class="icon-row">
+                <a class="icon-link" href="#" aria-label="Instagram" title="Instagram">
+                  <span class="icon-swap">
+                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
+                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
+                  </span>
+                </a>
+                <a class="icon-link" href="#" aria-label="Facebook" title="Facebook">
+                  <span class="icon-swap">
+                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
+                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
+                  </span>
+                </a>
+                <a class="icon-link" href="#" aria-label="Google reviews" title="Google Reviews">
+                  <img src="/assets/images/icons/hd_gr.png" alt="" style="width:22px;height:22px;display:block;">
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <div class="icon-row-title">Delivery and discovery</div>
+              <div class="pill-row">
+                <a class="pill" href="#" aria-label="Uber Eats">Uber Eats</a>
+                <a class="pill" href="#" aria-label="DoorDash">DoorDash</a>
+                <a class="pill" href="#" aria-label="Yelp">Yelp</a>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="card" aria-label="Haagen-Dazs Collins North Beach location">
-        <h3>Haagen-Dazs Collins North Beach</h3>
-        <p class="meta">
-          <strong>Address:</strong> 6978 Collins Avenue, Miami Beach, FL 33141<br>
-          <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a><br>
-          <strong>Hours:</strong> Mon-Thu 10am - 10pm, Fri-Sat 10am - 11pm, Sun 11am - 8pm
-        </p>
+        <article class="card" aria-label="Haagen-Dazs Collins North Beach location">
+          <h3>Haagen-Dazs Collins North Beach</h3>
+          <p class="meta">
+            <strong>Address:</strong> 6978 Collins Avenue, Miami Beach, FL 33141<br>
+            <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a><br>
+            <strong>Hours:</strong> Mon-Thu 10am - 10pm, Fri-Sat 10am - 11pm, Sun 11am - 8pm
+          </p>
 
-        <div class="actions">
-          <a class="chip" href="https://www.google.com/maps?q=6978+Collins+Ave,+Miami+Beach,+FL+33141" target="_blank" rel="noopener noreferrer">Directions</a>
-          <a class="chip" href="tel:+17866336485">Call</a>
-          <a class="chip" href="#menu">Menu</a>
-        </div>
-
-        <div class="icon-block">
-          <div>
-            <div class="icon-row-title">Community and reviews</div>
-            <div class="icon-row">
-              <a class="icon-link" href="#" aria-label="Instagram" title="Instagram">
-                <img src="/assets/images/icons/hd_ig_g.png" alt="Instagram">
-              </a>
-              <a class="icon-link" href="#" aria-label="Facebook" title="Facebook">
-                <img src="/assets/images/icons/hd_fb_g.png" alt="Facebook">
-              </a>
-              <a class="icon-link" href="#" aria-label="Google reviews" title="Google Reviews">
-                <img src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-              </a>
-            </div>
+          <div class="actions">
+            <a class="chip" href="https://www.google.com/maps?q=6978+Collins+Ave,+Miami+Beach,+FL+33141" target="_blank" rel="noopener noreferrer">Directions</a>
+            <a class="chip" href="tel:+17866336485">Call</a>
+            <a class="chip" href="/menu">Menu</a>
           </div>
 
-          <div>
-            <div class="icon-row-title">Delivery and discovery</div>
-            <div class="pill-row">
-              <a class="pill" href="#" aria-label="Uber Eats">Uber Eats</a>
-              <a class="pill" href="#" aria-label="DoorDash">DoorDash</a>
-              <a class="pill" href="#" aria-label="Yelp">Yelp</a>
+          <div class="icon-block">
+            <div>
+              <div class="icon-row-title">Community and reviews</div>
+              <div class="icon-row">
+                <a class="icon-link" href="#" aria-label="Instagram" title="Instagram">
+                  <span class="icon-swap">
+                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
+                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
+                  </span>
+                </a>
+                <a class="icon-link" href="#" aria-label="Facebook" title="Facebook">
+                  <span class="icon-swap">
+                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
+                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
+                  </span>
+                </a>
+                <a class="icon-link" href="#" aria-label="Google reviews" title="Google Reviews">
+                  <img src="/assets/images/icons/hd_gr.png" alt="" style="width:22px;height:22px;display:block;">
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <div class="icon-row-title">Delivery and discovery</div>
+              <div class="pill-row">
+                <a class="pill" href="#" aria-label="Uber Eats">Uber Eats</a>
+                <a class="pill" href="#" aria-label="DoorDash">DoorDash</a>
+                <a class="pill" href="#" aria-label="Yelp">Yelp</a>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
+
+      <div style="height: 18px;"></div>
     </div>
   </div>
 </section>
@@ -587,7 +604,7 @@
 <section class="section" id="menu">
   <div class="container">
     <h2>Menu</h2>
-    <p class="lead">Add your shared menu page here. This section will link to /menu once that page exists.</p>
+    <p class="lead">Explore our menu and discover cakes, shakes, sundaes, and seasonal favorites.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="/menu">Go to menu</a>
       <a class="btn btn-secondary" href="/cakes">Cakes</a>
