@@ -86,13 +86,14 @@
     }
     .hero-top-bg .spacer { min-height: 68px; display: block; }
 
-    /* HERO (CONTAINED, like reference) */
     .hero-full {
       width: 100%;
       padding: 0;
       margin: 0;
       background: transparent;
     }
+
+    .hero-shell { display: none !important; }
 
     .hero-carousel {
       position: relative;
@@ -105,7 +106,6 @@
       box-shadow: var(--shadow-soft);
     }
 
-    /* Keep hero within container */
     .hero-carousel-wrap {
       padding: 0 0 18px;
     }
@@ -172,10 +172,6 @@
       max-width: 60ch;
     }
 
-    /* Animation timing per 3s cycle:
-       - Title fade in at 1s
-       - Subtitle slide in at 2s
-    */
     .hero-slide .hero-overlay h2,
     .hero-slide .hero-overlay p {
       opacity: 0;
@@ -202,7 +198,6 @@
       to   { opacity: 1; transform: translateX(0); }
     }
 
-    /* HERO ARROWS: transparent + moved down between center and bottom */
     .hero-carousel-btn {
       position: absolute;
       top: auto;
@@ -256,55 +251,6 @@
       border-color: rgba(255,255,255,0.98);
     }
 
-    /* HERO TEXT (re-added) below hero, above locations */
-    .hero-intro {
-      padding: 14px 0 10px;
-    }
-
-    .hero-intro h1 {
-      margin: 0 0 10px;
-      font-size: 42px;
-      line-height: 1.06;
-      color: var(--hd-burgundy);
-    }
-
-    .hero-intro p {
-      margin: 0;
-      font-size: 16px;
-      color: var(--text-muted);
-      max-width: 75ch;
-      line-height: 1.55;
-    }
-
-    /* CTA buttons (re-added) */
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 900;
-      border: 0;
-      cursor: pointer;
-      user-select: none;
-      font-family: inherit;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .btn-primary { background: var(--hd-burgundy); color: var(--hd-white); }
-    .btn-secondary { background: var(--hd-gold); color: var(--hd-white); }
-
-    /* LOCATIONS */
     .locations-wrap {
       background: rgba(249, 230, 195, 0.45);
       border-top: 1px solid rgba(0,0,0,0.06);
@@ -394,7 +340,6 @@
       margin: 0 0 8px;
     }
 
-    /* ICONS: BELOW label, centered under label width (not full card) */
     .icon-group {
       display: inline-grid;
       justify-items: center;
@@ -470,7 +415,6 @@
       display: block;
     }
 
-    /* +2px for DoorDash and Yelp icons */
     .delivery-icon.is-dd img,
     .delivery-icon.is-yelp img {
       width: 26px;
@@ -485,7 +429,6 @@
       .hero-top-bg .spacer { min-height: 54px; }
       .hero-carousel { border-left: 0; border-right: 0; border-radius: 0; }
       .hero-carousel-btn { bottom: 30%; }
-      .hero-intro h1 { font-size: 38px; }
     }
 
     @media (max-width: 640px) {
@@ -498,8 +441,6 @@
       .delivery-icon.is-dd img,
       .delivery-icon.is-yelp img { width: 26px; height: 26px; }
       .hero-carousel { border-radius: 0; }
-      .hero-intro h1 { font-size: 34px; }
-      .hero-intro p { font-size: 15px; }
     }
   </style>
 </head>
@@ -538,20 +479,6 @@
         <button class="hero-dot" type="button" aria-label="Go to slide 2" id="heroDot1"></button>
       </div>
     </div>
-
-    <div class="hero-intro" aria-label="Hero intro">
-      <h1>Simply extraordinary, served locally</h1>
-      <p>
-        Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
-        Find hours, directions, and ordering links in seconds.
-      </p>
-      <div class="cta-row" aria-label="Quick actions">
-        <a class="btn btn-primary" href="#locations">Locations</a>
-        <a class="btn btn-secondary" href="/menu">Menu</a>
-        <a class="btn btn-secondary" href="/cakes">Cakes</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -562,7 +489,7 @@
       <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
 
       <div class="cards">
-        <article class="card" aria-label="Häagen-Dazs North Miami location">
+        <article class="card" aria-label="Häagen-Dazs North Miami location" data-lat="25.889975023767263" data-lng="-80.16218023582432">
           <h3>Häagen-Dazs North Miami (Causeway Square)</h3>
           <p class="meta">
             <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
@@ -577,7 +504,7 @@
           </div>
 
           <div class="actions">
-            <a class="chip" href="https://www.google.com/maps?q=1809+NE+123rd+St,+North+Miami,+FL+33181" target="_blank" rel="noopener noreferrer">Directions</a>
+            <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
             <a class="chip" href="tel:+17869638203">Call</a>
           </div>
 
@@ -620,8 +547,8 @@
           </div>
         </article>
 
-        <article class="card" aria-label="Häagen-Dazs Collins North Beach location">
-          <h3>Häagen-Dazs Collins North Beach</h3>
+        <article class="card" aria-label="Häagen-Dazs North Beach location" data-lat="25.855930163991367" data-lng="-80.12070053213803">
+          <h3>Häagen-Dazs North Beach (6978 Collins Ave)</h3>
           <p class="meta">
             <strong>Address:</strong> 6978 Collins Avenue, Miami Beach, FL 33141<br>
             <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a>
@@ -635,7 +562,7 @@
           </div>
 
           <div class="actions">
-            <a class="chip" href="https://www.google.com/maps?q=6978+Collins+Ave,+Miami+Beach,+FL+33141" target="_blank" rel="noopener noreferrer">Directions</a>
+            <a class="chip" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Directions</a>
             <a class="chip" href="tel:+17866336485">Call</a>
           </div>
 
