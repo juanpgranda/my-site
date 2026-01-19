@@ -210,8 +210,10 @@
       overflow: hidden;
     }
 
+    /* 1:1 square storefront image */
     .hero-card .img {
-      height: 178px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       background: #efe8db;
       overflow: hidden;
     }
@@ -268,6 +270,11 @@
       align-items: start;
     }
 
+    .stack {
+      display: grid;
+      gap: 16px;
+    }
+
     .card {
       border: var(--border-soft);
       border-radius: var(--radius-lg);
@@ -299,15 +306,7 @@
       margin: 12px 0;
     }
 
-    /* Media rail */
-    .media-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.68fr;
-      gap: 16px;
-      align-items: start;
-    }
-
-    /* Image carousel */
+    /* Photo highlights (wider, shorter) */
     .gallery {
       position: relative;
       border-radius: var(--radius-lg);
@@ -320,7 +319,7 @@
     .gallery-viewport {
       position: relative;
       width: 100%;
-      height: 430px;
+      height: 360px;
     }
 
     .g-slide {
@@ -396,55 +395,6 @@
       border-color: rgba(255,255,255,0.55);
     }
 
-    /* 9:16 video slot */
-    .video-slot {
-      border: var(--border-soft);
-      border-radius: var(--radius-lg);
-      background: rgba(249,230,195,0.25);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-
-    .video-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 12px;
-      background: rgba(255,255,255,0.80);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      gap: 12px;
-    }
-
-    .video-head .label,
-    .map-head .label {
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 11px;
-      color: rgba(101, 11, 50, 0.70);
-    }
-
-    .video-frame {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      background: #0b0b0b;
-      display: grid;
-      place-items: center;
-      color: rgba(255,255,255,0.82);
-      font-weight: 800;
-      text-align: center;
-      padding: 14px;
-    }
-
-    .video-frame iframe,
-    .video-frame video {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-      object-fit: cover;
-    }
-
     /* Map */
     .map-wrap {
       border: 1px solid rgba(0,0,0,0.10);
@@ -462,6 +412,15 @@
       background: rgba(255,255,255,0.80);
       border-bottom: 1px solid rgba(0,0,0,0.08);
       gap: 12px;
+    }
+
+    .map-head .label,
+    .video-head .label {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: rgba(101, 11, 50, 0.70);
     }
 
     .map-frame {
@@ -639,12 +598,7 @@
       height: 26px;
     }
 
-    /* Sidebar */
-    .stack {
-      display: grid;
-      gap: 16px;
-    }
-
+    /* Sidebar hours */
     .hours {
       display: grid;
       gap: 8px;
@@ -655,13 +609,52 @@
     }
     .hours strong { color: var(--hd-burgundy); }
 
+    /* Video card (last in sidebar) */
+    .video-slot {
+      border: var(--border-soft);
+      border-radius: var(--radius-lg);
+      background: rgba(249,230,195,0.25);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .video-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 12px;
+      background: rgba(255,255,255,0.80);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      gap: 12px;
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #0b0b0b;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,0.82);
+      font-weight: 800;
+      text-align: center;
+      padding: 14px;
+    }
+
+    .video-frame iframe,
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      object-fit: cover;
+    }
+
     /* Mobile */
     @media (max-width: 980px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-title { font-size: 40px; }
       .layout { grid-template-columns: 1fr; }
-      .media-grid { grid-template-columns: 1fr; }
-      .gallery-viewport { height: 360px; }
+      .gallery-viewport { height: 300px; }
       .map-frame { height: 240px; }
       .map-frame iframe { height: 240px; }
       .info-grid { grid-template-columns: 1fr; }
@@ -670,7 +663,7 @@
     @media (max-width: 640px) {
       .hero-top-bg .spacer { min-height: 46px; }
       .hero-title { font-size: 34px; }
-      .gallery-viewport { height: 320px; }
+      .gallery-viewport { height: 260px; }
       .g-btn { width: 40px; height: 40px; }
       .icon-link, .delivery-icon { width: 42px; height: 42px; }
       .delivery-icon.is-dd img,
@@ -709,7 +702,7 @@
 
       <div class="hero-card" aria-label="North Miami at a glance">
         <div class="img">
-          <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami location placeholder image">
+          <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami storefront placeholder image">
         </div>
         <div class="pad">
           <p class="mini">
@@ -737,60 +730,35 @@
 
       <!-- MAIN -->
       <div class="stack">
-        <div class="media-grid">
 
-          <!-- Carousel -->
-          <div>
-            <div class="card" style="border:0; box-shadow:none; background:transparent;">
-              <h2 style="margin:0 0 10px; font-size:18px; color: var(--hd-burgundy); font-weight:900;">Photo highlights</h2>
-              <div class="gallery" aria-label="North Miami image carousel">
-                <div class="gallery-viewport" id="galleryViewport">
-                  <div class="g-slide is-active" data-index="0" aria-hidden="false">
-                    <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 1">
-                  </div>
-                  <div class="g-slide" data-index="1" aria-hidden="true">
-                    <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 2">
-                  </div>
-                  <div class="g-slide" data-index="2" aria-hidden="true">
-                    <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 3">
-                  </div>
-                </div>
-
-                <div class="g-controls">
-                  <button class="g-btn" type="button" aria-label="Previous photo" id="gPrev">&#8249;</button>
-                  <div class="g-dots" role="tablist" aria-label="Photo pagination">
-                    <button class="g-dot is-active" type="button" aria-label="Go to photo 1" id="gDot0"></button>
-                    <button class="g-dot" type="button" aria-label="Go to photo 2" id="gDot1"></button>
-                    <button class="g-dot" type="button" aria-label="Go to photo 3" id="gDot2"></button>
-                  </div>
-                  <button class="g-btn" type="button" aria-label="Next photo" id="gNext">&#8250;</button>
-                </div>
+        <div class="card pad" aria-label="Photo highlights">
+          <h2>Photo highlights</h2>
+          <div class="gallery" aria-label="North Miami image carousel">
+            <div class="gallery-viewport" id="galleryViewport">
+              <div class="g-slide is-active" data-index="0" aria-hidden="false">
+                <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 1">
               </div>
-              <p class="muted" style="margin-top:10px;">Swap these placeholders with real store photos when ready.</p>
+              <div class="g-slide" data-index="1" aria-hidden="true">
+                <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 2">
+              </div>
+              <div class="g-slide" data-index="2" aria-hidden="true">
+                <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 3">
+              </div>
+            </div>
+
+            <div class="g-controls">
+              <button class="g-btn" type="button" aria-label="Previous photo" id="gPrev">&#8249;</button>
+              <div class="g-dots" role="tablist" aria-label="Photo pagination">
+                <button class="g-dot is-active" type="button" aria-label="Go to photo 1" id="gDot0"></button>
+                <button class="g-dot" type="button" aria-label="Go to photo 2" id="gDot1"></button>
+                <button class="g-dot" type="button" aria-label="Go to photo 3" id="gDot2"></button>
+              </div>
+              <button class="g-btn" type="button" aria-label="Next photo" id="gNext">&#8250;</button>
             </div>
           </div>
-
-          <!-- 9:16 video slot -->
-          <div>
-            <div class="card" style="border:0; box-shadow:none; background:transparent;">
-              <h2 style="margin:0 0 10px; font-size:18px; color: var(--hd-burgundy); font-weight:900;">Featured video (9:16)</h2>
-              <div class="video-slot" aria-label="9 by 16 video embed slot">
-                <div class="video-head">
-                  <div class="label">Video embed</div>
-                  <a class="chip" href="#" onclick="return false;">Placeholder</a>
-                </div>
-                <div class="video-frame">
-                  Add a 9:16 embed here later (Instagram Reel, TikTok, YouTube Shorts).<br><br>
-                  Replace with an iframe or video tag.
-                </div>
-              </div>
-              <p class="muted" style="margin-top:10px;">When you have the video link, I can wire up the exact embed code.</p>
-            </div>
-          </div>
-
+          <p class="muted" style="margin-top:10px;">Swap these placeholders with real store photos when ready.</p>
         </div>
 
-        <!-- Details + Map + FAQ -->
         <div class="card pad" aria-label="Store details">
           <h2>Store details</h2>
           <p class="muted" style="margin:0;">
@@ -906,6 +874,7 @@
 
       <!-- SIDEBAR -->
       <aside class="stack" aria-label="North Miami sidebar">
+
         <div class="card pad">
           <h2>Hours</h2>
           <p class="muted">Plan your stop for dessert, pickup, or a quick family treat.</p>
@@ -952,6 +921,24 @@
             <a class="chip" href="/contact">Contact us</a>
           </div>
         </div>
+
+        <!-- LAST CARD IN SIDEBAR: Featured video -->
+        <div class="card pad" aria-label="Featured video">
+          <h2>Featured video (9:16)</h2>
+          <div class="video-slot" aria-label="9 by 16 video embed slot">
+            <div class="video-head">
+              <div class="label">Video embed</div>
+              <a class="chip" href="#" onclick="return false;">Placeholder</a>
+            </div>
+            <div class="video-frame">
+              Add a 9:16 embed here later (Instagram Reel, TikTok, YouTube Shorts).
+              <br><br>
+              Replace with an iframe or video tag.
+            </div>
+          </div>
+          <p class="muted" style="margin-top:10px;">When you have the video link, I can wire up the exact embed code.</p>
+        </div>
+
       </aside>
 
     </div>
