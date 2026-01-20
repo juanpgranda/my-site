@@ -123,12 +123,19 @@
     }
     .hero-top-bg .spacer { min-height: 68px; display: block; }
 
-    /* Page header: single column (removes empty space above content) */
+    /* Page header */
     .page-hero {
       background: linear-gradient(180deg, rgba(249,230,195,0.55), rgba(255,255,255,1));
       border-top: 1px solid rgba(0,0,0,0.06);
       border-bottom: 1px solid rgba(0,0,0,0.06);
-      padding: 18px 0 16px;
+      padding: 18px 0 14px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 16px;
+      align-items: start;
     }
 
     .crumbs {
@@ -155,7 +162,7 @@
       color: var(--text-muted);
       font-size: 15px;
       line-height: 1.55;
-      max-width: 92ch;
+      max-width: 85ch;
     }
 
     .quick-actions {
@@ -193,8 +200,61 @@
     .chip.primary:hover,
     .chip.primary:focus { background: rgba(101, 11, 50, 0.92); }
 
+    .hero-card {
+      border: var(--border-soft);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.86);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    .hero-card .img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #efe8db;
+      overflow: hidden;
+    }
+
+    .hero-card .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-card .pad { padding: 12px 12px 14px; }
+
+    .hero-card .mini {
+      margin: 0;
+      color: rgba(101, 11, 50, 0.78);
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .k-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(249, 230, 195, 0.55);
+      border: 1px solid rgba(101, 11, 50, 0.16);
+      color: rgba(101, 11, 50, 0.92);
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
     /* Layout */
-    .section { padding: 14px 0 34px; }
+    .section { padding: 12px 0 34px; }
 
     .layout {
       display: grid;
@@ -206,7 +266,6 @@
     .stack {
       display: grid;
       gap: 16px;
-      min-height: 0;
     }
 
     .sidebar {
@@ -249,55 +308,14 @@
       margin: 12px 0;
     }
 
-    /* Storefront card (moved to sidebar to eliminate dead space) */
-    .storefront-card { background: rgba(255,255,255,0.90); }
-
-    .storefront-img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #efe8db;
-      overflow: hidden;
+    /* Photo highlights: eliminate dead space by removing fixed height */
+    .photo-card {
+      display: grid;
+      gap: 10px;
+      padding: 16px;
     }
+    .photo-card h2 { margin-bottom: 0; }
 
-    .storefront-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .storefront-pad { padding: 12px 12px 14px; }
-
-    .storefront-mini {
-      margin: 0;
-      color: rgba(101, 11, 50, 0.78);
-      font-size: 12px;
-      line-height: 1.5;
-      font-weight: 800;
-    }
-
-    .k-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(249, 230, 195, 0.55);
-      border: 1px solid rgba(101, 11, 50, 0.16);
-      color: rgba(101, 11, 50, 0.92);
-      font-weight: 900;
-      font-size: 12px;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    /* Photo highlights */
     .gallery {
       position: relative;
       border-radius: var(--radius-lg);
@@ -310,7 +328,8 @@
     .gallery-viewport {
       position: relative;
       width: 100%;
-      height: 360px;
+      aspect-ratio: 16 / 9;
+      height: auto;
     }
 
     .g-slide {
@@ -584,7 +603,10 @@
     }
 
     .delivery-icon.is-dd img,
-    .delivery-icon.is-yelp img { width: 26px; height: 26px; }
+    .delivery-icon.is-yelp img {
+      width: 26px;
+      height: 26px;
+    }
 
     /* Sidebar hours */
     .hours {
@@ -637,25 +659,28 @@
       object-fit: cover;
     }
 
+    /* Mobile */
     @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
       .hero-title { font-size: 40px; }
       .layout { grid-template-columns: 1fr; align-items: start; }
-      .gallery-viewport { height: 300px; }
-      .map-frame { height: 240px; }
-      .map-frame iframe { height: 240px; }
+      .section { padding-top: 14px; }
       .info-grid { grid-template-columns: 1fr; }
       .sidebar { height: auto; display: grid; gap: 16px; }
       .sidebar .video-card { margin-top: 0; }
+      .map-frame { height: 240px; }
+      .map-frame iframe { height: 240px; }
+      .gallery-viewport { aspect-ratio: 16 / 10; }
     }
 
     @media (max-width: 640px) {
       .hero-top-bg .spacer { min-height: 46px; }
       .hero-title { font-size: 34px; }
-      .gallery-viewport { height: 260px; }
       .g-btn { width: 40px; height: 40px; }
       .icon-link, .delivery-icon { width: 42px; height: 42px; }
       .delivery-icon.is-dd img,
       .delivery-icon.is-yelp img { width: 26px; height: 26px; }
+      .gallery-viewport { aspect-ratio: 4 / 3; }
     }
   </style>
 </head>
@@ -666,23 +691,48 @@
   <main id="main">
     <section class="page-hero" aria-label="North Miami header">
       <div class="container">
-        <div class="crumbs">
-          <a href="/locations/" style="color: inherit; text-decoration: none;">Locations</a>
-          <span aria-hidden="true">/</span>
-          <span>North Miami</span>
-        </div>
-    <h1 class="hero-title">North Miami (Causeway Square)</h1>
-    <p class="hero-sub">
-      Family-friendly ice cream and desserts in North Miami. Find directions, hours, ordering links, a map, and featured media in one place.
-    </p>
+        <div class="hero-grid">
+          <div>
+            <div class="crumbs">
+              <a href="/locations/" style="color: inherit; text-decoration: none;">Locations</a>
+              <span aria-hidden="true">/</span>
+              <span>North Miami</span>
+            </div>
+<h1 class="hero-title">North Miami (Causeway Square)</h1>
+        <p class="hero-sub">
+          Family-friendly ice cream and desserts in North Miami. Find directions, hours, ordering links, a map, and featured media in one place.
+        </p>
 
-    <div class="quick-actions" aria-label="Quick actions">
-      <a class="chip primary" href="/menu">View Menu</a>
-      <a class="chip primary" href="/cakes">View Cakes</a>
-      <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
-      <a class="chip" href="tel:+17869638203">Call</a>
-      <a class="chip" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer">Uber Eats</a>
-      <a class="chip" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer">DoorDash</a>
+        <div class="quick-actions" aria-label="Quick actions">
+          <a class="chip primary" href="/menu">View Menu</a>
+          <a class="chip primary" href="/cakes">View Cakes</a>
+          <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
+          <a class="chip" href="tel:+17869638203">Call</a>
+          <a class="chip" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer">Uber Eats</a>
+          <a class="chip" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer">DoorDash</a>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-label="North Miami at a glance">
+        <div class="img">
+          <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami storefront placeholder image">
+        </div>
+        <div class="pad">
+          <p class="mini">
+            1809 NE 123rd St, North Miami, FL 33181<br>
+            Call (786) 963-8203
+          </p>
+          <div class="k-badges" aria-label="Highlights">
+            <span class="badge">Family</span>
+            <span class="badge">Friendly staff</span>
+            <span class="badge">Great service</span>
+            <span class="badge">Parking</span>
+            <span class="badge">Flavors</span>
+            <span class="badge">Dairy-free options</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -694,8 +744,9 @@
       <!-- LEFT COLUMN -->
       <div class="stack">
 
-        <div class="card pad" aria-label="Photo highlights">
+        <div class="card photo-card" aria-label="Photo highlights">
           <h2>Photo highlights</h2>
+
           <div class="gallery" aria-label="North Miami image carousel">
             <div class="gallery-viewport" id="galleryViewport">
               <div class="g-slide is-active" data-index="0" aria-hidden="false">
@@ -829,32 +880,13 @@
               </div>
             </div>
           </div>
+
         </div>
 
       </div>
 
       <!-- RIGHT COLUMN -->
       <aside class="sidebar" aria-label="North Miami sidebar">
-
-        <div class="card storefront-card" aria-label="North Miami storefront">
-          <div class="storefront-img">
-            <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami storefront placeholder image">
-          </div>
-          <div class="storefront-pad">
-            <p class="storefront-mini">
-              1809 NE 123rd St, North Miami, FL 33181<br>
-              Call (786) 963-8203
-            </p>
-            <div class="k-badges" aria-label="Highlights">
-              <span class="badge">Family</span>
-              <span class="badge">Friendly staff</span>
-              <span class="badge">Great service</span>
-              <span class="badge">Parking</span>
-              <span class="badge">Flavors</span>
-              <span class="badge">Dairy-free options</span>
-            </div>
-          </div>
-        </div>
 
         <div class="card pad">
           <h2>Hours</h2>
@@ -885,7 +917,7 @@
 
         <div class="card pad">
           <h2>Planning a celebration?</h2>
-          <p class="muted">Cakes and desserts for birthdays and family get-togethers.</p>
+          <p class="muted">Perfect for birthdays, family get-togethers, and small events. Use Cakes for ideas or contact us for help.</p>
           <div class="divider"></div>
           <div class="quick-actions">
             <a class="chip" href="/cakes">Cakes</a>
@@ -976,14 +1008,6 @@
       if (dots[0]) dots[0].addEventListener("click", function () { stop(); setActive(0); start(); });
       if (dots[1]) dots[1].addEventListener("click", function () { stop(); setActive(1); start(); });
       if (dots[2]) dots[2].addEventListener("click", function () { stop(); setActive(2); start(); });
-
-      var gallery = document.querySelector(".gallery");
-      if (gallery) {
-        gallery.addEventListener("mouseenter", stop);
-        gallery.addEventListener("mouseleave", start);
-        gallery.addEventListener("focusin", stop);
-        gallery.addEventListener("focusout", start);
-      }
 
       setActive(0);
       start();
