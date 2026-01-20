@@ -123,19 +123,12 @@
     }
     .hero-top-bg .spacer { min-height: 68px; display: block; }
 
-    /* Page header */
+    /* Header band: content-only, no reserved whitespace */
     .page-hero {
       background: linear-gradient(180deg, rgba(249,230,195,0.55), rgba(255,255,255,1));
       border-top: 1px solid rgba(0,0,0,0.06);
       border-bottom: 1px solid rgba(0,0,0,0.06);
-      padding: 18px 0 14px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 16px;
-      align-items: start;
+      padding: 18px 0 16px;
     }
 
     .crumbs {
@@ -198,74 +191,24 @@
     }
 
     .chip.primary:hover,
-    .chip.primary:focus {
-      background: rgba(101, 11, 50, 0.92);
-    }
+    .chip.primary:focus { background: rgba(101, 11, 50, 0.92); }
 
-    .hero-card {
-      border: var(--border-soft);
-      border-radius: var(--radius-lg);
-      background: rgba(255,255,255,0.86);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      overflow: hidden;
-    }
-
-    .hero-card .img {
-      height: 178px;
-      background: #efe8db;
-      overflow: hidden;
-    }
-
-    .hero-card .img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-card .pad {
-      padding: 12px 12px 14px;
-    }
-
-    .hero-card .mini {
-      margin: 0;
-      color: rgba(101, 11, 50, 0.78);
-      font-size: 12px;
-      line-height: 1.5;
-      font-weight: 800;
-    }
-
-    .k-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(249, 230, 195, 0.55);
-      border: 1px solid rgba(101, 11, 50, 0.16);
-      color: rgba(101, 11, 50, 0.92);
-      font-weight: 900;
-      font-size: 12px;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    /* Layout */
-    .section {
-      padding: 22px 0 34px;
-    }
+    /* Main layout: collapse to content height (no stretching, no auto push) */
+    .section { padding: 14px 0 34px; }
 
     .layout {
       display: grid;
       grid-template-columns: 1.55fr 0.85fr;
       gap: 16px;
       align-items: start;
+    }
+
+    .stack { display: grid; gap: 16px; }
+
+    .sidebar {
+      display: grid;
+      gap: 16px;
+      align-content: start;
     }
 
     .card {
@@ -299,15 +242,68 @@
       margin: 12px 0;
     }
 
-    /* Media rail */
-    .media-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.68fr;
-      gap: 16px;
-      align-items: start;
+    /* At-a-glance card lives in sidebar now (removes header whitespace issue) */
+    .hero-card {
+      border: var(--border-soft);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      overflow: hidden;
     }
 
-    /* Image carousel */
+    .hero-card .img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #efe8db;
+      overflow: hidden;
+    }
+
+    .hero-card .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-card .pad { padding: 12px 12px 14px; }
+
+    .hero-card .mini {
+      margin: 0;
+      color: rgba(101, 11, 50, 0.78);
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .k-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(249, 230, 195, 0.55);
+      border: 1px solid rgba(101, 11, 50, 0.16);
+      color: rgba(101, 11, 50, 0.92);
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    /* Photo highlights: no fixed height, no extra padding below */
+    .photo-card {
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .photo-card h2 { margin-bottom: 0; }
+
     .gallery {
       position: relative;
       border-radius: var(--radius-lg);
@@ -320,7 +316,8 @@
     .gallery-viewport {
       position: relative;
       width: 100%;
-      height: 430px;
+      aspect-ratio: 16 / 9;
+      height: auto;
     }
 
     .g-slide {
@@ -330,11 +327,7 @@
       transition: opacity 320ms ease;
       pointer-events: none;
     }
-
-    .g-slide.is-active {
-      opacity: 1;
-      pointer-events: auto;
-    }
+    .g-slide.is-active { opacity: 1; pointer-events: auto; }
 
     .g-slide img {
       width: 100%;
@@ -396,55 +389,6 @@
       border-color: rgba(255,255,255,0.55);
     }
 
-    /* 9:16 video slot */
-    .video-slot {
-      border: var(--border-soft);
-      border-radius: var(--radius-lg);
-      background: rgba(249,230,195,0.25);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-
-    .video-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 12px;
-      background: rgba(255,255,255,0.80);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      gap: 12px;
-    }
-
-    .video-head .label,
-    .map-head .label {
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 11px;
-      color: rgba(101, 11, 50, 0.70);
-    }
-
-    .video-frame {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      background: #0b0b0b;
-      display: grid;
-      place-items: center;
-      color: rgba(255,255,255,0.82);
-      font-weight: 800;
-      text-align: center;
-      padding: 14px;
-    }
-
-    .video-frame iframe,
-    .video-frame video {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-      object-fit: cover;
-    }
-
     /* Map */
     .map-wrap {
       border: 1px solid rgba(0,0,0,0.10);
@@ -454,21 +398,27 @@
       margin-top: 12px;
     }
 
-    .map-head {
+    .map-head,
+    .video-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 12px;
+      padding: 10px 12px;
       background: rgba(255,255,255,0.80);
       border-bottom: 1px solid rgba(0,0,0,0.08);
       gap: 12px;
     }
 
-    .map-frame {
-      height: 280px;
-      background: #efe8db;
+    .map-head .label,
+    .video-head .label {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: rgba(101, 11, 50, 0.70);
     }
 
+    .map-frame { height: 280px; background: #efe8db; }
     .map-frame iframe {
       width: 100%;
       height: 280px;
@@ -509,11 +459,7 @@
     }
 
     /* FAQ */
-    .faq {
-      display: grid;
-      gap: 10px;
-      margin-top: 12px;
-    }
+    .faq { display: grid; gap: 10px; margin-top: 12px; }
 
     details.faq-item {
       border: 1px solid rgba(0,0,0,0.10);
@@ -634,17 +580,9 @@
     }
 
     .delivery-icon.is-dd img,
-    .delivery-icon.is-yelp img {
-      width: 26px;
-      height: 26px;
-    }
+    .delivery-icon.is-yelp img { width: 26px; height: 26px; }
 
-    /* Sidebar */
-    .stack {
-      display: grid;
-      gap: 16px;
-    }
-
+    /* Sidebar hours */
     .hours {
       display: grid;
       gap: 8px;
@@ -655,26 +593,54 @@
     }
     .hours strong { color: var(--hd-burgundy); }
 
+    /* Video card */
+    .video-slot {
+      border: var(--border-soft);
+      border-radius: var(--radius-lg);
+      background: rgba(249,230,195,0.25);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #0b0b0b;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,0.82);
+      font-weight: 800;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .video-frame iframe,
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      object-fit: cover;
+    }
+
     /* Mobile */
     @media (max-width: 980px) {
-      .hero-grid { grid-template-columns: 1fr; }
       .hero-title { font-size: 40px; }
       .layout { grid-template-columns: 1fr; }
-      .media-grid { grid-template-columns: 1fr; }
-      .gallery-viewport { height: 360px; }
+      .info-grid { grid-template-columns: 1fr; }
       .map-frame { height: 240px; }
       .map-frame iframe { height: 240px; }
-      .info-grid { grid-template-columns: 1fr; }
+      .gallery-viewport { aspect-ratio: 16 / 10; }
     }
 
     @media (max-width: 640px) {
       .hero-top-bg .spacer { min-height: 46px; }
       .hero-title { font-size: 34px; }
-      .gallery-viewport { height: 320px; }
       .g-btn { width: 40px; height: 40px; }
       .icon-link, .delivery-icon { width: 42px; height: 42px; }
       .delivery-icon.is-dd img,
       .delivery-icon.is-yelp img { width: 26px; height: 26px; }
+      .gallery-viewport { aspect-ratio: 4 / 3; }
     }
   </style>
 </head>
@@ -685,48 +651,23 @@
   <main id="main">
     <section class="page-hero" aria-label="North Miami header">
       <div class="container">
-        <div class="hero-grid">
-          <div>
-            <div class="crumbs">
-              <a href="/locations/" style="color: inherit; text-decoration: none;">Locations</a>
-              <span aria-hidden="true">/</span>
-              <span>North Miami</span>
-            </div>
-        <h1 class="hero-title">North Miami (Causeway Square)</h1>
-        <p class="hero-sub">
-          Family-friendly ice cream and desserts in North Miami. Find directions, hours, ordering links, a map, and featured media in one place.
-        </p>
-
-        <div class="quick-actions" aria-label="Quick actions">
-          <a class="chip primary" href="/menu">View Menu</a>
-          <a class="chip primary" href="/cakes">View Cakes</a>
-          <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
-          <a class="chip" href="tel:+17869638203">Call</a>
-          <a class="chip" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer">Uber Eats</a>
-          <a class="chip" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer">DoorDash</a>
+        <div class="crumbs">
+          <a href="/locations/" style="color: inherit; text-decoration: none;">Locations</a>
+          <span aria-hidden="true">/</span>
+          <span>North Miami</span>
         </div>
-      </div>
+    <h1 class="hero-title">North Miami (Causeway Square)</h1>
+    <p class="hero-sub">
+      Family-friendly ice cream and desserts in North Miami. Find directions, hours, ordering links, a map, and featured media in one place.
+    </p>
 
-      <div class="hero-card" aria-label="North Miami at a glance">
-        <div class="img">
-          <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami location placeholder image">
-        </div>
-        <div class="pad">
-          <p class="mini">
-            1809 NE 123rd St, North Miami, FL 33181<br>
-            Call (786) 963-8203
-          </p>
-          <div class="k-badges" aria-label="Highlights">
-            <span class="badge">Family</span>
-            <span class="badge">Friendly staff</span>
-            <span class="badge">Great service</span>
-            <span class="badge">Parking</span>
-            <span class="badge">Flavors</span>
-            <span class="badge">Dairy-free options</span>
-          </div>
-        </div>
-      </div>
-
+    <div class="quick-actions" aria-label="Quick actions">
+      <a class="chip primary" href="/menu">View Menu</a>
+      <a class="chip primary" href="/cakes">View Cakes</a>
+      <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
+      <a class="chip" href="tel:+17869638203">Call</a>
+      <a class="chip" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer">Uber Eats</a>
+      <a class="chip" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer">DoorDash</a>
     </div>
   </div>
 </section>
@@ -735,62 +676,37 @@
   <div class="container">
     <div class="layout">
 
-      <!-- MAIN -->
+      <!-- LEFT COLUMN -->
       <div class="stack">
-        <div class="media-grid">
 
-          <!-- Carousel -->
-          <div>
-            <div class="card" style="border:0; box-shadow:none; background:transparent;">
-              <h2 style="margin:0 0 10px; font-size:18px; color: var(--hd-burgundy); font-weight:900;">Photo highlights</h2>
-              <div class="gallery" aria-label="North Miami image carousel">
-                <div class="gallery-viewport" id="galleryViewport">
-                  <div class="g-slide is-active" data-index="0" aria-hidden="false">
-                    <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 1">
-                  </div>
-                  <div class="g-slide" data-index="1" aria-hidden="true">
-                    <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 2">
-                  </div>
-                  <div class="g-slide" data-index="2" aria-hidden="true">
-                    <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 3">
-                  </div>
-                </div>
+        <div class="card photo-card" aria-label="Photo highlights">
+          <h2>Photo highlights</h2>
 
-                <div class="g-controls">
-                  <button class="g-btn" type="button" aria-label="Previous photo" id="gPrev">&#8249;</button>
-                  <div class="g-dots" role="tablist" aria-label="Photo pagination">
-                    <button class="g-dot is-active" type="button" aria-label="Go to photo 1" id="gDot0"></button>
-                    <button class="g-dot" type="button" aria-label="Go to photo 2" id="gDot1"></button>
-                    <button class="g-dot" type="button" aria-label="Go to photo 3" id="gDot2"></button>
-                  </div>
-                  <button class="g-btn" type="button" aria-label="Next photo" id="gNext">&#8250;</button>
-                </div>
+          <div class="gallery" aria-label="North Miami image carousel">
+            <div class="gallery-viewport" id="galleryViewport">
+              <div class="g-slide is-active" data-index="0" aria-hidden="false">
+                <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 1">
               </div>
-              <p class="muted" style="margin-top:10px;">Swap these placeholders with real store photos when ready.</p>
+              <div class="g-slide" data-index="1" aria-hidden="true">
+                <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 2">
+              </div>
+              <div class="g-slide" data-index="2" aria-hidden="true">
+                <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami photo placeholder 3">
+              </div>
+            </div>
+
+            <div class="g-controls">
+              <button class="g-btn" type="button" aria-label="Previous photo" id="gPrev">&#8249;</button>
+              <div class="g-dots" role="tablist" aria-label="Photo pagination">
+                <button class="g-dot is-active" type="button" aria-label="Go to photo 1" id="gDot0"></button>
+                <button class="g-dot" type="button" aria-label="Go to photo 2" id="gDot1"></button>
+                <button class="g-dot" type="button" aria-label="Go to photo 3" id="gDot2"></button>
+              </div>
+              <button class="g-btn" type="button" aria-label="Next photo" id="gNext">&#8250;</button>
             </div>
           </div>
-
-          <!-- 9:16 video slot -->
-          <div>
-            <div class="card" style="border:0; box-shadow:none; background:transparent;">
-              <h2 style="margin:0 0 10px; font-size:18px; color: var(--hd-burgundy); font-weight:900;">Featured video (9:16)</h2>
-              <div class="video-slot" aria-label="9 by 16 video embed slot">
-                <div class="video-head">
-                  <div class="label">Video embed</div>
-                  <a class="chip" href="#" onclick="return false;">Placeholder</a>
-                </div>
-                <div class="video-frame">
-                  Add a 9:16 embed here later (Instagram Reel, TikTok, YouTube Shorts).<br><br>
-                  Replace with an iframe or video tag.
-                </div>
-              </div>
-              <p class="muted" style="margin-top:10px;">When you have the video link, I can wire up the exact embed code.</p>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Details + Map + FAQ -->
         <div class="card pad" aria-label="Store details">
           <h2>Store details</h2>
           <p class="muted" style="margin:0;">
@@ -899,13 +815,32 @@
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
 
-      <!-- SIDEBAR -->
-      <aside class="stack" aria-label="North Miami sidebar">
+      <!-- RIGHT COLUMN -->
+      <aside class="sidebar" aria-label="North Miami sidebar">
+
+        <div class="hero-card" aria-label="North Miami at a glance">
+          <div class="img">
+            <img src="/assets/images/placeholders/hd_locations_placeholder.jpg" alt="North Miami storefront placeholder image">
+          </div>
+          <div class="pad">
+            <p class="mini">
+              1809 NE 123rd St, North Miami, FL 33181<br>
+              Call (786) 963-8203
+            </p>
+            <div class="k-badges" aria-label="Highlights">
+              <span class="badge">Family</span>
+              <span class="badge">Friendly staff</span>
+              <span class="badge">Great service</span>
+              <span class="badge">Parking</span>
+              <span class="badge">Flavors</span>
+              <span class="badge">Dairy-free options</span>
+            </div>
+          </div>
+        </div>
+
         <div class="card pad">
           <h2>Hours</h2>
           <p class="muted">Plan your stop for dessert, pickup, or a quick family treat.</p>
@@ -919,16 +854,6 @@
           <div class="quick-actions">
             <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
             <a class="chip" href="tel:+17869638203">Call</a>
-          </div>
-        </div>
-
-        <div class="card pad">
-          <h2>Menu and cakes</h2>
-          <p class="muted">Browse ahead to speed up ordering.</p>
-          <div class="divider"></div>
-          <div class="quick-actions">
-            <a class="chip primary" href="/menu">Menu</a>
-            <a class="chip primary" href="/cakes">Cakes</a>
           </div>
         </div>
 
@@ -952,8 +877,23 @@
             <a class="chip" href="/contact">Contact us</a>
           </div>
         </div>
-      </aside>
 
+        <div class="card pad" aria-label="Featured video">
+          <h2>Featured video (9:16)</h2>
+          <div class="video-slot" aria-label="9 by 16 video embed slot">
+            <div class="video-head">
+              <div class="label">Video embed</div>
+            </div>
+            <div class="video-frame">
+              Add a 9:16 embed here later (Instagram Reel, TikTok, YouTube Shorts).
+              <br><br>
+              Replace with an iframe or video tag.
+            </div>
+          </div>
+          <p class="muted" style="margin-top:10px;">When you have the video link, I can wire up the exact embed code.</p>
+        </div>
+
+      </aside>
     </div>
   </div>
 </section>
