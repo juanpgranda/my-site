@@ -126,9 +126,42 @@ h1 {
   letter-spacing: 0.02em;
 }
 
-form {
-  padding: 16px;
+.form-head-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
 }
+
+.help {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.view-cakes-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(101, 11, 50, 0.18);
+  background: rgba(255,255,255,0.75);
+  color: var(--hd-burgundy);
+  white-space: nowrap;
+}
+.view-cakes-btn:hover,
+.view-cakes-btn:focus {
+  outline: none;
+  background: rgba(249, 230, 195, 0.70);
+  border-color: rgba(101, 11, 50, 0.26);
+}
+
+form { padding: 16px; }
 
 .grid {
   display: grid;
@@ -137,10 +170,7 @@ form {
   align-items: start;
 }
 
-.field {
-  display: grid;
-  gap: 6px;
-}
+.field { display: grid; gap: 6px; }
 
 label {
   font-size: 12px;
@@ -168,12 +198,6 @@ input:focus, select:focus, textarea:focus {
 textarea {
   min-height: 110px;
   resize: vertical;
-}
-
-.help {
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.4;
 }
 
 .full { grid-column: 1 / -1; }
@@ -232,6 +256,94 @@ textarea {
 .status.ok { color: rgba(14, 96, 45, 0.95); }
 .status.err { color: rgba(150, 20, 40, 0.95); }
 
+/* Cake preview (inline, lightweight) */
+.design-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.preview-card {
+  border: 1px solid rgba(101, 11, 50, 0.14);
+  background: rgba(249, 230, 195, 0.16);
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+}
+
+.preview-img {
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  background: #efe8db;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.preview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.preview-meta {
+  display: grid;
+  gap: 6px;
+  align-content: center;
+  min-width: 0;
+}
+
+.preview-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(101, 11, 50, 0.70);
+}
+
+.preview-name {
+  font-weight: 900;
+  color: var(--hd-burgundy);
+  font-size: 14px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview-links {
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.preview-link {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--hd-burgundy);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(101, 11, 50, 0.25);
+  padding-bottom: 1px;
+  line-height: 1.1;
+}
+.preview-link:hover,
+.preview-link:focus {
+  outline: none;
+  border-bottom-color: rgba(101, 11, 50, 0.65);
+}
+
+.preview-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
 @media (max-width: 900px) {
   h1 { font-size: 38px; }
 }
@@ -241,6 +353,10 @@ textarea {
   h1 { font-size: 34px; }
   .hero-top-bg .spacer { min-height: 46px; }
   .btn { width: 100%; min-width: 0; }
+  .form-head { align-items: flex-start; }
+  .form-head-right { flex-direction: column; align-items: flex-end; gap: 6px; }
+  .preview-card { grid-template-columns: 96px 1fr; }
+  .preview-img { width: 96px; }
 }
   </style>
 </head>
@@ -271,7 +387,10 @@ textarea {
     <div class="form-card" role="region" aria-label="Cake order form card">
       <div class="form-head">
         <div class="title">Cake Order Form</div>
-        <div class="help" id="minDateHint"></div>
+        <div class="form-head-right">
+          <a class="view-cakes-btn" href="/cakes" target="_blank" rel="noopener noreferrer">View Cakes</a>
+          <div class="help" id="minDateHint"></div>
+        </div>
       </div>
 
       <form id="cakeOrderForm" novalidate>
@@ -296,19 +415,37 @@ textarea {
             <input id="email" name="email" type="email" autocomplete="email" required>
           </div>
 
-          <div class="field">
-            <label for="cakeDesign">Cake Design</label>
-            <select id="cakeDesign" name="cake_design" required>
-              <option value="" selected disabled>Select a cake design</option>
-              <option>Ribbon Cake</option>
-              <option>Dulce de Leche Cake</option>
-              <option>Coffee Crunch Cake</option>
-              <option>Rose's Birthday Cake</option>
-              <option>Cookies and Cream Cake</option>
-              <option>Triple Chocolate Cake</option>
-              <option>Just Because Cake</option>
-              <option>Reuben's Birthday Cake</option>
-            </select>
+          <div class="field full">
+            <div class="design-block">
+              <div class="field" style="margin:0;">
+                <label for="cakeDesign">Cake Design</label>
+                <select id="cakeDesign" name="cake_design" required>
+                  <option value="" selected disabled>Select a cake design</option>
+                  <option>Ribbon Cake</option>
+                  <option>Dulce de Leche Cake</option>
+                  <option>Coffee Crunch Cake</option>
+                  <option>Rose's Birthday Cake</option>
+                  <option>Cookies and Cream Cake</option>
+                  <option>Triple Chocolate Cake</option>
+                  <option>Just Because Cake</option>
+                  <option>Reuben's Birthday Cake</option>
+                </select>
+              </div>
+
+              <div class="preview-card" aria-label="Selected cake preview" id="cakePreviewCard">
+                <div class="preview-img" aria-hidden="true">
+                  <img id="cakePreviewImg" src="/assets/images/placeholders/hd_cakes_01.png" alt="">
+                </div>
+                <div class="preview-meta">
+                  <div class="preview-label">Selected cake</div>
+                  <div class="preview-name" id="cakePreviewName">Choose a cake design to preview</div>
+                  <div class="preview-links">
+                    <a class="preview-link" href="/cakes" target="_blank" rel="noopener noreferrer">View all cakes</a>
+                  </div>
+                  <div class="preview-hint">This preview updates when you change the Cake Design.</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="field">
@@ -321,6 +458,13 @@ textarea {
           </div>
 
           <div class="field">
+            <label for="flavorDistribution">Flavor Distribution</label>
+            <select id="flavorDistribution" name="flavor_distribution" required>
+              <option selected>Layered</option>
+            </select>
+          </div>
+
+          <div class="field">
             <label for="firstFlavor">First Flavor</label>
             <select id="firstFlavor" name="first_flavor" required></select>
           </div>
@@ -328,13 +472,6 @@ textarea {
           <div class="field">
             <label for="secondFlavor">Second Flavor</label>
             <select id="secondFlavor" name="second_flavor" required></select>
-          </div>
-
-          <div class="field">
-            <label for="flavorDistribution">Flavor Distribution</label>
-            <select id="flavorDistribution" name="flavor_distribution" required>
-              <option selected>Layered</option>
-            </select>
           </div>
 
           <div class="field">
@@ -417,28 +554,7 @@ textarea {
   </script>
   <script>
     (function () {
-      function loadInto(id, url) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        fetch(url, { cache: "no-cache" })
-          .then(function (r) { return r.text(); })
-          .then(function (html) { el.innerHTML = html; })
-          .catch(function () { el.innerHTML = ""; });
-      }
-
-      var docLang = document.documentElement.getAttribute("lang") || "en";
-      var isEs = docLang.toLowerCase().indexOf("es") === 0;
-
-      var headerUrl = isEs ? "/assets/includes/header-es.html" : "/assets/includes/header.html";
-      var footerUrl = isEs ? "/assets/includes/footer-es.html" : "/assets/includes/footer.html";
-
-      loadInto("siteHeader", headerUrl);
-      loadInto("siteFooter", footerUrl);
-    })();
-  </script>
-  <script>
-    (function () {
-      var WEB_APP_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+      var WEB_APP_URL = "https://script.google.com/a/macros/klizos.com/s/AKfycbx0aYS-y84nQkUt-uNKDh_y5IcvGdKhTiF02mkjEaPWmcB4dDQ70u8S06GDJd9CtSRMXA/exec";
       var PROCESSING_DAYS = 2;
 
       var flavors = [
@@ -483,6 +599,10 @@ textarea {
       var customMessageWrap = document.getElementById("customMessageWrap");
       var specialInstructions = document.getElementById("specialInstructions");
       var charCounter = document.getElementById("charCounter");
+
+      var cakeDesign = document.getElementById("cakeDesign");
+      var cakePreviewImg = document.getElementById("cakePreviewImg");
+      var cakePreviewName = document.getElementById("cakePreviewName");
 
       var form = document.getElementById("cakeOrderForm");
       var statusMsg = document.getElementById("statusMsg");
@@ -567,11 +687,56 @@ textarea {
         charCounter.textContent = n + " / 500";
       }
 
+      function slugifyCakeName(name) {
+        return String(name || "")
+          .toLowerCase()
+          .replace(/&/g, "and")
+          .replace(/'/g, "")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "");
+      }
+
+      /*
+        Preview image mapping
+        Recommended: put your real cake images here once available, e.g.
+        "/assets/images/cakes/ribbon-cake.jpg"
+
+        For now: it falls back to a safe placeholder.
+      */
+      function getCakeImageUrl(cakeName) {
+        var slug = slugifyCakeName(cakeName);
+        var map = {
+          "ribbon-cake": "/assets/images/placeholders/hd_cakes_01.png",
+          "dulce-de-leche-cake": "/assets/images/placeholders/hd_cakes_01.png",
+          "coffee-crunch-cake": "/assets/images/placeholders/hd_cakes_01.png",
+          "roses-birthday-cake": "/assets/images/placeholders/hd_cakes_01.png",
+          "cookies-and-cream-cake": "/assets/images/placeholders/hd_cakes_01.png",
+          "triple-chocolate-cake": "/assets/images/placeholders/hd_cakes_01.png",
+          "just-because-cake": "/assets/images/placeholders/hd_cakes_01.png",
+          "reubens-birthday-cake": "/assets/images/placeholders/hd_cakes_01.png"
+        };
+        return map[slug] || "/assets/images/placeholders/hd_cakes_01.png";
+      }
+
+      function updateCakePreview() {
+        var selected = (cakeDesign.value || "").trim();
+        if (!selected) {
+          cakePreviewName.textContent = "Choose a cake design to preview";
+          cakePreviewImg.src = "/assets/images/placeholders/hd_cakes_01.png";
+          cakePreviewImg.alt = "";
+          return;
+        }
+        cakePreviewName.textContent = selected;
+        cakePreviewImg.src = getCakeImageUrl(selected);
+        cakePreviewImg.alt = selected;
+      }
+
       fillFlavorSelect(firstFlavor);
       fillFlavorSelect(secondFlavor);
       setEarliestPickup();
       toggleCustomMessage();
       updateCounter();
+      updateCakePreview();
 
       firstName.addEventListener("blur", function () { firstName.value = capFirst(firstName.value); });
       lastName.addEventListener("blur", function () { lastName.value = capFirst(lastName.value); });
@@ -581,15 +746,15 @@ textarea {
       });
 
       messageChoice.addEventListener("change", toggleCustomMessage);
-
       specialInstructions.addEventListener("input", updateCounter);
+      cakeDesign.addEventListener("change", updateCakePreview);
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         setStatus("", "");
 
-        if (!WEB_APP_URL || WEB_APP_URL.indexOf("PASTE_YOUR_WEB_APP_URL_HERE") !== -1) {
-          setStatus("Web App URL is not set yet. Paste your Apps Script Web App URL into this page first.", "err");
+        if (!WEB_APP_URL) {
+          setStatus("Web App URL is not set yet.", "err");
           return;
         }
 
@@ -611,7 +776,6 @@ textarea {
           special_instructions: (document.getElementById("specialInstructions").value || "").trim()
         };
 
-        // Basic required validation
         var required = [
           "first_name","last_name","phone","email","cake_design","cake_size",
           "first_flavor","second_flavor","flavor_distribution",
@@ -647,6 +811,7 @@ textarea {
             setEarliestPickup();
             toggleCustomMessage();
             updateCounter();
+            updateCakePreview();
           } else {
             setStatus("Could not submit. " + (res && res.error ? res.error : "Please try again."), "err");
           }
