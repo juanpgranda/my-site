@@ -378,164 +378,166 @@ textarea {
           Earliest pickup: <strong id="earliestPickupText">Calculating...</strong>.<br>
           If needing sooner, contact store for inventory availability
         </div>
-    <div style="height:14px;"></div>
+        <div style="height:14px;"></div>
 
-    <h1>Celebrate with Cake</h1>
-    <p class="sublead">
-      Fill out this form and we will confirm your pickup details. If you need a faster pickup, contact the store for inventory availability.
-    </p>
-  </div>
-</section>
-
-<section class="section" aria-label="Cake order form section">
-  <div class="container">
-    <div class="form-card" role="region" aria-label="Cake order form card">
-      <div class="form-head">
-        <div class="title">Cake Order Form</div>
-        <div class="right">
-          <a class="view-cakes-btn" href="/cakes" target="_blank" rel="noopener noreferrer">View Cakes</a>
-          <div class="help" id="minDateHint"></div>
-        </div>
+        <h1>Celebrate with Cake</h1>
+        <p class="sublead">
+          Fill out this form and we will confirm your pickup details. If you need a faster pickup, contact the store for inventory availability.
+        </p>
       </div>
+    </section>
 
-      <form id="cakeOrderForm" novalidate>
-        <div class="grid">
-          <div class="field">
-            <label for="firstName">First Name</label>
-            <input id="firstName" name="first_name" type="text" autocomplete="given-name" required>
+    <section class="section" aria-label="Cake order form section">
+      <div class="container">
+        <div class="form-card" role="region" aria-label="Cake order form card">
+          <div class="form-head">
+            <div class="title">Cake Order Form</div>
+            <div class="right">
+              <a class="view-cakes-btn" href="/cakes" target="_blank" rel="noopener noreferrer">View Cakes</a>
+              <div class="help" id="minDateHint"></div>
+            </div>
           </div>
 
-          <div class="field">
-            <label for="lastName">Last Name</label>
-            <input id="lastName" name="last_name" type="text" autocomplete="family-name" required>
-          </div>
+          <form id="cakeOrderForm" novalidate>
+            <div class="grid">
+              <div class="field">
+                <label for="firstName">First Name</label>
+                <input id="firstName" name="first_name" type="text" autocomplete="given-name" required>
+              </div>
 
-          <div class="field">
-            <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(786) 555-1212" required>
-          </div>
+              <div class="field">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" name="last_name" type="text" autocomplete="family-name" required>
+              </div>
 
-          <div class="field">
-            <label for="email">Email Address</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
+              <div class="field">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(786) 555-1212" required>
+              </div>
 
-          <div class="field full">
-            <div class="design-row">
-              <div class="field" style="margin:0;">
-                <label for="cakeDesign">Cake Design</label>
-                <select id="cakeDesign" name="cake_design" required>
-                  <option value="" selected disabled>Select a cake design</option>
-                  <option>Ribbon Cake</option>
-                  <option>Dulce de Leche Cake</option>
-                  <option>Coffee Crunch Cake</option>
-                  <option>Rose's Birthday Cake</option>
-                  <option>Cookies and Cream Cake</option>
-                  <option>Triple Chocolate Cake</option>
-                  <option>Just Because Cake</option>
-                  <option>Reuben's Birthday Cake</option>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+
+              <div class="field full">
+                <div class="design-row">
+                  <div class="field" style="margin:0;">
+                    <label for="cakeDesign">Cake Design</label>
+                    <select id="cakeDesign" name="cake_design" required>
+                      <option value="" selected disabled>Select a cake design</option>
+                      <option>Ribbon Cake</option>
+                      <option>Dulce de Leche Cake</option>
+                      <option>Coffee Crunch Cake</option>
+                      <option>Rose’s Birthday Cake</option>
+                      <option>Reuben’s Birthday Cake</option>
+                      <option>Cookies &amp; Cream Cake</option>
+                      <option>Triple Chocolate Cake</option>
+                      <option>Just Because Cake</option>
+                    </select>
+                  </div>
+
+                  <div class="preview-card" aria-label="Selected cake preview" id="cakePreviewCard">
+                    <div class="preview-img" aria-hidden="true">
+                      <img id="cakePreviewImg" src="/assets/images/cakes/RibbonCake_Whole_041725.jpg" alt="">
+                    </div>
+                    <div class="preview-meta">
+                      <div class="preview-label">Selected cake</div>
+                      <div class="preview-name" id="cakePreviewName">Choose a cake design to preview</div>
+                      <div class="preview-links">
+                        <a class="preview-link" href="/cakes" target="_blank" rel="noopener noreferrer">View all cakes</a>
+                      </div>
+                      <div class="preview-hint">Preview updates when you change the Cake Design.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="cakeSize">Cake Size</label>
+                <select id="cakeSize" name="cake_size" required>
+                  <option value="" selected disabled>Select a cake size</option>
+                  <option>2x6 (serves 6-8)</option>
+                  <option>2x8 (serves 12-15)</option>
                 </select>
               </div>
 
-              <div class="preview-card" aria-label="Selected cake preview" id="cakePreviewCard">
-                <div class="preview-img" aria-hidden="true">
-                  <img id="cakePreviewImg" src="/assets/images/placeholders/hd_cakes_01.png" alt="">
+              <div class="field">
+                <label for="flavorDistribution">Flavor Distribution</label>
+                <select id="flavorDistribution" name="flavor_distribution" required>
+                  <option selected>Layered</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="firstFlavor">First Flavor</label>
+                <select id="firstFlavor" name="first_flavor" required></select>
+              </div>
+
+              <div class="field">
+                <label for="secondFlavor">Second Flavor</label>
+                <select id="secondFlavor" name="second_flavor" required></select>
+              </div>
+
+              <div class="field">
+                <label for="pickupDate">Pick Up Date</label>
+                <input id="pickupDate" name="pickup_date" type="date" required>
+                <div class="help">Earliest available date is auto-set.</div>
+              </div>
+
+              <div class="field">
+                <label for="pickupTime">Pick Up Time</label>
+                <input id="pickupTime" name="pickup_time" type="time" step="900" required>
+                <div class="help">15-minute increments for easier scheduling.</div>
+              </div>
+
+              <div class="field full">
+                <label for="pickupLocation">Pick Up Location</label>
+                <select id="pickupLocation" name="pickup_location" required>
+                  <option value="" selected disabled>Select pickup location</option>
+                  <option>Häagen-Dazs North Miami (Causeway Square)</option>
+                  <option>Häagen-Dazs North Beach (6978 Collins Ave)</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="messageChoice">Message on the Cake</label>
+                <select id="messageChoice" name="message_on_cake_choice" required>
+                  <option value="" selected disabled>Select a message</option>
+                  <option>Happy Birthday</option>
+                  <option>Custom - write in Special Instructions</option>
+                </select>
+                <div class="help" id="messageHelp">If you choose Custom, write the exact message in Special Instructions.</div>
+              </div>
+
+              <div class="field full" id="customMessageWrap" style="display:none;">
+                <label for="customMessage">Custom Message on the Cake</label>
+                <input id="customMessage" name="custom_message_on_cake" type="text" placeholder="Example: Congrats Maria">
+                <div class="help">Optional. You can also write this in Special Instructions.</div>
+              </div>
+
+              <div class="field full">
+                <div class="inline-row">
+                  <label for="specialInstructions">Special Instructions</label>
+                  <div class="counter" id="charCounter">0 / 500</div>
                 </div>
-                <div class="preview-meta">
-                  <div class="preview-label">Selected cake</div>
-                  <div class="preview-name" id="cakePreviewName">Choose a cake design to preview</div>
-                  <div class="preview-links">
-                    <a class="preview-link" href="/cakes" target="_blank" rel="noopener noreferrer">View all cakes</a>
-                  </div>
-                  <div class="preview-hint">Preview updates when you change the Cake Design.</div>
-                </div>
+                <textarea id="specialInstructions" name="special_instructions" maxlength="500" placeholder="Allergies, custom message, pickup notes, decorations, etc."></textarea>
+                <div class="help">500 character limit.</div>
               </div>
             </div>
-          </div>
 
-          <div class="field">
-            <label for="cakeSize">Cake Size</label>
-            <select id="cakeSize" name="cake_size" required>
-              <option value="" selected disabled>Select a cake size</option>
-              <option>2x6 (serves 6-8)</option>
-              <option>2x8 (serves 12-15)</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="flavorDistribution">Flavor Distribution</label>
-            <select id="flavorDistribution" name="flavor_distribution" required>
-              <option selected>Layered</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="firstFlavor">First Flavor</label>
-            <select id="firstFlavor" name="first_flavor" required></select>
-          </div>
-
-          <div class="field">
-            <label for="secondFlavor">Second Flavor</label>
-            <select id="secondFlavor" name="second_flavor" required></select>
-          </div>
-
-          <div class="field">
-            <label for="pickupDate">Pick Up Date</label>
-            <input id="pickupDate" name="pickup_date" type="date" required>
-            <div class="help">Earliest available date is auto-set.</div>
-          </div>
-
-          <div class="field">
-            <label for="pickupTime">Pick Up Time</label>
-            <input id="pickupTime" name="pickup_time" type="time" step="900" required>
-            <div class="help">15-minute increments for easier scheduling.</div>
-          </div>
-
-          <div class="field full">
-            <label for="pickupLocation">Pick Up Location</label>
-            <select id="pickupLocation" name="pickup_location" required>
-              <option value="" selected disabled>Select pickup location</option>
-              <option>Häagen-Dazs North Miami (Causeway Square)</option>
-              <option>Häagen-Dazs North Beach (6978 Collins Ave)</option>
-            </select>
-          </div>
-
-          <div class="field full">
-            <label for="messageChoice">Message on the Cake</label>
-            <select id="messageChoice" name="message_on_cake_choice" required>
-              <option value="" selected disabled>Select a message</option>
-              <option>Happy Birthday</option>
-              <option>Custom - write in Special Instructions</option>
-            </select>
-            <div class="help" id="messageHelp">If you choose Custom, write the exact message in Special Instructions.</div>
-          </div>
-
-          <div class="field full" id="customMessageWrap" style="display:none;">
-            <label for="customMessage">Custom Message on the Cake</label>
-            <input id="customMessage" name="custom_message_on_cake" type="text" placeholder="Example: Congrats Maria">
-            <div class="help">Optional. You can also write this in Special Instructions.</div>
-          </div>
-
-          <div class="field full">
-            <div class="inline-row">
-              <label for="specialInstructions">Special Instructions</label>
-              <div class="counter" id="charCounter">0 / 500</div>
+            <div class="actions">
+              <button class="btn" type="submit" id="submitBtn">Submit Form</button>
+              <div class="status" id="statusMsg" aria-live="polite"></div>
             </div>
-            <textarea id="specialInstructions" name="special_instructions" maxlength="500" placeholder="Allergies, custom message, pickup notes, decorations, etc."></textarea>
-            <div class="help">500 character limit.</div>
-          </div>
+          </form>
         </div>
-
-        <div class="actions">
-          <button class="btn" type="submit" id="submitBtn">Submit Form</button>
-          <div class="status" id="statusMsg" aria-live="polite"></div>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
   </main>
+
   <div id="siteFooter"></div>
+
   <script>
     (function () {
       function loadInto(id, url) {
@@ -557,6 +559,7 @@ textarea {
       loadInto("siteFooter", footerUrl);
     })();
   </script>
+
   <script>
     (function () {
       var WEB_APP_URL = "https://script.google.com/a/macros/klizos.com/s/AKfycbx0aYS-y84nQkUt-uNKDh_y5IcvGdKhTiF02mkjEaPWmcB4dDQ70u8S06GDJd9CtSRMXA/exec";
@@ -692,33 +695,29 @@ textarea {
         charCounter.textContent = n + " / 500";
       }
 
-      function slugifyCakeName(name) {
-        return String(name || "")
-          .toLowerCase()
-          .replace(/&/g, "and")
-          .replace(/'/g, "")
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/(^-|-$)/g, "");
+      function normalizeKey(s) {
+        return String(s || "")
+          .trim()
+          .replace(/\u2019/g, "'")
+          .replace(/\u2018/g, "'")
+          .replace(/\s+/g, " ");
       }
 
-      /*
-        Preview image mapping:
-        - Replace these with your real image paths when ready.
-        - Example: "/assets/images/cakes/ribbon-cake.jpg"
-      */
       function getCakeImageUrl(cakeName) {
-        var slug = slugifyCakeName(cakeName);
+        var key = normalizeKey(cakeName);
+
         var map = {
-          "ribbon-cake": "/assets/images/placeholders/hd_cakes_01.png",
-          "dulce-de-leche-cake": "/assets/images/placeholders/hd_cakes_01.png",
-          "coffee-crunch-cake": "/assets/images/placeholders/hd_cakes_01.png",
-          "roses-birthday-cake": "/assets/images/placeholders/hd_cakes_01.png",
-          "cookies-and-cream-cake": "/assets/images/placeholders/hd_cakes_01.png",
-          "triple-chocolate-cake": "/assets/images/placeholders/hd_cakes_01.png",
-          "just-because-cake": "/assets/images/placeholders/hd_cakes_01.png",
-          "reubens-birthday-cake": "/assets/images/placeholders/hd_cakes_01.png"
+          "Ribbon Cake": "/assets/images/cakes/RibbonCake_Whole_041725.jpg",
+          "Dulce de Leche Cake": "/assets/images/cakes/DulcedeLecheCake_Whole_041725.jpg",
+          "Coffee Crunch Cake": "/assets/images/cakes/CoffeeCrunchCake_Whole_041725.jpg",
+          "Rose's Birthday Cake": "/assets/images/cakes/RosesBirthdayCake_Whole_041725.jpg",
+          "Reuben's Birthday Cake": "/assets/images/cakes/ReubensBirthdayCake_Whole_041725.jpg",
+          "Cookies & Cream Cake": "/assets/images/cakes/CookiesAndCreamCake_Whole_041725.jpg",
+          "Triple Chocolate Cake": "/assets/images/cakes/TripleChocolateCake_Whole_041725.jpg",
+          "Just Because Cake": "/assets/images/cakes/JustBecauseCake_Whole_041725.jpg"
         };
-        return map[slug] || "/assets/images/placeholders/hd_cakes_01.png";
+
+        return map[key] || "/assets/images/placeholders/hd_cakes_01.png";
       }
 
       function updateCakePreview() {
@@ -729,8 +728,11 @@ textarea {
           cakePreviewImg.alt = "";
           return;
         }
+
         cakePreviewName.textContent = selected;
-        cakePreviewImg.src = getCakeImageUrl(selected);
+
+        var img = getCakeImageUrl(selected);
+        cakePreviewImg.src = img;
         cakePreviewImg.alt = selected;
       }
 
