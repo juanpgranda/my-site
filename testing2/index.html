@@ -126,7 +126,7 @@ h1 {
   letter-spacing: 0.02em;
 }
 
-.form-head-right {
+.form-head .right {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -150,14 +150,15 @@ h1 {
   font-size: 12px;
   letter-spacing: 0.02em;
   border: 1px solid rgba(101, 11, 50, 0.18);
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.78);
   color: var(--hd-burgundy);
   white-space: nowrap;
 }
+
 .view-cakes-btn:hover,
 .view-cakes-btn:focus {
   outline: none;
-  background: rgba(249, 230, 195, 0.70);
+  background: rgba(249, 230, 195, 0.75);
   border-color: rgba(101, 11, 50, 0.26);
 }
 
@@ -170,7 +171,10 @@ form { padding: 16px; }
   align-items: start;
 }
 
-.field { display: grid; gap: 6px; }
+.field {
+  display: grid;
+  gap: 6px;
+}
 
 label {
   font-size: 12px;
@@ -256,8 +260,8 @@ textarea {
 .status.ok { color: rgba(14, 96, 45, 0.95); }
 .status.err { color: rgba(150, 20, 40, 0.95); }
 
-/* Cake preview (inline, lightweight) */
-.design-block {
+/* Cake preview block */
+.design-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -332,6 +336,7 @@ textarea {
   padding-bottom: 1px;
   line-height: 1.1;
 }
+
 .preview-link:hover,
 .preview-link:focus {
   outline: none;
@@ -354,7 +359,7 @@ textarea {
   .hero-top-bg .spacer { min-height: 46px; }
   .btn { width: 100%; min-width: 0; }
   .form-head { align-items: flex-start; }
-  .form-head-right { flex-direction: column; align-items: flex-end; gap: 6px; }
+  .form-head .right { flex-direction: column; align-items: flex-end; gap: 6px; }
   .preview-card { grid-template-columns: 96px 1fr; }
   .preview-img { width: 96px; }
 }
@@ -387,7 +392,7 @@ textarea {
     <div class="form-card" role="region" aria-label="Cake order form card">
       <div class="form-head">
         <div class="title">Cake Order Form</div>
-        <div class="form-head-right">
+        <div class="right">
           <a class="view-cakes-btn" href="/cakes" target="_blank" rel="noopener noreferrer">View Cakes</a>
           <div class="help" id="minDateHint"></div>
         </div>
@@ -416,7 +421,7 @@ textarea {
           </div>
 
           <div class="field full">
-            <div class="design-block">
+            <div class="design-row">
               <div class="field" style="margin:0;">
                 <label for="cakeDesign">Cake Design</label>
                 <select id="cakeDesign" name="cake_design" required>
@@ -442,7 +447,7 @@ textarea {
                   <div class="preview-links">
                     <a class="preview-link" href="/cakes" target="_blank" rel="noopener noreferrer">View all cakes</a>
                   </div>
-                  <div class="preview-hint">This preview updates when you change the Cake Design.</div>
+                  <div class="preview-hint">Preview updates when you change the Cake Design.</div>
                 </div>
               </div>
             </div>
@@ -697,11 +702,9 @@ textarea {
       }
 
       /*
-        Preview image mapping
-        Recommended: put your real cake images here once available, e.g.
-        "/assets/images/cakes/ribbon-cake.jpg"
-
-        For now: it falls back to a safe placeholder.
+        Preview image mapping:
+        - Replace these with your real image paths when ready.
+        - Example: "/assets/images/cakes/ribbon-cake.jpg"
       */
       function getCakeImageUrl(cakeName) {
         var slug = slugifyCakeName(cakeName);
@@ -752,11 +755,6 @@ textarea {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         setStatus("", "");
-
-        if (!WEB_APP_URL) {
-          setStatus("Web App URL is not set yet.", "err");
-          return;
-        }
 
         var data = {
           first_name: (document.getElementById("firstName").value || "").trim(),
