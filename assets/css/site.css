@@ -41,13 +41,14 @@
    ========================= */
 
 :root {
+  /* Brand Colors */
   --hd-burgundy: #650B32;
   --hd-gold: #D29937;
   --hd-gold-medium: #F9D79C;
   --hd-gold-light: #F9E6C3;
   --hd-white: #FFFFFF;
 
-  /* Poppins everywhere by default */
+  /* Typography: Poppins everywhere by default */
   --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-headline: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-script: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -58,7 +59,7 @@
 }
 
 /* =========================
-   Base Typography
+   Base + Global Typography
    ========================= */
 
 html { box-sizing: border-box; }
@@ -66,27 +67,37 @@ html { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: var(--font-body);
+  font-family: var(--font-body) !important;
   color: var(--hd-burgundy);
   background-color: var(--hd-white);
   line-height: 1.5;
 }
 
+/* Make sure everything inherits Poppins by default */
+* {
+  font-family: inherit;
+}
+
 /* Headings also Poppins site-wide */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-headline);
+  font-family: var(--font-headline) !important;
   font-weight: 800;
   color: var(--hd-burgundy);
 }
 
-/* Force form controls + “bubbles” to stay Poppins */
+/* Links inherit Poppins */
+a {
+  font-family: inherit;
+}
+
+/* Force form controls + buttons + chips to stay Poppins */
 button,
 input,
 select,
 textarea,
 .chip,
 .btn {
-  font-family: var(--font-body);
+  font-family: var(--font-body) !important;
 }
 
 /* =========================
@@ -94,12 +105,12 @@ textarea,
    ========================= */
 
 .hd-headline {
-  font-family: var(--font-brand-headline);
+  font-family: var(--font-brand-headline) !important;
   font-weight: 700;
 }
 
 .brand-script {
-  font-family: var(--font-brand-script);
+  font-family: var(--font-brand-script) !important;
 }
 
 /* =========================
