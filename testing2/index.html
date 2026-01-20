@@ -176,10 +176,11 @@
       min-width: 0;
     }
 
-    /* Second line inside buttons */
+    /* Second line inside buttons: force true line 2 (no orphan "for") */
     .btn-sub {
-      display: inline-block;
+      display: block;
       font-weight: 900;
+      margin-top: 2px;
     }
 
     /* Primary review CTAs: light gold fill */
@@ -537,13 +538,13 @@
                 <div class="count">216 Google reviews total</div>
               </div>
 
-              <!-- UPDATED: force location onto second line -->
+              <!-- FIXED: exactly 2 lines, no orphan "for" -->
               <div class="cta-row" aria-label="Primary actions">
                 <a class="btn btn-primary" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer">
-                  Write a review for<br><span class="btn-sub">North Miami</span>
+                  Write a review<span class="btn-sub">North Miami</span>
                 </a>
                 <a class="btn btn-primary" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer">
-                  Write a review for<br><span class="btn-sub">North Beach</span>
+                  Write a review<span class="btn-sub">North Beach</span>
                 </a>
                 <a class="btn btn-tertiary full" href="/menu">View Menu</a>
               </div>
