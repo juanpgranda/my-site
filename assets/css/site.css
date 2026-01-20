@@ -1,4 +1,10 @@
 /* =========================
+   Google Font (Site-wide)
+   ========================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+/* =========================
    Brand Webfonts (Self-hosted)
    ========================= */
 
@@ -44,7 +50,9 @@
   /* Brand Fonts */
   --font-headline: "Dazs", serif;
   --font-script: "Dazs Script", cursive;
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Site Body Font (Poppins site-wide) */
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 /* =========================
@@ -61,7 +69,7 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-body);
+  font-family: var(--font-body) !important;
   color: var(--hd-burgundy);
   background-color: var(--hd-white);
   line-height: 1.5;
