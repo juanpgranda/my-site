@@ -6,6 +6,7 @@
 
 /* =========================
    Brand Webfonts (Self-hosted)
+   Kept for optional use, but NOT used by default site-wide
    ========================= */
 
 @font-face {
@@ -46,23 +47,22 @@
   --hd-gold-light: #F9E6C3;
   --hd-white: #FFFFFF;
 
-  /* Fonts */
-  --font-headline: "Dazs", serif;
-  --font-script: "Dazs Script", cursive;
+  /* Poppins everywhere by default */
   --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-headline: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-script: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Optional brand fonts (opt-in only) */
+  --font-brand-headline: "Dazs", serif;
+  --font-brand-script: "Dazs Script", cursive;
 }
 
 /* =========================
    Base Typography
    ========================= */
 
-html {
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
 
 body {
   margin: 0;
@@ -72,23 +72,39 @@ body {
   line-height: 1.5;
 }
 
-/* Headings use Poppins by default */
+/* Headings also Poppins site-wide */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-body);
+  font-family: var(--font-headline);
   font-weight: 800;
   color: var(--hd-burgundy);
 }
 
-/* Opt-in brand type when you want it */
+/* Force form controls + “bubbles” to stay Poppins */
+button,
+input,
+select,
+textarea,
+.chip,
+.btn {
+  font-family: var(--font-body);
+}
+
+/* =========================
+   Opt-in Brand Type (only if you add these classes)
+   ========================= */
+
 .hd-headline {
-  font-family: var(--font-headline);
+  font-family: var(--font-brand-headline);
   font-weight: 700;
 }
 
 .brand-script {
-  font-family: var(--font-script);
+  font-family: var(--font-brand-script);
 }
 
-/* Utilities */
+/* =========================
+   Utilities
+   ========================= */
+
 .text-gold { color: var(--hd-gold); }
 .bg-gold { background-color: var(--hd-gold); color: var(--hd-white); }
