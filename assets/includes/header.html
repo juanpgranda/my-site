@@ -4,71 +4,63 @@
   <meta charset="utf-8">
   <style>
     .hd-header {
-      background: var(--hd-white);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
       margin: 0;
       padding: 0;
+      background: var(--hd-white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-:root {
-  --hd-header-max: 1120px;
-  --hd-tapestry-url: url("/assets/images/pages/hd_tapestry_39.jpg");
-  --hd-logo-url: "/assets/images/pages/hd_logo_transparent.jpeg";
-  --hd-tapestry-height: clamp(72px, 8vw, 120px);
-  --hd-logo-height-desktop: 72px;
-  --hd-logo-height-mobile: 56px;
-}
-
-/* Tapestry band with centered logo */
+/* Tapestry band (GLOBAL) */
 .hd-header .tapestry {
-  background-image: var(--hd-tapestry-url);
+  background-image: url("/assets/images/pages/hd_tapestry_39.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  line-height: 0;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 0;
 }
 
 .hd-header .tapestry-inner {
-  max-width: var(--hd-header-max);
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 10px 20px;
-  min-height: var(--hd-tapestry-height);
+  padding: 0 20px;
+  min-height: 96px; /* desktop tapestry height */
   display: grid;
-  place-items: center;
+  align-items: center;
+  justify-items: center;
 }
 
-.hd-header .tapestry-logo {
+/* Centered logo (GLOBAL) */
+.hd-header .logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
 }
 
-.hd-header .tapestry-logo img {
-  height: var(--hd-logo-height-desktop);
+.hd-header .logo img {
+  height: 74px; /* desktop logo size (increase here) */
   width: auto;
+  max-width: min(520px, 92vw);
   display: block;
 }
 
-/* Nav bar below tapestry */
+/* Desktop nav row under tapestry */
 .hd-header .bar {
-  max-width: var(--hd-header-max);
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 10px 20px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  background: var(--hd-white);
 }
 
 .hd-nav {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex: 1 1 auto;
   justify-content: center;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -112,8 +104,9 @@
 .hd-nav .submenu {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
-  min-width: 220px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 240px;
   background: var(--hd-white);
   border: 1px solid rgba(0,0,0,0.10);
   border-radius: 14px;
@@ -130,6 +123,7 @@
   font-weight: 900;
   color: var(--hd-burgundy);
   background: rgba(249, 230, 195, 0.20);
+  text-align: left;
 }
 
 .hd-nav .submenu a:hover,
@@ -143,9 +137,14 @@
   display: block;
 }
 
-/* Mobile: hamburger only in bar */
-.hd-mobile {
+/* Mobile: logo centered, hamburger below tapestry */
+.hd-mobile-row {
   display: none;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 20px 12px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hd-mobile-toggle {
@@ -162,6 +161,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
 .hd-burger span {
@@ -192,7 +192,7 @@
 }
 
 .hd-mobile-panel .inner {
-  max-width: var(--hd-header-max);
+  max-width: 1120px;
   margin: 0 auto;
   padding: 12px 20px 18px;
 }
@@ -221,25 +221,33 @@
   display: block;
 }
 
+/* Responsive sizing */
 @media (max-width: 960px) {
   .hd-header .tapestry-inner {
-    padding: 10px 16px;
+    min-height: 84px;
   }
 
-  .hd-header .tapestry-logo img {
-    height: var(--hd-logo-height-mobile);
-  }
-
-  .hd-nav {
-    display: none;
+  .hd-header .logo img {
+    height: 62px; /* mobile logo size (increase here) */
   }
 
   .hd-header .bar {
-    justify-content: flex-end;
+    display: none; /* hide desktop nav */
   }
 
-  .hd-mobile {
-    display: inline-flex;
+  .hd-mobile-row {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hd-header .tapestry-inner {
+    min-height: 76px;
+  }
+
+  .hd-header .logo img {
+    height: 56px; /* small mobile logo size */
   }
 }
   </style>
@@ -248,12 +256,13 @@
   <header class="hd-header" aria-label="Site header">
     <div class="tapestry" aria-hidden="true">
       <div class="tapestry-inner">
-        <a class="tapestry-logo" href="/" aria-label="Home">
-          <img src="/assets/images/pages/hd_logo_transparent_01.png" alt="Haagen-Dazs">
+        <a class="logo" href="/" aria-label="Home">
+          <img src="/assets/images/pages/hd_logo_transparent_01.png" alt="Häagen-Dazs">
         </a>
       </div>
     </div>
-<div class="bar">
+<!-- Desktop nav -->
+<div class="bar" aria-label="Primary navigation bar">
   <nav class="hd-nav" aria-label="Primary navigation">
     <a href="/">HOME</a>
 
@@ -262,6 +271,7 @@
         LOCATIONS <span class="caret">&#9662;</span>
       </a>
       <div class="submenu" role="menu" aria-label="Locations submenu">
+        <a href="/locations" role="menuitem">ALL LOCATIONS</a>
         <a href="/locations/north-miami" role="menuitem">NORTH MIAMI</a>
         <a href="/locations/north-beach" role="menuitem">NORTH BEACH</a>
       </div>
@@ -273,9 +283,12 @@
     <a href="/about-us">ABOUT US</a>
     <a href="/contact">CONTACT</a>
   </nav>
+</div>
 
-  <label class="hd-mobile" for="hdMobileToggle" aria-label="Open menu">
-    <span class="hd-burger"><span></span></span>
+<!-- Mobile hamburger -->
+<div class="hd-mobile-row" aria-label="Mobile navigation bar">
+  <label class="hd-burger" for="hdMobileToggle" aria-label="Open menu">
+    <span></span>
   </label>
 </div>
 
