@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Häagen-Dazs</title>
-  <meta name="description" content="Visit Häagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
-  <link rel="canonical" href="https://www.hdicecream.com/">
+  <title>Menu | Häagen-Dazs</title>
+  <meta name="description" content="Explore the Häagen-Dazs menu for Collins North Beach. Browse cones, cups, sundaes, milkshakes, frozen drinks, sorbet smoothies, and ice cream cakes.">
+  <link rel="canonical" href="https://www.hdicecream.com/menu/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Häagen-Dazs">
-  <meta property="og:title" content="Home | Häagen-Dazs">
-  <meta property="og:description" content="Visit Häagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
-  <meta property="og:url" content="https://www.hdicecream.com/">
+  <meta property="og:title" content="Menu | Häagen-Dazs">
+  <meta property="og:description" content="Explore the Häagen-Dazs menu for Collins North Beach. Browse cones, cups, sundaes, milkshakes, frozen drinks, sorbet smoothies, and ice cream cakes.">
+  <meta property="og:url" content="https://www.hdicecream.com/menu/">
   <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Häagen-Dazs - North Miami and Collins North Beach shop locations.">
+  <meta property="og:image:alt" content="Häagen-Dazs menu - Collins North Beach.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Home | Häagen-Dazs">
-  <meta name="twitter:description" content="Visit Häagen-Dazs North Miami and Collins North Beach for ice cream, shakes, sundaes, cakes, and delivery. View hours, directions, and ordering links.">
+  <meta name="twitter:title" content="Menu | Häagen-Dazs">
+  <meta name="twitter:description" content="Explore the Häagen-Dazs menu for Collins North Beach. Browse cones, cups, sundaes, milkshakes, frozen drinks, sorbet smoothies, and ice cream cakes.">
   <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <link rel="icon" href="/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
@@ -37,627 +37,932 @@
   <style>
     :root {
       --container: 1120px;
-      --radius-lg: 18px;
-      --radius-md: 14px;
       --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-      --border-soft: 1px solid rgba(0,0,0,0.08);
+      --border-soft: 1px solid rgba(0,0,0,0.10);
       --text-muted: rgba(101, 11, 50, 0.72);
-      --hero-ink: #ffffff;
-      --hero-shadow: 0 10px 30px rgba(0,0,0,0.28);
     }
-* { box-sizing: border-box; }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-}
+    * { box-sizing: border-box; }
 
-.container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 20px;
-}
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 10px;
-  background: var(--hd-burgundy);
-  color: var(--hd-white);
-  padding: 10px 12px;
-  border-radius: 10px;
-  z-index: 9999;
-  text-decoration: none;
-  font-weight: 700;
-}
-.skip-link:focus { left: 10px; }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+      padding: 10px 12px;
+      border-radius: 10px;
+      z-index: 9999;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .skip-link:focus { left: 10px; }
 
-#siteHeader, #siteFooter { margin: 0; padding: 0; }
+    #siteHeader, #siteFooter { margin: 0; padding: 0; }
 
-/* HERO (CONTAINED, like reference) */
-.hero-full {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-}
+    .page-hero {
+      background: var(--hd-white);
+      padding: 26px 0 18px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
 
-.hero-carousel-wrap {
-  padding: 18px 0 18px;
-}
+    h1 {
+      margin: 0 0 12px;
+      font-size: 72px;
+      line-height: 1.02;
+      font-weight: 700;
+      color: var(--hd-burgundy);
+      letter-spacing: -0.02em;
+    }
 
-.hero-carousel {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  border-radius: 0;
-  overflow: hidden;
-  background: #000;
-  border: var(--border-soft);
-  box-shadow: var(--shadow-soft);
-}
+    .lead {
+      margin: 0;
+      color: var(--hd-burgundy);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.4;
+      max-width: 72ch;
+    }
 
-.hero-carousel-viewport {
-  position: relative;
-  width: 100%;
-  height: 520px;
-}
+    .top-grid-wrap {
+      padding: 22px 0 12px;
+      background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
+    }
 
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 400ms ease;
-  pointer-events: none;
-}
+    .top-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
 
-.hero-slide.is-active {
-  opacity: 1;
-  pointer-events: auto;
-}
+    .cat-card {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 0;
+      overflow: hidden;
+      border: var(--border-soft);
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      min-width: 0;
+    }
 
-.hero-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .cat-img {
+      aspect-ratio: 1 / 1;
+      background: #efe8db;
+      overflow: hidden;
+      position: relative;
+    }
 
-.hero-overlay {
-  position: absolute;
-  left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 560px;
-  color: var(--hero-ink);
-  text-shadow: var(--hero-shadow);
-  padding: 0;
-}
+    .cat-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1);
+      transition: transform 160ms ease;
+    }
 
-.hero-overlay .kicker {
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 10px;
-}
+    .cat-card:hover .cat-img img,
+    .cat-card:focus .cat-img img {
+      transform: scale(1.03);
+    }
 
-.hero-overlay h2 {
-  margin: 0 0 10px;
-  font-size: 36px;
-  line-height: 1.05;
-  font-weight: 900;
-  color: #ffffff;
-}
+    .cat-body {
+      padding: 12px 12px 14px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255,255,255,0.98);
+    }
 
-.hero-overlay p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.45;
-  color: rgba(255,255,255,0.92);
-  max-width: 60ch;
-}
+    .cat-title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--hd-burgundy);
+      line-height: 1.2;
+    }
 
-.hero-slide .hero-overlay h2,
-.hero-slide .hero-overlay p {
-  opacity: 0;
-  transform: translateX(0);
-}
+    .section {
+      padding: 26px 0 42px;
+    }
 
-.hero-slide.anim .hero-overlay h2 {
-  animation: hdFadeIn 0.5s ease forwards;
-  animation-delay: 1s;
-}
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--hd-burgundy);
+      line-height: 1.2;
+    }
 
-.hero-slide.anim .hero-overlay p {
-  animation: hdSlideInRight 0.5s ease forwards;
-  animation-delay: 2s;
-}
+    .section-rule {
+      height: 2px;
+      background: rgba(101, 11, 50, 0.75);
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
 
-@keyframes hdFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px 16px;
+    }
 
-@keyframes hdSlideInRight {
-  from { opacity: 0; transform: translateX(24px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
+    .item-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-width: 0;
+    }
 
-.hero-carousel-btn {
-  position: absolute;
-  top: auto;
-  bottom: 33%;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.18);
-  color: #ffffff;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  box-shadow: none;
-  z-index: 3;
-  backdrop-filter: blur(3px);
-}
+    .item-img {
+      aspect-ratio: 1 / 1;
+      background: #efe8db;
+      overflow: hidden;
+      border-radius: 0;
+      position: relative;
+    }
 
-.hero-carousel-btn:hover,
-.hero-carousel-btn:focus {
-  outline: none;
-  background: rgba(255,255,255,0.28);
-  border-color: rgba(255,255,255,0.55);
-}
+    .item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1);
+      transition: transform 160ms ease;
+    }
 
-.hero-carousel-btn.prev { left: 16px; }
-.hero-carousel-btn.next { right: 16px; }
+    .item-card:hover .item-img img,
+    .item-card:focus-within .item-img img {
+      transform: scale(1.03);
+    }
 
-.hero-carousel-dots {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 14px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  z-index: 3;
-}
+    .item-body {
+      padding: 12px 0 0;
+      display: grid;
+      gap: 8px;
+      align-content: start;
+    }
 
-.hero-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  border: 2px solid rgba(255,255,255,0.95);
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-}
-.hero-dot.is-active {
-  background: var(--hd-gold);
-  border-color: rgba(255,255,255,0.98);
-}
+    .item-name {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--hd-burgundy);
+      line-height: 1.25;
+    }
 
-.hero-intro {
-  padding: 14px 0 10px;
-}
+    .item-desc {
+      margin: 0;
+      color: rgba(101, 11, 50, 0.78);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
 
-.hero-intro h1 {
-  margin: 0 0 10px;
-  font-size: 42px;
-  line-height: 1.06;
-  color: var(--hd-burgundy);
-}
+    .empty-note {
+      grid-column: 1 / -1;
+      padding: 14px 16px;
+      border: 1px solid rgba(101, 11, 50, 0.14);
+      background: rgba(249,230,195,0.18);
+      color: rgba(101, 11, 50, 0.80);
+      border-radius: 0;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
 
-.hero-intro p {
-  margin: 0;
-  font-size: 16px;
-  color: var(--text-muted);
-  max-width: 75ch;
-  line-height: 1.55;
-}
+    .scroll-anchor {
+      scroll-margin-top: 96px;
+    }
 
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 14px;
-}
+    @media (max-width: 980px) {
+      h1 { font-size: 56px; }
+      .lead { font-size: 20px; }
+      .top-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .items-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cat-title { font-size: 22px; }
+      .section-title { font-size: 28px; }
+      .item-name { font-size: 22px; }
+    }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 16px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 900;
-  border: 0;
-  cursor: pointer;
-  user-select: none;
-  font-family: inherit;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.btn-primary { background: var(--hd-burgundy); color: var(--hd-white); }
-.btn-secondary { background: var(--hd-gold); color: var(--hd-white); }
-
-.locations-wrap {
-  background: rgba(249, 230, 195, 0.45);
-  border-top: 1px solid rgba(0,0,0,0.06);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  padding: 26px 0;
-}
-
-.section { padding: 18px 0 0; }
-
-.section h2 { margin: 0 0 14px; font-size: 34px; color: var(--hd-burgundy); }
-
-.section p.lead {
-  margin: 0 0 20px;
-  color: var(--text-muted);
-  max-width: 80ch;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.card {
-  border: var(--border-soft);
-  border-radius: var(--radius-lg);
-  background: var(--hd-white);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  padding: 18px;
-}
-
-.card h3 { margin: 0 0 8px; font-size: 22px; color: var(--hd-burgundy); }
-
-.meta {
-  margin: 0;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-.meta strong { color: var(--hd-burgundy); }
-
-.hours-block {
-  margin-top: 6px;
-  color: var(--text-muted);
-  line-height: 1.55;
-}
-.hours-block strong { color: var(--hd-burgundy); }
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(101, 11, 50, 0.18);
-  background: rgba(249, 230, 195, 0.45);
-  color: var(--hd-burgundy);
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 14px;
-}
-
-.chip:hover,
-.chip:focus { background: rgba(249, 230, 195, 0.78); outline: none; }
-
-.icon-block {
-  margin-top: 16px;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  padding-top: 14px;
-  display: grid;
-  gap: 12px;
-}
-
-.icon-row-title {
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(101, 11, 50, 0.68);
-  display: inline-block;
-  margin: 0 0 8px;
-}
-
-.icon-group {
-  display: inline-grid;
-  justify-items: center;
-  width: max-content;
-  max-width: 100%;
-}
-
-.icon-row,
-.delivery-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0;
-  width: 100%;
-}
-
-.icon-link,
-.delivery-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  border: 1px solid rgba(101, 11, 50, 0.14);
-  background: rgba(255,255,255,0.65);
-  text-decoration: none;
-}
-
-.icon-link:hover,
-.icon-link:focus,
-.delivery-icon:hover,
-.delivery-icon:focus {
-  outline: none;
-  background: rgba(249, 230, 195, 0.70);
-  border-color: rgba(101, 11, 50, 0.22);
-}
-
-.icon-swap {
-  width: 24px;
-  height: 24px;
-  display: block;
-  position: relative;
-}
-
-.icon-swap img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  display: block;
-  position: absolute;
-  inset: 0;
-  transition: opacity 120ms ease;
-}
-
-.icon-swap img.burgundy { opacity: 0; }
-.icon-link:hover .icon-swap img.burgundy,
-.icon-link:focus .icon-swap img.burgundy { opacity: 1; }
-.icon-link:hover .icon-swap img.gold,
-.icon-link:focus .icon-swap img.gold { opacity: 0; }
-
-.google-icon {
-  width: 24px;
-  height: 24px;
-  display: block;
-  object-fit: contain;
-}
-
-.delivery-icon img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  display: block;
-}
-
-.delivery-icon.is-dd img,
-.delivery-icon.is-yelp img {
-  width: 26px;
-  height: 26px;
-}
-
-@media (max-width: 960px) {
-  .cards { grid-template-columns: 1fr; }
-  .hero-carousel-viewport { height: 420px; }
-  .hero-overlay { left: 18px; right: 18px; max-width: none; }
-  .hero-overlay h2 { font-size: 30px; }
-  .hero-carousel { border-left: 0; border-right: 0; border-radius: 0; }
-  .hero-carousel-btn { bottom: 30%; }
-  .hero-intro h1 { font-size: 38px; }
-}
-
-@media (max-width: 640px) {
-  .hero-carousel-viewport { height: 340px; }
-  .hero-overlay h2 { font-size: 24px; }
-  .hero-overlay p { font-size: 14px; }
-  .hero-carousel-btn { width: 40px; height: 40px; bottom: 28%; }
-  .icon-link, .delivery-icon { width: 42px; height: 42px; }
-  .delivery-icon.is-dd img,
-  .delivery-icon.is-yelp img { width: 26px; height: 26px; }
-  .hero-carousel { border-radius: 0; }
-  .hero-intro h1 { font-size: 34px; }
-  .hero-intro p { font-size: 15px; }
-}
+    @media (max-width: 640px) {
+      h1 { font-size: 40px; }
+      .lead { font-size: 18px; }
+      .top-grid { grid-template-columns: 1fr; }
+      .items-grid { grid-template-columns: 1fr; }
+      .cat-title { font-size: 20px; }
+      .section-title { font-size: 26px; }
+      .item-name { font-size: 20px; }
+      .item-desc { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div id="siteHeader"></div>
   <main id="main">
-    <section class="hero-full" aria-label="Hero">
-      <div class="container hero-carousel-wrap">
-    <div class="hero-carousel" aria-label="Homepage hero carousel">
-      <div class="hero-carousel-viewport" id="heroCarouselViewport">
-
-        <div class="hero-slide is-active anim" data-index="0" aria-hidden="false">
-          <img src="/assets/images/pages/220421_HD_Online_MoneyShot.jpg" alt="Order online hero image">
-          <div class="hero-overlay">
-            <div class="kicker">Häagen-Dazs</div>
-            <h2>ORDER ONLINE</h2>
-            <p>Enjoy your favorite desserts at home.</p>
-          </div>
+    <section class="page-hero" aria-label="Menu header">
+      <div class="container">
+        <h1>Quality ingredients, irresistible creations</h1>
+        <p class="lead">Step into a Häagen-Dazs shop in Collins North Beach and indulge in creations made with our super premium ice cream and sorbet.</p>
+      </div>
+    </section>
+<section class="top-grid-wrap" aria-label="Menu categories">
+  <div class="container">
+    <div class="top-grid" aria-label="Menu top categories">
+      <a class="cat-card" href="#ice-cream-cones-and-cups" aria-label="Jump to Ice Cream Cones and Cups section">
+        <div class="cat-img" aria-hidden="true">
+          <img src="/assets/images/menu/top_section/HD_SingleScoop_Strawberry_LYR_06_Simplified.jpg" alt="">
         </div>
-
-        <div class="hero-slide" data-index="1" aria-hidden="true">
-          <img src="/assets/images/placeholders/hd_dulce.jpeg" alt="Catering and sundae creations hero image">
-          <div class="hero-overlay">
-            <div class="kicker">Häagen-Dazs</div>
-            <h2>CATERING</h2>
-            <p>Make your next gathering sweeter with shop favorites.</p>
-          </div>
+        <div class="cat-body">
+          <div class="cat-title">Ice Cream Cones and Cups</div>
         </div>
+      </a>
 
-      </div>
+      <a class="cat-card" href="#dazzler-sundaes" aria-label="Jump to Dazzler Sundaes section">
+        <div class="cat-img" aria-hidden="true">
+          <img src="/assets/images/menu/top_section/220204_FRO5251_HD_Shops_DessertImagery_DazzlerSundaes_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Dazzler Sundaes</div>
+        </div>
+      </a>
 
-      <button class="hero-carousel-btn prev" type="button" aria-label="Previous slide" id="heroPrev">&#8249;</button>
-      <button class="hero-carousel-btn next" type="button" aria-label="Next slide" id="heroNext">&#8250;</button>
+      <a class="cat-card" href="#milkshakes" aria-label="Jump to Milkshakes section">
+        <div class="cat-img" aria-hidden="true">
+          <img src="/assets/images/menu/top_section/220204_FRO5251_HD_Shops_DessertImagery_MilkshakeFamily_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Milkshakes</div>
+        </div>
+      </a>
 
-      <div class="hero-carousel-dots" role="tablist" aria-label="Hero carousel pagination">
-        <button class="hero-dot is-active" type="button" aria-label="Go to slide 1" id="heroDot0"></button>
-        <button class="hero-dot" type="button" aria-label="Go to slide 2" id="heroDot1"></button>
-      </div>
+      <a class="cat-card" href="#frozen-drinks" aria-label="Jump to Frozen Drinks section">
+        <div class="cat-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Frozen Drinks</div>
+        </div>
+      </a>
+
+      <a class="cat-card" href="#ice-cream-cakes" aria-label="Jump to Ice Cream Cakes section">
+        <div class="cat-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Ice Cream Cakes</div>
+        </div>
+      </a>
+
+      <a class="cat-card" href="#limited-time-offers" aria-label="Jump to Limited Time Offers section">
+        <div class="cat-img" aria-hidden="true">
+          <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Limited Time Offers</div>
+        </div>
+      </a>
     </div>
-
-    <div class="hero-intro" aria-label="Hero intro">
-      <h1>Simply extraordinary, served locally</h1>
-      <p>
-        Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
-        Find hours, directions, and ordering links in seconds.
-      </p>
-      <div class="cta-row" aria-label="Quick actions">
-        <a class="btn btn-primary" href="/locations">Locations</a>
-        <a class="btn btn-secondary" href="/menu">Menu</a>
-        <a class="btn btn-secondary" href="/cakes">Cakes</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<section class="locations-wrap" id="locations">
+<section class="section scroll-anchor" id="sorbet-smoothies" aria-label="Sorbet Smoothies section">
   <div class="container">
-    <div class="section">
-      <h2>Locations</h2>
-      <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
+    <h2 class="section-title">Sorbet Smoothies</h2>
+    <div class="section-rule" aria-hidden="true"></div>
 
-      <div class="cards">
-        <article class="card" aria-label="Häagen-Dazs North Miami location">
-          <h3>Häagen-Dazs North Miami (Causeway Square)</h3>
-          <p class="meta">
-            <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
-            <strong>Directions:</strong> <a href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">Open in Google Maps</a><br>
-            <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a>
-          </p>
+    <div class="items-grid" aria-label="Sorbet Smoothies items">
+      <article class="item-card" aria-label="Aloha Mango Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/smoothies/251013_HD_Smoothie_Mango_LYR_4by3ratio.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Aloha Mango Smoothie</h3>
+          <p class="item-desc">Real peaches and bananas blended with our signature Mango Sorbet and pineapple juice.​</p>
+        </div>
+      </article>
 
-          <div class="hours-block">
-            <strong>Hours:</strong><br>
-            Mon-Thu 10am - 10pm<br>
-            Fri-Sat 10am - 11pm<br>
-            Sun 11am - 8pm
-          </div>
+      <article class="item-card" aria-label="Strawberry Banana Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/smoothies/251013_HD_Smoothie_StrawBanana_LYR_4by3ratio.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Strawberry Banana Smoothie</h3>
+          <p class="item-desc">Real bananas and strawberries with our refreshing Strawberry Sorbet and cranberry juice.</p>
+        </div>
+      </article>
 
-          <div class="actions">
-            <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
-            <a class="chip" href="tel:+17869638203">Call</a>
-          </div>
+      <article class="item-card" aria-label="Strawberry Mango Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/smoothies/251013_HD_Smoothie_StrawMango_LYR_4by3ratio.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Strawberry Mango Smoothie</h3>
+          <p class="item-desc">Real strawberries and peaches with our signature Mango Sorbet and pineapple juice.​</p>
+        </div>
+      </article>
 
-          <div class="icon-block">
-            <div class="icon-group">
-              <div class="icon-row-title">Community and reviews</div>
-              <div class="icon-row">
-                <a class="icon-link" href="https://www.instagram.com/haagendazs_north_miami" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthMiami/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
-                  <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-                </a>
-              </div>
-            </div>
+      <article class="item-card" aria-label="Wildberry Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/smoothies/251013_HD_Smoothie_MixBerry_LYR_4by3ratio.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Wildberry Smoothie</h3>
+          <p class="item-desc">Real blueberries and strawberries blended with our refreshing Strawberry Sorbet and cranberry juice.</p>
+        </div>
+      </article>
 
-            <div class="icon-group">
-              <div class="icon-row-title">Delivery and discovery</div>
-              <div class="delivery-row">
-                <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
-                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                </a>
-                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
-                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                </a>
-                <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
-                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
+      <article class="item-card" aria-label="Pomegranate Berry Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/smoothies/251013_HD_Smoothie_Pome_LYR_4by3ratio.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Pomegranate Berry Smoothie</h3>
+          <p class="item-desc">Real strawberries blended with our bright Raspberry Sorbet and pomegranate juice.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-        <article class="card" aria-label="Häagen-Dazs Collins North Beach location">
-          <h3>Häagen-Dazs Collins North Beach</h3>
-          <p class="meta">
-            <strong>Address:</strong> 6978 Collins Ave, Miami Beach, FL 33141<br>
-            <strong>Directions:</strong> <a href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">Open in Google Maps</a><br>
-            <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a>
-          </p>
+<section class="section scroll-anchor" id="dazzler-sundaes" aria-label="Dazzler Sundaes section">
+  <div class="container">
+    <h2 class="section-title">Dazzler Sundaes</h2>
+    <div class="section-rule" aria-hidden="true"></div>
 
-          <div class="hours-block">
-            <strong>Hours:</strong><br>
-            Mon-Thu 10am - 10pm<br>
-            Fri-Sat 10am - 11pm<br>
-            Sun 11am - 8pm
-          </div>
+    <div class="items-grid" aria-label="Dazzler Sundaes items">
+      <article class="item-card" aria-label="Banana Split Dazzler">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/sundaes/220128_FRO5251_HD_Shops_DessertImagery_BananaSplit_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Banana Split Dazzler</h3>
+          <p class="item-desc">Vanilla Ice Cream layered with bananas, pineapple, strawberry and hot fudge topped with whipped cream and a cherry. Served with toppings.</p>
+        </div>
+      </article>
 
-          <div class="actions">
-            <a class="chip" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Directions</a>
-            <a class="chip" href="tel:+17866336485">Call</a>
-          </div>
+      <article class="item-card" aria-label="Cookies &amp; Cream Dazzler">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/sundaes/220128_FRO5251_HD_Shops_DessertImagery_CnCDazzler_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Cookies &amp; Cream Dazzler</h3>
+          <p class="item-desc">Cookies and Cream Ice Cream layered with hot fudge and chocolate cookie pieces topped with whipped cream and cookie crunch. Served with toppings.</p>
+        </div>
+      </article>
 
-          <div class="icon-block">
-            <div class="icon-group">
-              <div class="icon-row-title">Community and reviews</div>
-              <div class="icon-row">
-                <a class="icon-link" href="https://www.instagram.com/haagendazs_northbeach" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthBeach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
-                  <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-                </a>
-              </div>
-            </div>
+      <article class="item-card" aria-label="Dulce De Leche Dazzler">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/sundaes/220128_FRO5251_HD_Shops_DessertImagery_DDL_Dazzler_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Dulce De Leche Dazzler</h3>
+          <p class="item-desc">Sweet Caramel Ice Cream with bananas and warm caramel topped with whipped cream. Served with toppings.</p>
+        </div>
+      </article>
 
-            <div class="icon-group">
-              <div class="icon-row-title">Delivery and discovery</div>
-              <div class="delivery-row">
-                <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-6978-collins-avenue/_fVlFIVpWaqPatU03tzQaw?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkhhYWdlbi1EYXpzJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyaGVyZSUzQXBkcyUzQXBsYWNlJTNBODQwZGh3Y2ctZWM4Yjg4YjgwMmI4NGI3MDlhMzg1OWU5NDJjNDFiMTklMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyaGVyZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTI1LjY0NDQ4JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTgwLjMzODEyJTdE&ps=1&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
-                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                </a>
-                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
-                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                </a>
-                <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
-                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
+      <article class="item-card" aria-label="Midnight Cookies &amp; Cream Dazzler">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/sundaes/220128_FRO5251_HD_Shops_DessertImagery_MidnightCnC_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Midnight Cookies &amp; Cream Dazzler</h3>
+          <p class="item-desc">Midnight Cookies and Cream Ice Cream layered with hot fudge and chocolate cookie pieces topped with whipped cream and hot fudge. Served with toppings.</p>
+        </div>
+      </article>
 
-      <div style="height: 18px;"></div>
+      <article class="item-card" aria-label="Mint Chip Dazzler">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/sundaes/220204_FRO5251_HD_Shops_DessertImagery_MintChip_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Mint Chip Dazzler</h3>
+          <p class="item-desc">Mint Chip Ice Cream layered with hot fudge and chocolate cookie pieces topped with whipped cream and chocolate sprinkles. Served with toppings.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Rocky Road Dazzler">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Rocky Road Dazzler</h3>
+          <p class="item-desc">Rocky Road Ice Cream layered with hot fudge and chocolate cookie pieces topped with whipped cream and chocolate cookie crunch. Served with toppings.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="New York Strawberry Cheesecake Dazzler">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/sundaes/240131_FRO6579_HD_Shops_2024_Campaigns_NYSC_SocialMedia_1x1.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">New York Strawberry Cheesecake Dazzler</h3>
+          <p class="item-desc">Creamy New York Strawberry Cheese Ice Cream, with a swirl of sweet strawberry sauce and graham cracker crust pieces layered with fresh strawberries and graham cracker crumbs, topped with whipped cream and a strawberry garnish. Available at participating shop locations.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section scroll-anchor" id="milkshakes" aria-label="Milkshakes section">
+  <div class="container">
+    <h2 class="section-title">Milkshakes</h2>
+    <div class="section-rule" aria-hidden="true"></div>
+
+    <div class="items-grid" aria-label="Milkshakes items">
+      <article class="item-card" aria-label="Belgian Chocolate Shake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/milkshakes/220128_FRO5251_HD_Shops_DessertImagery_BelgianChocolate_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Belgian Chocolate Shake</h3>
+          <p class="item-desc">Belgian Chocolate Ice Cream surrounded by ribbons of hot fudge topped with whipped cream and chocolate sprinkles.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Cookies &amp; Cream Shake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/milkshakes/220128_FRO5251_HD_Shops_DessertImagery_MilkshakeCnC_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Cookies &amp; Cream Shake</h3>
+          <p class="item-desc">Cookies &amp; Cream Ice Cream blended and topped with whipped cream and chocolate cookie crunch.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Dulce De Leche Shake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/milkshakes/220128_FRO5251_HD_Shops_DessertImagery_DDL_Milkshake_SocialMedia_1x1_ALT.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Dulce De Leche Shake</h3>
+          <p class="item-desc">Sweet Caramel Ice Cream blended and topped with whipped cream and warm caramel.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Coffee Chip Shake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/milkshakes/HD_Milkshake_CoffeeChip_LYR_07_Release.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Coffee Chip Shake</h3>
+          <p class="item-desc">Coffee Ice Cream paired with plenty of rich, sweet chocolaty chips blended and topped with whipped cream and hot fudge.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Caramel Cone Shake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/milkshakes/HD_Milkshake_CaramelCone_LYR_09_Release.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Caramel Cone Shake</h3>
+          <p class="item-desc">Rich Caramel Ice Cream with crunchy chocolate covered cone pieces surrounded by ribbons of caramel topped with whipped cream and waffle cone pieces.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Pineapple Coconut Shake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/milkshakes/Pineapple cononut milkshake.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Pineapple Coconut Shake</h3>
+          <p class="item-desc">Juicy Pineapple Coconut Ice Cream, blended and topped with whipped cream and garnished with fresh pineapple. Available at participating shop locations.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Coffee Shake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/milkshakes/HD_Shake_CoffeeCoffee_LYR_Simplified.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Coffee Shake</h3>
+          <p class="item-desc">Rich Coffee Ice Cream blended to perfection and topped with creamy whipped cream.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Mocha Shake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Mocha Shake</h3>
+          <p class="item-desc">Belgian Chocolate Ice Cream paired with Coffee Ice Cream, blended and topped with whipped cream and crunchy chocolate cookie pieces.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Caramel Coffee Shake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/milkshakes/HD_Shake_CoffeeCaramel_LYR_Simplified.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Caramel Coffee Shake</h3>
+          <p class="item-desc">Sweet Dulce de Leche Ice Cream blended with Coffee Ice Cream and finished with silky whipped cream and warm caramel.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section scroll-anchor" id="frozen-drinks" aria-label="Frozen Drinks section">
+  <div class="container">
+    <h2 class="section-title">Frozen Drinks</h2>
+    <div class="section-rule" aria-hidden="true"></div>
+
+    <div class="items-grid" aria-label="Frozen Drinks items">
+      <article class="item-card" aria-label="Aloha Mango Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/frozen_drinks/211216_HD_Smoothie_Mango_4by3ratio.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Aloha Mango Smoothie</h3>
+          <p class="item-desc">Peaches and banana with Mango Sorbet, pineapple juice and Vanilla Ice Cream.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Strawberry Banana Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/frozen_drinks/211216_HD_Smoothie_StrawBanana_4by3ratio.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Strawberry Banana Smoothie</h3>
+          <p class="item-desc">Bananas and strawberries with Strawberry Sorbet, cranberry juice and Vanilla Ice Cream.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Strawberry Mango Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Strawberry Mango Smoothie</h3>
+          <p class="item-desc">Strawberries and peaches with Mango Sorbet, pineapple juice and Vanilla Ice Cream.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Wildberry Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/frozen_drinks/211216_HD_Smoothie_MixBerry_4by3ratio.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Wildberry Smoothie</h3>
+          <p class="item-desc">Blueberries and strawberries with Strawberry Sorbet, cranberry juice and Vanilla Ice Cream.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Pomegranate Berry Smoothie">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/frozen_drinks/211216_HD_Smoothie_PomBerry_4by3ratio.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Pomegranate Berry Smoothie</h3>
+          <p class="item-desc">Strawberries with Raspberry Sorbet, pomegranate juice and Vanilla Ice Cream.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Strawberry Mango Frozen Lemonade">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/frozen_drinks/240515_FRO6579_HD_Shops_StrawberryMangoLemonade_OnlineOrdering_4x3.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Strawberry Mango Frozen Lemonade</h3>
+          <p class="item-desc">Real Strawberry Sorbet and Mango Sorbet blended with lemonade.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Strawberry Frozen Lemonade">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/frozen_drinks/240515_FRO6579_HD_Shops_StrawberryLemonade_OnlineOrdering_4x3.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Strawberry Frozen Lemonade</h3>
+          <p class="item-desc">Juicy Strawberry Sorbet blended with refreshing lemonade.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Raspberry Frozen Lemonade">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/frozen_drinks/240515_FRO6579_HD_Shops_RaspberryLemonade_OnlineOrdering_4x3.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Raspberry Frozen Lemonade</h3>
+          <p class="item-desc">Tangy Raspberry Sorbet blended to perfection with lemonade.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section scroll-anchor" id="ice-cream-cones-and-cups" aria-label="Ice Cream Cones &amp; Cups section">
+  <div class="container">
+    <h2 class="section-title">Ice Cream Cones &amp; Cups</h2>
+    <div class="section-rule" aria-hidden="true"></div>
+
+    <div class="items-grid" aria-label="Ice Cream Cones &amp; Cups items">
+      <article class="item-card" aria-label="Belgian Chocolate">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Belgian Chocolate</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Butter Pecan">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Butter Pecan</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Caramel Cone">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Caramel Cone</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Chocolate">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Chocolate</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Coffee">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Coffee</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Coffee Chip">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Coffee Chip</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Cookie Dough">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Cookie Dough</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Cookies &amp; Cream">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Cookies &amp; Cream</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Dulce de Leche">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Dulce de Leche</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Mint Chip">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Mint Chip</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Pineapple Coconut">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Pineapple Coconut</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Pistachio">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Pistachio</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Rocky Road">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Rocky Road</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Rum Raisin">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Rum Raisin</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Sea Salt Caramel Truffle">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Sea Salt Caramel Truffle</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Strawberry">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Strawberry</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Vanilla">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Vanilla</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Vanilla Chocolate Chip">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Vanilla Chocolate Chip</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Vanilla Swiss Almond">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Vanilla Swiss Almond</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="White Chocolate Raspberry Truffle">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">White Chocolate Raspberry Truffle</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Mango Sorbet">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Mango Sorbet</h3>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Raspberry Sorbet">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/menu/hd_assets_menu_placeholder_02.png" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Raspberry Sorbet</h3>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section scroll-anchor" id="ice-cream-cakes" aria-label="Ice Cream Cakes section">
+  <div class="container">
+    <h2 class="section-title">Ice Cream Cakes</h2>
+    <div class="section-rule" aria-hidden="true"></div>
+
+    <div class="items-grid" aria-label="Ice Cream Cakes items">
+      <article class="item-card" aria-label="Ribbon Cake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/cakes/RibbonCake_Whole_041725.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Ribbon Cake</h3>
+          <p class="item-desc">Our signature cake with layers of Midnight Cookies &amp; Cream and Vanilla Chocolate Chip ice creams, layered with cookie crunch, surrounded by rolled wafer cookies and tied with a ribbon.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Dulce de Leche Cake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/cakes/DulcedeLecheCake_Whole_041725.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Dulce de Leche Cake</h3>
+          <p class="item-desc">Our iconic Dulce de Leche ice cream layered with caramel and spiced cinnamon cookies topped with a caramel drizzle and even more crunchy cookie pieces.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Coffee Crunch Cake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/cakes/CoffeeCrunchCake_Whole_041725.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Coffee Crunch Cake</h3>
+          <p class="item-desc">Smooth Coffee ice cream layered with shortbread cookie pieces and rich chocolate frosting, topped with cookie crunch and chocolate-covered espresso beans.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Rose’s Birthday Cake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/cakes/RosesBirthdayCake_Whole_041725.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Rose’s Birthday Cake</h3>
+          <p class="item-desc">Our classic Vanilla and Chocolate ice creams layered with sprinkles shortbread cookie pieces, covered in even more colorful sprinkles.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Reuben’s Birthday Cake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/cakes/ReubensBirthdayCake_Whole_041725.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Reuben’s Birthday Cake</h3>
+          <p class="item-desc">Vanilla and Chocolate ice creams divided by a layer of sprinkles and crunchy shortbread cookie pieces, finished off with sprinkles and your own special message. A customizable version of Rose’s Birthday Cake.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Cookies &amp; Cream Cake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/cakes/CookiesAndCreamCake_Whole_041725.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Cookies &amp; Cream Cake</h3>
+          <p class="item-desc">Our widely celebrated Cookies and Cream ice cream layered with a swirl of cookie chunks and frosted with our cookie crunch icing.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Triple Chocolate Cake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/cakes/TripleChocolateCake_Whole_041725.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Triple Chocolate Cake</h3>
+          <p class="item-desc">Rich Belgian Chocolate ice cream layered with chocolate cookie pieces and chocolate frosting, topped with creamy chocolate frosting and finished with a crunchy chocolate drizzle.</p>
+        </div>
+      </article>
+
+      <article class="item-card" aria-label="Just Because Cake">
+        <div class="item-img" aria-hidden="true">
+          <img src="/assets/images/cakes/JustBecauseCake_Whole_041725.jpg" alt="">
+        </div>
+        <div class="item-body">
+          <h3 class="item-name">Just Because Cake</h3>
+          <p class="item-desc">Two favorites, Strawberry and Vanilla ice creams, layered with buttery shortbread cookies and vanilla frosting layer. Top it off with a personalized message and make the moment unforgettable.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section scroll-anchor" id="limited-time-offers" aria-label="Limited Time Offers section">
+  <div class="container">
+    <h2 class="section-title">Limited Time Offers</h2>
+    <div class="section-rule" aria-hidden="true"></div>
+
+    <div class="items-grid" aria-label="Limited Time Offers items">
+      <div class="empty-note">Seasonal items vary. Ask in store for current limited time options.</div>
     </div>
   </div>
 </section>
@@ -683,61 +988,17 @@ body {
   </script>
   <script>
     (function () {
-      var slides = Array.prototype.slice.call(document.querySelectorAll(".hero-slide"));
-      var dots = [document.getElementById("heroDot0"), document.getElementById("heroDot1")];
-      var prevBtn = document.getElementById("heroPrev");
-      var nextBtn = document.getElementById("heroNext");
-
-      var idx = 0;
-      var timer = null;
-      var intervalMs = 3000;
-
-      function restartAnim(slideEl) {
-        slideEl.classList.remove("anim");
-        void slideEl.offsetWidth;
-        slideEl.classList.add("anim");
+      var links = document.querySelectorAll('a[href^="#"]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function (e) {
+          var href = this.getAttribute("href") || "";
+          if (href.length < 2) return;
+          var target = document.getElementById(href.slice(1));
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
       }
-
-      function setActive(nextIdx) {
-        idx = nextIdx;
-
-        for (var i = 0; i < slides.length; i++) {
-          var active = i === idx;
-          slides[i].classList.toggle("is-active", active);
-          slides[i].setAttribute("aria-hidden", active ? "false" : "true");
-          if (dots[i]) dots[i].classList.toggle("is-active", active);
-          if (active) restartAnim(slides[i]);
-        }
-      }
-
-      function next() { setActive((idx + 1) % slides.length); }
-
-      function start() {
-        stop();
-        timer = window.setInterval(next, intervalMs);
-      }
-
-      function stop() {
-        if (timer) window.clearInterval(timer);
-        timer = null;
-      }
-
-      if (nextBtn) nextBtn.addEventListener("click", function () { stop(); next(); start(); });
-      if (prevBtn) prevBtn.addEventListener("click", function () { stop(); setActive((idx - 1 + slides.length) % slides.length); start(); });
-
-      if (dots[0]) dots[0].addEventListener("click", function () { stop(); setActive(0); start(); });
-      if (dots[1]) dots[1].addEventListener("click", function () { stop(); setActive(1); start(); });
-
-      var carousel = document.querySelector(".hero-carousel");
-      if (carousel) {
-        carousel.addEventListener("mouseenter", stop);
-        carousel.addEventListener("mouseleave", start);
-        carousel.addEventListener("focusin", stop);
-        carousel.addEventListener("focusout", start);
-      }
-
-      setActive(0);
-      start();
     })();
   </script>
 </body>
