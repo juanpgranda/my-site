@@ -3,23 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<html lang="en" data-lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Häagen-Dazs</title>
+  <meta name="description" content="Contact Häagen-Dazs North Miami and Collins North Beach. Send us a message and we will get back to you as soon as possible.">
+  <link rel="canonical" href="https://www.hdicecream.com/contact/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Häagen-Dazs">
-  <meta property="og:title" content="Celebrate with Cake | Häagen-Dazs">
-  <meta property="og:description" content="Order a Häagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
-  <meta property="og:url" content="https://www.hdicecream.com/cakes/order-form/">
+  <meta property="og:title" content="Contact | Häagen-Dazs">
+  <meta property="og:description" content="Contact Häagen-Dazs North Miami and Collins North Beach. Send us a message and we will get back to you as soon as possible.">
+  <meta property="og:url" content="https://www.hdicecream.com/contact/">
   <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Häagen-Dazs cake order form for pickup.">
+  <meta property="og:image:alt" content="Häagen-Dazs contact page.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Celebrate with Cake | Häagen-Dazs">
-  <meta name="twitter:description" content="Order a Häagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
+  <meta name="twitter:title" content="Contact | Häagen-Dazs">
+  <meta name="twitter:description" content="Contact Häagen-Dazs North Miami and Collins North Beach. Send us a message and we will get back to you as soon as possible.">
   <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <link rel="icon" href="/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
@@ -35,7 +34,9 @@
       --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
       --border-soft: 1px solid rgba(0,0,0,0.10);
       --text-muted: rgba(101, 11, 50, 0.72);
-      --panel: rgba(249, 230, 195, 0.45);
+      --cream-1: rgba(249,230,195,0.22);
+      --cream-2: rgba(249,230,195,0.36);
+      --cream-3: rgba(249,230,195,0.55);
     }
 * { box-sizing: border-box; }
 
@@ -105,18 +106,6 @@ h1 {
   max-width: 85ch;
 }
 
-.info-card {
-  margin-top: 14px;
-  background: rgba(249, 230, 195, 0.30);
-  border: 1px solid rgba(101, 11, 50, 0.14);
-  border-radius: 14px;
-  padding: 12px 12px;
-  color: rgba(101, 11, 50, 0.90);
-  font-size: 13px;
-  line-height: 1.55;
-}
-.info-card strong { color: var(--hd-burgundy); }
-
 .section {
   padding: 18px 0 34px;
   background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
@@ -138,6 +127,7 @@ h1 {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .form-head .title {
@@ -146,40 +136,10 @@ h1 {
   letter-spacing: 0.02em;
 }
 
-.form-head .right {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  flex: 0 0 auto;
-}
-
 .help {
   font-size: 12px;
   color: var(--text-muted);
   line-height: 1.4;
-}
-
-.view-cakes-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 9px 12px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  border: 1px solid rgba(101, 11, 50, 0.18);
-  background: rgba(255,255,255,0.78);
-  color: var(--hd-burgundy);
-  white-space: nowrap;
-}
-
-.view-cakes-btn:hover,
-.view-cakes-btn:focus {
-  outline: none;
-  background: rgba(249, 230, 195, 0.75);
-  border-color: rgba(101, 11, 50, 0.26);
 }
 
 form { padding: 16px; }
@@ -202,7 +162,7 @@ label {
   color: rgba(101, 11, 50, 0.85);
 }
 
-input, select, textarea {
+input, textarea {
   width: 100%;
   border: 1px solid rgba(101, 11, 50, 0.18);
   border-radius: 12px;
@@ -214,13 +174,13 @@ input, select, textarea {
   font-family: var(--font-body);
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus, textarea:focus {
   border-color: rgba(101, 11, 50, 0.38);
   box-shadow: 0 0 0 3px rgba(210, 153, 55, 0.18);
 }
 
 textarea {
-  min-height: 110px;
+  min-height: 140px;
   resize: vertical;
 }
 
@@ -228,7 +188,7 @@ textarea {
 
 .inline-row {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   gap: 10px;
 }
@@ -236,7 +196,8 @@ textarea {
 .counter {
   font-size: 12px;
   color: rgba(101, 11, 50, 0.70);
-  font-weight: 800;
+  font-weight: 900;
+  white-space: nowrap;
 }
 
 .actions {
@@ -255,119 +216,31 @@ textarea {
   border-radius: 12px;
   text-decoration: none;
   font-weight: 900;
-  border: 0;
+  border: 1px solid rgba(101, 11, 50, 0.18);
   cursor: pointer;
   user-select: none;
   font-family: var(--font-body);
-  background: var(--hd-burgundy);
-  color: var(--hd-white);
-  box-shadow: var(--shadow-soft);
+  background: var(--hd-gold-light);
+  color: var(--hd-burgundy);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
   min-width: 220px;
 }
 
 .btn:hover, .btn:focus {
   outline: none;
-  background: rgba(101, 11, 50, 0.92);
+  background: var(--hd-gold-medium);
+  border-color: rgba(101, 11, 50, 0.26);
 }
 
 .status {
   margin-top: 12px;
   text-align: center;
   font-size: 13px;
-  color: rgba(101, 11, 50, 0.80);
+  color: rgba(101, 11, 50, 0.82);
 }
 
 .status.ok { color: rgba(14, 96, 45, 0.95); }
 .status.err { color: rgba(150, 20, 40, 0.95); }
-
-/* Cake preview block */
-.design-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-
-.preview-card {
-  border: 1px solid rgba(101, 11, 50, 0.14);
-  background: rgba(249, 230, 195, 0.16);
-  border-radius: 14px;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 12px;
-  align-items: center;
-  padding: 10px;
-}
-
-.preview-img {
-  width: 120px;
-  aspect-ratio: 1 / 1;
-  background: #efe8db;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.08);
-}
-
-.preview-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.preview-meta {
-  display: grid;
-  gap: 6px;
-  align-content: center;
-  min-width: 0;
-}
-
-.preview-label {
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(101, 11, 50, 0.70);
-}
-
-.preview-name {
-  font-weight: 900;
-  color: var(--hd-burgundy);
-  font-size: 14px;
-  line-height: 1.25;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.preview-links {
-  display: inline-flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.preview-link {
-  font-size: 12px;
-  font-weight: 900;
-  color: var(--hd-burgundy);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(101, 11, 50, 0.25);
-  padding-bottom: 1px;
-  line-height: 1.1;
-}
-
-.preview-link:hover,
-.preview-link:focus {
-  outline: none;
-  border-bottom-color: rgba(101, 11, 50, 0.65);
-}
-
-.preview-hint {
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.35;
-}
 
 @media (max-width: 900px) {
   h1 { font-size: 38px; }
@@ -376,12 +249,8 @@ textarea {
 @media (max-width: 720px) {
   .grid { grid-template-columns: 1fr; }
   h1 { font-size: 34px; }
-  .hero-top-bg .spacer { min-height: 46px; display: block; }
+  .hero-top-bg .spacer { min-height: 46px; }
   .btn { width: 100%; min-width: 0; }
-  .form-head { align-items: flex-start; }
-  .form-head .right { flex-direction: column; align-items: flex-end; gap: 6px; }
-  .preview-card { grid-template-columns: 96px 1fr; }
-  .preview-img { width: 96px; }
 }
   </style>
 </head>
@@ -390,34 +259,24 @@ textarea {
   <div class="hero-top-bg" aria-hidden="true"><div class="spacer"></div></div>
   <div id="siteHeader"></div>
   <main id="main">
-    <section class="page-hero" aria-label="Cake order header">
+    <section class="page-hero" aria-label="Contact header">
       <div class="container">
-        <div class="kicker">Pickup info</div>
-        <div class="info-card" id="pickupInfo">
-          Orders placed require <strong>2 day(s)</strong> processing.<br>
-          Earliest pickup: <strong id="earliestPickupText">Calculating...</strong>.<br>
-          If needing sooner, contact store for inventory availability
-        </div>
-        <div style="height:14px;"></div>
-    <h1>Celebrate with Cake</h1>
-    <p class="sublead">
-      Fill out this form and we will confirm your pickup details. If you need a faster pickup, contact the store for inventory availability.
-    </p>
-  </div>
-</section>
-
-<section class="section" aria-label="Cake order form section">
+        <div class="kicker">Contact</div>
+        <h1>Send us a message</h1>
+        <p class="sublead">
+          Have a question about our menu, cakes, catering, or pickup? Send a message and our team will reply as soon as possible.
+        </p>
+      </div>
+    </section>
+<section class="section" aria-label="Contact form section">
   <div class="container">
-    <div class="form-card" role="region" aria-label="Cake order form card">
+    <div class="form-card" role="region" aria-label="Contact form card">
       <div class="form-head">
-        <div class="title">Cake Order Form</div>
-        <div class="right">
-          <a class="view-cakes-btn" href="/cakes" target="_blank" rel="noopener noreferrer">View Cakes</a>
-          <div class="help" id="minDateHint"></div>
-        </div>
+        <div class="title">Contact Form</div>
+        <div class="help">We will email a copy of your message to you.</div>
       </div>
 
-      <form id="cakeOrderForm" novalidate>
+      <form id="contactForm" novalidate>
         <div class="grid">
           <div class="field">
             <label for="firstName">First Name</label>
@@ -440,113 +299,16 @@ textarea {
           </div>
 
           <div class="field full">
-            <div class="design-row">
-              <div class="field" style="margin:0;">
-                <label for="cakeDesign">Cake Design</label>
-                <select id="cakeDesign" name="cake_design" required>
-                  <option value="" selected disabled>Select a cake design</option>
-                  <option>Ribbon Cake</option>
-                  <option>Dulce de Leche Cake</option>
-                  <option>Coffee Crunch Cake</option>
-                  <option>Rose’s Birthday Cake</option>
-                  <option>Reuben’s Birthday Cake</option>
-                  <option>Cookies &amp; Cream Cake</option>
-                  <option>Triple Chocolate Cake</option>
-                  <option>Just Because Cake</option>
-                </select>
-              </div>
-
-              <div class="preview-card" aria-label="Selected cake preview" id="cakePreviewCard">
-                <div class="preview-img" aria-hidden="true">
-                  <img id="cakePreviewImg" src="/assets/images/cakes/RibbonCake_Whole_041725.jpg" alt="">
-                </div>
-                <div class="preview-meta">
-                  <div class="preview-label">Selected cake</div>
-                  <div class="preview-name" id="cakePreviewName">Choose a cake design to preview</div>
-                  <div class="preview-links">
-                    <a class="preview-link" href="/cakes" target="_blank" rel="noopener noreferrer">View all cakes</a>
-                  </div>
-                  <div class="preview-hint">Preview updates when you change the Cake Design.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="cakeSize">Cake Size</label>
-            <select id="cakeSize" name="cake_size" required>
-              <option value="" selected disabled>Select a cake size</option>
-              <option>2x6 (serves 6-8)</option>
-              <option>2x8 (serves 12-15)</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="flavorDistribution">Flavor Distribution</label>
-            <select id="flavorDistribution" name="flavor_distribution" required>
-              <option selected>Layered</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="firstFlavor">First Flavor</label>
-            <select id="firstFlavor" name="first_flavor" required></select>
-          </div>
-
-          <div class="field">
-            <label for="secondFlavor">Second Flavor</label>
-            <select id="secondFlavor" name="second_flavor" required></select>
-          </div>
-
-          <div class="field">
-            <label for="pickupDate">Pick Up Date</label>
-            <input id="pickupDate" name="pickup_date" type="date" required>
-            <div class="help">Earliest available date is auto-set.</div>
-          </div>
-
-          <div class="field">
-            <label for="pickupTime">Pick Up Time</label>
-            <input id="pickupTime" name="pickup_time" type="time" step="900" required>
-            <div class="help">15-minute increments for easier scheduling.</div>
-          </div>
-
-          <div class="field full">
-            <label for="pickupLocation">Pick Up Location</label>
-            <select id="pickupLocation" name="pickup_location" required>
-              <option value="" selected disabled>Select pickup location</option>
-              <option>Häagen-Dazs North Miami (Causeway Square)</option>
-              <option>Häagen-Dazs North Beach (6978 Collins Ave)</option>
-            </select>
-          </div>
-
-          <div class="field full">
-            <label for="messageChoice">Message on the Cake</label>
-            <select id="messageChoice" name="message_on_cake_choice" required>
-              <option value="" selected disabled>Select a message</option>
-              <option>Happy Birthday</option>
-              <option>Custom - write in Special Instructions</option>
-            </select>
-            <div class="help" id="messageHelp">If you choose Custom, write the exact message in Special Instructions.</div>
-          </div>
-
-          <div class="field full" id="customMessageWrap" style="display:none;">
-            <label for="customMessage">Custom Message on the Cake</label>
-            <input id="customMessage" name="custom_message_on_cake" type="text" placeholder="Example: Congrats Maria">
-            <div class="help">Optional. You can also write this in Special Instructions.</div>
-          </div>
-
-          <div class="field full">
             <div class="inline-row">
-              <label for="specialInstructions">Special Instructions</label>
-              <div class="counter" id="charCounter">0 / 500</div>
+              <label for="message">Message</label>
+              <div class="counter" id="msgCounter">0 / 1000</div>
             </div>
-            <textarea id="specialInstructions" name="special_instructions" maxlength="500" placeholder="Allergies, custom message, pickup notes, decorations, etc."></textarea>
-            <div class="help">500 character limit.</div>
+            <textarea id="message" name="message" maxlength="1000" placeholder="How can we help?" required></textarea>
           </div>
         </div>
 
         <div class="actions">
-          <button class="btn" type="submit" id="submitBtn">Submit Form</button>
+          <button class="btn" type="submit" id="submitBtn">Send Message</button>
           <div class="status" id="statusMsg" aria-live="polite"></div>
         </div>
       </form>
@@ -578,105 +340,19 @@ textarea {
   </script>
   <script>
     (function () {
-      var WEB_APP_URL = "https://script.google.com/a/macros/klizos.com/s/AKfycbx0aYS-y84nQkUt-uNKDh_y5IcvGdKhTiF02mkjEaPWmcB4dDQ70u8S06GDJd9CtSRMXA/exec";
-      var PROCESSING_DAYS = 2;
+      var WEB_APP_URL = "https://script.google.com/a/macros/klizos.com/s/AKfycbw0GCt6as7CIraDZmrfP1c0J9ysoQadqmnCU8vdoYdKBu24m2Rde9G9CO0co9K28w32/exec";
 
-      var flavors = [
-        "Chocolate",
-        "Dulce De Leche",
-        "Mango",
-        "Strawberry",
-        "Raspberry",
-        "Brownies A La Mode",
-        "Butter Pecan",
-        "Caramel Cone",
-        "Coffee",
-        "Cookie Dough Dynamo",
-        "Cookies & Cream",
-        "Midnight Cookies & Cream",
-        "Mint Chip",
-        "Pineapple Coconut",
-        "Pralines & Cream",
-        "Rocky Road",
-        "Rum Raisin",
-        "Vanilla",
-        "Vanilla Chip",
-        "Vanilla Swiss Almond",
-        "White Chocolate Raspberry",
-        "Irish Cream Brownie",
-        "Belgian Chocolate",
-        "Coffee Chip",
-        "Pistachio",
-        "New York Strawberry Cheesecake"
-      ];
-
-      var firstFlavor = document.getElementById("firstFlavor");
-      var secondFlavor = document.getElementById("secondFlavor");
-      var pickupDate = document.getElementById("pickupDate");
-      var earliestPickupText = document.getElementById("earliestPickupText");
-      var minDateHint = document.getElementById("minDateHint");
+      var form = document.getElementById("contactForm");
+      var statusMsg = document.getElementById("statusMsg");
+      var submitBtn = document.getElementById("submitBtn");
 
       var firstName = document.getElementById("firstName");
       var lastName = document.getElementById("lastName");
       var phone = document.getElementById("phone");
-      var messageChoice = document.getElementById("messageChoice");
-      var customMessageWrap = document.getElementById("customMessageWrap");
-      var specialInstructions = document.getElementById("specialInstructions");
-      var charCounter = document.getElementById("charCounter");
 
-      var cakeDesign = document.getElementById("cakeDesign");
-      var cakePreviewImg = document.getElementById("cakePreviewImg");
-      var cakePreviewName = document.getElementById("cakePreviewName");
-
-      var form = document.getElementById("cakeOrderForm");
-      var statusMsg = document.getElementById("statusMsg");
-      var submitBtn = document.getElementById("submitBtn");
-
-      function pad2(n) { return (n < 10 ? "0" : "") + n; }
-
-      function addDays(d, days) {
-        var x = new Date(d.getTime());
-        x.setDate(x.getDate() + days);
-        return x;
-      }
-
-      function formatLongDate(d) {
-        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-        var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-        return days[d.getDay()] + ", " + months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
-      }
-
-      function formatISODate(d) {
-        return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
-      }
-
-      function setEarliestPickup() {
-        var today = new Date();
-        var earliest = addDays(today, PROCESSING_DAYS);
-        var iso = formatISODate(earliest);
-        pickupDate.min = iso;
-        if (!pickupDate.value) pickupDate.value = iso;
-
-        earliestPickupText.textContent = formatLongDate(earliest);
-        minDateHint.textContent = "Earliest pickup date: " + iso;
-      }
-
-      function fillFlavorSelect(selectEl) {
-        selectEl.innerHTML = "";
-        var opt0 = document.createElement("option");
-        opt0.value = "";
-        opt0.textContent = "Select a flavor";
-        opt0.disabled = true;
-        opt0.selected = true;
-        selectEl.appendChild(opt0);
-
-        for (var i = 0; i < flavors.length; i++) {
-          var opt = document.createElement("option");
-          opt.value = flavors[i];
-          opt.textContent = flavors[i];
-          selectEl.appendChild(opt);
-        }
-      }
+      var messageEl = document.getElementById("message");
+      var msgCounter = document.getElementById("msgCounter");
+      var MSG_MAX = 1000;
 
       function capFirst(s) {
         s = String(s || "").trim();
@@ -697,67 +373,50 @@ textarea {
         statusMsg.className = "status" + (kind ? " " + kind : "");
       }
 
-      function toggleCustomMessage() {
-        var v = messageChoice.value || "";
-        if (v.indexOf("Custom") === 0) {
-          customMessageWrap.style.display = "grid";
-        } else {
-          customMessageWrap.style.display = "none";
+      function safeJsonParse(text) {
+        try { return JSON.parse(text); } catch (e) { return null; }
+      }
+
+      function updateMsgCounter() {
+        var n = (messageEl.value || "").length;
+        msgCounter.textContent = n + " / " + MSG_MAX;
+      }
+
+      function capitalizeSentences(text) {
+        var s = String(text || "");
+        var parts = s.split(/(\r?\n)/);
+        for (var i = 0; i < parts.length; i++) {
+          if (parts[i] === "\n" || parts[i] === "\r\n") continue;
+
+          var chunk = parts[i];
+          var leadMatch = chunk.match(/^\s*/);
+          var lead = leadMatch ? leadMatch[0] : "";
+          var body = chunk.slice(lead.length);
+
+          var out = "";
+          var startSentence = true;
+
+          for (var j = 0; j < body.length; j++) {
+            var ch = body.charAt(j);
+
+            if (startSentence) {
+              if (/[a-zA-Z]/.test(ch)) {
+                out += ch.toUpperCase();
+                startSentence = false;
+              } else {
+                out += ch;
+              }
+            } else {
+              out += ch;
+            }
+
+            if (ch === "." || ch === "!" || ch === "?") startSentence = true;
+          }
+
+          parts[i] = lead + out;
         }
+        return parts.join("");
       }
-
-      function updateCounter() {
-        var n = (specialInstructions.value || "").length;
-        charCounter.textContent = n + " / 500";
-      }
-
-      function normalizeKey(s) {
-        return String(s || "")
-          .trim()
-          .replace(/\u2019/g, "'")
-          .replace(/\u2018/g, "'")
-          .replace(/\s+/g, " ");
-      }
-
-      function getCakeImageUrl(cakeName) {
-        var key = normalizeKey(cakeName);
-
-        var map = {
-          "Ribbon Cake": "/assets/images/cakes/RibbonCake_Whole_041725.jpg",
-          "Dulce de Leche Cake": "/assets/images/cakes/DulcedeLecheCake_Whole_041725.jpg",
-          "Coffee Crunch Cake": "/assets/images/cakes/CoffeeCrunchCake_Whole_041725.jpg",
-          "Rose's Birthday Cake": "/assets/images/cakes/RosesBirthdayCake_Whole_041725.jpg",
-          "Reuben's Birthday Cake": "/assets/images/cakes/ReubensBirthdayCake_Whole_041725.jpg",
-          "Cookies & Cream Cake": "/assets/images/cakes/CookiesAndCreamCake_Whole_041725.jpg",
-          "Triple Chocolate Cake": "/assets/images/cakes/TripleChocolateCake_Whole_041725.jpg",
-          "Just Because Cake": "/assets/images/cakes/JustBecauseCake_Whole_041725.jpg"
-        };
-
-        return map[key] || "/assets/images/placeholders/hd_cakes_01.png";
-      }
-
-      function updateCakePreview() {
-        var selected = (cakeDesign.value || "").trim();
-        if (!selected) {
-          cakePreviewName.textContent = "Choose a cake design to preview";
-          cakePreviewImg.src = "/assets/images/placeholders/hd_cakes_01.png";
-          cakePreviewImg.alt = "";
-          return;
-        }
-
-        cakePreviewName.textContent = selected;
-
-        var img = getCakeImageUrl(selected);
-        cakePreviewImg.src = img;
-        cakePreviewImg.alt = selected;
-      }
-
-      fillFlavorSelect(firstFlavor);
-      fillFlavorSelect(secondFlavor);
-      setEarliestPickup();
-      toggleCustomMessage();
-      updateCounter();
-      updateCakePreview();
 
       firstName.addEventListener("blur", function () { firstName.value = capFirst(firstName.value); });
       lastName.addEventListener("blur", function () { lastName.value = capFirst(lastName.value); });
@@ -766,68 +425,67 @@ textarea {
         phone.value = formatPhone(phone.value);
       });
 
-      messageChoice.addEventListener("change", toggleCustomMessage);
-      specialInstructions.addEventListener("input", updateCounter);
-      cakeDesign.addEventListener("change", updateCakePreview);
+      messageEl.addEventListener("input", function () {
+        if ((messageEl.value || "").length > MSG_MAX) {
+          messageEl.value = (messageEl.value || "").slice(0, MSG_MAX);
+        }
+        updateMsgCounter();
+      });
+
+      messageEl.addEventListener("blur", function () {
+        var v = messageEl.value || "";
+        var next = capitalizeSentences(v);
+        if (next !== v) messageEl.value = next;
+        updateMsgCounter();
+      });
+
+      updateMsgCounter();
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         setStatus("", "");
 
+        firstName.value = capFirst(firstName.value);
+        lastName.value = capFirst(lastName.value);
+
+        messageEl.value = capitalizeSentences(messageEl.value || "");
+        if ((messageEl.value || "").length > MSG_MAX) {
+          messageEl.value = (messageEl.value || "").slice(0, MSG_MAX);
+        }
+        updateMsgCounter();
+
         var data = {
-          first_name: (document.getElementById("firstName").value || "").trim(),
-          last_name: (document.getElementById("lastName").value || "").trim(),
-          phone: (document.getElementById("phone").value || "").trim(),
+          first_name: (firstName.value || "").trim(),
+          last_name: (lastName.value || "").trim(),
+          phone: (phone.value || "").trim(),
           email: (document.getElementById("email").value || "").trim(),
-          cake_design: (document.getElementById("cakeDesign").value || "").trim(),
-          cake_size: (document.getElementById("cakeSize").value || "").trim(),
-          first_flavor: (document.getElementById("firstFlavor").value || "").trim(),
-          second_flavor: (document.getElementById("secondFlavor").value || "").trim(),
-          flavor_distribution: (document.getElementById("flavorDistribution").value || "").trim(),
-          pickup_date: (document.getElementById("pickupDate").value || "").trim(),
-          pickup_time: (document.getElementById("pickupTime").value || "").trim(),
-          pickup_location: (document.getElementById("pickupLocation").value || "").trim(),
-          message_on_cake_choice: (document.getElementById("messageChoice").value || "").trim(),
-          custom_message_on_cake: (document.getElementById("customMessage").value || "").trim(),
-          special_instructions: (document.getElementById("specialInstructions").value || "").trim()
+          message: (messageEl.value || "").trim()
         };
 
-        var required = [
-          "first_name","last_name","phone","email","cake_design","cake_size",
-          "first_flavor","second_flavor","flavor_distribution",
-          "pickup_date","pickup_time","pickup_location","message_on_cake_choice"
-        ];
-
-        var missing = [];
+        var required = ["first_name","last_name","phone","email","message"];
         for (var i = 0; i < required.length; i++) {
-          if (!String(data[required[i]] || "").trim()) missing.push(required[i]);
-        }
-
-        if (missing.length) {
-          setStatus("Please complete all required fields before submitting.", "err");
-          return;
+          if (!String(data[required[i]] || "").trim()) {
+            setStatus("Please complete all required fields before submitting.", "err");
+            return;
+          }
         }
 
         submitBtn.disabled = true;
-        submitBtn.textContent = "Submitting...";
-        setStatus("Submitting your order request...", "");
+        submitBtn.textContent = "Sending...";
+        setStatus("Sending your message...", "");
 
         fetch(WEB_APP_URL, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(data)
         })
-        .then(function (r) { return r.json(); })
-        .then(function (res) {
+        .then(function (r) { return r.text(); })
+        .then(function (txt) {
+          var res = safeJsonParse(txt) || {};
           if (res && res.ok) {
-            setStatus("Success. Your order request was received. A confirmation email was sent.", "ok");
+            setStatus("Message sent. We emailed you a confirmation.", "ok");
             form.reset();
-            fillFlavorSelect(firstFlavor);
-            fillFlavorSelect(secondFlavor);
-            setEarliestPickup();
-            toggleCustomMessage();
-            updateCounter();
-            updateCakePreview();
+            updateMsgCounter();
           } else {
             setStatus("Could not submit. " + (res && res.error ? res.error : "Please try again."), "err");
           }
@@ -837,7 +495,7 @@ textarea {
         })
         .finally(function () {
           submitBtn.disabled = false;
-          submitBtn.textContent = "Submit Form";
+          submitBtn.textContent = "Send Message";
         });
       });
     })();
