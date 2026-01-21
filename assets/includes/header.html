@@ -9,247 +9,267 @@
       background: var(--hd-white);
       border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-/* Tapestry band (GLOBAL) */
-.hd-header .tapestry {
-  background-image: url("/assets/images/pages/hd_tapestry_39.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-  border-bottom: 0;
-}
 
-.hd-header .tapestry-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 20px;
-  min-height: 96px; /* desktop tapestry height */
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
+    /* Tapestry band (GLOBAL) */
+    .hd-header .tapestry {
+      background-image: url("/assets/images/pages/hd_tapestry_39.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      line-height: 0;
+      margin: 0;
+      padding: 0;
+      border-bottom: 0;
+    }
 
-/* Centered logo (GLOBAL) */
-.hd-header .logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
+    .hd-header .tapestry-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+      min-height: 96px;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
 
-.hd-header .logo img {
-  height: 74px; /* desktop logo size (increase here) */
-  width: auto;
-  max-width: min(520px, 92vw);
-  display: block;
-}
+    /* Centered logo (GLOBAL) */
+    .hd-header .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
 
-/* Desktop nav row under tapestry */
-.hd-header .bar {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 10px 20px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .hd-header .logo img {
+      height: 74px;
+      width: auto;
+      max-width: min(520px, 92vw);
+      display: block;
+    }
 
-.hd-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+    /* Desktop nav row under tapestry */
+    .hd-header .bar {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 20px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.hd-nav a {
-  text-decoration: none;
-  color: var(--hd-burgundy);
-  font-weight: 900;
-  font-size: 13px;
-  letter-spacing: 0.02em;
-  padding: 10px 12px;
-  border-radius: 14px;
-  line-height: 1;
-  white-space: nowrap;
-}
+    .hd-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-.hd-nav a:hover,
-.hd-nav a:focus {
-  outline: none;
-  background: rgba(249, 230, 195, 0.65);
-}
+    .hd-nav a {
+      text-decoration: none;
+      color: var(--hd-burgundy);
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      padding: 10px 12px;
+      border-radius: 14px;
+      line-height: 1;
+      white-space: nowrap;
+    }
 
-/* Desktop dropdown for Locations */
-.hd-nav .has-sub {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
+    .hd-nav a:hover,
+    .hd-nav a:focus {
+      outline: none;
+      background: rgba(249, 230, 195, 0.65);
+    }
 
-.hd-nav .has-sub > a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
+    /* Desktop dropdown for Locations */
+    .hd-nav .has-sub {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
 
-.hd-nav .caret {
-  font-size: 10px;
-  line-height: 1;
-  opacity: 0.85;
-}
+    .hd-nav .has-sub > a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.hd-nav .submenu {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 240px;
-  background: var(--hd-white);
-  border: 1px solid rgba(0,0,0,0.10);
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  padding: 8px;
-  display: none;
-  z-index: 9999;
-}
+    .hd-nav .caret {
+      font-size: 10px;
+      line-height: 1;
+      opacity: 0.85;
+    }
 
-.hd-nav .submenu a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-weight: 900;
-  color: var(--hd-burgundy);
-  background: rgba(249, 230, 195, 0.20);
-  text-align: left;
-}
+    /* IMPORTANT: remove hover gap by aligning submenu to the bottom edge of the trigger */
+    .hd-nav .submenu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 240px;
+      background: var(--hd-white);
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      padding: 8px;
+      display: none;
+      z-index: 9999;
+      margin-top: 8px; /* visual spacing without creating a hover gap */
+    }
 
-.hd-nav .submenu a:hover,
-.hd-nav .submenu a:focus {
-  background: rgba(249, 230, 195, 0.65);
-  outline: none;
-}
+    /* Hover bridge: keeps hover active while moving to submenu */
+    .hd-nav .has-sub::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      height: 12px;
+      display: none;
+    }
 
-.hd-nav .has-sub:hover .submenu,
-.hd-nav .has-sub:focus-within .submenu {
-  display: block;
-}
+    .hd-nav .submenu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-weight: 900;
+      color: var(--hd-burgundy);
+      background: rgba(249, 230, 195, 0.20);
+      text-align: left;
+      text-decoration: none;
+    }
 
-/* Mobile: logo centered, hamburger below tapestry */
-.hd-mobile-row {
-  display: none;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 10px 20px 12px;
-  align-items: center;
-  justify-content: center;
-}
+    .hd-nav .submenu a:hover,
+    .hd-nav .submenu a:focus {
+      background: rgba(249, 230, 195, 0.65);
+      outline: none;
+    }
 
-.hd-mobile-toggle {
-  display: none;
-}
+    .hd-nav .has-sub:hover .submenu,
+    .hd-nav .has-sub:focus-within .submenu {
+      display: block;
+    }
 
-.hd-burger {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  border: 1px solid rgba(101, 11, 50, 0.18);
-  background: var(--hd-white);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-}
+    .hd-nav .has-sub:hover::after,
+    .hd-nav .has-sub:focus-within::after {
+      display: block;
+    }
 
-.hd-burger span {
-  width: 18px;
-  height: 2px;
-  background: var(--hd-burgundy);
-  display: block;
-  position: relative;
-}
+    /* Mobile: logo centered, hamburger below tapestry */
+    .hd-mobile-row {
+      display: none;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 20px 12px;
+      align-items: center;
+      justify-content: center;
+    }
 
-.hd-burger span::before,
-.hd-burger span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 18px;
-  height: 2px;
-  background: var(--hd-burgundy);
-}
+    .hd-mobile-toggle {
+      display: none;
+    }
 
-.hd-burger span::before { top: -6px; }
-.hd-burger span::after { top: 6px; }
+    .hd-burger {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: var(--hd-white);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
 
-.hd-mobile-panel {
-  display: none;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  background: var(--hd-white);
-}
+    .hd-burger span {
+      width: 18px;
+      height: 2px;
+      background: var(--hd-burgundy);
+      display: block;
+      position: relative;
+    }
 
-.hd-mobile-panel .inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 12px 20px 18px;
-}
+    .hd-burger span::before,
+    .hd-burger span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 18px;
+      height: 2px;
+      background: var(--hd-burgundy);
+    }
 
-.hd-mobile-panel nav {
-  display: grid;
-  gap: 8px;
-}
+    .hd-burger span::before { top: -6px; }
+    .hd-burger span::after { top: 6px; }
 
-.hd-mobile-panel a {
-  text-decoration: none;
-  color: var(--hd-burgundy);
-  font-weight: 900;
-  padding: 12px 12px;
-  border-radius: 14px;
-  background: rgba(249, 230, 195, 0.35);
-}
+    .hd-mobile-panel {
+      display: none;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      background: var(--hd-white);
+    }
 
-.hd-mobile-panel a:hover,
-.hd-mobile-panel a:focus {
-  outline: none;
-  background: rgba(249, 230, 195, 0.65);
-}
+    .hd-mobile-panel .inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 20px 18px;
+    }
 
-.hd-mobile-toggle:checked ~ .hd-mobile-panel {
-  display: block;
-}
+    .hd-mobile-panel nav {
+      display: grid;
+      gap: 8px;
+    }
 
-/* Responsive sizing */
-@media (max-width: 960px) {
-  .hd-header .tapestry-inner {
-    min-height: 84px;
-  }
+    .hd-mobile-panel a {
+      text-decoration: none;
+      color: var(--hd-burgundy);
+      font-weight: 900;
+      padding: 12px 12px;
+      border-radius: 14px;
+      background: rgba(249, 230, 195, 0.35);
+    }
 
-  .hd-header .logo img {
-    height: 62px; /* mobile logo size (increase here) */
-  }
+    .hd-mobile-panel a:hover,
+    .hd-mobile-panel a:focus {
+      outline: none;
+      background: rgba(249, 230, 195, 0.65);
+    }
 
-  .hd-header .bar {
-    display: none; /* hide desktop nav */
-  }
+    .hd-mobile-toggle:checked ~ .hd-mobile-panel {
+      display: block;
+    }
 
-  .hd-mobile-row {
-    display: flex;
-    justify-content: center;
-  }
-}
+    /* Responsive sizing */
+    @media (max-width: 960px) {
+      .hd-header .tapestry-inner {
+        min-height: 84px;
+      }
 
-@media (max-width: 640px) {
-  .hd-header .tapestry-inner {
-    min-height: 76px;
-  }
+      .hd-header .logo img {
+        height: 62px;
+      }
 
-  .hd-header .logo img {
-    height: 56px; /* small mobile logo size */
-  }
-}
+      .hd-header .bar {
+        display: none;
+      }
+
+      .hd-mobile-row {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hd-header .tapestry-inner {
+        min-height: 76px;
+      }
+
+      .hd-header .logo img {
+        height: 56px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -261,54 +281,55 @@
         </a>
       </div>
     </div>
-<!-- Desktop nav -->
-<div class="bar" aria-label="Primary navigation bar">
-  <nav class="hd-nav" aria-label="Primary navigation">
-    <a href="/">HOME</a>
 
-    <div class="has-sub">
-      <a href="/locations" aria-haspopup="true" aria-expanded="false">
-        LOCATIONS <span class="caret">&#9662;</span>
-      </a>
-      <div class="submenu" role="menu" aria-label="Locations submenu">
-        <a href="/locations" role="menuitem">ALL LOCATIONS</a>
-        <a href="/locations/north-miami" role="menuitem">NORTH MIAMI</a>
-        <a href="/locations/north-beach" role="menuitem">NORTH BEACH</a>
-      </div>
+    <!-- Desktop nav -->
+    <div class="bar" aria-label="Primary navigation bar">
+      <nav class="hd-nav" aria-label="Primary navigation">
+        <a href="/">HOME</a>
+
+        <div class="has-sub">
+          <a href="/locations" aria-haspopup="true" aria-expanded="false">
+            LOCATIONS <span class="caret">&#9662;</span>
+          </a>
+          <div class="submenu" role="menu" aria-label="Locations submenu">
+            <a href="/locations" role="menuitem">ALL LOCATIONS</a>
+            <a href="/locations/north-miami" role="menuitem">NORTH MIAMI</a>
+            <a href="/locations/north-beach" role="menuitem">NORTH BEACH</a>
+          </div>
+        </div>
+
+        <a href="/menu">MENU</a>
+        <a href="/cakes">CAKES</a>
+        <a href="/reviews">REVIEWS</a>
+        <a href="/about-us">ABOUT US</a>
+        <a href="/contact">CONTACT</a>
+      </nav>
     </div>
 
-    <a href="/menu">MENU</a>
-    <a href="/cakes">CAKES</a>
-    <a href="/reviews">REVIEWS</a>
-    <a href="/about-us">ABOUT US</a>
-    <a href="/contact">CONTACT</a>
-  </nav>
-</div>
+    <!-- Mobile hamburger -->
+    <div class="hd-mobile-row" aria-label="Mobile navigation bar">
+      <label class="hd-burger" for="hdMobileToggle" aria-label="Open menu">
+        <span></span>
+      </label>
+    </div>
 
-<!-- Mobile hamburger -->
-<div class="hd-mobile-row" aria-label="Mobile navigation bar">
-  <label class="hd-burger" for="hdMobileToggle" aria-label="Open menu">
-    <span></span>
-  </label>
-</div>
+    <input class="hd-mobile-toggle" type="checkbox" id="hdMobileToggle" aria-hidden="true">
 
-<input class="hd-mobile-toggle" type="checkbox" id="hdMobileToggle" aria-hidden="true">
-
-<div class="hd-mobile-panel" aria-label="Mobile menu">
-  <div class="inner">
-    <nav aria-label="Mobile navigation">
-      <a href="/">HOME</a>
-      <a href="/locations">LOCATIONS</a>
-      <a href="/locations/north-miami">NORTH MIAMI</a>
-      <a href="/locations/north-beach">NORTH BEACH</a>
-      <a href="/menu">MENU</a>
-      <a href="/cakes">CAKES</a>
-      <a href="/reviews">REVIEWS</a>
-      <a href="/about-us">ABOUT US</a>
-      <a href="/contact">CONTACT</a>
-    </nav>
-  </div>
-</div>
+    <div class="hd-mobile-panel" aria-label="Mobile menu">
+      <div class="inner">
+        <nav aria-label="Mobile navigation">
+          <a href="/">HOME</a>
+          <a href="/locations">LOCATIONS</a>
+          <a href="/locations/north-miami">NORTH MIAMI</a>
+          <a href="/locations/north-beach">NORTH BEACH</a>
+          <a href="/menu">MENU</a>
+          <a href="/cakes">CAKES</a>
+          <a href="/reviews">REVIEWS</a>
+          <a href="/about-us">ABOUT US</a>
+          <a href="/contact">CONTACT</a>
+        </nav>
+      </div>
+    </div>
   </header>
 </body>
 </html>
