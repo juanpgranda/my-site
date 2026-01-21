@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact | Häagen-Dazs</title>
-  <meta name="description" content="Contact Häagen-Dazs North Miami and North Beach. Send us a message and we will get back to you.">
-  <link rel="canonical" href="https://www.hdicecream.com/contact/">
+  <title>Menu | Häagen-Dazs</title>
+  <meta name="description" content="Explore our Häagen-Dazs menu including cones, sundaes, milkshakes, frozen drinks, sorbet smoothies, and ice cream cakes.">
+  <link rel="canonical" href="https://www.hdicecream.com/menu/">
   <meta name="theme-color" content="#650B32">
   <link rel="stylesheet" href="/assets/css/site.css">
   <style>
     :root {
-      --container: 920px;
+      --container: 1120px;
       --radius-lg: 18px;
+      --radius-md: 14px;
       --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
       --border-soft: 1px solid rgba(0,0,0,0.10);
       --text-muted: rgba(101, 11, 50, 0.72);
@@ -57,7 +58,7 @@
 
     .page-hero {
       background: var(--hd-white);
-      padding: 26px 0 10px;
+      padding: 26px 0 14px;
       border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
@@ -74,165 +75,170 @@
     }
 
     h1 {
-      margin: 0 0 8px;
-      font-size: 42px;
-      line-height: 1.08;
+      margin: 0 0 10px;
+      font-size: 44px;
+      line-height: 1.06;
       color: var(--hd-burgundy);
     }
 
-    .sublead {
+    .lead {
       margin: 0;
       color: var(--text-muted);
       font-size: 14px;
-      line-height: 1.55;
-      max-width: 85ch;
+      line-height: 1.6;
+      max-width: 90ch;
+    }
+
+    .top-grid-wrap {
+      padding: 18px 0 10px;
+      background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .cat-card {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      text-decoration: none;
+      color: inherit;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: var(--border-soft);
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      min-width: 0;
+    }
+
+    .cat-img {
+      aspect-ratio: 1 / 1;
+      background: #efe8db;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cat-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1);
+      transition: transform 140ms ease;
+    }
+
+    .cat-card:hover .cat-img img,
+    .cat-card:focus .cat-img img {
+      transform: scale(1.03);
+    }
+
+    .cat-body {
+      padding: 10px 12px 12px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255,255,255,0.98);
+    }
+
+    .cat-title {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--hd-burgundy);
+      line-height: 1.2;
     }
 
     .section {
       padding: 18px 0 34px;
-      background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
     }
 
-    .form-card {
-      background: var(--hd-white);
-      border: var(--border-soft);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-
-    .form-head {
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      background: rgba(249, 230, 195, 0.22);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .form-head .title {
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 18px;
       font-weight: 900;
       color: var(--hd-burgundy);
-      letter-spacing: 0.02em;
     }
 
-    .help {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.4;
+    .section-rule {
+      height: 2px;
+      background: rgba(101, 11, 50, 0.75);
+      margin-bottom: 16px;
+      border-radius: 999px;
+      opacity: 0.9;
     }
 
-    form { padding: 16px; }
-
-    .grid {
+    .items-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      align-items: start;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
     }
 
-    .field {
+    .item-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-width: 0;
+    }
+
+    .item-img {
+      aspect-ratio: 1 / 1;
+      background: #efe8db;
+      overflow: hidden;
+      border-radius: 0;
+      position: relative;
+    }
+
+    .item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1);
+      transition: transform 140ms ease;
+    }
+
+    .item-card:hover .item-img img,
+    .item-card:focus-within .item-img img {
+      transform: scale(1.03);
+    }
+
+    .item-body {
+      padding: 10px 0 0;
       display: grid;
       gap: 6px;
+      align-content: start;
     }
 
-    label {
+    .item-name {
+      margin: 0;
       font-size: 12px;
-      font-weight: 800;
-      color: rgba(101, 11, 50, 0.85);
-    }
-
-    input, textarea {
-      width: 100%;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      border-radius: 12px;
-      padding: 11px 12px;
-      font-size: 14px;
-      color: rgba(31, 27, 28, 0.95);
-      background: #fff;
-      outline: none;
-      font-family: var(--font-body);
-    }
-
-    input:focus, textarea:focus {
-      border-color: rgba(101, 11, 50, 0.38);
-      box-shadow: 0 0 0 3px rgba(210, 153, 55, 0.18);
-    }
-
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    .full { grid-column: 1 / -1; }
-
-    .inline-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .counter {
-      font-size: 12px;
-      color: rgba(101, 11, 50, 0.70);
       font-weight: 900;
-      white-space: nowrap;
-    }
-
-    .actions {
-      display: grid;
-      justify-content: center;
-      padding: 18px 16px 18px;
-      border-top: 1px solid rgba(0,0,0,0.08);
-      background: rgba(249, 230, 195, 0.14);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 900;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      cursor: pointer;
-      user-select: none;
-      font-family: var(--font-body);
-      background: var(--hd-gold-light);
       color: var(--hd-burgundy);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.10);
-      min-width: 220px;
+      line-height: 1.25;
     }
 
-    .btn:hover, .btn:focus {
-      outline: none;
-      background: var(--hd-gold-medium);
-      border-color: rgba(101, 11, 50, 0.26);
+    .item-desc {
+      margin: 0;
+      color: rgba(101, 11, 50, 0.78);
+      font-size: 11px;
+      line-height: 1.55;
     }
 
-    .status {
-      margin-top: 12px;
-      text-align: center;
-      font-size: 13px;
-      color: rgba(101, 11, 50, 0.82);
+    .scroll-anchor {
+      scroll-margin-top: 96px;
     }
 
-    .status.ok { color: rgba(14, 96, 45, 0.95); }
-    .status.err { color: rgba(150, 20, 40, 0.95); }
-
-    @media (max-width: 900px) {
-      h1 { font-size: 38px; }
+    @media (max-width: 980px) {
+      h1 { font-size: 40px; }
+      .top-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .items-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 720px) {
-      .grid { grid-template-columns: 1fr; }
+    @media (max-width: 640px) {
       h1 { font-size: 34px; }
       .hero-top-bg .spacer { min-height: 46px; }
-      .btn { width: 100%; min-width: 0; }
+      .top-grid { grid-template-columns: 1fr; }
+      .items-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -242,63 +248,696 @@
   <div id="siteHeader"></div>
 
   <main id="main">
-    <section class="page-hero" aria-label="Contact header">
+    <section class="page-hero" aria-label="Menu header">
       <div class="container">
-        <div class="kicker">Contact</div>
-        <h1>Send us a message</h1>
-        <p class="sublead">
-          Have a question about our menu, cakes, catering, or pickup? Send a message and our team will reply as soon as possible.
-        </p>
+        <div class="kicker">Menu</div>
+        <h1>Quality ingredients, irresistible creations</h1>
+        <p class="lead">Browse by category, then explore flavors and favorites below. Tap any category to jump to that section.</p>
       </div>
     </section>
 
-    <section class="section" aria-label="Contact form section">
+    <section class="top-grid-wrap" aria-label="Menu categories">
       <div class="container">
-        <div class="form-card" role="region" aria-label="Contact form card">
-          <div class="form-head">
-            <div class="title">Contact Form</div>
-            <div class="help">We will email a copy of your message to you.</div>
-          </div>
+        <div class="top-grid" aria-label="Menu top categories">
 
-          <form id="contactForm" novalidate>
-            <div class="grid">
-              <div class="field">
-                <label for="firstName">First Name</label>
-                <input id="firstName" name="first_name" type="text" autocomplete="given-name" required>
-              </div>
-
-              <div class="field">
-                <label for="lastName">Last Name</label>
-                <input id="lastName" name="last_name" type="text" autocomplete="family-name" required>
-              </div>
-
-              <div class="field">
-                <label for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(786) 555-1212" required>
-              </div>
-
-              <div class="field">
-                <label for="email">Email Address</label>
-                <input id="email" name="email" type="email" autocomplete="email" required>
-              </div>
-
-              <div class="field full">
-                <div class="inline-row">
-                  <label for="message">Message</label>
-                  <div class="counter" id="msgCounter">0 / 1000</div>
-                </div>
-                <textarea id="message" name="message" maxlength="1000" placeholder="How can we help?" required></textarea>
-              </div>
+          <a class="cat-card" href="#ice-cream-cones-and-cups" aria-label="Jump to Ice Cream Cones and Cups section">
+            <div class="cat-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/HD_SingleScoop_Strawberry_LYR_06_Simplified.jpg" alt="">
             </div>
-
-            <div class="actions">
-              <button class="btn" type="submit" id="submitBtn">Send Message</button>
-              <div class="status" id="statusMsg" aria-live="polite"></div>
+            <div class="cat-body">
+              <div class="cat-title">Ice Cream Cones and Cups</div>
             </div>
-          </form>
+          </a>
+
+          <a class="cat-card" href="#dazzler-sundaes" aria-label="Jump to Dazzler Sundaes section">
+            <div class="cat-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/220204_FRO5251_HD_Shops_DessertImagery_DazzlerSundaes_SocialMedia_1x1_ALT.jpg" alt="">
+            </div>
+            <div class="cat-body">
+              <div class="cat-title">Dazzler Sundaes</div>
+            </div>
+          </a>
+
+          <a class="cat-card" href="#milkshakes" aria-label="Jump to Milkshakes section">
+            <div class="cat-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/220204_FRO5251_HD_Shops_DessertImagery_MilkshakeFamily_SocialMedia_1x1_ALT.jpg" alt="">
+            </div>
+            <div class="cat-body">
+              <div class="cat-title">Milkshakes</div>
+            </div>
+          </a>
+
+          <a class="cat-card" href="#frozen-drinks" aria-label="Jump to Frozen Drinks section">
+            <div class="cat-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="cat-body">
+              <div class="cat-title">Frozen Drinks</div>
+            </div>
+          </a>
+
+          <a class="cat-card" href="#ice-cream-cakes" aria-label="Jump to Ice Cream Cakes section">
+            <div class="cat-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="cat-body">
+              <div class="cat-title">Ice Cream Cakes</div>
+            </div>
+          </a>
+
+          <a class="cat-card" href="#limited-time-offers" aria-label="Jump to Limited Time Offers section">
+            <div class="cat-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="cat-body">
+              <div class="cat-title">Limited Time Offers</div>
+            </div>
+          </a>
+
         </div>
       </div>
     </section>
+
+    <section class="section scroll-anchor" id="sorbet-smoothies" aria-label="Sorbet Smoothies section">
+      <div class="container">
+        <h2 class="section-title">Sorbet Smoothies</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+        <div class="items-grid" aria-label="Sorbet Smoothies items">
+
+          <article class="item-card" aria-label="Aloha Mango Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Aloha Mango Smoothie</h3>
+              <p class="item-desc">Real peaches and bananas blended with our signature Mango Sorbet and pineapple juice.​</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Strawberry Banana Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Strawberry Banana Smoothie</h3>
+              <p class="item-desc">Real bananas and strawberries with our refreshing Strawberry Sorbet and cranberry juice.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Strawberry Mango Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Strawberry Mango Smoothie</h3>
+              <p class="item-desc">Real strawberries and peaches with our signature Mango Sorbet and pineapple juice.​</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Wildberry Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Wildberry Smoothie</h3>
+              <p class="item-desc">Real blueberries and strawberries blended with our refreshing Strawberry Sorbet and cranberry juice.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Pomegranate Berry Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Pomegranate Berry Smoothie</h3>
+              <p class="item-desc">Real strawberries blended with our bright Raspberry Sorbet and pomegranate juice.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section scroll-anchor" id="dazzler-sundaes" aria-label="Dazzler Sundaes section">
+      <div class="container">
+        <h2 class="section-title">Dazzler Sundaes</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+        <div class="items-grid" aria-label="Dazzler Sundaes items">
+
+          <article class="item-card" aria-label="Banana Split Dazzler">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Banana Split Dazzler</h3>
+              <p class="item-desc">Vanilla Ice Cream layered with bananas, pineapple, strawberry and hot fudge topped with whipped cream and a cherry. Served with toppings.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Cookies &amp; Cream Dazzler">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Cookies &amp; Cream Dazzler</h3>
+              <p class="item-desc">Cookies and Cream Ice Cream layered with hot fudge and chocolate cookie pieces topped with whipped cream and cookie crunch. Served with toppings.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Dulce De Leche Dazzler">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Dulce De Leche Dazzler</h3>
+              <p class="item-desc">Sweet Caramel Ice Cream with bananas and warm caramel topped with whipped cream. Served with toppings.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Midnight Cookies &amp; Cream Dazzler">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Midnight Cookies &amp; Cream Dazzler</h3>
+              <p class="item-desc">Midnight Cookies and Cream Ice Cream layered with hot fudge and chocolate cookie pieces topped with whipped cream and hot fudge. Served with toppings.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Mint Chip Dazzler">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Mint Chip Dazzler</h3>
+              <p class="item-desc">Mint Chip Ice Cream layered with hot fudge and chocolate cookie pieces topped with whipped cream and chocolate sprinkles. Served with toppings.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Rocky Road Dazzler">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Rocky Road Dazzler</h3>
+              <p class="item-desc">Rocky Road Ice Cream layered with hot fudge and chocolate cookie pieces topped with whipped cream and chocolate cookie crunch. Served with toppings.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="New York Strawberry Cheesecake Dazzler">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">New York Strawberry Cheesecake Dazzler</h3>
+              <p class="item-desc">Creamy New York Strawberry Cheese Ice Cream, with a swirl of sweet strawberry sauce and graham cracker crust pieces layered with fresh strawberries and graham cracker crumbs, topped with whipped cream and a strawberry garnish. Available at participating shop locations.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section scroll-anchor" id="milkshakes" aria-label="Milkshakes section">
+      <div class="container">
+        <h2 class="section-title">Milkshakes</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+        <div class="items-grid" aria-label="Milkshakes items">
+
+          <article class="item-card" aria-label="Belgian Chocolate Shake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Belgian Chocolate Shake</h3>
+              <p class="item-desc">Belgian Chocolate Ice Cream surrounded by ribbons of hot fudge topped with whipped cream and chocolate sprinkles.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Cookies &amp; Cream Shake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Cookies &amp; Cream Shake</h3>
+              <p class="item-desc">Cookies &amp; Cream Ice Cream blended and topped with whipped cream and chocolate cookie crunch.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Dulce De Leche Shake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Dulce De Leche Shake</h3>
+              <p class="item-desc">Sweet Caramel Ice Cream blended and topped with whipped cream and warm caramel.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Coffee Chip Shake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Coffee Chip Shake</h3>
+              <p class="item-desc">Coffee Ice Cream paired with plenty of rich, sweet chocolaty chips blended and topped with whipped cream and hot fudge.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Caramel Cone Shake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Caramel Cone Shake</h3>
+              <p class="item-desc">Rich Caramel Ice Cream with crunchy chocolate covered cone pieces surrounded by ribbons of caramel topped with whipped cream and waffle cone pieces.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Pineapple Coconut Shake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Pineapple Coconut Shake</h3>
+              <p class="item-desc">Juicy Pineapple Coconut Ice Cream, blended and topped with whipped cream and garnished with fresh pineapple. Available at participating shop locations.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Coffee Shake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Coffee Shake</h3>
+              <p class="item-desc">Rich Coffee Ice Cream blended to perfection and topped with creamy whipped cream.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Mocha Shake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Mocha Shake</h3>
+              <p class="item-desc">Belgian Chocolate Ice Cream paired with Coffee Ice Cream, blended and topped with whipped cream and crunchy chocolate cookie pieces.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Caramel Coffee Shake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Caramel Coffee Shake</h3>
+              <p class="item-desc">Sweet Dulce de Leche Ice Cream blended with Coffee Ice Cream and finished with silky whipped cream and warm caramel.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section scroll-anchor" id="frozen-drinks" aria-label="Frozen Drinks section">
+      <div class="container">
+        <h2 class="section-title">Frozen Drinks</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+        <div class="items-grid" aria-label="Frozen Drinks items">
+
+          <article class="item-card" aria-label="Aloha Mango Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Aloha Mango Smoothie</h3>
+              <p class="item-desc">Peaches and banana with Mango Sorbet, pineapple juice and Vanilla Ice Cream.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Strawberry Banana Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Strawberry Banana Smoothie</h3>
+              <p class="item-desc">Bananas and strawberries with Strawberry Sorbet, cranberry juice and Vanilla Ice Cream.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Strawberry Mango Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Strawberry Mango Smoothie</h3>
+              <p class="item-desc">Strawberries and peaches with Mango Sorbet, pineapple juice and Vanilla Ice Cream.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Wildberry Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Wildberry Smoothie</h3>
+              <p class="item-desc">Blueberries and strawberries with Strawberry Sorbet, cranberry juice and Vanilla Ice Cream.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Pomegranate Berry Smoothie">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Pomegranate Berry Smoothie</h3>
+              <p class="item-desc">Strawberries with Raspberry Sorbet, pomegranate juice and Vanilla Ice Cream.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Strawberry Mango Frozen Lemonade">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Strawberry Mango Frozen Lemonade</h3>
+              <p class="item-desc">Real Strawberry Sorbet and Mango Sorbet blended with lemonade.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Strawberry Frozen Lemonade">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Strawberry Frozen Lemonade</h3>
+              <p class="item-desc">Juicy Strawberry Sorbet blended with refreshing lemonade.</p>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Raspberry Frozen Lemonade">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Raspberry Frozen Lemonade</h3>
+              <p class="item-desc">Tangy Raspberry Sorbet blended to perfection with lemonade.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section scroll-anchor" id="ice-cream-cones-and-cups" aria-label="Ice Cream Cones &amp; Cups section">
+      <div class="container">
+        <h2 class="section-title">Ice Cream Cones &amp; Cups</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+        <div class="items-grid" aria-label="Ice Cream Cones &amp; Cups items">
+
+          <article class="item-card" aria-label="Belgian Chocolate">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Belgian Chocolate</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Butter Pecan">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Butter Pecan</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Caramel Cone">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Caramel Cone</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Chocolate">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Chocolate</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Coffee">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Coffee</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Coffee Chip">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Coffee Chip</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Cookie Dough">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Cookie Dough</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Cookies &amp; Cream">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Cookies &amp; Cream</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Dulce de Leche">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Dulce de Leche</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Mint Chip">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Mint Chip</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Pineapple Coconut">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Pineapple Coconut</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Pistachio">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Pistachio</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Rocky Road">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Rocky Road</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Rum Raisin">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Rum Raisin</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Sea Salt Caramel Truffle">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Sea Salt Caramel Truffle</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Strawberry">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Strawberry</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Vanilla">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Vanilla</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Vanilla Chocolate Chip">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Vanilla Chocolate Chip</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Vanilla Swiss Almond">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Vanilla Swiss Almond</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="White Chocolate Raspberry Truffle">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">White Chocolate Raspberry Truffle</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Mango Sorbet">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Mango Sorbet</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Raspberry Sorbet">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/menu/top_section/251022_FRO7285_HD_Shops_2026_SorbetSmoothies_SocialMedia_2000x2000.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Raspberry Sorbet</h3>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section scroll-anchor" id="ice-cream-cakes" aria-label="Ice Cream Cakes section">
+      <div class="container">
+        <h2 class="section-title">Ice Cream Cakes</h2>
+        <div class="section-rule" aria-hidden="true"></div>
+        <div class="items-grid" aria-label="Ice Cream Cakes items">
+
+          <article class="item-card" aria-label="Ribbon Cake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/cakes/RibbonCake_Whole_041725.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Ribbon Cake</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Dulce de Leche Cake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/cakes/DulcedeLecheCake_Whole_041725.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Dulce de Leche Cake</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Coffee Crunch Cake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/cakes/CoffeeCrunchCake_Whole_041725.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Coffee Crunch Cake</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Rose’s Birthday Cake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/cakes/RosesBirthdayCake_Whole_041725.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Rose’s Birthday Cake</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Reuben’s Birthday Cake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/cakes/ReubensBirthdayCake_Whole_041725.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Reuben’s Birthday Cake</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Cookies &amp; Cream Cake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/cakes/CookiesAndCreamCake_Whole_041725.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Cookies &amp; Cream Cake</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Triple Chocolate Cake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/cakes/TripleChocolateCake_Whole_041725.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Triple Chocolate Cake</h3>
+            </div>
+          </article>
+
+          <article class="item-card" aria-label="Just Because Cake">
+            <div class="item-img" aria-hidden="true">
+              <img src="/assets/images/cakes/JustBecauseCake_Whole_041725.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-name">Just Because Cake</h3>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="siteFooter"></div>
@@ -324,176 +963,20 @@
       loadInto("siteFooter", footerUrl);
     })();
   </script>
-
   <script>
     (function () {
-      var WEB_APP_URL = "https://script.google.com/a/macros/klizos.com/s/AKfycbw0GCt6as7CIraDZmrfP1c0J9ysoQadqmnCU8vdoYdKBu24m2Rde9G9CO0co9K28w32/exec";
-
-      var form = document.getElementById("contactForm");
-      var statusMsg = document.getElementById("statusMsg");
-      var submitBtn = document.getElementById("submitBtn");
-
-      var firstName = document.getElementById("firstName");
-      var lastName = document.getElementById("lastName");
-      var phone = document.getElementById("phone");
-
-      var messageEl = document.getElementById("message");
-      var msgCounter = document.getElementById("msgCounter");
-      var MSG_MAX = 1000;
-
-      function capFirst(s) {
-        s = String(s || "").trim();
-        if (!s) return "";
-        return s.charAt(0).toUpperCase() + s.slice(1);
-      }
-
-      function formatPhone(value) {
-        var digits = String(value || "").replace(/\D/g, "").slice(0, 10);
-        if (digits.length === 0) return "";
-        if (digits.length < 4) return "(" + digits;
-        if (digits.length < 7) return "(" + digits.slice(0,3) + ") " + digits.slice(3);
-        return "(" + digits.slice(0,3) + ") " + digits.slice(3,6) + "-" + digits.slice(6);
-      }
-
-      function setStatus(text, kind) {
-        statusMsg.textContent = text || "";
-        statusMsg.className = "status" + (kind ? " " + kind : "");
-      }
-
-      function safeJsonParse(text) {
-        try { return JSON.parse(text); } catch (e) { return null; }
-      }
-
-      function updateMsgCounter() {
-        var n = (messageEl.value || "").length;
-        msgCounter.textContent = n + " / " + MSG_MAX;
-      }
-
-      function capitalizeSentences(text) {
-        var s = String(text || "");
-        // Normalize spacing a bit but keep user's line breaks
-        var parts = s.split(/(\r?\n)/); // keep newlines as tokens
-        for (var i = 0; i < parts.length; i++) {
-          if (parts[i] === "\n" || parts[i] === "\r\n") continue;
-
-          // Capitalize first letter of each sentence in this line chunk.
-          var chunk = parts[i];
-
-          // Trim left only for capitalization check (keep original spacing by rebuilding)
-          var leadMatch = chunk.match(/^\s*/);
-          var lead = leadMatch ? leadMatch[0] : "";
-          var body = chunk.slice(lead.length);
-
-          // Walk through body and capitalize after sentence ends.
-          var out = "";
-          var startSentence = true;
-
-          for (var j = 0; j < body.length; j++) {
-            var ch = body.charAt(j);
-
-            if (startSentence) {
-              if (/[a-zA-Z]/.test(ch)) {
-                out += ch.toUpperCase();
-                startSentence = false;
-              } else {
-                out += ch;
-              }
-            } else {
-              out += ch;
-            }
-
-            if (ch === "." || ch === "!" || ch === "?") {
-              startSentence = true;
-            }
-          }
-
-          parts[i] = lead + out;
-        }
-        return parts.join("");
-      }
-
-      firstName.addEventListener("blur", function () { firstName.value = capFirst(firstName.value); });
-      lastName.addEventListener("blur", function () { lastName.value = capFirst(lastName.value); });
-
-      phone.addEventListener("input", function () {
-        phone.value = formatPhone(phone.value);
-      });
-
-      messageEl.addEventListener("input", function () {
-        if ((messageEl.value || "").length > MSG_MAX) {
-          messageEl.value = (messageEl.value || "").slice(0, MSG_MAX);
-        }
-        updateMsgCounter();
-      });
-
-      // Capitalize sentence starts when user leaves the field
-      messageEl.addEventListener("blur", function () {
-        var v = messageEl.value || "";
-        var next = capitalizeSentences(v);
-        if (next !== v) messageEl.value = next;
-        updateMsgCounter();
-      });
-
-      updateMsgCounter();
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        setStatus("", "");
-
-        // Final normalization
-        firstName.value = capFirst(firstName.value);
-        lastName.value = capFirst(lastName.value);
-
-        messageEl.value = capitalizeSentences(messageEl.value || "");
-        if ((messageEl.value || "").length > MSG_MAX) {
-          messageEl.value = (messageEl.value || "").slice(0, MSG_MAX);
-        }
-        updateMsgCounter();
-
-        var data = {
-          first_name: (firstName.value || "").trim(),
-          last_name: (lastName.value || "").trim(),
-          phone: (phone.value || "").trim(),
-          email: (document.getElementById("email").value || "").trim(),
-          message: (messageEl.value || "").trim()
-        };
-
-        var required = ["first_name","last_name","phone","email","message"];
-        for (var i = 0; i < required.length; i++) {
-          if (!String(data[required[i]] || "").trim()) {
-            setStatus("Please complete all required fields before submitting.", "err");
-            return;
-          }
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
-        setStatus("Sending your message...", "");
-
-        fetch(WEB_APP_URL, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(data)
-        })
-        .then(function (r) { return r.text(); })
-        .then(function (txt) {
-          var res = safeJsonParse(txt) || {};
-          if (res && res.ok) {
-            setStatus("Message sent. We emailed you a confirmation.", "ok");
-            form.reset();
-            updateMsgCounter();
-          } else {
-            setStatus("Could not submit. " + (res && res.error ? res.error : "Please try again."), "err");
-          }
-        })
-        .catch(function () {
-          setStatus("Network error. Please try again.", "err");
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Send Message";
+      // Smooth scroll for in-page category links
+      var links = document.querySelectorAll('a[href^="#"]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function (e) {
+          var href = this.getAttribute("href") || "";
+          if (href.length < 2) return;
+          var target = document.getElementById(href.slice(1));
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
         });
-      });
+      }
     })();
   </script>
 </body>
