@@ -9,52 +9,58 @@
       margin: 0;
       padding: 0;
     }
-/* Remove the extra "tapestry band" space entirely */
+:root {
+  --hd-header-max: 1120px;
+  --hd-tapestry-url: url("/assets/images/pages/hd_tapestry_39.jpg");
+  --hd-logo-url: "/assets/images/pages/hd_logo_transparent.jpeg";
+  --hd-tapestry-height: clamp(72px, 8vw, 120px);
+  --hd-logo-height-desktop: 72px;
+  --hd-logo-height-mobile: 56px;
+}
+
+/* Tapestry band with centered logo */
 .hd-header .tapestry {
-  display: none;
-  height: 0;
-  min-height: 0;
-  padding: 0;
+  background-image: var(--hd-tapestry-url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   margin: 0;
-  border: 0;
-  background: transparent;
+  padding: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .hd-header .tapestry-inner {
-  display: none;
-  height: 0;
-  min-height: 0;
-  padding: 0;
-  margin: 0;
+  max-width: var(--hd-header-max);
+  margin: 0 auto;
+  padding: 10px 20px;
+  min-height: var(--hd-tapestry-height);
+  display: grid;
+  place-items: center;
 }
 
-/* Desktop layout: logo left, menu right */
+.hd-header .tapestry-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.hd-header .tapestry-logo img {
+  height: var(--hd-logo-height-desktop);
+  width: auto;
+  display: block;
+}
+
+/* Nav bar below tapestry */
 .hd-header .bar {
-  max-width: 1120px;
+  max-width: var(--hd-header-max);
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
-}
-
-.hd-header .logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex: 0 0 auto;
-}
-
-.hd-header .logo a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.hd-header .logo img {
-  height: 52px;
-  width: auto;
-  display: block;
+  background: var(--hd-white);
 }
 
 .hd-nav {
@@ -62,7 +68,7 @@
   align-items: center;
   gap: 10px;
   flex: 1 1 auto;
-  justify-content: flex-end;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -82,84 +88,6 @@
 .hd-nav a:focus {
   outline: none;
   background: rgba(249, 230, 195, 0.65);
-}
-
-/* Mobile: logo left, hamburger right */
-.hd-mobile {
-  display: none;
-}
-
-.hd-mobile-toggle {
-  display: none;
-}
-
-.hd-burger {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  border: 1px solid rgba(101, 11, 50, 0.18);
-  background: var(--hd-white);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hd-burger span {
-  width: 18px;
-  height: 2px;
-  background: var(--hd-burgundy);
-  display: block;
-  position: relative;
-}
-
-.hd-burger span::before,
-.hd-burger span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 18px;
-  height: 2px;
-  background: var(--hd-burgundy);
-}
-
-.hd-burger span::before { top: -6px; }
-.hd-burger span::after { top: 6px; }
-
-.hd-mobile-panel {
-  display: none;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  background: var(--hd-white);
-}
-
-.hd-mobile-panel .inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 12px 20px 18px;
-}
-
-.hd-mobile-panel nav {
-  display: grid;
-  gap: 8px;
-}
-
-.hd-mobile-panel a {
-  text-decoration: none;
-  color: var(--hd-burgundy);
-  font-weight: 900;
-  padding: 12px 12px;
-  border-radius: 14px;
-  background: rgba(249, 230, 195, 0.35);
-}
-
-.hd-mobile-panel a:hover,
-.hd-mobile-panel a:focus {
-  outline: none;
-  background: rgba(249, 230, 195, 0.65);
-}
-
-.hd-mobile-toggle:checked ~ .hd-mobile-panel {
-  display: block;
 }
 
 /* Desktop dropdown for Locations */
@@ -215,21 +143,103 @@
   display: block;
 }
 
+/* Mobile: hamburger only in bar */
+.hd-mobile {
+  display: none;
+}
+
+.hd-mobile-toggle {
+  display: none;
+}
+
+.hd-burger {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(101, 11, 50, 0.18);
+  background: var(--hd-white);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hd-burger span {
+  width: 18px;
+  height: 2px;
+  background: var(--hd-burgundy);
+  display: block;
+  position: relative;
+}
+
+.hd-burger span::before,
+.hd-burger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--hd-burgundy);
+}
+
+.hd-burger span::before { top: -6px; }
+.hd-burger span::after { top: 6px; }
+
+.hd-mobile-panel {
+  display: none;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: var(--hd-white);
+}
+
+.hd-mobile-panel .inner {
+  max-width: var(--hd-header-max);
+  margin: 0 auto;
+  padding: 12px 20px 18px;
+}
+
+.hd-mobile-panel nav {
+  display: grid;
+  gap: 8px;
+}
+
+.hd-mobile-panel a {
+  text-decoration: none;
+  color: var(--hd-burgundy);
+  font-weight: 900;
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(249, 230, 195, 0.35);
+}
+
+.hd-mobile-panel a:hover,
+.hd-mobile-panel a:focus {
+  outline: none;
+  background: rgba(249, 230, 195, 0.65);
+}
+
+.hd-mobile-toggle:checked ~ .hd-mobile-panel {
+  display: block;
+}
+
 @media (max-width: 960px) {
+  .hd-header .tapestry-inner {
+    padding: 10px 16px;
+  }
+
+  .hd-header .tapestry-logo img {
+    height: var(--hd-logo-height-mobile);
+  }
+
   .hd-nav {
     display: none;
   }
 
+  .hd-header .bar {
+    justify-content: flex-end;
+  }
+
   .hd-mobile {
     display: inline-flex;
-  }
-
-  .hd-header .bar {
-    justify-content: space-between;
-  }
-
-  .hd-header .logo img {
-    height: 48px;
   }
 }
   </style>
@@ -237,15 +247,13 @@
 <body>
   <header class="hd-header" aria-label="Site header">
     <div class="tapestry" aria-hidden="true">
-      <div class="tapestry-inner"></div>
+      <div class="tapestry-inner">
+        <a class="tapestry-logo" href="/" aria-label="Home">
+          <img src="/assets/images/pages/hd_logo_transparent.jpeg" alt="Haagen-Dazs">
+        </a>
+      </div>
     </div>
 <div class="bar">
-  <div class="logo">
-    <a href="/" aria-label="Home">
-      <img src="/assets/images/pages/hd_logo_transparent.jpeg" alt="Haagen-Dazs">
-    </a>
-  </div>
-
   <nav class="hd-nav" aria-label="Primary navigation">
     <a href="/">HOME</a>
 
