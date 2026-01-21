@@ -28,7 +28,7 @@
   margin: 0;
 }
 
-/* Desktop layout: logo left, menu right (to the left of language switch) */
+/* Desktop layout: logo left, menu right */
 .hd-header .bar {
   max-width: 1120px;
   margin: 0 auto;
@@ -82,44 +82,6 @@
 .hd-nav a:focus {
   outline: none;
   background: rgba(249, 230, 195, 0.65);
-}
-
-.hd-right {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  flex: 0 0 auto;
-}
-
-.lang-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid rgba(101, 11, 50, 0.18);
-  border-radius: 999px;
-  padding: 6px;
-  background: var(--hd-white);
-}
-
-.lang-switch a {
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 12px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  color: var(--hd-burgundy);
-  line-height: 1;
-}
-
-.lang-switch a:hover,
-.lang-switch a:focus {
-  outline: none;
-  background: rgba(249, 230, 195, 0.65);
-}
-
-.lang-switch a.is-active {
-  background: var(--hd-burgundy);
-  color: var(--hd-white);
 }
 
 /* Mobile: logo left, hamburger right */
@@ -196,12 +158,6 @@
   background: rgba(249, 230, 195, 0.65);
 }
 
-.hd-mobile-panel .lang-row {
-  margin-top: 12px;
-  display: flex;
-  justify-content: flex-start;
-}
-
 .hd-mobile-toggle:checked ~ .hd-mobile-panel {
   display: block;
 }
@@ -260,8 +216,7 @@
 }
 
 @media (max-width: 960px) {
-  .hd-nav,
-  .hd-right {
+  .hd-nav {
     display: none;
   }
 
@@ -287,7 +242,7 @@
 <div class="bar">
   <div class="logo">
     <a href="/" aria-label="Home">
-      <img src="/assets/images/hd_logo_transparent.png" alt="Haagen-Dazs">
+      <img src="/assets/images/pages/hd_logo_transparent.jpeg" alt="Haagen-Dazs">
     </a>
   </div>
 
@@ -311,13 +266,6 @@
     <a href="/contact">CONTACT</a>
   </nav>
 
-  <div class="hd-right">
-    <div class="lang-switch" aria-label="Language switch">
-      <a class="is-active" href="/">EN</a>
-      <a href="/es/" lang="es">ES</a>
-    </div>
-  </div>
-
   <label class="hd-mobile" for="hdMobileToggle" aria-label="Open menu">
     <span class="hd-burger"><span></span></span>
   </label>
@@ -337,13 +285,6 @@
       <a href="/about-us">ABOUT US</a>
       <a href="/contact">CONTACT</a>
     </nav>
-
-    <div class="lang-row">
-      <div class="lang-switch" aria-label="Language switch">
-        <a class="is-active" href="/">EN</a>
-        <a href="/es/" lang="es">ES</a>
-      </div>
-    </div>
   </div>
 </div>
   </header>
