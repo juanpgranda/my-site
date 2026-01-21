@@ -168,6 +168,20 @@
 
     .full { grid-column: 1 / -1; }
 
+    .inline-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .counter {
+      font-size: 12px;
+      color: rgba(101, 11, 50, 0.70);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
     .actions {
       display: grid;
       justify-content: center;
@@ -269,8 +283,11 @@
               </div>
 
               <div class="field full">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+                <div class="inline-row">
+                  <label for="message">Message</label>
+                  <div class="counter" id="msgCounter">0 / 1000</div>
+                </div>
+                <textarea id="message" name="message" maxlength="1000" placeholder="How can we help?" required></textarea>
               </div>
             </div>
 
@@ -310,8 +327,7 @@
 
   <script>
     (function () {
-      // Paste your Apps Script Web App URL here after you deploy it
-      var WEB_APP_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+      var WEB_APP_URL = "https://script.google.com/a/macros/klizos.com/s/AKfycbw0GCt6as7CIraDZmrfP1c0J9ysoQadqmnCU8vdoYdKBu24m2Rde9G9CO0co9K28w32/exec";
 
       var form = document.getElementById("contactForm");
       var statusMsg = document.getElementById("statusMsg");
@@ -320,6 +336,10 @@
       var firstName = document.getElementById("firstName");
       var lastName = document.getElementById("lastName");
       var phone = document.getElementById("phone");
+
+      var messageEl = document.getElementById("message");
+      var msgCounter = document.getElementById("msgCounter");
+      var MSG_MAX = 1000;
 
       function capFirst(s) {
         s = String(s || "").trim();
@@ -344,6 +364,54 @@
         try { return JSON.parse(text); } catch (e) { return null; }
       }
 
+      function updateMsgCounter() {
+        var n = (messageEl.value || "").length;
+        msgCounter.textContent = n + " / " + MSG_MAX;
+      }
+
+      function capitalizeSentences(text) {
+        var s = String(text || "");
+        // Normalize spacing a bit but keep user's line breaks
+        var parts = s.split(/(\r?\n)/); // keep newlines as tokens
+        for (var i = 0; i < parts.length; i++) {
+          if (parts[i] === "\n" || parts[i] === "\r\n") continue;
+
+          // Capitalize first letter of each sentence in this line chunk.
+          var chunk = parts[i];
+
+          // Trim left only for capitalization check (keep original spacing by rebuilding)
+          var leadMatch = chunk.match(/^\s*/);
+          var lead = leadMatch ? leadMatch[0] : "";
+          var body = chunk.slice(lead.length);
+
+          // Walk through body and capitalize after sentence ends.
+          var out = "";
+          var startSentence = true;
+
+          for (var j = 0; j < body.length; j++) {
+            var ch = body.charAt(j);
+
+            if (startSentence) {
+              if (/[a-zA-Z]/.test(ch)) {
+                out += ch.toUpperCase();
+                startSentence = false;
+              } else {
+                out += ch;
+              }
+            } else {
+              out += ch;
+            }
+
+            if (ch === "." || ch === "!" || ch === "?") {
+              startSentence = true;
+            }
+          }
+
+          parts[i] = lead + out;
+        }
+        return parts.join("");
+      }
+
       firstName.addEventListener("blur", function () { firstName.value = capFirst(firstName.value); });
       lastName.addEventListener("blur", function () { lastName.value = capFirst(lastName.value); });
 
@@ -351,21 +419,43 @@
         phone.value = formatPhone(phone.value);
       });
 
+      messageEl.addEventListener("input", function () {
+        if ((messageEl.value || "").length > MSG_MAX) {
+          messageEl.value = (messageEl.value || "").slice(0, MSG_MAX);
+        }
+        updateMsgCounter();
+      });
+
+      // Capitalize sentence starts when user leaves the field
+      messageEl.addEventListener("blur", function () {
+        var v = messageEl.value || "";
+        var next = capitalizeSentences(v);
+        if (next !== v) messageEl.value = next;
+        updateMsgCounter();
+      });
+
+      updateMsgCounter();
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         setStatus("", "");
 
-        if (!WEB_APP_URL || WEB_APP_URL.indexOf("PASTE_YOUR_WEB_APP_URL_HERE") !== -1) {
-          setStatus("Web App URL is not set yet. Paste your Apps Script Web App URL into this page first.", "err");
-          return;
+        // Final normalization
+        firstName.value = capFirst(firstName.value);
+        lastName.value = capFirst(lastName.value);
+
+        messageEl.value = capitalizeSentences(messageEl.value || "");
+        if ((messageEl.value || "").length > MSG_MAX) {
+          messageEl.value = (messageEl.value || "").slice(0, MSG_MAX);
         }
+        updateMsgCounter();
 
         var data = {
-          first_name: (document.getElementById("firstName").value || "").trim(),
-          last_name: (document.getElementById("lastName").value || "").trim(),
-          phone: (document.getElementById("phone").value || "").trim(),
+          first_name: (firstName.value || "").trim(),
+          last_name: (lastName.value || "").trim(),
+          phone: (phone.value || "").trim(),
           email: (document.getElementById("email").value || "").trim(),
-          message: (document.getElementById("message").value || "").trim()
+          message: (messageEl.value || "").trim()
         };
 
         var required = ["first_name","last_name","phone","email","message"];
@@ -380,7 +470,6 @@
         submitBtn.textContent = "Sending...";
         setStatus("Sending your message...", "");
 
-        // Use text/plain to reduce CORS/preflight issues with Apps Script web apps
         fetch(WEB_APP_URL, {
           method: "POST",
           headers: { "Content-Type": "text/plain;charset=utf-8" },
@@ -392,6 +481,7 @@
           if (res && res.ok) {
             setStatus("Message sent. We emailed you a confirmation.", "ok");
             form.reset();
+            updateMsgCounter();
           } else {
             setStatus("Could not submit. " + (res && res.error ? res.error : "Please try again."), "err");
           }
