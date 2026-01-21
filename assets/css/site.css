@@ -48,6 +48,15 @@
   --hd-gold-light: #F9E6C3;
   --hd-white: #FFFFFF;
 
+  /* Global surfaces */
+  --hd-cream-bg: #fff8ea; /* light cream page backdrop */
+  --hd-card-bg: #ffffff;  /* card surface */
+  --hd-border-soft: 1px solid rgba(0,0,0,0.08);
+  --hd-border-soft-strong: 1px solid rgba(0,0,0,0.10);
+  --hd-shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+  --hd-radius-lg: 18px;
+  --hd-radius-md: 14px;
+
   /* Typography: Poppins everywhere by default */
   --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-headline: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -69,14 +78,12 @@ body {
   margin: 0;
   font-family: var(--font-body) !important;
   color: var(--hd-burgundy);
-  background-color: var(--hd-white);
+  background-color: var(--hd-cream-bg);
   line-height: 1.5;
 }
 
 /* Make sure everything inherits Poppins by default */
-* {
-  font-family: inherit;
-}
+* { font-family: inherit; }
 
 /* Headings also Poppins site-wide */
 h1, h2, h3, h4, h5, h6 {
@@ -85,10 +92,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--hd-burgundy);
 }
 
-/* Links inherit Poppins */
-a {
-  font-family: inherit;
-}
+/* Links */
+a { color: inherit; }
+a:focus { outline: 2px solid rgba(210, 153, 55, 0.45); outline-offset: 2px; }
 
 /* Force form controls + buttons + chips to stay Poppins */
 button,
@@ -99,6 +105,84 @@ textarea,
 .btn {
   font-family: var(--font-body) !important;
 }
+
+/* =========================
+   Global Layout Helpers
+   ========================= */
+
+#siteHeader, #siteFooter { margin: 0; padding: 0; }
+
+main {
+  display: block;
+  background: transparent;
+}
+
+/* Common container if a page does not redefine it */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   Global Surfaces (cards/panels)
+   ========================= */
+
+.card,
+.panel,
+.form-card,
+.preview-card,
+.loc-block,
+.review,
+.micro-block {
+  background: var(--hd-card-bg);
+}
+
+.card,
+.panel,
+.form-card {
+  border: var(--hd-border-soft);
+  border-radius: var(--hd-radius-lg);
+  box-shadow: var(--hd-shadow-soft);
+}
+
+.preview-card,
+.loc-block,
+.review,
+.micro-block {
+  border: var(--hd-border-soft);
+  border-radius: var(--hd-radius-md);
+  box-shadow: none;
+}
+
+/* =========================
+   Global Section Styling
+   ========================= */
+
+.page-hero {
+  background: var(--hd-card-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.section,
+.section-band {
+  background: transparent;
+}
+
+.section-cream {
+  background: var(--hd-cream-bg);
+}
+
+.section-grad {
+  background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
+}
+
+/* =========================
+   Buttons / Chips (safe defaults)
+   ========================= */
+
+.btn { border-radius: 14px; }
+.chip { border-radius: 999px; }
 
 /* =========================
    Opt-in Brand Type (only if you add these classes)
