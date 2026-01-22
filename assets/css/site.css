@@ -2,7 +2,7 @@
    Google Font (Site-wide)
    ========================= */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap");
 
 /* =========================
    Brand Webfonts (Self-hosted)
@@ -49,18 +49,43 @@
   --hd-white: #FFFFFF;
 
   /* Global surfaces */
-  --hd-cream-bg: #fff8ea; /* light cream page backdrop */
-  --hd-card-bg: #ffffff;  /* card surface */
+  --hd-cream-bg: #fff8ea;
+  --hd-card-bg: #ffffff;
   --hd-border-soft: 1px solid rgba(0,0,0,0.08);
   --hd-border-soft-strong: 1px solid rgba(0,0,0,0.10);
   --hd-shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
   --hd-radius-lg: 18px;
   --hd-radius-md: 14px;
 
-  /* Typography: Poppins everywhere by default */
-  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-headline: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-script: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  /* Typography: Outfit everywhere by default */
+  --font-body: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-headline: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-script: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Site-wide type scale (tokens) */
+  --fs-hero: 64px;
+  --lh-hero: 83.2px;
+  --fw-hero: 700;
+
+  --fs-h2: 36px;
+  --lh-h2: 44px;
+  --fw-h2: 700;
+
+  --fs-h3: 20px;
+  --lh-h3: 26px;
+  --fw-h3: 700;
+
+  --fs-body: 16px;
+  --lh-body: 24px;
+  --fw-body: 400;
+
+  --fs-lead: 16px;
+  --lh-lead: 24px;
+  --fw-lead: 300;
+
+  --fs-small: 12.5px;
+  --lh-small: 20px;
+  --fw-small: 400;
 
   /* Optional brand fonts (opt-in only) */
   --font-brand-headline: "Dazs", serif;
@@ -77,26 +102,54 @@ html { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: var(--font-body) !important;
+  font-weight: var(--fw-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   color: var(--hd-burgundy);
   background-color: var(--hd-cream-bg);
-  line-height: 1.5;
 }
 
-/* Make sure everything inherits Poppins by default */
+/* Make sure everything inherits the site font by default */
 * { font-family: inherit; }
 
-/* Headings also Poppins site-wide */
+/* Headings: Outfit site-wide */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headline) !important;
-  font-weight: 800;
   color: var(--hd-burgundy);
+}
+
+/* Default heading scale (so pages can stop redefining sizes) */
+h1 { font-size: var(--fs-hero); line-height: var(--lh-hero); font-weight: var(--fw-hero); }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: var(--fw-h2); }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: var(--fw-h3); }
+
+/* Helpers you can reuse on any page */
+.hd-hero-title {
+  font-size: var(--fs-hero);
+  line-height: var(--lh-hero);
+  font-weight: var(--fw-hero);
+  margin: 0 0 10px;
+  color: var(--hd-burgundy);
+}
+
+.hd-lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  font-weight: var(--fw-lead);
+  margin: 0;
+}
+
+.hd-small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  font-weight: var(--fw-small);
 }
 
 /* Links */
 a { color: inherit; }
 a:focus { outline: 2px solid rgba(210, 153, 55, 0.45); outline-offset: 2px; }
 
-/* Force form controls + buttons + chips to stay Poppins */
+/* Force form controls + buttons + chips to stay site font */
 button,
 input,
 select,
