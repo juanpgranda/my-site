@@ -27,7 +27,8 @@
   <link rel="manifest" href="/assets/images/site.webmanifest">
   <meta name="theme-color" content="#650B32">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google tag (gtag.js) -->
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ3XB37TBM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -35,6 +36,7 @@
     gtag("js", new Date());
     gtag("config", "G-JJ3XB37TBM");
   </script>
+
   <style>
     :root {
       --container: 1120px;
@@ -66,18 +68,6 @@
     .skip-link:focus { left: 10px; }
 
     #siteHeader, #siteFooter { margin: 0; padding: 0; }
-
-    .hero-top-bg {
-      background-image: url("/assets/images/placeholders/hd_home_hero_placeholder.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      border-bottom: 0;
-      line-height: 0;
-      margin: 0;
-      padding: 0;
-    }
-    .hero-top-bg .spacer { min-height: 54px; display: block; }
 
     /* Page header area (keep clean like Cakes screenshot 1 style) */
     .page-hero {
@@ -284,7 +274,6 @@
 
     @media (max-width: 640px) {
       h1 { font-size: 36px; }
-      .hero-top-bg .spacer { min-height: 46px; }
       .hero-media { height: 220px; }
       .block { padding: 14px; }
     }
@@ -311,73 +300,73 @@
               <a class="pill" href="/contact">Contact us</a>
             </div>
           </div>
-      <div>
-        <figure class="hero-media" aria-label="About image">
-          <img src="/assets/images/placeholders/hd_about_image_placeholder.jpg" alt="About Hagaan-Dazs DC placeholder image">
-        </figure>
-        <div class="hero-caption">Replace this image later: /assets/images/placeholders/hd_about_image_placeholder.jpg</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section panel" aria-label="About content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="block">
-        <h2>Our story</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Vitae ultricies leo integer malesuada nunc vel. Id faucibus nisl tincidunt eget nullam non nisi est sit.
-        </p>
-      </div>
-
-      <div class="block">
-        <h2>What we serve</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet volutpat consequat mauris nunc congue nisi vitae.
-          Egestas sed sed risus pretium quam vulputate dignissim suspendisse.
-        </p>
-      </div>
-
-      <div class="block">
-        <h2>Community first</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus id interdum velit laoreet id donec ultrices.
-          Non curabitur gravida arcu ac tortor dignissim convallis aenean et.
-        </p>
-      </div>
-
-      <div class="block">
-        <h2>Visit our two locations</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. We have two Miami-area shops so you can grab your favorites fast.
-        </p>
-        <div style="height: 12px;"></div>
-        <div class="two-col" aria-label="Locations summary">
-          <div class="mini-card">
-            <h3>North Miami</h3>
-            <p class="meta">
-              <strong>Address:</strong> Lorem ipsum dolor sit amet, FL 33181<br>
-              <strong>Hours:</strong> Lorem ipsum Mon-Thu, Fri-Sat, Sun
-            </p>
-          </div>
-          <div class="mini-card">
-            <h3>North Beach</h3>
-            <p class="meta">
-              <strong>Address:</strong> Lorem ipsum dolor sit amet, FL 33141<br>
-              <strong>Hours:</strong> Lorem ipsum Mon-Thu, Fri-Sat, Sun
-            </p>
+          <div>
+            <figure class="hero-media" aria-label="About image">
+              <img src="/assets/images/placeholders/hd_about_image_placeholder.jpg" alt="About Hagaan-Dazs DC placeholder image">
+            </figure>
+            <div class="hero-caption">Replace this image later: /assets/images/placeholders/hd_about_image_placeholder.jpg</div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="cta">
-      <a class="btn" href="/contact" aria-label="Contact Hagaan-Dazs DC">Contact Us</a>
-    </div>
-  </div>
-</section>
+    <section class="section panel" aria-label="About content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="block">
+            <h2>Our story</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Vitae ultricies leo integer malesuada nunc vel. Id faucibus nisl tincidunt eget nullam non nisi est sit.
+            </p>
+          </div>
+
+          <div class="block">
+            <h2>What we serve</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet volutpat consequat mauris nunc congue nisi vitae.
+              Egestas sed sed risus pretium quam vulputate dignissim suspendisse.
+            </p>
+          </div>
+
+          <div class="block">
+            <h2>Community first</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus id interdum velit laoreet id donec ultrices.
+              Non curabitur gravida arcu ac tortor dignissim convallis aenean et.
+            </p>
+          </div>
+
+          <div class="block">
+            <h2>Visit our two locations</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. We have two Miami-area shops so you can grab your favorites fast.
+            </p>
+            <div style="height: 12px;"></div>
+            <div class="two-col" aria-label="Locations summary">
+              <div class="mini-card">
+                <h3>North Miami</h3>
+                <p class="meta">
+                  <strong>Address:</strong> Lorem ipsum dolor sit amet, FL 33181<br>
+                  <strong>Hours:</strong> Lorem ipsum Mon-Thu, Fri-Sat, Sun
+                </p>
+              </div>
+              <div class="mini-card">
+                <h3>North Beach</h3>
+                <p class="meta">
+                  <strong>Address:</strong> Lorem ipsum dolor sit amet, FL 33141<br>
+                  <strong>Hours:</strong> Lorem ipsum Mon-Thu, Fri-Sat, Sun
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="/contact" aria-label="Contact Hagaan-Dazs DC">Contact Us</a>
+        </div>
+      </div>
+    </section>
   </main>
   <div id="siteFooter"></div>
   <script>
