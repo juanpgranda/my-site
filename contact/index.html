@@ -266,55 +266,58 @@
         </p>
       </div>
     </section>
-<section class="section" aria-label="Contact form section">
-  <div class="container">
-    <div class="form-card" role="region" aria-label="Contact form card">
-      <div class="form-head">
-        <div class="title">Contact Form</div>
-        <div class="help">We will email a copy of your message to you.</div>
-      </div>
 
-      <form id="contactForm" novalidate>
-        <div class="grid">
-          <div class="field">
-            <label for="firstName">First Name</label>
-            <input id="firstName" name="first_name" type="text" autocomplete="given-name" required>
+    <section class="section" aria-label="Contact form section">
+      <div class="container">
+        <div class="form-card" role="region" aria-label="Contact form card">
+          <div class="form-head">
+            <div class="title">Contact Form</div>
+            <div class="help">We will email a copy of your message to you.</div>
           </div>
 
-          <div class="field">
-            <label for="lastName">Last Name</label>
-            <input id="lastName" name="last_name" type="text" autocomplete="family-name" required>
-          </div>
+          <form id="contactForm" novalidate>
+            <div class="grid">
+              <div class="field">
+                <label for="firstName">First Name</label>
+                <input id="firstName" name="first_name" type="text" autocomplete="given-name" required>
+              </div>
 
-          <div class="field">
-            <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(786) 555-1212" required>
-          </div>
+              <div class="field">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" name="last_name" type="text" autocomplete="family-name" required>
+              </div>
 
-          <div class="field">
-            <label for="email">Email Address</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
+              <div class="field">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(786) 555-1212" required>
+              </div>
 
-          <div class="field full">
-            <div class="inline-row">
-              <label for="message">Message</label>
-              <div class="counter" id="msgCounter">0 / 1000</div>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+
+              <div class="field full">
+                <div class="inline-row">
+                  <label for="message">Message</label>
+                  <div class="counter" id="msgCounter">0 / 1000</div>
+                </div>
+                <textarea id="message" name="message" maxlength="1000" placeholder="How can we help?" required></textarea>
+              </div>
             </div>
-            <textarea id="message" name="message" maxlength="1000" placeholder="How can we help?" required></textarea>
-          </div>
-        </div>
 
-        <div class="actions">
-          <button class="btn" type="submit" id="submitBtn">Send Message</button>
-          <div class="status" id="statusMsg" aria-live="polite"></div>
+            <div class="actions">
+              <button class="btn" type="submit" id="submitBtn">Send Message</button>
+              <div class="status" id="statusMsg" aria-live="polite"></div>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
   </main>
+
   <div id="siteFooter"></div>
+
   <script>
     (function () {
       function loadInto(id, url) {
@@ -330,6 +333,7 @@
       loadInto("siteFooter", "/assets/includes/footer.html");
     })();
   </script>
+
   <script>
     (function () {
       var WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyJ-wQg3QplX41eGyq5T4bDAY04EnkjQZHGrYy6t4cCsuGhiVLgbDx0nEnteLfHDmuT9A/exec";
@@ -363,10 +367,6 @@
       function setStatus(text, kind) {
         statusMsg.textContent = text || "";
         statusMsg.className = "status" + (kind ? " " + kind : "");
-      }
-
-      function safeJsonParse(text) {
-        try { return JSON.parse(text); } catch (e) { return null; }
       }
 
       function updateMsgCounter() {
@@ -466,21 +466,19 @@
         submitBtn.textContent = "Sending...";
         setStatus("Sending your message...", "");
 
+        // IMPORTANT: no-cors avoids the browser CORS block for Apps Script web apps.
+        // With no-cors, the response is opaque and cannot be read.
         fetch(WEB_APP_URL, {
           method: "POST",
+          mode: "no-cors",
           headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(data)
         })
-        .then(function (r) { return r.text(); })
-        .then(function (txt) {
-          var res = safeJsonParse(txt) || {};
-          if (res && res.ok) {
-            setStatus("Message sent. We emailed you a confirmation.", "ok");
-            form.reset();
-            updateMsgCounter();
-          } else {
-            setStatus("Could not submit. " + (res && res.error ? res.error : "Please try again."), "err");
-          }
+        .then(function () {
+          // We cannot inspect the response, but the request was dispatched.
+          setStatus("Message sent. If you do not see a confirmation email soon, try again or call the shop.", "ok");
+          form.reset();
+          updateMsgCounter();
         })
         .catch(function () {
           setStatus("Network error. Please try again.", "err");
