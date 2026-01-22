@@ -10,9 +10,6 @@
 
 /* =========================
    Official Haagen-Dazs Fonts (Self-hosted)
-   Expected paths:
-   /assets/fonts/body/...
-   /assets/fonts/brand/...
    ========================= */
 
 /* Body font: Hurme Geometric Sans 1 */
@@ -70,14 +67,12 @@
    Root Variables
    ========================= */
 :root {
-  /* Brand Colors */
   --hd-burgundy: #650B32;
   --hd-gold: #D29937;
   --hd-gold-medium: #F9D79C;
   --hd-gold-light: #F9E6C3;
   --hd-white: #FFFFFF;
 
-  /* Global surfaces */
   --hd-cream-bg: #fff8ea;
   --hd-card-bg: #ffffff;
   --hd-border-soft: 1px solid rgba(0,0,0,0.08);
@@ -112,11 +107,17 @@
 }
 
 /* =========================
-   Base + Typography
+   Global Font Lock
    ========================= */
 html { box-sizing: border-box; }
-*, *::before, *::after { box-sizing: inherit; }
+*, *::before, *::after {
+  box-sizing: inherit;
+  font-family: inherit;
+}
 
+/* =========================
+   Base Typography
+   ========================= */
 body {
   margin: 0;
   font-family: var(--font-body) !important;
@@ -127,8 +128,7 @@ body {
   background-color: var(--hd-cream-bg);
 }
 
-* { font-family: inherit; }
-
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headline) !important;
   color: var(--hd-burgundy);
@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: var(--fs-hero); line-height: var(--lh-hero); font-weight: 700; }
 h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: 700; }
-h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 600; } /* uses SemiBold */
+h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 600; }
 
 /* Paragraph defaults */
 p {
@@ -145,18 +145,12 @@ p {
   font-weight: 400;
 }
 
-/* "Icecream.com-like" hierarchy helpers */
-.body-copy { font-weight: 400; }
-
+/* Hierarchy helpers (SemiBold usage) */
 .sub-head,
 .lead,
 .section-intro {
-  font-weight: 600; /* uses SemiBold */
+  font-weight: 600;
 }
-
-/* Links */
-a { color: inherit; }
-a:focus { outline: 2px solid rgba(210, 153, 55, 0.45); outline-offset: 2px; }
 
 /* Navigation, buttons, labels */
 nav a,
@@ -168,7 +162,7 @@ textarea,
 .chip,
 label {
   font-family: var(--font-body) !important;
-  font-weight: 600; /* uses SemiBold */
+  font-weight: 600;
 }
 
 /* Small/meta text */
@@ -187,7 +181,6 @@ label {
 
 main { display: block; background: transparent; }
 
-/* Common container */
 .container {
   max-width: 1120px;
   margin: 0 auto;
@@ -195,7 +188,7 @@ main { display: block; background: transparent; }
 }
 
 /* =========================
-   Surfaces / Cards
+   Surfaces
    ========================= */
 .card,
 .panel,
@@ -238,10 +231,16 @@ main { display: block; background: transparent; }
 }
 
 .section-cream { background: var(--hd-cream-bg); }
-.section-grad { background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1)); }
+.section-grad {
+  background: linear-gradient(
+    180deg,
+    rgba(249,230,195,0.20),
+    rgba(255,255,255,1)
+  );
+}
 
 /* =========================
-   Buttons / Chips (safe defaults)
+   Buttons / Chips
    ========================= */
 .btn { border-radius: 14px; }
 .chip { border-radius: 999px; }
