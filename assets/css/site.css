@@ -1,18 +1,45 @@
 /* =========================
-   Google Font (Site-wide)
+   Google Font (Site-wide fallback)
    ========================= */
 
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap");
 
 /* =========================
-   Brand Webfonts (Self-hosted)
-   Kept for optional use, but NOT used by default site-wide
+   Official Haagen-Dazs Fonts (Self-hosted)
+   Paths based on your repo:
+   /assets/fonts/body/...
+   /assets/fonts/brand/...
    ========================= */
 
+/* Body font: Hurme Geometric Sans 1 */
+@font-face {
+  font-family: "HurmeGeometric";
+  src: url("/assets/fonts/body/HurmeGeometricSans1-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HurmeGeometric";
+  src: url("/assets/fonts/body/HurmeGeometricSans1-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HurmeGeometric";
+  src: url("/assets/fonts/body/HurmeGeometricSans1-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Brand headline font: Dazs */
 @font-face {
   font-family: "Dazs";
-  src: url("/assets/fonts/dazs-webfont.woff2") format("woff2"),
-       url("/assets/fonts/dazs-webfont.woff") format("woff");
+  src: url("/assets/fonts/brand/Dazs.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -20,17 +47,16 @@
 
 @font-face {
   font-family: "Dazs";
-  src: url("/assets/fonts/dazs-bold-webfont.woff2") format("woff2"),
-       url("/assets/fonts/dazs-bold-webfont.woff") format("woff");
+  src: url("/assets/fonts/brand/Dazs_Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
+/* Brand script font: Dazs Script */
 @font-face {
   font-family: "Dazs Script";
-  src: url("/assets/fonts/dazs-script-webfont.woff2") format("woff2"),
-       url("/assets/fonts/dazs-script-webfont.woff") format("woff");
+  src: url("/assets/fonts/brand/Dazs_Script.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -57,10 +83,14 @@
   --hd-radius-lg: 18px;
   --hd-radius-md: 14px;
 
-  /* Typography: Outfit everywhere by default */
-  --font-body: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-headline: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-script: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  /* Typography: Official site font stack (Hurme first, Outfit fallback) */
+  --font-body: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-headline: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-script: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Optional brand fonts (opt-in via classes) */
+  --font-brand-headline: "Dazs", serif;
+  --font-brand-script: "Dazs Script", cursive;
 
   /* Site-wide type scale (tokens) */
   --fs-hero: 64px;
@@ -86,10 +116,6 @@
   --fs-small: 12.5px;
   --lh-small: 20px;
   --fw-small: 400;
-
-  /* Optional brand fonts (opt-in only) */
-  --font-brand-headline: "Dazs", serif;
-  --font-brand-script: "Dazs Script", cursive;
 }
 
 /* =========================
@@ -112,7 +138,7 @@ body {
 /* Make sure everything inherits the site font by default */
 * { font-family: inherit; }
 
-/* Headings: Outfit site-wide */
+/* Headings: Hurme site-wide by default */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headline) !important;
   color: var(--hd-burgundy);
@@ -241,13 +267,16 @@ main {
    Opt-in Brand Type (only if you add these classes)
    ========================= */
 
+/* Use Dazs for key brand headlines only */
 .hd-headline {
   font-family: var(--font-brand-headline) !important;
   font-weight: 700;
 }
 
+/* Use Dazs Script sparingly (signatures, accents) */
 .brand-script {
   font-family: var(--font-brand-script) !important;
+  font-weight: 400;
 }
 
 /* =========================
