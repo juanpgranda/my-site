@@ -50,7 +50,7 @@
       "addressCountry": "US"
     },
     "geo": {
-      "@type":": "GeoCoordinates",
+      "@type": "GeoCoordinates",
       "latitude": 25.855930163991367,
       "longitude": -80.12070053213803
     },
@@ -110,18 +110,6 @@
     .skip-link:focus { left: 10px; }
 
     #siteHeader, #siteFooter { margin: 0; padding: 0; }
-
-    .hero-top-bg {
-      background-image: url("/assets/images/placeholders/hd_tapestry_placeholder_white.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      border-bottom: 0;
-      line-height: 0;
-      margin: 0;
-      padding: 0;
-    }
-    .hero-top-bg .spacer { min-height: 68px; display: block; }
 
     .page-hero {
       background: linear-gradient(180deg, rgba(249,230,195,0.55), rgba(255,255,255,1));
@@ -623,7 +611,6 @@
     }
 
     @media (max-width: 640px) {
-      .hero-top-bg .spacer { min-height: 46px; }
       .hero-title { font-size: 34px; }
       .g-btn { width: 40px; height: 40px; }
       .icon-link, .delivery-icon { width: 42px; height: 42px; }
@@ -663,7 +650,6 @@
   <div class="container">
     <div class="layout">
 
-      <!-- LEFT COLUMN -->
       <div class="stack">
 
         <div class="card photo-card" aria-label="Photo highlights">
@@ -789,20 +775,17 @@
                 <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-6978-collins-avenue/_fVlFIVpWaqPatU03tzQaw?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkhhYWdlbi1EYXpzJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyaGVyZSUzQXBkcyUzQXBsYWNlJTNBODQwZGh3Y2ctZWM4Yjg4YjgwMmI4NGI3MDlhMzg1OWU5NDJjNDFiMTklMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyaGVyZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTI1LjY0NDQ4JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTgwLjMzODEyJTdE&ps=1&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
                   <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
                 </a>
-                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
-                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                </a>
                 <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
                   <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
                 </a>
               </div>
             </div>
           </div>
+
         </div>
 
       </div>
 
-      <!-- RIGHT COLUMN -->
       <aside class="sidebar" aria-label="North Beach sidebar">
 
         <div class="hero-card" aria-label="North Beach at a glance">
@@ -885,14 +868,8 @@
           .catch(function () { el.innerHTML = ""; });
       }
 
-      var docLang = document.documentElement.getAttribute("lang") || "en";
-      var isEs = docLang.toLowerCase().indexOf("es") === 0;
-
-      var headerUrl = isEs ? "/assets/includes/header-es.html" : "/assets/includes/header.html";
-      var footerUrl = isEs ? "/assets/includes/footer-es.html" : "/assets/includes/footer.html";
-
-      loadInto("siteHeader", headerUrl);
-      loadInto("siteFooter", footerUrl);
+      loadInto("siteHeader", "/assets/includes/header.html");
+      loadInto("siteFooter", "/assets/includes/footer.html");
     })();
   </script>
   <script>
