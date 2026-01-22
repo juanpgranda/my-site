@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Celebrate with Cake | Häagen-Dazs</title>
-  <meta name="description" content="Order a Häagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
+  <title>Celebrate with Cake | Haagen-Dazs</title>
+  <meta name="description" content="Order a Haagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
   <link rel="canonical" href="https://www.hdicecream.com/cakes/order-form/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Häagen-Dazs">
-  <meta property="og:title" content="Celebrate with Cake | Häagen-Dazs">
-  <meta property="og:description" content="Order a Häagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
+  <meta property="og:site_name" content="Haagen-Dazs">
+  <meta property="og:title" content="Celebrate with Cake | Haagen-Dazs">
+  <meta property="og:description" content="Order a Haagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
   <meta property="og:url" content="https://www.hdicecream.com/cakes/order-form/">
   <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Häagen-Dazs cake order form for pickup.">
+  <meta property="og:image:alt" content="Haagen-Dazs cake order form for pickup.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Celebrate with Cake | Häagen-Dazs">
-  <meta name="twitter:description" content="Order a Häagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
+  <meta name="twitter:title" content="Celebrate with Cake | Haagen-Dazs">
+  <meta name="twitter:description" content="Order a Haagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
   <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <link rel="icon" href="/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
@@ -42,352 +42,376 @@
       --border-soft: 1px solid rgba(0,0,0,0.10);
       --text-muted: rgba(101, 11, 50, 0.72);
     }
+* { box-sizing: border-box; }
 
-    * { box-sizing: border-box; }
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    .container {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: var(--hd-burgundy);
+  color: var(--hd-white);
+  padding: 10px 12px;
+  border-radius: 10px;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: 700;
+}
+.skip-link:focus { left: 10px; }
 
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 10px;
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
-      padding: 10px 12px;
-      border-radius: 10px;
-      z-index: 9999;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .skip-link:focus { left: 10px; }
+#siteHeader, #siteFooter { margin: 0; padding: 0; }
 
-    #siteHeader, #siteFooter { margin: 0; padding: 0; }
+.page-hero {
+  background: var(--hd-white);
+  padding: 26px 0 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
 
-    .page-hero {
-      background: var(--hd-white);
-      padding: 26px 0 10px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(101, 11, 50, 0.75);
+  margin-bottom: 10px;
+}
 
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: rgba(101, 11, 50, 0.75);
-      margin-bottom: 10px;
-    }
+h1 {
+  margin: 0 0 8px;
+  font-size: 42px;
+  line-height: 1.08;
+  color: var(--hd-burgundy);
+}
 
-    h1 {
-      margin: 0 0 8px;
-      font-size: 42px;
-      line-height: 1.08;
-      color: var(--hd-burgundy);
-    }
+.sublead {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 85ch;
+}
 
-    .sublead {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 16px;
-      line-height: 1.55;
-      max-width: 85ch;
-    }
+.info-card {
+  margin-top: 14px;
+  background: rgba(249, 230, 195, 0.30);
+  border: 1px solid rgba(101, 11, 50, 0.14);
+  border-radius: 14px;
+  padding: 12px 12px;
+  color: rgba(101, 11, 50, 0.90);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.info-card strong { color: var(--hd-burgundy); }
 
-    .info-card {
-      margin-top: 14px;
-      background: rgba(249, 230, 195, 0.30);
-      border: 1px solid rgba(101, 11, 50, 0.14);
-      border-radius: 14px;
-      padding: 12px 12px;
-      color: rgba(101, 11, 50, 0.90);
-      font-size: 13px;
-      line-height: 1.55;
-    }
-    .info-card strong { color: var(--hd-burgundy); }
+.info-card a {
+  color: var(--hd-burgundy);
+  text-decoration: underline;
+  font-weight: 800;
+}
 
-    .info-card a {
-      color: var(--hd-burgundy);
-      text-decoration: underline;
-      font-weight: 800;
-    }
+.info-card a:hover,
+.info-card a:focus {
+  outline: none;
+  text-decoration-thickness: 2px;
+}
 
-    .info-card a:hover,
-    .info-card a:focus {
-      outline: none;
-      text-decoration-thickness: 2px;
-    }
+.section {
+  padding: 18px 0 34px;
+  background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
+}
 
-    .section {
-      padding: 18px 0 34px;
-      background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
-    }
+.form-card {
+  background: var(--hd-white);
+  border: var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
 
-    .form-card {
-      background: var(--hd-white);
-      border: var(--border-soft);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
+.form-head {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: rgba(249, 230, 195, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
 
-    .form-head {
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      background: rgba(249, 230, 195, 0.22);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
+.form-head .title {
+  font-weight: 900;
+  color: var(--hd-burgundy);
+  letter-spacing: 0.02em;
+}
 
-    .form-head .title {
-      font-weight: 900;
-      color: var(--hd-burgundy);
-      letter-spacing: 0.02em;
-    }
+.form-head .right {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
 
-    .form-head .right {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      flex: 0 0 auto;
-    }
+.help {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
 
-    .help {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
+.view-cakes-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(101, 11, 50, 0.18);
+  background: rgba(255,255,255,0.78);
+  color: var(--hd-burgundy);
+  white-space: nowrap;
+}
 
-    .view-cakes-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 9px 12px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 12px;
-      letter-spacing: 0.02em;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      background: rgba(255,255,255,0.78);
-      color: var(--hd-burgundy);
-      white-space: nowrap;
-    }
+.view-cakes-btn:hover,
+.view-cakes-btn:focus {
+  outline: none;
+  background: rgba(249, 230, 195, 0.75);
+  border-color: rgba(101, 11, 50, 0.26);
+}
 
-    .view-cakes-btn:hover,
-    .view-cakes-btn:focus {
-      outline: none;
-      background: rgba(249, 230, 195, 0.75);
-      border-color: rgba(101, 11, 50, 0.26);
-    }
+form { padding: 16px; }
 
-    form { padding: 16px; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      align-items: start;
-    }
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
 
-    .field {
-      display: grid;
-      gap: 6px;
-    }
+label {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(101, 11, 50, 0.85);
+}
 
-    label {
-      font-size: 12px;
-      font-weight: 800;
-      color: rgba(101, 11, 50, 0.85);
-    }
+input, select, textarea {
+  width: 100%;
+  border: 1px solid rgba(101, 11, 50, 0.18);
+  border-radius: 12px;
+  padding: 11px 12px;
+  font-size: 14px;
+  color: rgba(31, 27, 28, 0.95);
+  background: #fff;
+  outline: none;
+  font-family: var(--font-body);
+}
 
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      border-radius: 12px;
-      padding: 11px 12px;
-      font-size: 14px;
-      color: rgba(31, 27, 28, 0.95);
-      background: #fff;
-      outline: none;
-      font-family: var(--font-body);
-    }
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(101, 11, 50, 0.38);
+  box-shadow: 0 0 0 3px rgba(210, 153, 55, 0.18);
+}
 
-    input:focus, select:focus, textarea:focus {
-      border-color: rgba(101, 11, 50, 0.38);
-      box-shadow: 0 0 0 3px rgba(210, 153, 55, 0.18);
-    }
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
 
-    textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
+.full { grid-column: 1 / -1; }
 
-    .full { grid-column: 1 / -1; }
+.inline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
 
-    .inline-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
+.counter {
+  font-size: 12px;
+  color: rgba(101, 11, 50, 0.70);
+  font-weight: 800;
+}
 
-    .counter {
-      font-size: 12px;
-      color: rgba(101, 11, 50, 0.70);
-      font-weight: 800;
-    }
+.actions {
+  display: grid;
+  justify-content: center;
+  padding: 18px 16px 18px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: rgba(249, 230, 195, 0.14);
+}
 
-    .actions {
-      display: grid;
-      justify-content: center;
-      padding: 18px 16px 18px;
-      border-top: 1px solid rgba(0,0,0,0.08);
-      background: rgba(249, 230, 195, 0.14);
-    }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 900;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-body);
+  background: var(--hd-burgundy);
+  color: var(--hd-white);
+  box-shadow: var(--shadow-soft);
+  min-width: 220px;
+}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 900;
-      border: 0;
-      cursor: pointer;
-      user-select: none;
-      font-family: var(--font-body);
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
-      box-shadow: var(--shadow-soft);
-      min-width: 220px;
-    }
+.btn:hover, .btn:focus {
+  outline: none;
+  background: rgba(101, 11, 50, 0.92);
+}
 
-    .btn:hover, .btn:focus {
-      outline: none;
-      background: rgba(101, 11, 50, 0.92);
-    }
+.status {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(101, 11, 50, 0.80);
+}
 
-    .status {
-      margin-top: 12px;
-      text-align: center;
-      font-size: 13px;
-      color: rgba(101, 11, 50, 0.80);
-    }
+.status.ok { color: rgba(14, 96, 45, 0.95); }
+.status.err { color: rgba(150, 20, 40, 0.95); }
 
-    .status.ok { color: rgba(14, 96, 45, 0.95); }
-    .status.err { color: rgba(150, 20, 40, 0.95); }
+.design-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
 
-    .design-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
+.preview-card {
+  border: 1px solid rgba(101, 11, 50, 0.14);
+  background: rgba(249, 230, 195, 0.16);
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+}
 
-    .preview-card {
-      border: 1px solid rgba(101, 11, 50, 0.14);
-      background: rgba(249, 230, 195, 0.16);
-      border-radius: 14px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 12px;
-      align-items: center;
-      padding: 10px;
-    }
+.preview-img {
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  background: #efe8db;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+}
 
-    .preview-img {
-      width: 120px;
-      aspect-ratio: 1 / 1;
-      background: #efe8db;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.08);
-    }
+.preview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .preview-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+.preview-meta {
+  display: grid;
+  gap: 6px;
+  align-content: center;
+  min-width: 0;
+}
 
-    .preview-meta {
-      display: grid;
-      gap: 6px;
-      align-content: center;
-      min-width: 0;
-    }
+.preview-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(101, 11, 50, 0.70);
+}
 
-    .preview-label {
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(101, 11, 50, 0.70);
-    }
+.preview-name {
+  font-weight: 900;
+  color: var(--hd-burgundy);
+  font-size: 14px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-    .preview-name {
-      font-weight: 900;
-      color: var(--hd-burgundy);
-      font-size: 14px;
-      line-height: 1.25;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+.preview-links {
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-    .preview-links {
-      display: inline-flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+.preview-link {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--hd-burgundy);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(101, 11, 50, 0.25);
+  padding-bottom: 1px;
+  line-height: 1.1;
+}
 
-    .preview-link {
-      font-size: 12px;
-      font-weight: 900;
-      color: var(--hd-burgundy);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(101, 11, 50, 0.25);
-      padding-bottom: 1px;
-      line-height: 1.1;
-    }
+.preview-link:hover,
+.preview-link:focus {
+  outline: none;
+  border-bottom-color: rgba(101, 11, 50, 0.65);
+}
 
-    .preview-link:hover,
-    .preview-link:focus {
-      outline: none;
-      border-bottom-color: rgba(101, 11, 50, 0.65);
-    }
+.preview-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
 
-    .preview-hint {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.35;
-    }
+/* UX FIX 1: consistent select caret, no "broken" far-right look */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 44px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23650B32' d='M7 10l5 5l5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px 16px;
+}
+select::-ms-expand { display: none; }
 
-    @media (max-width: 900px) {
-      h1 { font-size: 38px; }
-    }
+/* UX FIX 2: pickup time uses two compact selects (hour + minutes) as requested */
+.time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+}
+.time-grid select { min-width: 0; }
 
-    @media (max-width: 720px) {
-      .grid { grid-template-columns: 1fr; }
-      h1 { font-size: 34px; }
-      .btn { width: 100%; min-width: 0; }
-      .form-head { align-items: flex-start; }
-      .form-head .right { flex-direction: column; align-items: flex-end; gap: 6px; }
-      .preview-card { grid-template-columns: 96px 1fr; }
-      .preview-img { width: 96px; }
-    }
+@media (max-width: 900px) {
+  h1 { font-size: 38px; }
+}
+
+@media (max-width: 720px) {
+  .grid { grid-template-columns: 1fr; }
+  h1 { font-size: 34px; }
+  .btn { width: 100%; min-width: 0; }
+  .form-head { align-items: flex-start; }
+  .form-head .right { flex-direction: column; align-items: flex-end; gap: 6px; }
+  .preview-card { grid-template-columns: 96px 1fr; }
+  .preview-img { width: 96px; }
+  .time-grid { grid-template-columns: 1fr 1fr; }
+}
   </style>
 </head>
 <body>
@@ -454,8 +478,8 @@
                   <option>Ribbon Cake</option>
                   <option>Dulce de Leche Cake</option>
                   <option>Coffee Crunch Cake</option>
-                  <option>Rose’s Birthday Cake</option>
-                  <option>Reuben’s Birthday Cake</option>
+                  <option>Rose's Birthday Cake</option>
+                  <option>Reuben's Birthday Cake</option>
                   <option>Cookies &amp; Cream Cake</option>
                   <option>Triple Chocolate Cake</option>
                   <option>Just Because Cake</option>
@@ -515,17 +539,21 @@
           </div>
 
           <div class="field">
-            <label for="pickupTime">Pick Up Time</label>
-            <select id="pickupTime" name="pickup_time" required></select>
-            <div class="help">Pickup times available 11:15 AM to 7:45 PM in 15-minute increments.</div>
+            <label for="pickupHour">Pick Up Time</label>
+            <div class="time-grid" aria-label="Pickup time selectors">
+              <select id="pickupHour" aria-label="Pickup hour" required></select>
+              <select id="pickupMinute" aria-label="Pickup minutes" required></select>
+            </div>
+            <input id="pickupTime" name="pickup_time" type="hidden" required>
+            <div class="help">Available 11:15 AM to 7:45 PM. Choose hour, then minutes in 15-minute steps.</div>
           </div>
 
           <div class="field full">
             <label for="pickupLocation">Pick Up Location</label>
             <select id="pickupLocation" name="pickup_location" required>
               <option value="" selected disabled>Select pickup location</option>
-              <option>Häagen-Dazs North Miami (Causeway Square)</option>
-              <option>Häagen-Dazs North Beach (6978 Collins Ave)</option>
+              <option>Haagen-Dazs North Miami (Causeway Square)</option>
+              <option>Haagen-Dazs North Beach (6978 Collins Ave)</option>
             </select>
           </div>
 
@@ -585,8 +613,8 @@
       var WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0iumR07OyUWmmkdjcRPRaqqSGBJ-wHGdyP4lPPYCjxOppbJFXnkyzOjVbFRU49QwY/exec";
       var PROCESSING_DAYS = 2;
 
-      /* Flavors pulled from your CSV and kept in that exact order.
-         Label adds two spaces then (GF) when gluten_free = GF. */
+      /* Flavors from your CSV only, in that exact order.
+         Label adds two spaces then (GF) when gf = true. */
       var flavors = [
         { name: "Cookies n' Cream", gf: false },
         { name: "Midnight Cookies n' Cream", gf: false },
@@ -624,10 +652,14 @@
 
       var firstFlavor = document.getElementById("firstFlavor");
       var secondFlavor = document.getElementById("secondFlavor");
+
       var pickupDate = document.getElementById("pickupDate");
-      var pickupTime = document.getElementById("pickupTime");
       var earliestPickupText = document.getElementById("earliestPickupText");
       var minDateHint = document.getElementById("minDateHint");
+
+      var pickupHour = document.getElementById("pickupHour");
+      var pickupMinute = document.getElementById("pickupMinute");
+      var pickupTimeHidden = document.getElementById("pickupTime");
 
       var firstName = document.getElementById("firstName");
       var lastName = document.getElementById("lastName");
@@ -645,10 +677,10 @@
       var statusMsg = document.getElementById("statusMsg");
       var submitBtn = document.getElementById("submitBtn");
 
-      /* Time window: 11:15 AM to 7:45 PM, 15-min increments */
-      var TIME_START_MINUTES = (11 * 60) + 15;
-      var TIME_END_MINUTES = (19 * 60) + 45;
-      var TIME_STEP_MINUTES = 15;
+      /* Requested time rules */
+      var MIN_HOUR_24 = 11;  /* 11 AM */
+      var MAX_HOUR_24 = 19;  /* 7 PM */
+      var MINUTE_OPTIONS = ["00", "15", "30", "45"];
 
       function pad2(n) { return (n < 10 ? "0" : "") + n; }
 
@@ -668,42 +700,11 @@
         return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
       }
 
-      function format24h(totalMinutes) {
-        var h = Math.floor(totalMinutes / 60);
-        var m = totalMinutes % 60;
-        return pad2(h) + ":" + pad2(m);
-      }
-
-      function format12hLabel(totalMinutes) {
-        var h24 = Math.floor(totalMinutes / 60);
-        var m = totalMinutes % 60;
+      function hourLabel(h24) {
         var ampm = (h24 >= 12) ? "PM" : "AM";
         var h12 = h24 % 12;
         if (h12 === 0) h12 = 12;
-        return h12 + ":" + pad2(m) + " " + ampm;
-      }
-
-      function fillTimeSelect() {
-        if (!pickupTime) return;
-        pickupTime.innerHTML = "";
-
-        var opt0 = document.createElement("option");
-        opt0.value = "";
-        opt0.textContent = "Select a pickup time";
-        opt0.disabled = true;
-        opt0.selected = true;
-        pickupTime.appendChild(opt0);
-
-        for (var t = TIME_START_MINUTES; t <= TIME_END_MINUTES; t += TIME_STEP_MINUTES) {
-          var v = format24h(t);
-          var label = format12hLabel(t);
-          var opt = document.createElement("option");
-          opt.value = v;
-          opt.textContent = label;
-          pickupTime.appendChild(opt);
-        }
-
-        pickupTime.value = format24h(TIME_START_MINUTES);
+        return h12 + " " + ampm;
       }
 
       function setEarliestPickup() {
@@ -813,10 +814,89 @@
         cakePreviewImg.alt = selected;
       }
 
+      function fillTimeSelectors() {
+        if (!pickupHour || !pickupMinute) return;
+
+        pickupHour.innerHTML = "";
+        pickupMinute.innerHTML = "";
+
+        var h0 = document.createElement("option");
+        h0.value = "";
+        h0.textContent = "Hour";
+        h0.disabled = true;
+        h0.selected = true;
+        pickupHour.appendChild(h0);
+
+        for (var h = MIN_HOUR_24; h <= MAX_HOUR_24; h++) {
+          var optH = document.createElement("option");
+          optH.value = String(h);
+          optH.textContent = hourLabel(h);
+          pickupHour.appendChild(optH);
+        }
+
+        var m0 = document.createElement("option");
+        m0.value = "";
+        m0.textContent = "Min";
+        m0.disabled = true;
+        m0.selected = true;
+        pickupMinute.appendChild(m0);
+
+        for (var i = 0; i < MINUTE_OPTIONS.length; i++) {
+          var mm = MINUTE_OPTIONS[i];
+          var optM = document.createElement("option");
+          optM.value = mm;
+          optM.textContent = ":" + mm;
+          pickupMinute.appendChild(optM);
+        }
+
+        /* Default to 11:15 AM */
+        pickupHour.value = String(MIN_HOUR_24);
+        pickupMinute.value = "15";
+        syncHiddenTime();
+        enforceTimeBounds();
+      }
+
+      function enforceTimeBounds() {
+        var h = parseInt(pickupHour.value || "0", 10);
+        var m = pickupMinute.value || "";
+
+        /* Disable :00 for 11 AM (because earliest is 11:15) */
+        for (var i = 0; i < pickupMinute.options.length; i++) {
+          var opt = pickupMinute.options[i];
+          if (!opt || !opt.value) continue;
+          opt.disabled = false;
+        }
+
+        if (h === 11) {
+          for (var j = 0; j < pickupMinute.options.length; j++) {
+            var o = pickupMinute.options[j];
+            if (o && o.value === "00") o.disabled = true;
+          }
+          if (m === "00") pickupMinute.value = "15";
+        }
+
+        /* Latest is 7:45 PM, and our minute list stops at :45 so nothing else needed */
+        if (h === 19) {
+          /* keep :00, :15, :30, :45 all allowed (<= 7:45) */
+        }
+
+        syncHiddenTime();
+      }
+
+      function syncHiddenTime() {
+        var h = parseInt(pickupHour.value || "0", 10);
+        var m = pickupMinute.value || "";
+        if (!h || !m) {
+          pickupTimeHidden.value = "";
+          return;
+        }
+        pickupTimeHidden.value = pad2(h) + ":" + m;
+      }
+
       fillFlavorSelect(firstFlavor);
       fillFlavorSelect(secondFlavor);
-      fillTimeSelect();
       setEarliestPickup();
+      fillTimeSelectors();
       toggleCustomMessage();
       updateCounter();
       updateCakePreview();
@@ -828,6 +908,9 @@
         phone.value = formatPhone(phone.value);
       });
 
+      pickupHour.addEventListener("change", enforceTimeBounds);
+      pickupMinute.addEventListener("change", enforceTimeBounds);
+
       messageChoice.addEventListener("change", toggleCustomMessage);
       specialInstructions.addEventListener("input", updateCounter);
       cakeDesign.addEventListener("change", updateCakePreview);
@@ -835,6 +918,8 @@
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         setStatus("", "");
+
+        syncHiddenTime();
 
         var data = {
           first_name: (document.getElementById("firstName").value || "").trim(),
@@ -884,10 +969,11 @@
           if (res && res.ok) {
             setStatus("Success. Your order request was received. A confirmation email was sent.", "ok");
             form.reset();
+
             fillFlavorSelect(firstFlavor);
             fillFlavorSelect(secondFlavor);
-            fillTimeSelect();
             setEarliestPickup();
+            fillTimeSelectors();
             toggleCustomMessage();
             updateCounter();
             updateCakePreview();
