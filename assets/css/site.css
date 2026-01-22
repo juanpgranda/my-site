@@ -10,6 +10,9 @@
 
 /* =========================
    Official Haagen-Dazs Fonts (Self-hosted)
+   Expected paths:
+   /assets/fonts/body/...
+   /assets/fonts/brand/...
    ========================= */
 
 /* Body font: Hurme Geometric Sans 1 */
@@ -67,12 +70,14 @@
    Root Variables
    ========================= */
 :root {
+  /* Brand Colors */
   --hd-burgundy: #650B32;
   --hd-gold: #D29937;
   --hd-gold-medium: #F9D79C;
   --hd-gold-light: #F9E6C3;
   --hd-white: #FFFFFF;
 
+  /* Global surfaces */
   --hd-cream-bg: #fff8ea;
   --hd-card-bg: #ffffff;
   --hd-border-soft: 1px solid rgba(0,0,0,0.08);
@@ -89,35 +94,37 @@
   --font-brand-headline: "Dazs", serif;
   --font-brand-script: "Dazs Script", cursive;
 
-  /* Type scale */
-  --fs-hero: 64px;
-  --lh-hero: 83.2px;
+  /* Type scale (responsive) */
+  --fs-hero: clamp(40px, 4.4vw, 64px);
+  --lh-hero: 1.15;
 
-  --fs-h2: 36px;
-  --lh-h2: 44px;
+  --fs-h2: clamp(28px, 3.0vw, 36px);
+  --lh-h2: 1.22;
 
   --fs-h3: 20px;
-  --lh-h3: 26px;
+  --lh-h3: 1.30;
 
   --fs-body: 16px;
-  --lh-body: 24px;
+  --lh-body: 1.50;
 
   --fs-small: 12.5px;
-  --lh-small: 20px;
+  --lh-small: 1.55;
+
+  /* Header/nav sizing tokens */
+  --nav-font-size: 14px;
+  --nav-font-weight: 600; /* SemiBold */
+  --nav-gap: 18px;
+  --nav-pill-radius: 999px;
+  --nav-pill-pad-y: 10px;
+  --nav-pill-pad-x: 14px;
 }
 
 /* =========================
-   Global Font Lock
+   Base + Typography
    ========================= */
 html { box-sizing: border-box; }
-*, *::before, *::after {
-  box-sizing: inherit;
-  font-family: inherit;
-}
+*, *::before, *::after { box-sizing: inherit; }
 
-/* =========================
-   Base Typography
-   ========================= */
 body {
   margin: 0;
   font-family: var(--font-body) !important;
@@ -128,7 +135,8 @@ body {
   background-color: var(--hd-cream-bg);
 }
 
-/* Headings */
+* { font-family: inherit; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headline) !important;
   color: var(--hd-burgundy);
@@ -137,32 +145,34 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: var(--fs-hero); line-height: var(--lh-hero); font-weight: 700; }
 h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: 700; }
-h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 600; }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 600; } /* SemiBold */
 
 /* Paragraph defaults */
-p {
-  margin: 0;
-  font-weight: 400;
-}
+p { margin: 0; font-weight: 400; }
 
 /* Hierarchy helpers (SemiBold usage) */
 .sub-head,
 .lead,
-.section-intro {
-  font-weight: 600;
+.section-intro,
+label,
+.kicker {
+  font-weight: 600; /* SemiBold */
 }
 
-/* Navigation, buttons, labels */
+/* Links */
+a { color: inherit; }
+a:focus { outline: 2px solid rgba(210, 153, 55, 0.45); outline-offset: 2px; }
+
+/* Navigation, buttons, controls (SemiBold usage) */
 nav a,
 .btn,
 button,
 input,
 select,
 textarea,
-.chip,
-label {
+.chip {
   font-family: var(--font-body) !important;
-  font-weight: 600;
+  font-weight: 600; /* SemiBold */
 }
 
 /* Small/meta text */
@@ -188,7 +198,59 @@ main { display: block; background: transparent; }
 }
 
 /* =========================
-   Surfaces
+   Header / Nav (safe site-wide styling)
+   This is designed to be "selector tolerant" until we confirm your header markup.
+   ========================= */
+#siteHeader header,
+#siteHeader .topbar,
+#siteHeader .header,
+#siteHeader .site-header {
+  background: var(--hd-white);
+}
+
+#siteHeader nav,
+#siteHeader .nav,
+#siteHeader .nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--nav-gap);
+  flex-wrap: wrap;
+}
+
+#siteHeader nav a,
+#siteHeader .nav a,
+#siteHeader .nav-links a {
+  font-size: var(--nav-font-size);
+  font-weight: var(--nav-font-weight);
+  text-decoration: none;
+  color: var(--hd-burgundy);
+  padding: var(--nav-pill-pad-y) var(--nav-pill-pad-x);
+  border-radius: var(--nav-pill-radius);
+  line-height: 1;
+}
+
+#siteHeader nav a:hover,
+#siteHeader nav a:focus,
+#siteHeader .nav a:hover,
+#siteHeader .nav a:focus,
+#siteHeader .nav-links a:hover,
+#siteHeader .nav-links a:focus {
+  outline: none;
+  background: rgba(249, 230, 195, 0.55);
+}
+
+/* Mobile nav tightening */
+@media (max-width: 720px) {
+  :root {
+    --nav-gap: 10px;
+    --nav-font-size: 13px;
+    --nav-pill-pad-y: 9px;
+    --nav-pill-pad-x: 12px;
+  }
+}
+
+/* =========================
+   Surfaces / Cards
    ========================= */
 .card,
 .panel,
@@ -231,16 +293,10 @@ main { display: block; background: transparent; }
 }
 
 .section-cream { background: var(--hd-cream-bg); }
-.section-grad {
-  background: linear-gradient(
-    180deg,
-    rgba(249,230,195,0.20),
-    rgba(255,255,255,1)
-  );
-}
+.section-grad { background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1)); }
 
 /* =========================
-   Buttons / Chips
+   Buttons / Chips (safe defaults)
    ========================= */
 .btn { border-radius: 14px; }
 .chip { border-radius: 999px; }
