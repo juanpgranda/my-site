@@ -6,9 +6,6 @@
 
 /* =========================
    Official Haagen-Dazs Fonts (Self-hosted)
-   Paths based on your repo:
-   /assets/fonts/body/...
-   /assets/fonts/brand/...
    ========================= */
 
 /* Body font: Hurme Geometric Sans 1 */
@@ -67,14 +64,12 @@
    ========================= */
 
 :root {
-  /* Brand Colors */
   --hd-burgundy: #650B32;
   --hd-gold: #D29937;
   --hd-gold-medium: #F9D79C;
   --hd-gold-light: #F9E6C3;
   --hd-white: #FFFFFF;
 
-  /* Global surfaces */
   --hd-cream-bg: #fff8ea;
   --hd-card-bg: #ffffff;
   --hd-border-soft: 1px solid rgba(0,0,0,0.08);
@@ -83,43 +78,30 @@
   --hd-radius-lg: 18px;
   --hd-radius-md: 14px;
 
-  /* Typography: Official site font stack (Hurme first, Outfit fallback) */
   --font-body: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-headline: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-script: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
-  /* Optional brand fonts (opt-in via classes) */
   --font-brand-headline: "Dazs", serif;
   --font-brand-script: "Dazs Script", cursive;
 
-  /* Site-wide type scale (tokens) */
   --fs-hero: 64px;
   --lh-hero: 83.2px;
-  --fw-hero: 700;
 
   --fs-h2: 36px;
   --lh-h2: 44px;
-  --fw-h2: 700;
 
   --fs-h3: 20px;
   --lh-h3: 26px;
-  --fw-h3: 700;
 
   --fs-body: 16px;
   --lh-body: 24px;
-  --fw-body: 400;
-
-  --fs-lead: 16px;
-  --lh-lead: 24px;
-  --fw-lead: 300;
 
   --fs-small: 12.5px;
   --lh-small: 20px;
-  --fw-small: 400;
 }
 
 /* =========================
-   Base + Global Typography
+   Base + Typography
    ========================= */
 
 html { box-sizing: border-box; }
@@ -127,155 +109,95 @@ html { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: var(--font-body) !important;
-  font-weight: var(--fw-body);
+  font-family: var(--font-body);
+  font-weight: 400;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--hd-burgundy);
   background-color: var(--hd-cream-bg);
 }
 
-/* Make sure everything inherits the site font by default */
 * { font-family: inherit; }
 
-/* Headings: Hurme site-wide by default */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-headline) !important;
+  font-family: var(--font-headline);
   color: var(--hd-burgundy);
 }
 
-/* Default heading scale (so pages can stop redefining sizes) */
-h1 { font-size: var(--fs-hero); line-height: var(--lh-hero); font-weight: var(--fw-hero); }
-h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: var(--fw-h2); }
-h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: var(--fw-h3); }
+h1 { font-size: var(--fs-hero); line-height: var(--lh-hero); font-weight: 700; }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: 700; }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 600; }
 
-/* Helpers you can reuse on any page */
-.hd-hero-title {
-  font-size: var(--fs-hero);
-  line-height: var(--lh-hero);
-  font-weight: var(--fw-hero);
-  margin: 0 0 10px;
-  color: var(--hd-burgundy);
+/* Body hierarchy (matches icecream.com) */
+p,
+.body-copy {
+  font-weight: 400;
 }
 
-.hd-lead {
-  font-size: var(--fs-lead);
-  line-height: var(--lh-lead);
-  font-weight: var(--fw-lead);
-  margin: 0;
+.sub-head,
+.lead,
+.section-intro {
+  font-weight: 600;
 }
 
-.hd-small {
-  font-size: var(--fs-small);
-  line-height: var(--lh-small);
-  font-weight: var(--fw-small);
-}
-
-/* Links */
-a { color: inherit; }
-a:focus { outline: 2px solid rgba(210, 153, 55, 0.45); outline-offset: 2px; }
-
-/* Force form controls + buttons + chips to stay site font */
+/* Navigation, buttons, labels */
+nav a,
+.btn,
 button,
 input,
 select,
 textarea,
-.chip,
-.btn {
-  font-family: var(--font-body) !important;
+.chip {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+/* Small meta text */
+.small,
+.caption,
+.meta {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  font-weight: 400;
 }
 
 /* =========================
-   Global Layout Helpers
+   Layout Helpers
    ========================= */
 
-#siteHeader, #siteFooter { margin: 0; padding: 0; }
-
-main {
-  display: block;
-  background: transparent;
-}
-
-/* Common container if a page does not redefine it */
 .container {
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+main { display: block; }
+
 /* =========================
-   Global Surfaces (cards/panels)
+   Surfaces
    ========================= */
 
 .card,
 .panel,
-.form-card,
-.preview-card,
-.loc-block,
-.review,
-.micro-block {
-  background: var(--hd-card-bg);
-}
-
-.card,
-.panel,
 .form-card {
+  background: var(--hd-card-bg);
   border: var(--hd-border-soft);
   border-radius: var(--hd-radius-lg);
   box-shadow: var(--hd-shadow-soft);
 }
 
-.preview-card,
-.loc-block,
-.review,
-.micro-block {
-  border: var(--hd-border-soft);
-  border-radius: var(--hd-radius-md);
-  box-shadow: none;
-}
-
 /* =========================
-   Global Section Styling
+   Brand Opt-in Fonts
    ========================= */
 
-.page-hero {
-  background: var(--hd-card-bg);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-.section,
-.section-band {
-  background: transparent;
-}
-
-.section-cream {
-  background: var(--hd-cream-bg);
-}
-
-.section-grad {
-  background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
-}
-
-/* =========================
-   Buttons / Chips (safe defaults)
-   ========================= */
-
-.btn { border-radius: 14px; }
-.chip { border-radius: 999px; }
-
-/* =========================
-   Opt-in Brand Type (only if you add these classes)
-   ========================= */
-
-/* Use Dazs for key brand headlines only */
 .hd-headline {
-  font-family: var(--font-brand-headline) !important;
+  font-family: var(--font-brand-headline);
   font-weight: 700;
 }
 
-/* Use Dazs Script sparingly (signatures, accents) */
 .brand-script {
-  font-family: var(--font-brand-script) !important;
+  font-family: var(--font-brand-script);
   font-weight: 400;
 }
 
