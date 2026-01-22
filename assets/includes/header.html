@@ -60,29 +60,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
-/* NAV LINKS: black default, burgundy on hover (no background change) */
-.hd-nav a {
-  text-decoration: none;
-  color: #111111;
+/* =========================================================
+   DESKTOP NAV: BLACK DEFAULT, BURGUNDY ON HOVER, NO PILL
+   (hard override to kill any legacy pill/background styles)
+   ========================================================= */
+
+.hd-nav a,
+.hd-nav .has-sub > a {
+  text-decoration: none !important;
+  color: #111111 !important;
   font-weight: 900;
   font-size: 13px;
   letter-spacing: 0.02em;
-  padding: 10px 12px;
-  border-radius: 14px;
+  padding: 10px 2px;
   line-height: 1;
   white-space: nowrap;
-  background: transparent;
+
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .hd-nav a:hover,
-.hd-nav a:focus {
-  outline: none;
-  color: var(--hd-burgundy);
-  background: transparent;
+.hd-nav a:focus,
+.hd-nav .has-sub > a:hover,
+.hd-nav .has-sub > a:focus {
+  color: var(--hd-burgundy) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Kill any pseudo-element "pill" effects */
+.hd-nav a::before,
+.hd-nav a::after,
+.hd-nav .has-sub > a::before,
+.hd-nav .has-sub > a::after {
+  content: none !important;
 }
 
 /* Desktop dropdown for Locations */
@@ -102,6 +122,7 @@
   font-size: 10px;
   line-height: 1;
   opacity: 0.85;
+  color: currentColor;
 }
 
 /* IMPORTANT: remove hover gap by aligning submenu to the bottom edge of the trigger */
@@ -132,23 +153,23 @@
   display: none;
 }
 
-/* Submenu links: black default, burgundy hover */
+/* Submenu links */
 .hd-nav .submenu a {
   display: block;
   padding: 10px 12px;
   border-radius: 12px;
   font-weight: 900;
-  color: #111111;
+  color: #111111 !important;
   background: rgba(249, 230, 195, 0.20);
   text-align: left;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .hd-nav .submenu a:hover,
 .hd-nav .submenu a:focus {
-  outline: none;
-  color: var(--hd-burgundy);
+  color: var(--hd-burgundy) !important;
   background: rgba(249, 230, 195, 0.35);
+  outline: none;
 }
 
 .hd-nav .has-sub:hover .submenu,
@@ -226,21 +247,21 @@
   gap: 8px;
 }
 
-/* Mobile links: black default, burgundy hover */
+/* Mobile links: black default, burgundy hover (no pill) */
 .hd-mobile-panel a {
   text-decoration: none;
   color: #111111;
   font-weight: 900;
-  padding: 12px 12px;
-  border-radius: 14px;
-  background: rgba(249, 230, 195, 0.35);
+  padding: 12px 2px;
+  border-radius: 0;
+  background: transparent;
 }
 
 .hd-mobile-panel a:hover,
 .hd-mobile-panel a:focus {
   outline: none;
   color: var(--hd-burgundy);
-  background: rgba(249, 230, 195, 0.65);
+  background: transparent;
 }
 
 .hd-mobile-toggle:checked ~ .hd-mobile-panel {
@@ -283,7 +304,7 @@
     <div class="tapestry" aria-hidden="true">
       <div class="tapestry-inner">
         <a class="logo" href="/" aria-label="Home">
-          <img src="/assets/images/pages/hd_logo_transparent_01.png" alt="Häagen-Dazs">
+          <img src="/assets/images/pages/hd_logo_transparent_01.png" alt="Haagen-Dazs">
         </a>
       </div>
     </div>
