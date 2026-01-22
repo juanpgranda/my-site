@@ -27,7 +27,6 @@
   <link rel="manifest" href="/assets/images/site.webmanifest">
   <meta name="theme-color" content="#650B32">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ3XB37TBM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -482,13 +481,13 @@
           <div class="field">
             <label for="cakeSize">Cake Size</label>
             <select id="cakeSize" name="cake_size" required>
-          <option value="" selected disabled>Select a cake size</option>
-          <option>2x6 (serves 6-8)</option>
-          <option>3x6 (serves 9-12)</option>
-          <option>2x8 (serves 12-16)</option>
-          <option>3x8 (serves 16-20)</option>
-          <option>2x10 (serves 20-24)</option>
-          <option>3x10 (serves 24-32)</option>
+              <option value="" selected disabled>Select a cake size</option>
+              <option>2x6 (serves 6-8)</option>
+              <option>3x6 (serves 9-12)</option>
+              <option>2x8 (serves 12-16)</option>
+              <option>3x8 (serves 16-20)</option>
+              <option>2x10 (serves 20-24)</option>
+              <option>3x10 (serves 24-32)</option>
             </select>
           </div>
 
@@ -517,8 +516,8 @@
 
           <div class="field">
             <label for="pickupTime">Pick Up Time</label>
-            <input id="pickupTime" name="pickup_time" type="time" step="900" required>
-            <div class="help">15-minute increments for easier scheduling.</div>
+            <select id="pickupTime" name="pickup_time" required></select>
+            <div class="help">Pickup times available 11:15 AM to 7:45 PM in 15-minute increments.</div>
           </div>
 
           <div class="field full">
@@ -586,69 +585,47 @@
       var WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0iumR07OyUWmmkdjcRPRaqqSGBJ-wHGdyP4lPPYCjxOppbJFXnkyzOjVbFRU49QwY/exec";
       var PROCESSING_DAYS = 2;
 
+      /* Flavors pulled from your CSV and kept in that exact order.
+         Label adds two spaces then (GF) when gluten_free = GF. */
       var flavors = [
-        { name: "Chocolate", gf: false },
-        { name: "Dulce De Leche", gf: false },
-        { name: "Mango", gf: false },
-        { name: "Strawberry", gf: false },
-        { name: "Raspberry", gf: false },
-        { name: "Brownies A La Mode", gf: false },
-        { name: "Butter Pecan", gf: true },
-        { name: "Caramel Cone", gf: false },
-        { name: "Coffee", gf: true },
-        { name: "Cookie Dough Dynamo", gf: false },
-        { name: "Cookies & Cream", gf: false },
-        { name: "Midnight Cookies & Cream", gf: false },
-        { name: "Mint Chip", gf: true },
-        { name: "Pineapple Coconut", gf: true },
-        { name: "Pralines & Cream", gf: true },
-        { name: "Rocky Road", gf: false },
-        { name: "Rum Raisin", gf: true },
+        { name: "Cookies n' Cream", gf: false },
+        { name: "Midnight Cookies n' Cream", gf: false },
+        { name: "Chocolate", gf: true },
+        { name: "Belgian Chocolate", gf: true },
         { name: "Vanilla", gf: true },
-        { name: "Vanilla Chip", gf: false },
-        { name: "Vanilla Swiss Almond", gf: false },
-        { name: "White Chocolate Raspberry", gf: false },
-        { name: "Irish Cream Brownie", gf: false },
-        { name: "Belgian Chocolate", gf: false },
-        { name: "Coffee Chip", gf: false },
+        { name: "Vanilla Choc Chip", gf: true },
+        { name: "Dulce de Leche", gf: true },
+        { name: "Cookie Dough Choc Chip", gf: false },
+        { name: "Rocky Road", gf: true },
+        { name: "Brownies a la Mode", gf: false },
+        { name: "Coffee", gf: true },
+        { name: "Coffee Chip", gf: true },
+        { name: "Butter Pecan", gf: true },
+        { name: "Pralines & Cream", gf: true },
+        { name: "Rum Raisin", gf: true },
         { name: "Pistachio", gf: true },
-        { name: "New York Strawberry Cheesecake", gf: false },
-        { name: "Caramel Biscuits and Cream", gf: false },
+        { name: "Mango", gf: true },
+        { name: "Raspberry", gf: true },
+        { name: "Strawberry", gf: true },
+        { name: "White Chocolate Raspberry Truffle", gf: true },
+        { name: "Caramel Cone", gf: false },
+        { name: "Pineapple Coconut", gf: true },
+        { name: "Green Tea", gf: true },
         { name: "Cherry Vanilla", gf: true },
-        { name: "Chocolate Chocolate Chip", gf: true },
         { name: "Chocolate Peanut Butter", gf: true },
+        { name: "Coffee Raspberry Truffle", gf: true },
         { name: "Chocolate Salted Fudge Truffle", gf: true },
         { name: "Coffee Chocolate Chip", gf: true },
-        { name: "Coffee Raspberry Truffle", gf: true },
-        { name: "Dulce De Leche (2)", gf: false },
-        { name: "Green Tea", gf: true },
-        { name: "Mango Sorbet", gf: true },
-        { name: "Mint Chip (2)", gf: true },
-        { name: "Pineapple Coconut (2)", gf: true },
-        { name: "Pralines & Cream (2)", gf: true },
-        { name: "Rum Raisin (2)", gf: true },
+        { name: "Chocolate Chocolate Chip", gf: true },
         { name: "Strawberry Cheesecake", gf: false },
-        { name: "Strawberry Sorbet", gf: true },
-        { name: "Vanilla (2)", gf: true },
-        { name: "Vanilla Milk Chocolate Almond", gf: false },
-        { name: "Vanilla Swiss Almond (2)", gf: false },
-        { name: "White Chocolate Raspberry Truffle", gf: true },
-        { name: "Rocky Road (2)", gf: false },
-        { name: "Coffee (2)", gf: true },
-        { name: "Chocolate (2)", gf: false },
-        { name: "Strawberry (2)", gf: false },
-        { name: "Dulce De Leche (3)", gf: false },
-        { name: "Caramel Cone (2)", gf: false },
-        { name: "Cookies & Cream (2)", gf: false },
-        { name: "Cookie Dough Dynamo (2)", gf: false },
-        { name: "Vanilla Chip (2)", gf: false },
-        { name: "New York Strawberry Cheesecake (2)", gf: false },
-        { name: "Raspberry (2)", gf: false }
+        { name: "Mango Sorbet", gf: true },
+        { name: "Strawberry Sorbet", gf: true }
       ];
 
       var firstFlavor = document.getElementById("firstFlavor");
       var secondFlavor = document.getElementById("secondFlavor");
       var pickupDate = document.getElementById("pickupDate");
+      var pickupTime = document.getElementById("pickupTime");
       var earliestPickupText = document.getElementById("earliestPickupText");
       var minDateHint = document.getElementById("minDateHint");
 
@@ -668,6 +645,11 @@
       var statusMsg = document.getElementById("statusMsg");
       var submitBtn = document.getElementById("submitBtn");
 
+      /* Time window: 11:15 AM to 7:45 PM, 15-min increments */
+      var TIME_START_MINUTES = (11 * 60) + 15;
+      var TIME_END_MINUTES = (19 * 60) + 45;
+      var TIME_STEP_MINUTES = 15;
+
       function pad2(n) { return (n < 10 ? "0" : "") + n; }
 
       function addDays(d, days) {
@@ -684,6 +666,44 @@
 
       function formatISODate(d) {
         return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+      }
+
+      function format24h(totalMinutes) {
+        var h = Math.floor(totalMinutes / 60);
+        var m = totalMinutes % 60;
+        return pad2(h) + ":" + pad2(m);
+      }
+
+      function format12hLabel(totalMinutes) {
+        var h24 = Math.floor(totalMinutes / 60);
+        var m = totalMinutes % 60;
+        var ampm = (h24 >= 12) ? "PM" : "AM";
+        var h12 = h24 % 12;
+        if (h12 === 0) h12 = 12;
+        return h12 + ":" + pad2(m) + " " + ampm;
+      }
+
+      function fillTimeSelect() {
+        if (!pickupTime) return;
+        pickupTime.innerHTML = "";
+
+        var opt0 = document.createElement("option");
+        opt0.value = "";
+        opt0.textContent = "Select a pickup time";
+        opt0.disabled = true;
+        opt0.selected = true;
+        pickupTime.appendChild(opt0);
+
+        for (var t = TIME_START_MINUTES; t <= TIME_END_MINUTES; t += TIME_STEP_MINUTES) {
+          var v = format24h(t);
+          var label = format12hLabel(t);
+          var opt = document.createElement("option");
+          opt.value = v;
+          opt.textContent = label;
+          pickupTime.appendChild(opt);
+        }
+
+        pickupTime.value = format24h(TIME_START_MINUTES);
       }
 
       function setEarliestPickup() {
@@ -795,6 +815,7 @@
 
       fillFlavorSelect(firstFlavor);
       fillFlavorSelect(secondFlavor);
+      fillTimeSelect();
       setEarliestPickup();
       toggleCustomMessage();
       updateCounter();
@@ -865,6 +886,7 @@
             form.reset();
             fillFlavorSelect(firstFlavor);
             fillFlavorSelect(secondFlavor);
+            fillTimeSelect();
             setEarliestPickup();
             toggleCustomMessage();
             updateCounter();
