@@ -44,6 +44,9 @@
 
     * { box-sizing: border-box; }
 
+    /* Override site-wide cream background for this page */
+    body { background: #ffffff; }
+
     .container {
       max-width: var(--container);
       margin: 0 auto;
@@ -268,7 +271,7 @@
       padding: 12px 16px;
       border-radius: 14px;
       text-decoration: none;
-      font-weight: 800;
+      font-weight: 700;
       border: 0;
       cursor: pointer;
       user-select: none;
@@ -279,7 +282,7 @@
     .btn-primary { background: var(--hd-burgundy); color: var(--hd-white); }
     .btn-secondary { background: var(--hd-gold); color: var(--hd-white); }
 
-    /* Light gold band for locations section (uses same family as menu band) */
+    /* Light gold band for locations section */
     .locations-wrap {
       background: rgba(249, 230, 195, 0.45);
       border-top: 1px solid rgba(0,0,0,0.06);
@@ -492,11 +495,14 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div id="siteHeader"></div>
+
   <main id="main">
     <section class="hero-full" aria-label="Hero">
       <div class="container hero-carousel-wrap">
+
         <div class="hero-carousel" aria-label="Homepage hero carousel">
           <div class="hero-carousel-viewport" id="heroCarouselViewport">
+
             <div class="hero-slide is-active anim" data-index="0" aria-hidden="false">
               <img src="/assets/images/pages/220421_HD_Online_MoneyShot.jpg" alt="Order online hero image">
               <div class="hero-overlay">
@@ -505,172 +511,177 @@
                 <p></p>
               </div>
             </div>
-        <div class="hero-slide" data-index="1" aria-hidden="true">
-          <img src="/assets/images/placeholders/hd_dulce.jpeg" alt="Catering and sundae creations hero image">
-          <div class="hero-overlay">
-            <div class="kicker"></div>
-            <h2></h2>
-            <p></p>
+
+            <div class="hero-slide" data-index="1" aria-hidden="true">
+              <img src="/assets/images/placeholders/hd_dulce.jpeg" alt="Catering and sundae creations hero image">
+              <div class="hero-overlay">
+                <div class="kicker"></div>
+                <h2></h2>
+                <p></p>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="hero-carousel-btn prev" type="button" aria-label="Previous slide" id="heroPrev">&#8249;</button>
+          <button class="hero-carousel-btn next" type="button" aria-label="Next slide" id="heroNext">&#8250;</button>
+
+          <div class="hero-carousel-dots" role="tablist" aria-label="Hero carousel pagination">
+            <button class="hero-dot is-active" type="button" aria-label="Go to slide 1" id="heroDot0"></button>
+            <button class="hero-dot" type="button" aria-label="Go to slide 2" id="heroDot1"></button>
           </div>
         </div>
-      </div>
 
-      <button class="hero-carousel-btn prev" type="button" aria-label="Previous slide" id="heroPrev">&#8249;</button>
-      <button class="hero-carousel-btn next" type="button" aria-label="Next slide" id="heroNext">&#8250;</button>
-
-      <div class="hero-carousel-dots" role="tablist" aria-label="Hero carousel pagination">
-        <button class="hero-dot is-active" type="button" aria-label="Go to slide 1" id="heroDot0"></button>
-        <button class="hero-dot" type="button" aria-label="Go to slide 2" id="heroDot1"></button>
-      </div>
-    </div>
-
-    <div class="hero-intro" aria-label="Hero intro">
-      <h1>Simply extraordinary, served locally</h1>
-      <p>
-        Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
-        Find hours, directions, and ordering links in seconds.
-      </p>
-      <div class="cta-row" aria-label="Quick actions">
-        <a class="btn btn-primary" href="/locations">Locations</a>
-        <a class="btn btn-secondary" href="/menu">Menu</a>
-        <a class="btn btn-secondary" href="/cakes">Cakes</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="locations-wrap" id="locations">
-  <div class="container">
-    <div class="section">
-      <h2>Locations</h2>
-      <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
-
-      <div class="cards">
-        <article class="card" aria-label="Häagen-Dazs North Miami location">
-          <h3>Häagen-Dazs North Miami (Causeway Square)</h3>
-          <p class="meta">
-            <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
-            <strong>Directions:</strong> <a href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open in Google Maps</a><br>
-            <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 963-8203</a>
+        <div class="hero-intro" aria-label="Hero intro">
+          <h1>Simply extraordinary, served locally</h1>
+          <p>
+            Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
+            Find hours, directions, and ordering links in seconds.
           </p>
-
-          <div class="hours-block">
-            <strong>Hours:</strong><br>
-            Mon-Thu 10am - 10pm<br>
-            Fri-Sat 10am - 11pm<br>
-            Sun 11am - 8pm
+          <div class="cta-row" aria-label="Quick actions">
+            <a class="btn btn-primary" href="/locations">Locations</a>
+            <a class="btn btn-secondary" href="/menu">Menu</a>
+            <a class="btn btn-secondary" href="/cakes">Cakes</a>
           </div>
+        </div>
 
-          <div class="actions">
-            <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
-            <a class="chip" href="tel:+17869638203">Call</a>
-          </div>
-
-          <div class="icon-block">
-            <div class="icon-group">
-              <div class="icon-row-title">Community and reviews</div>
-              <div class="icon-row">
-                <a class="icon-link" href="https://www.instagram.com/haagendazs_north_miami" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthMiami/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
-                  <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-                </a>
-              </div>
-            </div>
-
-            <div class="icon-group">
-              <div class="icon-row-title">Delivery and discovery</div>
-              <div class="delivery-row">
-                <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
-                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                </a>
-                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
-                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                </a>
-                <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
-                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" aria-label="Häagen-Dazs Collins North Beach location">
-          <h3>Häagen-Dazs Collins North Beach</h3>
-          <p class="meta">
-            <strong>Address:</strong> 6978 Collins Ave, Miami Beach, FL 33141<br>
-            <strong>Directions:</strong> <a href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open in Google Maps</a><br>
-            <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 633-6485</a>
-          </p>
-
-          <div class="hours-block">
-            <strong>Hours:</strong><br>
-            Mon-Thu 10am - 10pm<br>
-            Fri-Sat 10am - 11pm<br>
-            Sun 11am - 8pm
-          </div>
-
-          <div class="actions">
-            <a class="chip" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Directions</a>
-            <a class="chip" href="tel:+17866336485">Call</a>
-          </div>
-
-          <div class="icon-block">
-            <div class="icon-group">
-              <div class="icon-row-title">Community and reviews</div>
-              <div class="icon-row">
-                <a class="icon-link" href="https://www.instagram.com/haagendazs_northbeach" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthBeach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
-                  <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-                </a>
-              </div>
-            </div>
-
-            <div class="icon-group">
-              <div class="icon-row-title">Delivery and discovery</div>
-              <div class="delivery-row">
-                <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-6978-collins-avenue/_fVlFIVpWaqPatU03tzQaw?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkhhYWdlbi1EYXpzJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyaGVyZSUzQXBkcyUzQXBsYWNlJTNBODQwZGh3Y2ctZWM4Yjg4YjgwMmI4NGI3MDlhMzg1OWU5NDJjNDFiMTklMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyaGVyZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTI1LjY0NDQ4JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTgwLjMzODEyJTdE&ps=1&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
-                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                </a>
-                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-miami-beach-35160441/74478347/?cursor=eyJzZWFyY2hfaXRlbV9jYXJvdXNlbF9jdXJzb3IiOnsicXVlcnkiOiJpY2UgY3JlYW0iLCJpdGVtX2lkcyI6WzI3NjIxMzUyNjIxLDI3NjIxMzUyNjIyLDI3NjIxMzUyNjIzXSwic2VhcmNoX3Rlcm0iOiJpY2UgY3JlYW0iLCJ2ZXJ0aWNhbF9pZCI6LTk5OSwidmVydGljYWxfbmFtZSI6ImFsbCIsInF1ZXJ5X2ludGVudCI6IkZPT0RfRElTSCJ9LCJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsMTEwMDQ1LDQsMTAwMzMzXX0=&pickup=false" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
-                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                </a>
-                <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
-                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
       </div>
+    </section>
 
-      <div style="height: 18px;"></div>
-    </div>
-  </div>
-</section>
+    <section class="locations-wrap" id="locations" aria-label="Locations">
+      <div class="container">
+        <div class="section">
+          <h2>Locations</h2>
+          <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
+
+          <div class="cards">
+            <article class="card" aria-label="Häagen-Dazs North Miami location">
+              <h3>Häagen-Dazs North Miami (Causeway Square)</h3>
+              <p class="meta">
+                <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
+                <strong>Directions:</strong> <a href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open in Google Maps</a><br>
+                <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 963-8203</a>
+              </p>
+
+              <div class="hours-block">
+                <strong>Hours:</strong><br>
+                Mon-Thu 10am - 10pm<br>
+                Fri-Sat 10am - 11pm<br>
+                Sun 11am - 8pm
+              </div>
+
+              <div class="actions">
+                <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
+                <a class="chip" href="tel:+17869638203">Call</a>
+              </div>
+
+              <div class="icon-block">
+                <div class="icon-group">
+                  <div class="icon-row-title">Community and reviews</div>
+                  <div class="icon-row">
+                    <a class="icon-link" href="https://www.instagram.com/haagendazs_north_miami" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                      <span class="icon-swap">
+                        <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
+                        <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
+                      </span>
+                    </a>
+                    <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthMiami/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                      <span class="icon-swap">
+                        <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
+                        <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
+                      </span>
+                    </a>
+                    <a class="icon-link" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
+                      <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="icon-group">
+                  <div class="icon-row-title">Delivery and discovery</div>
+                  <div class="delivery-row">
+                    <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
+                      <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
+                    </a>
+                    <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
+                      <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
+                    </a>
+                    <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
+                      <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Häagen-Dazs Collins North Beach location">
+              <h3>Häagen-Dazs Collins North Beach</h3>
+              <p class="meta">
+                <strong>Address:</strong> 6978 Collins Ave, Miami Beach, FL 33141<br>
+                <strong>Directions:</strong> <a href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open in Google Maps</a><br>
+                <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 633-6485</a>
+              </p>
+
+              <div class="hours-block">
+                <strong>Hours:</strong><br>
+                Mon-Thu 10am - 10pm<br>
+                Fri-Sat 10am - 11pm<br>
+                Sun 11am - 8pm
+              </div>
+
+              <div class="actions">
+                <a class="chip" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Directions</a>
+                <a class="chip" href="tel:+17866336485">Call</a>
+              </div>
+
+              <div class="icon-block">
+                <div class="icon-group">
+                  <div class="icon-row-title">Community and reviews</div>
+                  <div class="icon-row">
+                    <a class="icon-link" href="https://www.instagram.com/haagendazs_northbeach" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                      <span class="icon-swap">
+                        <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
+                        <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
+                      </span>
+                    </a>
+                    <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthBeach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                      <span class="icon-swap">
+                        <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
+                        <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
+                      </span>
+                    </a>
+                    <a class="icon-link" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
+                      <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="icon-group">
+                  <div class="icon-row-title">Delivery and discovery</div>
+                  <div class="delivery-row">
+                    <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-6978-collins-avenue/_fVlFIVpWaqPatU03tzQaw?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkhhYWdlbi1EYXpzJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyaGVyZSUzQXBkcyUzQXBsYWNlJTNBODQwZGh3Y2ctZWM4Yjg4YjgwMmI4NGI3MDlhMzg1OWU5NDJjNDFiMTklMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyaGVyZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTI1LjY0NDQ4JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTgwLjMzODEyJTdE&ps=1&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
+                      <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
+                    </a>
+                    <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-miami-beach-35160441/74478347/?cursor=eyJzZWFyY2hfaXRlbV9jYXJvdXNlbF9jdXJzb3IiOnsicXVlcnkiOiJpY2UgY3JlYW0iLCJpdGVtX2lkcyI6WzI3NjIxMzUyNjIxLDI3NjIxMzUyNjIyLDI3NjIxMzUyNjIzXSwic2VhcmNoX3Rlcm0iOiJpY2UgY3JlYW0iLCJ2ZXJ0aWNhbF9pZCI6LTk5OSwidmVydGljYWxfbmFtZSI6ImFsbCIsInF1ZXJ5X2ludGVudCI6IkZPT0RfRElTSCJ9LCJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsMTEwMDQ1LDQsMTAwMzMzXX0=&pickup=false" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
+                      <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
+                    </a>
+                    <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
+                      <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div style="height: 18px;"></div>
+        </div>
+      </div>
+    </section>
   </main>
+
   <div id="siteFooter"></div>
+
   <script>
     (function () {
       function loadInto(id, url) {
@@ -689,6 +700,7 @@
       loadInto("siteFooter", footerUrl);
     })();
   </script>
+
   <script>
     (function () {
       var slides = Array.prototype.slice.call(document.querySelectorAll(".hero-slide"));
