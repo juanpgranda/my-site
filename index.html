@@ -37,632 +37,651 @@
   <style>
     :root {
       --container: 1120px;
-      --radius-lg: 18px;
-      --radius-md: 14px;
-      --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-      --border-soft: 1px solid rgba(0,0,0,0.08);
       --text-muted: rgba(101, 11, 50, 0.72);
       --hero-ink: #ffffff;
       --hero-shadow: 0 10px 30px rgba(0,0,0,0.28);
     }
-* { box-sizing: border-box; }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-}
+    * { box-sizing: border-box; }
 
-.container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 20px;
-}
+    /* Override site-wide cream background for this page */
+    body { background: #ffffff; }
 
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 10px;
-  background: var(--hd-burgundy);
-  color: var(--hd-white);
-  padding: 10px 12px;
-  border-radius: 10px;
-  z-index: 9999;
-  text-decoration: none;
-  font-weight: 700;
-}
-.skip-link:focus { left: 10px; }
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-#siteHeader, #siteFooter { margin: 0; padding: 0; }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+      padding: 10px 12px;
+      border-radius: 10px;
+      z-index: 9999;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .skip-link:focus { left: 10px; }
 
-/* HERO (CONTAINED, like reference) */
-.hero-full {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-}
+    #siteHeader, #siteFooter { margin: 0; padding: 0; }
 
-.hero-carousel-wrap {
-  padding: 18px 0 18px;
-}
+    /* HERO (contained, like reference) */
+    .hero-full {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      background: transparent;
+    }
 
-.hero-carousel {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  border-radius: 0;
-  overflow: hidden;
-  background: #000;
-  border: var(--border-soft);
-  box-shadow: var(--shadow-soft);
-}
+    .hero-carousel-wrap {
+      padding: 18px 0 18px;
+    }
 
-.hero-carousel-viewport {
-  position: relative;
-  width: 100%;
-  height: 520px;
-}
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+      overflow: hidden;
+      background: #000;
+      border: var(--hd-border-soft);
+      box-shadow: var(--hd-shadow-soft);
+    }
 
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 400ms ease;
-  pointer-events: none;
-}
+    .hero-carousel-viewport {
+      position: relative;
+      width: 100%;
+      height: 520px;
+    }
 
-.hero-slide.is-active {
-  opacity: 1;
-  pointer-events: auto;
-}
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 400ms ease;
+      pointer-events: none;
+    }
 
-.hero-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .hero-slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-.hero-overlay {
-  position: absolute;
-  left: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 560px;
-  color: var(--hero-ink);
-  text-shadow: var(--hero-shadow);
-  padding: 0;
-}
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-.hero-overlay .kicker {
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 10px;
-}
+    .hero-overlay {
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 560px;
+      color: var(--hero-ink);
+      text-shadow: var(--hero-shadow);
+      padding: 0;
+    }
 
-.hero-overlay h2 {
-  margin: 0 0 10px;
-  font-size: 36px;
-  line-height: 1.05;
-  font-weight: 900;
-  color: #ffffff;
-}
+    .hero-overlay .kicker {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(255,255,255,0.90);
+      margin-bottom: 10px;
+    }
 
-.hero-overlay p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.45;
-  color: rgba(255,255,255,0.92);
-  max-width: 60ch;
-}
+    .hero-overlay h2 {
+      margin: 0 0 10px;
+      font-size: 36px;
+      line-height: 1.05;
+      font-weight: 900;
+      color: #ffffff;
+    }
 
-.hero-slide .hero-overlay h2,
-.hero-slide .hero-overlay p {
-  opacity: 0;
-  transform: translateX(0);
-}
+    .hero-overlay p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.92);
+      max-width: 60ch;
+      font-weight: 400;
+    }
 
-.hero-slide.anim .hero-overlay h2 {
-  animation: hdFadeIn 0.5s ease forwards;
-  animation-delay: 1s;
-}
+    .hero-slide .hero-overlay h2,
+    .hero-slide .hero-overlay p {
+      opacity: 0;
+      transform: translateX(0);
+    }
 
-.hero-slide.anim .hero-overlay p {
-  animation: hdSlideInRight 0.5s ease forwards;
-  animation-delay: 2s;
-}
+    .hero-slide.anim .hero-overlay h2 {
+      animation: hdFadeIn 0.5s ease forwards;
+      animation-delay: 1s;
+    }
 
-@keyframes hdFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+    .hero-slide.anim .hero-overlay p {
+      animation: hdSlideInRight 0.5s ease forwards;
+      animation-delay: 2s;
+    }
 
-@keyframes hdSlideInRight {
-  from { opacity: 0; transform: translateX(24px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
+    @keyframes hdFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.hero-carousel-btn {
-  position: absolute;
-  top: auto;
-  bottom: 33%;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.18);
-  color: #ffffff;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  box-shadow: none;
-  z-index: 3;
-  backdrop-filter: blur(3px);
-}
+    @keyframes hdSlideInRight {
+      from { opacity: 0; transform: translateX(24px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
 
-.hero-carousel-btn:hover,
-.hero-carousel-btn:focus {
-  outline: none;
-  background: rgba(255,255,255,0.28);
-  border-color: rgba(255,255,255,0.55);
-}
+    .hero-carousel-btn {
+      position: absolute;
+      top: auto;
+      bottom: 33%;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.18);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: none;
+      z-index: 3;
+      backdrop-filter: blur(3px);
+    }
 
-.hero-carousel-btn.prev { left: 16px; }
-.hero-carousel-btn.next { right: 16px; }
+    .hero-carousel-btn:hover,
+    .hero-carousel-btn:focus {
+      outline: none;
+      background: rgba(255,255,255,0.28);
+      border-color: rgba(255,255,255,0.55);
+    }
 
-.hero-carousel-dots {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 14px;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  z-index: 3;
-}
+    .hero-carousel-btn.prev { left: 16px; }
+    .hero-carousel-btn.next { right: 16px; }
 
-.hero-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  border: 2px solid rgba(255,255,255,0.95);
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-}
-.hero-dot.is-active {
-  background: var(--hd-gold);
-  border-color: rgba(255,255,255,0.98);
-}
+    .hero-carousel-dots {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      z-index: 3;
+    }
 
-.hero-intro {
-  padding: 14px 0 10px;
-}
+    .hero-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,0.95);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+    }
 
-.hero-intro h1 {
-  margin: 0 0 10px;
-  font-size: 64px;
-  line-height: 1.06;
-  color: var(--hd-burgundy);
-}
+    .hero-dot.is-active {
+      background: var(--hd-gold);
+      border-color: rgba(255,255,255,0.98);
+    }
 
-.hero-intro p {
-  margin: 0;
-  font-size: 24px;
-  color: var(--text-muted);
-  max-width: 75ch;
-  line-height: 1.55;
-}
+    .hero-intro {
+      padding: 14px 0 10px;
+    }
 
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 14px;
-}
+    .hero-intro h1 {
+      margin: 0 0 10px;
+      font-size: 64px;
+      line-height: 1.06;
+      color: var(--hd-burgundy);
+      font-weight: 700;
+    }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 16px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 900;
-  border: 0;
-  cursor: pointer;
-  user-select: none;
-  font-family: inherit;
-  line-height: 1;
-  white-space: nowrap;
-}
+    .hero-intro p {
+      margin: 0;
+      font-size: 24px;
+      color: var(--text-muted);
+      max-width: 75ch;
+      line-height: 1.55;
+      font-weight: 400;
+    }
 
-.btn-primary { background: var(--hd-burgundy); color: var(--hd-white); }
-.btn-secondary { background: var(--hd-gold); color: var(--hd-white); }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
 
-.locations-wrap {
-  background: rgba(249, 230, 195, 0.45);
-  border-top: 1px solid rgba(0,0,0,0.06);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  padding: 26px 0;
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 0;
+      cursor: pointer;
+      user-select: none;
+      line-height: 1;
+      white-space: nowrap;
+    }
 
-.section { padding: 18px 0 0; }
+    .btn-primary { background: var(--hd-burgundy); color: var(--hd-white); }
+    .btn-secondary { background: var(--hd-gold); color: var(--hd-white); }
 
-.section h2 { margin: 0 0 14px; font-size: 34px; color: var(--hd-burgundy); }
+    /* Light gold band for locations section */
+    .locations-wrap {
+      background: rgba(249, 230, 195, 0.45);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 26px 0;
+    }
 
-.section p.lead {
-  margin: 0 0 20px;
-  color: var(--text-muted);
-  max-width: 80ch;
-}
+    .section { padding: 18px 0 0; }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 34px;
+      color: var(--hd-burgundy);
+      font-weight: 700;
+    }
 
-.card {
-  border: var(--border-soft);
-  border-radius: var(--radius-lg);
-  background: var(--hd-white);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  padding: 18px;
-}
+    .section p.lead {
+      margin: 0 0 20px;
+      color: var(--text-muted);
+      max-width: 80ch;
+      font-weight: 400;
+    }
 
-.card h3 { margin: 0 0 8px; font-size: 22px; color: var(--hd-burgundy); }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
 
-.meta {
-  margin: 0;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-.meta strong { color: var(--hd-burgundy); }
+    .card {
+      border: var(--hd-border-soft);
+      border-radius: var(--hd-radius-lg);
+      background: var(--hd-card-bg);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      padding: 18px;
+    }
 
-.hours-block {
-  margin-top: 6px;
-  color: var(--text-muted);
-  line-height: 1.55;
-}
-.hours-block strong { color: var(--hd-burgundy); }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      color: var(--hd-burgundy);
+      font-weight: 700;
+    }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 14px;
-}
+    .meta {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    .meta strong { color: var(--hd-burgundy); }
 
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(101, 11, 50, 0.18);
-  background: rgba(249, 230, 195, 0.45);
-  color: var(--hd-burgundy);
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 14px;
-}
+    .hours-block {
+      margin-top: 6px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      font-weight: 400;
+    }
+    .hours-block strong { color: var(--hd-burgundy); }
 
-.chip:hover,
-.chip:focus { background: rgba(249, 230, 195, 0.78); outline: none; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
 
-.icon-block {
-  margin-top: 16px;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  padding-top: 14px;
-  display: grid;
-  gap: 12px;
-}
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: rgba(249, 230, 195, 0.45);
+      color: var(--hd-burgundy);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1;
+    }
 
-.icon-row-title {
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(101, 11, 50, 0.68);
-  display: inline-block;
-  margin: 0 0 8px;
-}
+    .chip:hover,
+    .chip:focus { background: rgba(249, 230, 195, 0.78); outline: none; }
 
-.icon-group {
-  display: inline-grid;
-  justify-items: center;
-  width: max-content;
-  max-width: 100%;
-}
+    .icon-block {
+      margin-top: 16px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 14px;
+      display: grid;
+      gap: 12px;
+    }
 
-.icon-row,
-.delivery-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0;
-  width: 100%;
-}
+    .icon-row-title {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(101, 11, 50, 0.68);
+      display: inline-block;
+      margin: 0 0 8px;
+    }
 
-.icon-link,
-.delivery-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  border: 1px solid rgba(101, 11, 50, 0.14);
-  background: rgba(255,255,255,0.65);
-  text-decoration: none;
-}
+    .icon-group {
+      display: inline-grid;
+      justify-items: center;
+      width: max-content;
+      max-width: 100%;
+    }
 
-.icon-link:hover,
-.icon-link:focus,
-.delivery-icon:hover,
-.delivery-icon:focus {
-  outline: none;
-  background: rgba(249, 230, 195, 0.70);
-  border-color: rgba(101, 11, 50, 0.22);
-}
+    .icon-row,
+    .delivery-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      width: 100%;
+    }
 
-.icon-swap {
-  width: 24px;
-  height: 24px;
-  display: block;
-  position: relative;
-}
+    .icon-link,
+    .delivery-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(101, 11, 50, 0.14);
+      background: rgba(255,255,255,0.65);
+      text-decoration: none;
+    }
 
-.icon-swap img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  display: block;
-  position: absolute;
-  inset: 0;
-  transition: opacity 120ms ease;
-}
+    .icon-link:hover,
+    .icon-link:focus,
+    .delivery-icon:hover,
+    .delivery-icon:focus {
+      outline: none;
+      background: rgba(249, 230, 195, 0.70);
+      border-color: rgba(101, 11, 50, 0.22);
+    }
 
-.icon-swap img.burgundy { opacity: 0; }
-.icon-link:hover .icon-swap img.burgundy,
-.icon-link:focus .icon-swap img.burgundy { opacity: 1; }
-.icon-link:hover .icon-swap img.gold,
-.icon-link:focus .icon-swap img.gold { opacity: 0; }
+    .icon-swap {
+      width: 24px;
+      height: 24px;
+      display: block;
+      position: relative;
+    }
 
-.google-icon {
-  width: 24px;
-  height: 24px;
-  display: block;
-  object-fit: contain;
-}
+    .icon-swap img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+      position: absolute;
+      inset: 0;
+      transition: opacity 120ms ease;
+    }
 
-.delivery-icon img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  display: block;
-}
+    .icon-swap img.burgundy { opacity: 0; }
+    .icon-link:hover .icon-swap img.burgundy,
+    .icon-link:focus .icon-swap img.burgundy { opacity: 1; }
+    .icon-link:hover .icon-swap img.gold,
+    .icon-link:focus .icon-swap img.gold { opacity: 0; }
 
-.delivery-icon.is-dd img,
-.delivery-icon.is-yelp img {
-  width: 26px;
-  height: 26px;
-}
+    .google-icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+      object-fit: contain;
+    }
 
-@media (max-width: 960px) {
-  .cards { grid-template-columns: 1fr; }
-  .hero-carousel-viewport { height: 420px; }
-  .hero-overlay { left: 18px; right: 18px; max-width: none; }
-  .hero-overlay h2 { font-size: 30px; }
-  .hero-carousel { border-left: 0; border-right: 0; border-radius: 0; }
-  .hero-carousel-btn { bottom: 30%; }
-  .hero-intro h1 { font-size: 38px; }
-}
+    .delivery-icon img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+    }
 
-@media (max-width: 640px) {
-  .hero-carousel-viewport { height: 340px; }
-  .hero-overlay h2 { font-size: 24px; }
-  .hero-overlay p { font-size: 14px; }
-  .hero-carousel-btn { width: 40px; height: 40px; bottom: 28%; }
-  .icon-link, .delivery-icon { width: 42px; height: 42px; }
-  .delivery-icon.is-dd img,
-  .delivery-icon.is-yelp img { width: 26px; height: 26px; }
-  .hero-carousel { border-radius: 0; }
-  .hero-intro h1 { font-size: 34px; }
-  .hero-intro p { font-size: 15px; }
-}
+    .delivery-icon.is-dd img,
+    .delivery-icon.is-yelp img {
+      width: 26px;
+      height: 26px;
+    }
+
+    @media (max-width: 960px) {
+      .cards { grid-template-columns: 1fr; }
+      .hero-carousel-viewport { height: 420px; }
+      .hero-overlay { left: 18px; right: 18px; max-width: none; }
+      .hero-overlay h2 { font-size: 30px; }
+      .hero-carousel { border-left: 0; border-right: 0; border-radius: 0; }
+      .hero-carousel-btn { bottom: 30%; }
+      .hero-intro h1 { font-size: 38px; }
+      .hero-intro p { font-size: 20px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-carousel-viewport { height: 340px; }
+      .hero-overlay h2 { font-size: 24px; }
+      .hero-overlay p { font-size: 14px; }
+      .hero-carousel-btn { width: 40px; height: 40px; bottom: 28%; }
+      .icon-link, .delivery-icon { width: 42px; height: 42px; }
+      .delivery-icon.is-dd img,
+      .delivery-icon.is-yelp img { width: 26px; height: 26px; }
+      .hero-carousel { border-radius: 0; }
+      .hero-intro h1 { font-size: 34px; }
+      .hero-intro p { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div id="siteHeader"></div>
+
   <main id="main">
     <section class="hero-full" aria-label="Hero">
       <div class="container hero-carousel-wrap">
-    <div class="hero-carousel" aria-label="Homepage hero carousel">
-      <div class="hero-carousel-viewport" id="heroCarouselViewport">
 
-        <div class="hero-slide is-active anim" data-index="0" aria-hidden="false">
-          <img src="/assets/images/pages/220421_HD_Online_MoneyShot.jpg" alt="Order online hero image">
-          <div class="hero-overlay">
-            <div class="kicker"></div>
-            <h2></h2>
-            <p></p>
+        <div class="hero-carousel" aria-label="Homepage hero carousel">
+          <div class="hero-carousel-viewport" id="heroCarouselViewport">
+
+            <div class="hero-slide is-active anim" data-index="0" aria-hidden="false">
+              <img src="/assets/images/pages/220421_HD_Online_MoneyShot.jpg" alt="Order online hero image">
+              <div class="hero-overlay">
+                <div class="kicker"></div>
+                <h2></h2>
+                <p></p>
+              </div>
+            </div>
+
+            <div class="hero-slide" data-index="1" aria-hidden="true">
+              <img src="/assets/images/placeholders/hd_dulce.jpeg" alt="Catering and sundae creations hero image">
+              <div class="hero-overlay">
+                <div class="kicker"></div>
+                <h2></h2>
+                <p></p>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="hero-carousel-btn prev" type="button" aria-label="Previous slide" id="heroPrev">&#8249;</button>
+          <button class="hero-carousel-btn next" type="button" aria-label="Next slide" id="heroNext">&#8250;</button>
+
+          <div class="hero-carousel-dots" role="tablist" aria-label="Hero carousel pagination">
+            <button class="hero-dot is-active" type="button" aria-label="Go to slide 1" id="heroDot0"></button>
+            <button class="hero-dot" type="button" aria-label="Go to slide 2" id="heroDot1"></button>
           </div>
         </div>
 
-        <div class="hero-slide" data-index="1" aria-hidden="true">
-          <img src="/assets/images/placeholders/hd_dulce.jpeg" alt="Catering and sundae creations hero image">
-          <div class="hero-overlay">
-            <div class="kicker"></div>
-            <h2></h2>
-            <p></p>
+        <div class="hero-intro" aria-label="Hero intro">
+          <h1>Simply extraordinary, served locally</h1>
+          <p>
+            Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
+            Find hours, directions, and ordering links in seconds.
+          </p>
+          <div class="cta-row" aria-label="Quick actions">
+            <a class="btn btn-primary" href="/locations">Locations</a>
+            <a class="btn btn-secondary" href="/menu">Menu</a>
+            <a class="btn btn-secondary" href="/cakes">Cakes</a>
           </div>
         </div>
 
       </div>
+    </section>
 
-      <button class="hero-carousel-btn prev" type="button" aria-label="Previous slide" id="heroPrev">&#8249;</button>
-      <button class="hero-carousel-btn next" type="button" aria-label="Next slide" id="heroNext">&#8250;</button>
+    <section class="locations-wrap" id="locations" aria-label="Locations">
+      <div class="container">
+        <div class="section">
+          <h2>Locations</h2>
+          <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
 
-      <div class="hero-carousel-dots" role="tablist" aria-label="Hero carousel pagination">
-        <button class="hero-dot is-active" type="button" aria-label="Go to slide 1" id="heroDot0"></button>
-        <button class="hero-dot" type="button" aria-label="Go to slide 2" id="heroDot1"></button>
+          <div class="cards">
+            <article class="card" aria-label="Häagen-Dazs North Miami location">
+              <h3>Häagen-Dazs North Miami (Causeway Square)</h3>
+              <p class="meta">
+                <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
+                <strong>Directions:</strong> <a href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open in Google Maps</a><br>
+                <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 963-8203</a>
+              </p>
+
+              <div class="hours-block">
+                <strong>Hours:</strong><br>
+                Mon-Thu 10am - 10pm<br>
+                Fri-Sat 10am - 11pm<br>
+                Sun 11am - 8pm
+              </div>
+
+              <div class="actions">
+                <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
+                <a class="chip" href="tel:+17869638203">Call</a>
+              </div>
+
+              <div class="icon-block">
+                <div class="icon-group">
+                  <div class="icon-row-title">Community and reviews</div>
+                  <div class="icon-row">
+                    <a class="icon-link" href="https://www.instagram.com/haagendazs_north_miami" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                      <span class="icon-swap">
+                        <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
+                        <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
+                      </span>
+                    </a>
+                    <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthMiami/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                      <span class="icon-swap">
+                        <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
+                        <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
+                      </span>
+                    </a>
+                    <a class="icon-link" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
+                      <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="icon-group">
+                  <div class="icon-row-title">Delivery and discovery</div>
+                  <div class="delivery-row">
+                    <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
+                      <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
+                    </a>
+                    <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
+                      <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
+                    </a>
+                    <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
+                      <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" aria-label="Häagen-Dazs Collins North Beach location">
+              <h3>Häagen-Dazs Collins North Beach</h3>
+              <p class="meta">
+                <strong>Address:</strong> 6978 Collins Ave, Miami Beach, FL 33141<br>
+                <strong>Directions:</strong> <a href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open in Google Maps</a><br>
+                <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 633-6485</a>
+              </p>
+
+              <div class="hours-block">
+                <strong>Hours:</strong><br>
+                Mon-Thu 10am - 10pm<br>
+                Fri-Sat 10am - 11pm<br>
+                Sun 11am - 8pm
+              </div>
+
+              <div class="actions">
+                <a class="chip" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Directions</a>
+                <a class="chip" href="tel:+17866336485">Call</a>
+              </div>
+
+              <div class="icon-block">
+                <div class="icon-group">
+                  <div class="icon-row-title">Community and reviews</div>
+                  <div class="icon-row">
+                    <a class="icon-link" href="https://www.instagram.com/haagendazs_northbeach" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                      <span class="icon-swap">
+                        <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
+                        <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
+                      </span>
+                    </a>
+                    <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthBeach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                      <span class="icon-swap">
+                        <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
+                        <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
+                      </span>
+                    </a>
+                    <a class="icon-link" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
+                      <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
+                    </a>
+                  </div>
+                </div>
+
+                <div class="icon-group">
+                  <div class="icon-row-title">Delivery and discovery</div>
+                  <div class="delivery-row">
+                    <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-6978-collins-avenue/_fVlFIVpWaqPatU03tzQaw?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkhhYWdlbi1EYXpzJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyaGVyZSUzQXBkcyUzQXBsYWNlJTNBODQwZGh3Y2ctZWM4Yjg4YjgwMmI4NGI3MDlhMzg1OWU5NDJjNDFiMTklMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyaGVyZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTI1LjY0NDQ4JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTgwLjMzODEyJTdE&ps=1&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
+                      <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
+                    </a>
+                    <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-miami-beach-35160441/74478347/?cursor=eyJzZWFyY2hfaXRlbV9jYXJvdXNlbF9jdXJzb3IiOnsicXVlcnkiOiJpY2UgY3JlYW0iLCJpdGVtX2lkcyI6WzI3NjIxMzUyNjIxLDI3NjIxMzUyNjIyLDI3NjIxMzUyNjIzXSwic2VhcmNoX3Rlcm0iOiJpY2UgY3JlYW0iLCJ2ZXJ0aWNhbF9pZCI6LTk5OSwidmVydGljYWxfbmFtZSI6ImFsbCIsInF1ZXJ5X2ludGVudCI6IkZPT0RfRElTSCJ9LCJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsMTEwMDQ1LDQsMTAwMzMzXX0=&pickup=false" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
+                      <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
+                    </a>
+                    <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
+                      <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div style="height: 18px;"></div>
+        </div>
       </div>
-    </div>
-
-    <div class="hero-intro" aria-label="Hero intro">
-      <h1>Simply extraordinary, served locally</h1>
-      <p>
-        Visit our two Miami-area Häagen-Dazs shops for ice cream, shakes, sundaes, cakes, and delivery.
-        Find hours, directions, and ordering links in seconds.
-      </p>
-      <div class="cta-row" aria-label="Quick actions">
-        <a class="btn btn-primary" href="/locations">Locations</a>
-        <a class="btn btn-secondary" href="/menu">Menu</a>
-        <a class="btn btn-secondary" href="/cakes">Cakes</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="locations-wrap" id="locations">
-  <div class="container">
-    <div class="section">
-      <h2>Locations</h2>
-      <p class="lead">Two shops, one simple way to plan. Choose your location for hours, directions, and ordering.</p>
-
-      <div class="cards">
-        <article class="card" aria-label="Häagen-Dazs North Miami location">
-          <h3>Häagen-Dazs North Miami (Causeway Square)</h3>
-          <p class="meta">
-            <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
-            <strong>Directions:</strong> <a href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">Open in Google Maps</a><br>
-            <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a>
-          </p>
-
-          <div class="hours-block">
-            <strong>Hours:</strong><br>
-            Mon-Thu 10am - 10pm<br>
-            Fri-Sat 10am - 11pm<br>
-            Sun 11am - 8pm
-          </div>
-
-          <div class="actions">
-            <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
-            <a class="chip" href="tel:+17869638203">Call</a>
-          </div>
-
-          <div class="icon-block">
-            <div class="icon-group">
-              <div class="icon-row-title">Community and reviews</div>
-              <div class="icon-row">
-                <a class="icon-link" href="https://www.instagram.com/haagendazs_north_miami" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthMiami/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
-                  <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-                </a>
-              </div>
-            </div>
-
-            <div class="icon-group">
-              <div class="icon-row-title">Delivery and discovery</div>
-              <div class="delivery-row">
-                <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
-                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                </a>
-                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
-                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                </a>
-                <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
-                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card" aria-label="Häagen-Dazs Collins North Beach location">
-          <h3>Häagen-Dazs Collins North Beach</h3>
-          <p class="meta">
-            <strong>Address:</strong> 6978 Collins Ave, Miami Beach, FL 33141<br>
-            <strong>Directions:</strong> <a href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">Open in Google Maps</a><br>
-            <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a>
-          </p>
-
-          <div class="hours-block">
-            <strong>Hours:</strong><br>
-            Mon-Thu 10am - 10pm<br>
-            Fri-Sat 10am - 11pm<br>
-            Sun 11am - 8pm
-          </div>
-
-          <div class="actions">
-            <a class="chip" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Directions</a>
-            <a class="chip" href="tel:+17866336485">Call</a>
-          </div>
-
-          <div class="icon-block">
-            <div class="icon-group">
-              <div class="icon-row-title">Community and reviews</div>
-              <div class="icon-row">
-                <a class="icon-link" href="https://www.instagram.com/haagendazs_northbeach" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthBeach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-                  <span class="icon-swap">
-                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                  </span>
-                </a>
-                <a class="icon-link" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
-                  <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-                </a>
-              </div>
-            </div>
-
-            <div class="icon-group">
-              <div class="icon-row-title">Delivery and discovery</div>
-              <div class="delivery-row">
-                <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-6978-collins-avenue/_fVlFIVpWaqPatU03tzQaw?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkhhYWdlbi1EYXpzJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyaGVyZSUzQXBkcyUzQXBsYWNlJTNBODQwZGh3Y2ctZWM4Yjg4YjgwMmI4NGI3MDlhMzg1OWU5NDJjNDFiMTklMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyaGVyZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTI1LjY0NDQ4JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTgwLjMzODEyJTdE&ps=1&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
-                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                </a>
-                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-miami-beach-35160441/74478347/?cursor=eyJzZWFyY2hfaXRlbV9jYXJvdXNlbF9jdXJzb3IiOnsicXVlcnkiOiJpY2UgY3JlYW0iLCJpdGVtX2lkcyI6WzI3NjIxMzUyNjIxLDI3NjIxMzUyNjIyLDI3NjIxMzUyNjIzXSwic2VhcmNoX3Rlcm0iOiJpY2UgY3JlYW0iLCJ2ZXJ0aWNhbF9pZCI6LTk5OSwidmVydGljYWxfbmFtZSI6ImFsbCIsInF1ZXJ5X2ludGVudCI6IkZPT0RfRElTSCJ9LCJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsMTEwMDQ1LDQsMTAwMzMzXX0=&pickup=false" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
-                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                </a>
-                <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
-                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div style="height: 18px;"></div>
-    </div>
-  </div>
-</section>
+    </section>
   </main>
+
   <div id="siteFooter"></div>
+
   <script>
     (function () {
       function loadInto(id, url) {
@@ -681,6 +700,7 @@ body {
       loadInto("siteFooter", footerUrl);
     })();
   </script>
+
   <script>
     (function () {
       var slides = Array.prototype.slice.call(document.querySelectorAll(".hero-slide"));
