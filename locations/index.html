@@ -38,20 +38,14 @@
   <style>
     :root {
       --container: 1120px;
-      --radius-lg: 18px;
-      --radius-md: 14px;
-      --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-      --border-soft: 1px solid rgba(0,0,0,0.08);
       --text-muted: rgba(101, 11, 50, 0.72);
-      --panel: rgba(249, 230, 195, 0.45);
-      --panel-strong: rgba(249, 230, 195, 0.62);
+
+      /* Match Menu's top-band color family */
+      --band-gold: rgba(249, 230, 195, 0.35);
+      --band-gold-strong: rgba(249, 230, 195, 0.45);
     }
 
     * { box-sizing: border-box; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    }
 
     .container {
       max-width: var(--container);
@@ -75,22 +69,9 @@
 
     #siteHeader, #siteFooter { margin: 0; padding: 0; }
 
-    .hero-top-bg {
-      background-image: url("/assets/images/placeholders/hd_tapestry_placeholder_white.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      border-bottom: 0;
-      line-height: 0;
-      margin: 0;
-      padding: 0;
-    }
-    .hero-top-bg .spacer { min-height: 68px; display: block; }
-
-    /* PAGE INTRO */
+    /* PAGE INTRO (white, like Menu hero) */
     .page-hero {
-      background: var(--panel);
-      border-top: 1px solid rgba(0,0,0,0.06);
+      background: var(--hd-card-bg);
       border-bottom: 1px solid rgba(0,0,0,0.06);
       padding: 22px 0;
     }
@@ -100,6 +81,7 @@
       font-size: 64px;
       line-height: 1.06;
       color: var(--hd-burgundy);
+      font-weight: 700;
     }
 
     .page-hero p {
@@ -108,11 +90,12 @@
       color: var(--text-muted);
       max-width: 80ch;
       line-height: 1.55;
+      font-weight: 400;
     }
 
-    /* SECTION PANEL (padding/background behind cards) */
+    /* LIGHT GOLD BAND behind the cards (same family as Menu band) */
     .section-panel {
-      background: var(--panel-strong);
+      background: var(--band-gold-strong);
       border-top: 1px solid rgba(0,0,0,0.06);
       border-bottom: 1px solid rgba(0,0,0,0.06);
       padding: 26px 0 34px;
@@ -127,9 +110,9 @@
     }
 
     .card {
-      border: var(--border-soft);
-      border-radius: var(--radius-lg);
-      background: var(--hd-white);
+      border: var(--hd-border-soft);
+      border-radius: var(--hd-radius-lg);
+      background: var(--hd-card-bg);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       overflow: hidden;
       display: grid;
@@ -159,6 +142,7 @@
       font-size: 22px;
       color: var(--hd-burgundy);
       line-height: 1.2;
+      font-weight: 700;
     }
 
     .meta {
@@ -166,6 +150,7 @@
       color: var(--text-muted);
       line-height: 1.6;
       font-size: 16px;
+      font-weight: 400;
     }
     .meta strong { color: var(--hd-burgundy); }
 
@@ -173,6 +158,7 @@
       color: var(--text-muted);
       line-height: 1.55;
       font-size: 16px;
+      font-weight: 400;
     }
     .hours-block strong { color: var(--hd-burgundy); }
 
@@ -193,7 +179,7 @@
       background: rgba(249, 230, 195, 0.45);
       color: var(--hd-burgundy);
       text-decoration: none;
-      font-weight: 800;
+      font-weight: 700;
       font-size: 14px;
       line-height: 1;
       white-space: nowrap;
@@ -203,6 +189,7 @@
       background: var(--hd-burgundy);
       color: var(--hd-white);
       border-color: transparent;
+      font-weight: 800;
     }
 
     .chip:hover,
@@ -347,12 +334,13 @@
       .cards { grid-template-columns: 1fr; }
       .map-frame iframe { height: 240px; }
       .page-hero h1 { font-size: 38px; }
+      .page-hero p { font-size: 20px; }
       .card-media { height: 220px; }
     }
 
     @media (max-width: 640px) {
       .page-hero h1 { font-size: 34px; }
-      .hero-top-bg .spacer { min-height: 46px; }
+      .page-hero p { font-size: 18px; }
       .map-frame iframe { height: 220px; }
       .icon-link, .delivery-icon { width: 42px; height: 42px; }
       .delivery-icon.is-dd img,
@@ -380,8 +368,8 @@
 
           <!-- NORTH MIAMI -->
           <article class="card" aria-label="Häagen-Dazs North Miami location">
-            <div class="card-media" aria-label="North Miami photo placeholder">
-              <img src="/assets/images/pages/locations/north-miami/hd_locations_nm_01.jpg" alt="Häagen-Dazs North Miami placeholder image">
+            <div class="card-media" aria-label="North Miami store photo">
+              <img src="/assets/images/pages/locations/north-miami/hd_locations_nm_01.jpg" alt="Häagen-Dazs North Miami store photo">
             </div>
 
             <div class="card-body">
@@ -389,8 +377,8 @@
                 <h2>Häagen-Dazs North Miami (Causeway Square)</h2>
                 <p class="meta">
                   <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
-                  <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a><br>
-                  <strong>Map:</strong> <a href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">Open map</a><br>
+                  <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 963-8203</a><br>
+                  <strong>Map:</strong> <a href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open map</a><br>
                   <strong>Coordinates:</strong> 25.889975023767263, -80.16218023582432
                 </p>
               </div>
@@ -465,8 +453,8 @@
 
           <!-- NORTH BEACH -->
           <article class="card" aria-label="Häagen-Dazs North Beach location">
-            <div class="card-media" aria-label="North Beach photo placeholder">
-              <img src="/assets/images/pages/locations/north-beach/e010bbb8-66f0-4378-ac89-51379303e67a.JPG" alt="Häagen-Dazs North Beach placeholder image">
+            <div class="card-media" aria-label="North Beach store photo">
+              <img src="/assets/images/pages/locations/north-beach/e010bbb8-66f0-4378-ac89-51379303e67a.JPG" alt="Häagen-Dazs North Beach store photo">
             </div>
 
             <div class="card-body">
@@ -474,8 +462,8 @@
                 <h2>Häagen-Dazs North Beach (6978 Collins Ave)</h2>
                 <p class="meta">
                   <strong>Address:</strong> 6978 Collins Avenue, Miami Beach, FL 33141<br>
-                  <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 633-6485</a><br>
-                  <strong>Map:</strong> <a href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">Open map</a><br>
+                  <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 633-6485</a><br>
+                  <strong>Map:</strong> <a href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open map</a><br>
                   <strong>Coordinates:</strong> 25.855930163991367, -80.12070053213803
                 </p>
               </div>
