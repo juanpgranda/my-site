@@ -85,6 +85,7 @@
       position: relative;
       width: 100%;
       margin: 0;
+      max-width: var(--container-max, 1120px);
       border-radius: 0;
       overflow: hidden;
       background: #000;
@@ -95,7 +96,8 @@
     .hero-carousel-viewport {
       position: relative;
       width: 100%;
-      height: 520px;
+      aspect-ratio: 16 / 9;
+      height: auto;
     }
 
     .hero-slide {
@@ -469,10 +471,9 @@
 
     @media (max-width: 960px) {
       .cards { grid-template-columns: 1fr; }
-      .hero-carousel-viewport { height: 420px; }
+      .hero-carousel-viewport { aspect-ratio: 4 / 3; }
       .hero-overlay { left: 18px; right: 18px; max-width: none; }
       .hero-overlay h2 { font-size: 30px; }
-      .hero-carousel { border-left: 0; border-right: 0; border-radius: 0; }
       .hero-carousel-btn { bottom: 30%; }
       .hero-intro h1 { font-size: 38px; }
       .hero-intro p { font-size: 20px; }
@@ -481,7 +482,7 @@
     @media (max-width: 640px) {
       .hero-carousel-wrap { padding: 12px 0 10px; }
 
-      .hero-carousel-viewport { height: 340px; }
+      .hero-carousel-viewport { aspect-ratio: 1 / 1; }
       .hero-overlay h2 { font-size: 24px; }
       .hero-overlay p { font-size: 14px; }
       .hero-carousel-btn { width: 40px; height: 40px; bottom: 28%; }
