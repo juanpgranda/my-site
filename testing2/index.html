@@ -55,7 +55,7 @@
   left: -9999px;
   top: 10px;
   background: var(--hd-burgundy);
-  color: var(--hd-white);
+  color: var(--hd-burgundy);
   padding: 10px 12px;
   border-radius: 0;
   z-index: 9999;
@@ -64,7 +64,7 @@
 }
 .skip-link:focus { left: 10px; }
 
-#siteHeader, #siteFooter { margin: 0; padding: 0; }
+#siteHeader, #siteFooter { margin: 0 0 10px; padding: 0; }
 
 .hero-top-bg {
   background-image: url("/assets/images/placeholders/hd_home_hero_placeholder.jpg");
@@ -73,7 +73,7 @@
   background-position: center;
   border-bottom: 0;
   line-height: 0;
-  margin: 0;
+  margin: 0 0 10px;
   padding: 0;
 }
 .hero-top-bg .spacer { min-height: 54px; display: block; }
@@ -103,7 +103,7 @@ h1 {
 }
 
 .lead {
-  margin: 0;
+  margin: 0 0 10px;
   color: var(--text-muted);
   font-size: 24px;
   line-height: 1.55;
@@ -164,7 +164,7 @@ h1 {
 }
 
 .card figure {
-  margin: 0;
+  margin: 0 0 10px;
   width: 100%;
   aspect-ratio: 1 / 1;
   background: #efe8db;
@@ -188,23 +188,23 @@ h1 {
   align-content: start;
 }
 
-.rule {
-  height: 3px;
-  background: rgba(101, 11, 50, 0.22);
-  margin: 0;
-  width: 100%;
-}
-    
 .card h3 {
-  margin: 0;
+  margin: 0 0 10px;
   font-size: 20px;
   font-weight: 600;
   color: var(--hd-burgundy);
   line-height: 1.2;
 }
 
+.rule {
+  height: 2px; /* increase this value to make the line thicker */
+  background: rgba(101, 11, 50, 0.22);
+  margin: 0 0 10px;
+  width: 100%;
+}
+
 .card p {
-  margin: 0;
+  margin: 0 0 10px;
   color: var(--text-muted);
   font-size: 16px;
   line-height: 1.55;
@@ -276,8 +276,7 @@ h1 {
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <div class="kicker"></div>
-        <h1>Ordering is easy!</h1>
+                <h1>Ordering is easy!</h1>
         <p class="lead">
           Choose from our signature cake designs or create a custom masterpiece of your own, guided by our cake specialists.
           Together, we will craft a dessert that reflects your style, taste, and occasion.
@@ -297,8 +296,8 @@ h1 {
           <img src="/assets/images/cakes/RibbonCake_Whole_041725.jpg" alt="Ribbon Cake">
         </figure>
         <div class="body">
-          <h3>Ribbon Cake</h3>
           <div class="rule"></div>
+          <h3>Ribbon Cake</h3>
           <p>Our signature cake with layers of Midnight Cookies &amp; Cream and Vanilla Chocolate Chip ice creams, layered with cookie crunch, surrounded by rolled wafer cookies and tied with a ribbon.</p>
           <div class="order-row">
             <a class="order-link" href="/cakes/order-form" aria-label="Order Ribbon Cake">Order Now</a>
@@ -311,8 +310,8 @@ h1 {
           <img src="/assets/images/cakes/DulcedeLecheCake_Whole_041725.jpg" alt="Dulce de Leche Cake">
         </figure>
         <div class="body">
-          <h3>Dulce de Leche Cake</h3>
           <div class="rule"></div>
+          <h3>Dulce de Leche Cake</h3>
           <p>Our iconic Dulce de Leche ice cream layered with caramel and spiced cinnamon cookies topped with a caramel drizzle and even more crunchy cookie pieces.</p>
           <div class="order-row">
             <a class="order-link" href="/cakes/order-form" aria-label="Order Dulce de Leche Cake">Order Now</a>
@@ -325,8 +324,8 @@ h1 {
           <img src="/assets/images/cakes/CoffeeCrunchCake_Whole_041725.jpg" alt="Coffee Crunch Cake">
         </figure>
         <div class="body">
-          <h3>Coffee Crunch Cake</h3>
           <div class="rule"></div>
+          <h3>Coffee Crunch Cake</h3>
           <p>Smooth Coffee ice cream layered with shortbread cookie pieces and rich chocolate frosting, topped with cookie crunch and chocolate-covered espresso beans.</p>
           <div class="order-row">
             <a class="order-link" href="/cakes/order-form" aria-label="Order Coffee Crunch Cake">Order Now</a>
@@ -339,8 +338,8 @@ h1 {
           <img src="/assets/images/cakes/RosesBirthdayCake_Whole_041725.jpg" alt="Rose’s Birthday Cake">
         </figure>
         <div class="body">
-          <h3>Rose’s Birthday Cake</h3>
           <div class="rule"></div>
+          <h3>Rose’s Birthday Cake</h3>
           <p>Our classic Vanilla and Chocolate ice creams layered with sprinkles shortbread cookie pieces, covered in even more colorful sprinkles.</p>
           <div class="order-row">
             <a class="order-link" href="/cakes/order-form" aria-label="Order Rose’s Birthday Cake">Order Now</a>
@@ -353,8 +352,8 @@ h1 {
           <img src="/assets/images/cakes/ReubensBirthdayCake_Whole_041725.jpg" alt="Reuben’s Birthday Cake">
         </figure>
         <div class="body">
-          <h3>Reuben’s Birthday Cake</h3>
           <div class="rule"></div>
+          <h3>Reuben’s Birthday Cake</h3>
           <p>Vanilla and Chocolate ice creams divided by a layer of sprinkles and crunchy shortbread cookie pieces, finished off with sprinkles and your own special message. A customizable version of Rose’s Birthday Cake.</p>
           <div class="order-row">
             <a class="order-link" href="/cakes/order-form" aria-label="Order Reuben’s Birthday Cake">Order Now</a>
@@ -367,8 +366,8 @@ h1 {
           <img src="/assets/images/cakes/CookiesAndCreamCake_Whole_041725.jpg" alt="Cookies and Cream Cake">
         </figure>
         <div class="body">
-          <h3>Cookies &amp; Cream Cake</h3>
           <div class="rule"></div>
+          <h3>Cookies &amp; Cream Cake</h3>
           <p>Our widely celebrated Cookies and Cream ice cream layered with a swirl of cookie chunks and frosted with our cookie crunch icing.</p>
           <div class="order-row">
             <a class="order-link" href="/cakes/order-form" aria-label="Order Cookies and Cream Cake">Order Now</a>
@@ -381,8 +380,8 @@ h1 {
           <img src="/assets/images/cakes/TripleChocolateCake_Whole_041725.jpg" alt="Triple Chocolate Cake">
         </figure>
         <div class="body">
-          <h3>Triple Chocolate Cake</h3>
           <div class="rule"></div>
+          <h3>Triple Chocolate Cake</h3>
           <p>Rich Belgian Chocolate ice cream layered with chocolate cookie pieces and chocolate frosting, topped with creamy chocolate frosting and finished with a crunchy chocolate drizzle.</p>
           <div class="order-row">
             <a class="order-link" href="/cakes/order-form" aria-label="Order Triple Chocolate Cake">Order Now</a>
@@ -395,8 +394,8 @@ h1 {
           <img src="/assets/images/cakes/JustBecauseCake_Whole_041725.jpg" alt="Just Because Cake">
         </figure>
         <div class="body">
-          <h3>Just Because Cake</h3>
           <div class="rule"></div>
+          <h3>Just Because Cake</h3>
           <p>Two favorites, Strawberry and Vanilla ice creams, layered with buttery shortbread cookies and vanilla frosting layer. Top it off with a personalized message and make the moment unforgettable.</p>
           <div class="order-row">
             <a class="order-link" href="/cakes/order-form" aria-label="Order Just Because Cake">Order Now</a>
