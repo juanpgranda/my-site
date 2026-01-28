@@ -64,7 +64,7 @@
       background: var(--hd-burgundy);
       color: var(--hd-white);
       padding: 10px 12px;
-      border-radius: 10px;
+      border-radius: 0;
       z-index: 9999;
       text-decoration: none;
       font-weight: 700;
@@ -108,13 +108,13 @@
 
     .section {
       padding: 18px 0 34px;
-      background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
+      background: var(--band-gold-bg);
     }
 
     .form-card {
       background: var(--hd-white);
       border: var(--border-soft);
-      border-radius: var(--radius-lg);
+      border-radius: 0;
       box-shadow: var(--shadow-soft);
       overflow: hidden;
     }
@@ -165,7 +165,7 @@
     input, textarea {
       width: 100%;
       border: 1px solid rgba(101, 11, 50, 0.18);
-      border-radius: 12px;
+      border-radius: 0;
       padding: 11px 12px;
       font-size: 14px;
       color: rgba(31, 27, 28, 0.95);
@@ -213,23 +213,23 @@
       align-items: center;
       justify-content: center;
       padding: 12px 16px;
-      border-radius: 12px;
+      border-radius: var(--radius-btn);
       text-decoration: none;
       font-weight: 900;
-      border: 1px solid rgba(101, 11, 50, 0.18);
+      border: 0;
       cursor: pointer;
       user-select: none;
       font-family: var(--font-body);
-      background: var(--hd-gold-light);
-      color: var(--hd-burgundy);
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
       box-shadow: 0 10px 22px rgba(0,0,0,0.10);
       min-width: 220px;
     }
 
-    .btn:hover, .btn:focus {
+    .btn:hover,
+    .btn:focus {
       outline: none;
-      background: var(--hd-gold-medium);
-      border-color: rgba(101, 11, 50, 0.26);
+      background: rgba(101, 11, 50, 0.92);
     }
 
     .status {
@@ -249,7 +249,23 @@
     @media (max-width: 720px) {
       .grid { grid-template-columns: 1fr; }
       h1 { font-size: 34px; }
-      .btn { width: 100%; min-width: 0; }
+      .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      font-weight: 900;
+      border: 0;
+      cursor: pointer;
+      user-select: none;
+      font-family: var(--font-body);
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+      min-width: 220px;
+    }
     }
   </style>
 </head>
