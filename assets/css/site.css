@@ -60,7 +60,18 @@
   --font-body: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
   /* Unified light gold band */
-  --band-gold-bg: rgba(249, 230, 195, 0.35);
+  --band-gold-bg: #F9E6C3;
+
+/* Corners */
+--hd-radius-sm: 0px;
+--hd-radius-md: 0px;
+--hd-radius-lg: 0px;
+
+/* Button shape (not square, not pill) */
+--hd-btn-radius: 12px;
+
+/* Unified light gold background (use site-wide) */
+--hd-band-gold: #F9E6C3;
 }
 
 body {
@@ -82,4 +93,69 @@ body {
 
 .band-gold.band-pad {
   padding: 22px 0 14px;
+}
+
+/* ==========================================================================
+   Global UI consistency (added)
+   Goals:
+   1) Square corners for images + boxes/cards
+   2) Buttons: slightly rounded (not pill, not square)
+   3) Unified light-gold section background site-wide
+   ========================================================================== */
+
+/* 1) Square corners (images + common containers) */
+img, picture, video, iframe, svg,
+.card, .panel, .box, .tile, .surface, .section-card,
+.hero-carousel, .hero-carousel-viewport {
+  border-radius: 0px !important;
+}
+
+/* If any components use these variables, keep them square */
+:root {
+  --hd-radius-sm: 0px;
+  --hd-radius-md: 0px;
+  --hd-radius-lg: 0px;
+}
+
+/* 2) Button styling (matches reference: rounded-rectangle, not pill) */
+.btn,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+a.button,
+.button,
+.chip {
+  border-radius: var(--hd-btn-radius) !important;
+}
+
+/* Remove pill styles where they exist */
+.chip {
+  padding: 12px 16px;
+  border: 1px solid rgba(101, 11, 50, 0.22);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--hd-burgundy);
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.18);
+}
+
+.btn {
+  padding: 14px 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.18);
+}
+
+/* Keep existing theme colors for common variants if present */
+.btn-primary { background: var(--hd-burgundy); color: var(--hd-white); }
+.btn-secondary { background: var(--hd-gold); color: var(--hd-white); }
+
+/* 3) Unified light-gold background site-wide */
+.band-gold,
+.locations-wrap,
+.section-gold,
+.bg-gold {
+  background: var(--hd-band-gold) !important;
 }
