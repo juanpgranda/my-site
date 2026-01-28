@@ -41,8 +41,8 @@
       --text-muted: rgba(101, 11, 50, 0.72);
 
       /* Match Menu's top-band color family */
-      --band-gold: rgba(249, 230, 195, 0.35);
-      --band-gold-strong: rgba(249, 230, 195, 0.45);
+      --band-gold: var(--band-gold-bg);
+      --band-gold-strong: var(--band-gold-bg);
     }
 
     * { box-sizing: border-box; }
@@ -60,7 +60,7 @@
       background: var(--hd-burgundy);
       color: var(--hd-white);
       padding: 10px 12px;
-      border-radius: 10px;
+      border-radius: 0;
       z-index: 9999;
       text-decoration: none;
       font-weight: 700;
@@ -95,7 +95,7 @@
 
     /* LIGHT GOLD BAND behind the cards (same family as Menu band) */
     .section-panel {
-      background: var(--band-gold-strong);
+      background: var(--band-gold-bg);
       border-top: 1px solid rgba(0,0,0,0.06);
       border-bottom: 1px solid rgba(0,0,0,0.06);
       padding: 26px 0 34px;
@@ -111,7 +111,7 @@
 
     .card {
       border: var(--hd-border-soft);
-      border-radius: var(--hd-radius-lg);
+      border-radius: 0;
       background: var(--hd-card-bg);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       overflow: hidden;
@@ -174,9 +174,9 @@
       justify-content: center;
       gap: 10px;
       padding: 10px 12px;
-      border-radius: 999px;
+      border-radius: var(--radius-btn);
       border: 1px solid rgba(101, 11, 50, 0.18);
-      background: rgba(249, 230, 195, 0.45);
+      background: var(--band-gold-bg);
       color: var(--hd-burgundy);
       text-decoration: none;
       font-weight: 700;
@@ -193,7 +193,7 @@
     }
 
     .chip:hover,
-    .chip:focus { background: rgba(249, 230, 195, 0.78); outline: none; }
+    .chip:focus { background: rgba(249, 230, 195, 0.55); outline: none; }
 
     .chip.primary:hover,
     .chip.primary:focus { background: rgba(101, 11, 50, 0.92); }
@@ -201,8 +201,8 @@
     /* MAP */
     .map-wrap {
       border: 1px solid rgba(0,0,0,0.10);
-      background: rgba(249, 230, 195, 0.25);
-      border-radius: 14px;
+      background: rgba(249, 230, 195, 0.20);
+      border-radius: 0;
       overflow: hidden;
     }
 
@@ -272,7 +272,7 @@
       justify-content: center;
       width: 44px;
       height: 44px;
-      border-radius: 12px;
+      border-radius: 0;
       border: 1px solid rgba(101, 11, 50, 0.14);
       background: rgba(255,255,255,0.65);
       text-decoration: none;
@@ -469,7 +469,7 @@
               <div class="hours-block">
                 <strong>Hours:</strong><br>
                 Mon-Thu 11am - 11pm<br>
-                Fri-Sat 11am - 12am<br>
+                Fri-Sat 11am - 12pm<br>
                 Sun 11am - 11pm
               </div>
 
