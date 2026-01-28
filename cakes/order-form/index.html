@@ -37,7 +37,7 @@
   <style>
     :root {
       --container: 920px;
-      --radius-lg: 0;
+      --radius-lg: 18px;
       --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
       --border-soft: 1px solid rgba(0,0,0,0.10);
       --text-muted: rgba(101, 11, 50, 0.72);
@@ -57,7 +57,7 @@
   background: var(--hd-burgundy);
   color: var(--hd-white);
   padding: 10px 12px;
-  border-radius: 0;
+  border-radius: 10px;
   z-index: 9999;
   text-decoration: none;
   font-weight: 700;
@@ -103,7 +103,7 @@ h1 {
   margin-top: 14px;
   background: rgba(249, 230, 195, 0.30);
   border: 1px solid rgba(101, 11, 50, 0.14);
-  border-radius: 0;
+  border-radius: 14px;
   padding: 12px 12px;
   color: rgba(101, 11, 50, 0.90);
   font-size: 13px;
@@ -125,15 +125,13 @@ h1 {
 
 .section {
   padding: 18px 0 34px;
-  background: var(--band-gold-bg);
-  border-top: 1px solid rgba(0,0,0,0.06);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: linear-gradient(180deg, rgba(249,230,195,0.20), rgba(255,255,255,1));
 }
 
 .form-card {
   background: var(--hd-white);
   border: var(--border-soft);
-  border-radius: 0;
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
@@ -172,7 +170,7 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 9px 12px;
-  border-radius: var(--radius-btn);
+  border-radius: 999px;
   text-decoration: none;
   font-weight: 900;
   font-size: 12px;
@@ -186,7 +184,7 @@ h1 {
 .view-cakes-btn:hover,
 .view-cakes-btn:focus {
   outline: none;
-  background: rgba(249, 230, 195, 0.55);
+  background: rgba(249, 230, 195, 0.75);
   border-color: rgba(101, 11, 50, 0.26);
 }
 
@@ -214,7 +212,7 @@ label {
 input, select, textarea {
   width: 100%;
   border: 1px solid rgba(101, 11, 50, 0.18);
-  border-radius: var(--radius-field);
+  border-radius: 12px;
   padding: 11px 12px;
   font-size: 14px;
   color: rgba(31, 27, 28, 0.95);
@@ -261,7 +259,7 @@ textarea {
   align-items: center;
   justify-content: center;
   padding: 12px 16px;
-  border-radius: var(--radius-btn);
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 900;
   border: 0;
@@ -298,7 +296,7 @@ textarea {
 .preview-card {
   border: 1px solid rgba(101, 11, 50, 0.14);
   background: rgba(249, 230, 195, 0.16);
-  border-radius: 0;
+  border-radius: 14px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 120px 1fr;
@@ -311,7 +309,7 @@ textarea {
   width: 120px;
   aspect-ratio: 1 / 1;
   background: #efe8db;
-  border-radius: 0;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.08);
 }
@@ -630,27 +628,25 @@ select::-ms-expand { display: none; }
         { name: "Brownies a la Mode", gf: false },
         { name: "Coffee", gf: true },
         { name: "Coffee Chip", gf: true },
-        { name: "Butter Pecan", gf: true },
-        { name: "Pralines & Cream", gf: true },
-        { name: "Rum Raisin", gf: true },
-        { name: "Pistachio", gf: true },
-        { name: "Mango", gf: true },
-        { name: "Raspberry", gf: true },
+        { name: "Pralines n' Cream", gf: false },
+        { name: "(Vanilla Caramel Pecan)", gf: false },
         { name: "Strawberry", gf: true },
-        { name: "White Chocolate Raspberry Truffle", gf: true },
+        { name: "NY Strawberry Cheesecake", gf: false },
+        { name: "Pistachio", gf: true },
+        { name: "Butter Pecan", gf: true },
+        { name: "Irish Cream Brownie", gf: false },
+        { name: "Mint Chip", gf: true },
         { name: "Caramel Cone", gf: false },
-        { name: "Pineapple Coconut", gf: true },
-        { name: "Green Tea", gf: true },
-        { name: "Cherry Vanilla", gf: true },
-        { name: "Chocolate Peanut Butter", gf: true },
-        { name: "Coffee Raspberry Truffle", gf: true },
-        { name: "Chocolate Salted Fudge Truffle", gf: true },
-        { name: "Coffee Chocolate Chip", gf: true },
-        { name: "Chocolate Chocolate Chip", gf: true },
-        { name: "Strawberry Cheesecake", gf: false },
+        { name: "Pinneaple Cononut", gf: true },
+        { name: "Rum Raisin", gf: true },
         { name: "Mango Sorbet", gf: true },
-        { name: "Strawberry Sorbet", gf: true }
+        { name: "Strawberry Sorbet", gf: true },
+        { name: "Raspberry Sorbet", gf: true },
+        { name: "Blueberry Lemon Sorbet", gf: true },
+        { name: "White Choc Raspberry Truffle", gf: true },
+        { name: "Salted Brown Butter Cookie", gf: false }
       ];
+
 
       var firstFlavor = document.getElementById("firstFlavor");
       var secondFlavor = document.getElementById("secondFlavor");
