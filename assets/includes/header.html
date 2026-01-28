@@ -24,8 +24,8 @@
 .hd-header .tapestry-inner {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 20px;
-  min-height: 96px;
+  padding: 0 var(--container-pad);
+  min-height: 76px;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -50,7 +50,7 @@
 .hd-header .bar {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 10px 20px 12px;
+  padding: 10px var(--container-pad) 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,7 +187,7 @@
   display: none;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 10px 20px 12px;
+  padding: 10px var(--container-pad) 12px;
   align-items: center;
   justify-content: center;
 }
@@ -271,7 +271,7 @@
 /* Responsive sizing */
 @media (max-width: 960px) {
   .hd-header .tapestry-inner {
-    min-height: 84px;
+    min-height: 68px;
   }
 
   .hd-header .logo img {
