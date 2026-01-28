@@ -1,16 +1,11 @@
 /* ==========================================================================
    Haagen-Dazs Site CSS (site-wide)
    File: /assets/css/site.css
-   Notes:
-   - Enforces brand typography rules (Hurme default, DAZS opt-in).
-   - Enforces square media/cards and consistent button + field corner shape.
-   - Unifies the light gold band background token site-wide.
    ========================================================================== */
 
 /* Google Font (fallback only) */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap");
 
-/* Body font: Hurme Geometric Sans 1 */
 @font-face {
   font-family: "HurmeGeometric";
   src: url("/assets/fonts/body/HurmeGeometricSans1-Regular.woff2") format("woff2");
@@ -35,7 +30,6 @@
   font-display: swap;
 }
 
-/* Brand fonts: DAZS */
 @font-face {
   font-family: "Dazs";
   src: url("/assets/fonts/brand/Dazs.woff2") format("woff2");
@@ -53,232 +47,46 @@
 }
 
 :root {
-  /* Brand colors */
   --hd-burgundy: #650B32;
   --hd-gold: #D29937;
   --hd-gold-light: #F9E6C3;
   --hd-white: #FFFFFF;
 
-  /* Surfaces */
   --hd-cream-bg: #fff8ea;
   --hd-card-bg: #ffffff;
-
-  /* Borders / shadows */
   --hd-border-soft: 1px solid rgba(0,0,0,0.08);
   --hd-shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
 
-  /* Typography */
   --font-body: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-brand: "Dazs", serif;
-  --font-brand-script: "Dazs Script", cursive;
 
-  /* Radius system (site-wide) */
-  --radius-0: 0px;          /* square */
-  --radius-field: 6px;      /* closer to square (fields) */
-  --radius-btn: 10px;       /* rounded-rectangle (buttons) */
-
-  /* Unified light gold band (use after hero, and for Locations bands) */
+  /* Unified light gold band */
   --band-gold-bg: rgba(249, 230, 195, 0.35);
+
+  /* Container padding (site-wide, keeps mobile from feeling stretched) */
+  --container-pad: 20px;
+  --container-max: 1120px;
 }
 
-/* Base */
-* { box-sizing: border-box; }
-
-html, body { height: 100%; }
+@media (max-width: 720px) { :root { --container-pad: 16px; } }
+@media (max-width: 380px) { :root { --container-pad: 14px; } }
 
 body {
   margin: 0;
   font-family: var(--font-body);
   background: var(--hd-cream-bg);
   color: var(--hd-burgundy);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings (off-pack / web) use Hurme in sentence-case */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-body);
-  font-weight: 700;
-  letter-spacing: 0.00em;
-  color: var(--hd-burgundy);
-}
-
-/* Brand typography utilities (opt-in) */
-.hd-headline {
-  font-family: var(--font-brand);
-  font-weight: 400;
-  text-transform: lowercase;
-  letter-spacing: 0.00em;
-}
-
-.brand-script {
-  font-family: var(--font-brand-script);
-  font-weight: 400;
-  letter-spacing: 0.00em;
-}
-
-/* Use DAZS Regular only for designated romance/packaging copy (opt-in) */
-.dazs-romance {
-  font-family: var(--font-brand);
-  font-weight: 400;
-}
-
-/* Layout utility */
 .container {
-  max-width: 1120px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--container-pad);
 }
 
-/* Unified light-gold band */
-.band-gold { background: var(--band-gold-bg) !important; }
-.band-gold.band-pad { padding: 22px 0 14px; }
-
-/* Also force the common Locations wrapper class to match the global token */
-.locations-wrap { background: var(--band-gold-bg) !important; }
-
-/* ==========================================================================
-   Corners: square media + square common containers (site-wide)
-   ========================================================================== */
-
-/* Media should be square */
-img,
-video,
-iframe,
-svg,
-canvas {
-  border-radius: var(--radius-0) !important;
+.band-gold {
+  background: var(--band-gold-bg);
 }
 
-/* Common container patterns used across pages */
-.card,
-.box,
-.panel,
-.tile,
-.hero,
-.hero-carousel,
-.hero-card,
-.form-card,
-.preview-card,
-.info-card,
-.snap-card,
-figure,
-figure img {
-  border-radius: var(--radius-0) !important;
+.band-gold.band-pad {
+  padding: 22px 0 14px;
 }
-
-/* If a component relies on rounded overflow, keep overflow behavior but square corners */
-.card,
-.hero-carousel,
-.hero-card,
-.form-card,
-.preview-card,
-.info-card,
-.snap-card,
-figure {
-  overflow: hidden;
-}
-
-/* ==========================================================================
-   Buttons: consistent rounded-rectangle (not pill, not square)
-   ========================================================================== */
-
-.btn,
-a.btn,
-button.btn,
-input.btn,
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
-  border-radius: var(--radius-btn) !important;
-}
-
-/* Base button styling (only applies to elements explicitly using .btn
-   to avoid breaking icon-only controls like carousel nav) */
-.btn,
-a.btn,
-button.btn,
-input.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px 16px;
-  border: 1px solid transparent;
-  text-decoration: none;
-  font-weight: 800;
-  cursor: pointer;
-  user-select: none;
-  font-family: var(--font-body);
-  line-height: 1.1;
-  white-space: nowrap;
-}
-
-/* Primary / Secondary */
-.btn-primary {
-  background: var(--hd-burgundy) !important;
-  color: var(--hd-white) !important;
-  border-color: rgba(101, 11, 50, 0.18) !important;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  outline: none;
-  background: rgba(101, 11, 50, 0.92) !important;
-}
-
-.btn-secondary {
-  background: var(--hd-gold) !important;
-  color: var(--hd-white) !important;
-  border-color: rgba(0, 0, 0, 0.06) !important;
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-  outline: none;
-  filter: brightness(0.98);
-}
-
-/* Outline / soft */
-.btn-outline {
-  background: transparent !important;
-  color: var(--hd-burgundy) !important;
-  border-color: rgba(101, 11, 50, 0.22) !important;
-}
-
-.btn-outline:hover,
-.btn-outline:focus {
-  outline: none;
-  background: rgba(249, 230, 195, 0.45) !important;
-}
-
-/* Chips and badges should not be pills anymore */
-.chip,
-.badge {
-  border-radius: var(--radius-btn) !important;
-}
-
-/* ==========================================================================
-   Form fields: closer to square corners (site-wide)
-   ========================================================================== */
-
-input,
-select,
-textarea {
-  border-radius: var(--radius-field) !important;
-  font-family: var(--font-body);
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-}
-
-/* ==========================================================================
-   Small accessibility / defaults
-   ========================================================================== */
-
-a { color: inherit; }
-a:focus { outline: none; }
