@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Locations | Häagen-Dazs</title>
-  <meta name="description" content="Find Häagen-Dazs North Miami and Collins North Beach. View hours, directions, contact details, delivery links, and maps.">
-  <link rel="canonical" href="https://www.hdicecream.com/locations/">
+  <title>North Miami | Häagen-Dazs</title>
+  <meta name="description" content="Häagen-Dazs North Miami (Causeway Square) - hours, directions, map, delivery links, and featured media. Family-friendly ice cream, shakes, sundaes, and cakes in North Miami.">
+  <link rel="canonical" href="https://www.hdicecream.com/locations/north-miami/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Häagen-Dazs">
-  <meta property="og:title" content="Locations | Häagen-Dazs">
-  <meta property="og:description" content="Find Häagen-Dazs North Miami and Collins North Beach. View hours, directions, contact details, delivery links, and maps.">
-  <meta property="og:url" content="https://www.hdicecream.com/locations/">
+  <meta property="og:title" content="North Miami | Häagen-Dazs">
+  <meta property="og:description" content="Häagen-Dazs North Miami (Causeway Square) - hours, directions, map, delivery links, and featured media.">
+  <meta property="og:url" content="https://www.hdicecream.com/locations/north-miami/">
   <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Häagen-Dazs locations in North Miami and Miami Beach.">
+  <meta property="og:image:alt" content="Häagen-Dazs North Miami location.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Locations | Häagen-Dazs">
-  <meta name="twitter:description" content="Find Häagen-Dazs North Miami and Collins North Beach. View hours, directions, contact details, delivery links, and maps.">
+  <meta name="twitter:title" content="North Miami | Häagen-Dazs">
+  <meta name="twitter:description" content="Häagen-Dazs North Miami (Causeway Square) - hours, directions, map, delivery links, and featured media.">
   <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <link rel="icon" href="/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
@@ -34,18 +34,59 @@
     gtag("js", new Date());
     gtag("config", "G-JJ3XB37TBM");
   </script>
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "IceCreamShop",
+    "name": "Häagen-Dazs North Miami (Causeway Square)",
+    "url": "https://www.hdicecream.com/locations/north-miami/",
+    "telephone": "+1-786-963-8203",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1809 NE 123rd St",
+      "addressLocality": "North Miami",
+      "addressRegion": "FL",
+      "postalCode": "33181",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.889975023767263,
+      "longitude": -80.16218023582432
+    },
+    "hasMap": "https://maps.app.goo.gl/QsDxzKYF9mttgKL28",
+    "image": "https://www.hdicecream.com/assets/images/hd_og_image.jpg",
+    "servesCuisine": ["Ice cream", "Desserts", "Milkshakes"],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/haagendazs_north_miami",
+      "https://www.facebook.com/HaagenDazsNorthMiami/",
+      "https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami"
+    ],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "10:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "10:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "20:00" }
+    ]
+  }
+  </script>
   <style>
     :root {
       --container: 1120px;
+      --radius-lg: 0;
+      --radius-md: 0;
+      --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+      --border-soft: 1px solid rgba(0,0,0,0.08);
       --text-muted: rgba(101, 11, 50, 0.72);
-
-      /* Match Menu's top-band color family */
-      --band-gold: var(--band-gold-bg);
-      --band-gold-strong: var(--band-gold-bg);
+      --panel: var(--band-gold-bg);
+      --ink: var(--hd-burgundy);
     }
 
     * { box-sizing: border-box; }
+
+    body {
+      color: var(--ink);
+    }
 
     .container {
       max-width: var(--container);
@@ -69,174 +110,367 @@
 
     #siteHeader, #siteFooter { margin: 0; padding: 0; }
 
-    /* PAGE INTRO (white, like Menu hero) */
     .page-hero {
-      background: var(--hd-card-bg);
+      background: #ffffff;
+      border-top: 1px solid rgba(0,0,0,0.06);
       border-bottom: 1px solid rgba(0,0,0,0.06);
-      padding: 22px 0;
+      padding: 18px 0 16px;
     }
 
-    .page-hero h1 {
+    .crumbs {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: rgba(101, 11, 50, 0.68);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
       margin: 0 0 10px;
       font-size: 64px;
-      line-height: 1.06;
+      line-height: 1.05;
       color: var(--hd-burgundy);
-      font-weight: 700;
     }
 
-    .page-hero p {
+    .hero-sub {
       margin: 0;
-      font-size: 24px;
       color: var(--text-muted);
-      max-width: 80ch;
+      font-size: 24px;
       line-height: 1.55;
-      font-weight: 400;
+      max-width: 85ch;
     }
 
-    /* LIGHT GOLD BAND behind the cards (same family as Menu band) */
-    .section-panel {
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--radius-btn);
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: rgba(255,255,255,0.88);
+      color: var(--hd-burgundy);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .chip:hover,
+    .chip:focus { outline: none; background: rgba(249, 230, 195, 0.55); }
+
+    .chip.primary {
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+      border-color: rgba(101, 11, 50, 0.25);
+    }
+
+    .chip.primary:hover,
+    .chip.primary:focus { background: rgba(101, 11, 50, 0.92); }
+
+    .section {
       background: var(--band-gold-bg);
       border-top: 1px solid rgba(0,0,0,0.06);
       border-bottom: 1px solid rgba(0,0,0,0.06);
-      padding: 26px 0 34px;
+      padding: 14px 0 34px;
     }
 
-    /* LOCATIONS GRID */
-    .cards {
+    .layout {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1.55fr 0.85fr;
       gap: 16px;
-      margin-top: 16px;
+      align-items: start;
     }
+
+    .stack { display: grid; gap: 16px; }
+    .sidebar { display: grid; gap: 16px; align-content: start; }
 
     .card {
-      border: var(--hd-border-soft);
+      border: var(--border-soft);
       border-radius: 0;
-      background: var(--hd-card-bg);
+      background: var(--hd-white);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       overflow: hidden;
-      display: grid;
     }
 
-    .card-media {
-      height: 280px;
-      background: rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
+    .card.pad { padding: 16px; }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--hd-burgundy);
+      font-weight: 900;
+      letter-spacing: 0.02em;
     }
 
-    .card-media img {
+    .muted {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(0,0,0,0.08);
+      margin: 12px 0;
+    }
+
+    .hero-card {
+      border: var(--border-soft);
+      border-radius: 0;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    .hero-card .img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #efe8db;
+      overflow: hidden;
+    }
+
+    .hero-card .img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .card-body {
-      padding: 18px;
-      display: grid;
-      gap: 14px;
-    }
+    .hero-card .pad { padding: 12px 12px 14px; }
 
-    .card h2 {
+    .hero-card .mini {
       margin: 0;
-      font-size: 22px;
-      color: var(--hd-burgundy);
-      line-height: 1.2;
-      font-weight: 700;
+      color: rgba(101, 11, 50, 0.78);
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 800;
     }
 
-    .meta {
-      margin: 0;
-      color: var(--text-muted);
-      line-height: 1.6;
-      font-size: 16px;
-      font-weight: 400;
-    }
-    .meta strong { color: var(--hd-burgundy); }
-
-    .hours-block {
-      color: var(--text-muted);
-      line-height: 1.55;
-      font-size: 16px;
-      font-weight: 400;
-    }
-    .hours-block strong { color: var(--hd-burgundy); }
-
-    .actions {
+    .k-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
+      margin-top: 10px;
     }
 
-    .chip {
+    .badge {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px 12px;
+      padding: 8px 10px;
       border-radius: var(--radius-btn);
-      border: 1px solid rgba(101, 11, 50, 0.18);
       background: var(--band-gold-bg);
-      color: var(--hd-burgundy);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
+      border: 1px solid rgba(101, 11, 50, 0.16);
+      color: rgba(101, 11, 50, 0.92);
+      font-weight: 900;
+      font-size: 12px;
       line-height: 1;
       white-space: nowrap;
     }
 
-    .chip.primary {
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
-      border-color: transparent;
-      font-weight: 800;
+    .photo-card {
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .photo-card h2 { margin-bottom: 0; }
+
+    .gallery {
+      position: relative;
+      border-radius: 0;
+      overflow: hidden;
+      background: #000;
+      border: var(--border-soft);
+      box-shadow: var(--shadow-soft);
     }
 
-    .chip:hover,
-    .chip:focus { background: rgba(249, 230, 195, 0.55); outline: none; }
+    .gallery-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      height: auto;
+    }
 
-    .chip.primary:hover,
-    .chip.primary:focus { background: rgba(101, 11, 50, 0.92); }
+    .g-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 320ms ease;
+      pointer-events: none;
+    }
+    .g-slide.is-active { opacity: 1; pointer-events: auto; }
 
-    /* MAP */
+    .g-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .g-controls {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      pointer-events: none;
+    }
+
+    .g-dots {
+      display: inline-flex;
+      gap: 8px;
+      pointer-events: auto;
+    }
+
+    .g-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px !important;
+      border: 2px solid rgba(255,255,255,0.95);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+    }
+    .g-dot.is-active {
+      background: var(--hd-gold);
+      border-color: rgba(255,255,255,0.98);
+    }
+
+    .g-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px !important;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      backdrop-filter: blur(3px);
+      pointer-events: auto;
+    }
+
+    .g-btn:hover,
+    .g-btn:focus {
+      outline: none;
+      background: rgba(255,255,255,0.26);
+      border-color: rgba(255,255,255,0.55);
+    }
+
     .map-wrap {
       border: 1px solid rgba(0,0,0,0.10);
       background: rgba(249, 230, 195, 0.20);
       border-radius: 0;
       overflow: hidden;
+      margin-top: 12px;
     }
 
-    .map-head {
+    .map-head,
+    .video-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 12px;
-      background: rgba(255,255,255,0.70);
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.80);
       border-bottom: 1px solid rgba(0,0,0,0.08);
       gap: 12px;
     }
 
-    .map-head .label {
+    .map-head .label,
+    .video-head .label {
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 12px;
+      font-size: 11px;
       color: rgba(101, 11, 50, 0.70);
     }
 
+    .map-frame { height: 280px; background: #efe8db; }
     .map-frame iframe {
       width: 100%;
-      height: 260px;
+      height: 280px;
       border: 0;
       display: block;
     }
 
-    /* ICONS */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .info-box {
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 0;
+      background: rgba(249, 230, 195, 0.22);
+      padding: 12px;
+    }
+
+    .info-box h3 {
+      margin: 0 0 6px;
+      font-size: 13px;
+      font-weight: 900;
+      color: rgba(101, 11, 50, 0.92);
+      letter-spacing: 0.02em;
+    }
+
+    .info-box ul {
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(101, 11, 50, 0.78);
+      font-weight: 800;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .faq { display: grid; gap: 10px; margin-top: 12px; }
+
+    details.faq-item {
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 0;
+      background: rgba(255,255,255,0.88);
+      padding: 12px;
+    }
+
+    details.faq-item summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: var(--hd-burgundy);
+      font-size: 13px;
+      list-style: none;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+
+    details.faq-item .answer {
+      margin-top: 8px;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
     .icon-block {
       border-top: 1px solid rgba(0,0,0,0.08);
       padding-top: 14px;
       display: grid;
       gap: 12px;
+      margin-top: 12px;
     }
 
     .icon-row-title {
@@ -325,222 +559,316 @@
     }
 
     .delivery-icon.is-dd img,
-    .delivery-icon.is-yelp img {
-      width: 26px;
-      height: 26px;
+    .delivery-icon.is-yelp img { width: 26px; height: 26px; }
+
+    .hours {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+    .hours strong { color: var(--hd-burgundy); }
+
+    .video-slot {
+      border: var(--border-soft);
+      border-radius: 0;
+      background: rgba(249,230,195,0.25);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
     }
 
-    @media (max-width: 960px) {
-      .cards { grid-template-columns: 1fr; }
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #0b0b0b;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,0.82);
+      font-weight: 800;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .video-frame iframe,
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      object-fit: cover;
+    }
+
+    @media (max-width: 980px) {
+      .hero-title { font-size: 40px; }
+      .layout { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .map-frame { height: 240px; }
       .map-frame iframe { height: 240px; }
-      .page-hero h1 { font-size: 38px; }
-      .page-hero p { font-size: 20px; }
-      .card-media { height: 220px; }
+      .gallery-viewport { aspect-ratio: 16 / 10; }
     }
 
     @media (max-width: 640px) {
-      .page-hero h1 { font-size: 34px; }
-      .page-hero p { font-size: 18px; }
-      .map-frame iframe { height: 220px; }
+      .hero-title { font-size: 34px; }
+      .g-btn { width: 40px; height: 40px; }
       .icon-link, .delivery-icon { width: 42px; height: 42px; }
       .delivery-icon.is-dd img,
       .delivery-icon.is-yelp img { width: 26px; height: 26px; }
-      .card-media { height: 200px; }
+      .gallery-viewport { aspect-ratio: 4 / 3; }
     }
   </style>
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div id="siteHeader"></div>
-
   <main id="main">
-    <section class="page-hero" aria-label="Locations intro">
+    <section class="page-hero" aria-label="North Miami header">
       <div class="container">
-        <h1>Locations</h1>
-        <p>Two shops, one simple way to plan. Choose your location for hours, directions, ordering links, and a map.</p>
-      </div>
-    </section>
+        <div class="crumbs">
+          <a href="/locations/" style="color: inherit; text-decoration: none;">Locations</a>
+          <span aria-hidden="true">/</span>
+          <span>North Miami</span>
+        </div>
+    <h1 class="hero-title">North Miami (Causeway Square)</h1>
+    <p class="hero-sub">
+      Family-friendly ice cream and desserts in North Miami. Find directions, hours, ordering links, a map, and featured media in one place.
+    </p>
 
-    <section class="section-panel" aria-label="Locations list">
-      <div class="container">
-        <div class="cards">
+    <div class="quick-actions" aria-label="Quick actions">
+      <a class="chip primary" href="/menu">View Menu</a>
+      <a class="chip primary" href="/cakes">View Cakes</a>
+      <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
+      <a class="chip" href="tel:+17869638203">Call</a>
+      <a class="chip" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer">Uber Eats</a>
+      <a class="chip" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer">DoorDash</a>
+    </div>
+  </div>
+</section>
 
-          <!-- NORTH MIAMI -->
-          <article class="card" aria-label="Häagen-Dazs North Miami location">
-            <div class="card-media" aria-label="North Miami store photo">
-              <img src="/assets/images/pages/locations/north-miami/hd_locations_nm_01.jpg" alt="Häagen-Dazs North Miami store photo">
-            </div>
+<section class="section" aria-label="North Miami details">
+  <div class="container">
+    <div class="layout">
 
-            <div class="card-body">
-              <div>
-                <h2>Häagen-Dazs North Miami (Causeway Square)</h2>
-                <p class="meta">
-                  <strong>Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
-                  <strong>Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 963-8203</a><br>
-                  <strong>Map:</strong> <a href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open map</a><br>
-                </p>
+      <div class="stack">
+        <div class="card photo-card" aria-label="Photo highlights">
+          <h2>Photo highlights</h2>
+
+          <div class="gallery" aria-label="North Miami image carousel">
+            <div class="gallery-viewport" id="galleryViewport">
+              <div class="g-slide is-active" data-index="0" aria-hidden="false">
+                <img src="/assets/images/pages/locations/north-miami/hd_locations_nm_02.jpg" alt="North Miami photo placeholder 1">
               </div>
-
-              <div class="hours-block">
-                <strong>Hours:</strong><br>
-                Mon-Thu 11am - 10pm<br>
-                Fri-Sat 11am - 11pm<br>
-                Sun 11am - 10pm
+              <div class="g-slide" data-index="1" aria-hidden="true">
+                <img src="/assets/images/pages/locations/north-miami/hd_locations_nm_03.jpg" alt="North Miami photo placeholder 2">
               </div>
-
-              <div class="actions">
-                <a class="chip primary" href="/locations/north-miami">View location page</a>
-                <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
-                <a class="chip" href="tel:+17869638203">Call</a>
-              </div>
-
-              <div class="map-wrap" aria-label="Map for North Miami">
-                <div class="map-head">
-                  <div class="label">Map</div>
-                  <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-                </div>
-                <div class="map-frame">
-                  <iframe
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps?q=25.889975023767263,-80.16218023582432&z=17&output=embed"
-                    title="Map - Häagen-Dazs North Miami">
-                  </iframe>
-                </div>
-              </div>
-
-              <div class="icon-block">
-                <div class="icon-group">
-                  <div class="icon-row-title">Community and reviews</div>
-                  <div class="icon-row">
-                    <a class="icon-link" href="https://www.instagram.com/haagendazs_north_miami" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-                      <span class="icon-swap">
-                        <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                        <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                      </span>
-                    </a>
-                    <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthMiami/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-                      <span class="icon-swap">
-                        <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                        <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                      </span>
-                    </a>
-                    <a class="icon-link" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
-                      <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-                    </a>
-                  </div>
-                </div>
-
-                <div class="icon-group">
-                  <div class="icon-row-title">Delivery and discovery</div>
-                  <div class="delivery-row">
-                    <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
-                      <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                    </a>
-                    <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
-                      <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                    </a>
-                    <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
-                      <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                    </a>
-                  </div>
-                </div>
+              <div class="g-slide" data-index="2" aria-hidden="true">
+                <img src="/assets/images/pages/locations/north-miami/hd_locations_nm_01.jpg" alt="North Miami photo placeholder 3">
               </div>
             </div>
-          </article>
 
-          <!-- NORTH BEACH -->
-          <article class="card" aria-label="Häagen-Dazs North Beach location">
-            <div class="card-media" aria-label="North Beach store photo">
-              <img src="/assets/images/pages/locations/north-beach/e010bbb8-66f0-4378-ac89-51379303e67a.JPG" alt="Häagen-Dazs North Beach store photo">
+            <div class="g-controls">
+              <button class="g-btn" type="button" aria-label="Previous photo" id="gPrev">&#8249;</button>
+              <div class="g-dots" role="tablist" aria-label="Photo pagination">
+                <button class="g-dot is-active" type="button" aria-label="Go to photo 1" id="gDot0"></button>
+                <button class="g-dot" type="button" aria-label="Go to photo 2" id="gDot1"></button>
+                <button class="g-dot" type="button" aria-label="Go to photo 3" id="gDot2"></button>
+              </div>
+              <button class="g-btn" type="button" aria-label="Next photo" id="gNext">&#8250;</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card pad" aria-label="Store details">
+          <h2>Store details</h2>
+          <p class="muted" style="margin:0;">
+            <strong style="color: var(--hd-burgundy);">Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
+            <strong style="color: var(--hd-burgundy);">Phone:</strong> <a href="tel:+17869638203" style="color: var(--hd-burgundy); font-weight: 900; text-decoration: none;">(786) 963-8203</a>
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="info-grid" aria-label="What guests mention">
+            <div class="info-box">
+              <h3>What guests mention</h3>
+              <ul>
+                <li>Friendly service</li>
+                <li>Great atmosphere</li>
+                <li>Family visits</li>
+                <li>Clean space</li>
+              </ul>
+            </div>
+            <div class="info-box">
+              <h3>Good to know</h3>
+              <ul>
+                <li>Parking options nearby</li>
+                <li>Plenty of flavors</li>
+                <li>Dairy-free options</li>
+                <li>Easy pickup</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="map-wrap" aria-label="Map">
+            <div class="map-head">
+              <div class="label">Map</div>
+              <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+            </div>
+            <div class="map-frame">
+              <iframe
+                title="Häagen-Dazs North Miami map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=25.889975023767263,-80.16218023582432&z=17&output=embed">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h2 style="margin-top:0;">FAQ</h2>
+          <div class="faq" aria-label="North Miami FAQ">
+            <details class="faq-item">
+              <summary>Do you offer ice cream cakes?</summary>
+              <div class="answer">Yes. Use the Cakes page for options and availability, or call the store for help with timing.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Is this location kid-friendly?</summary>
+              <div class="answer">Yes. This location is popular for family visits and quick dessert stops.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Do you offer milkshakes?</summary>
+              <div class="answer">Yes. Milkshakes are available along with sundaes and other desserts.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Are dairy-free flavors available?</summary>
+              <div class="answer">Dairy-free options are available. Selection can vary, so call ahead if you are looking for a specific flavor.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Is parking available at Causeway Square?</summary>
+              <div class="answer">There are parking options nearby. If you are picking up, ordering ahead can make it even faster.</div>
+            </details>
+          </div>
+
+          <div class="icon-block" aria-label="Links and icons">
+            <div class="icon-group">
+              <div class="icon-row-title">Community and reviews</div>
+              <div class="icon-row">
+                <a class="icon-link" href="https://www.instagram.com/haagendazs_north_miami" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                  <span class="icon-swap">
+                    <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
+                    <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
+                  </span>
+                </a>
+                <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthMiami/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                  <span class="icon-swap">
+                    <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
+                    <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
+                  </span>
+                </a>
+                <a class="icon-link" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
+                  <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
+                </a>
+              </div>
             </div>
 
-            <div class="card-body">
-              <div>
-                <h2>Häagen-Dazs North Beach (6978 Collins Ave)</h2>
-                <p class="meta">
-                  <strong>Address:</strong> 6978 Collins Avenue, Miami Beach, FL 33141<br>
-                  <strong>Phone:</strong> <a href="tel:+17866336485" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">(786) 633-6485</a><br>
-                  <strong>Map:</strong> <a href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer" style="color: var(--hd-burgundy); font-weight: 700; text-decoration: none;">Open map</a><br>
-                </p>
-              </div>
-
-              <div class="hours-block">
-                <strong>Hours:</strong><br>
-                Mon-Thu 11am - 11pm<br>
-                Fri-Sat 11am - 12pm<br>
-                Sun 11am - 11pm
-              </div>
-
-              <div class="actions">
-                <a class="chip primary" href="/locations/north-beach">View location page</a>
-                <a class="chip" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Directions</a>
-                <a class="chip" href="tel:+17866336485">Call</a>
-              </div>
-
-              <div class="map-wrap" aria-label="Map for North Beach">
-                <div class="map-head">
-                  <div class="label">Map</div>
-                  <a class="chip" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-                </div>
-                <div class="map-frame">
-                  <iframe
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps?q=25.855930163991367,-80.12070053213803&z=17&output=embed"
-                    title="Map - Häagen-Dazs North Beach">
-                  </iframe>
-                </div>
-              </div>
-
-              <div class="icon-block">
-                <div class="icon-group">
-                  <div class="icon-row-title">Community and reviews</div>
-                  <div class="icon-row">
-                    <a class="icon-link" href="https://www.instagram.com/haagendazs_northbeach" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-                      <span class="icon-swap">
-                        <img class="gold" src="/assets/images/icons/hd_ig_g.png" alt="">
-                        <img class="burgundy" src="/assets/images/icons/hd_ig_b.png" alt="">
-                      </span>
-                    </a>
-                    <a class="icon-link" href="https://www.facebook.com/HaagenDazsNorthBeach/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-                      <span class="icon-swap">
-                        <img class="gold" src="/assets/images/icons/hd_fb_g.png" alt="">
-                        <img class="burgundy" src="/assets/images/icons/hd_fb_b.png" alt="">
-                      </span>
-                    </a>
-                    <a class="icon-link" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google reviews" title="Google Reviews">
-                      <img class="google-icon" src="/assets/images/icons/hd_gr.png" alt="Google Reviews">
-                    </a>
-                  </div>
-                </div>
-
-                <div class="icon-group">
-                  <div class="icon-row-title">Delivery and discovery</div>
-                  <div class="delivery-row">
-                    <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-6978-collins-avenue/_fVlFIVpWaqPatU03tzQaw?diningMode=PICKUP&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkhhYWdlbi1EYXpzJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyaGVyZSUzQXBkcyUzQXBsYWNlJTNBODQwZGh3Y2ctZWM4Yjg4YjgwMmI4NGI3MDlhMzg1OWU5NDJjNDFiMTklMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyaGVyZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTI1LjY0NDQ4JTJDJTIybG9uZ2l0dWRlJTIyJTNBLTgwLjMzODEyJTdE&ps=1&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
-                      <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
-                    </a>
-                    <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-miami-beach-35160441/74478347/?cursor=eyJzZWFyY2hfaXRlbV9jYXJvdXNlbF9jdXJzb3IiOnsicXVlcnkiOiJpY2UgY3JlYW0iLCJpdGVtX2lkcyI6WzI3NjIxMzUyNjIxLDI3NjIxMzUyNjIyLDI3NjIxMzUyNjIzXSwic2VhcmNoX3Rlcm0iOiJpY2UgY3JlYW0iLCJ2ZXJ0aWNhbF9pZCI6LTk5OSwidmVydGljYWxfbmFtZSI6ImFsbCIsInF1ZXJ5X2ludGVudCI6IkZPT0RfRElTSCJ9LCJzdG9yZV9wcmltYXJ5X3ZlcnRpY2FsX2lkcyI6WzEsMTEwMDQ1LDQsMTAwMzMzXX0=&pickup=false" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
-                      <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
-                    </a>
-                    <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
-                      <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
-                    </a>
-                  </div>
-                </div>
+            <div class="icon-group">
+              <div class="icon-row-title">Delivery and discovery</div>
+              <div class="delivery-row">
+                <a class="delivery-icon" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer" aria-label="Uber Eats" title="Uber Eats">
+                  <img src="/assets/images/icons/hd_ue.png" alt="Uber Eats">
+                </a>
+                <a class="delivery-icon is-dd" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer" aria-label="DoorDash" title="DoorDash">
+                  <img src="/assets/images/icons/hd_dd.png" alt="DoorDash">
+                </a>
+                <a class="delivery-icon is-yelp" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer" aria-label="Yelp" title="Yelp">
+                  <img src="/assets/images/icons/hd_yelp.png" alt="Yelp">
+                </a>
               </div>
             </div>
-          </article>
-
+          </div>
         </div>
       </div>
-    </section>
+
+      <aside class="sidebar" aria-label="North Miami sidebar">
+        <div class="hero-card" aria-label="North Miami at a glance">
+          <div class="img">
+            <img src="/assets/images/pages/locations/north-miami/hd_locations_nm_01.jpg" alt="North Miami storefront placeholder image">
+          </div>
+          <div class="pad">
+            <p class="mini">
+              1809 NE 123rd St, North Miami, FL 33181<br>
+              Call (786) 963-8203
+            </p>
+            <div class="k-badges" aria-label="Highlights">
+              <span class="badge">Family</span>
+              <span class="badge">Friendly staff</span>
+              <span class="badge">Great service</span>
+              <span class="badge">Parking</span>
+              <span class="badge">Flavors</span>
+              <span class="badge">Dairy-free options</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <h2>Hours</h2>
+          <p class="muted">Plan your stop for dessert, pickup, or a quick family treat.</p>
+          <div class="divider"></div>
+          <div class="hours" aria-label="Opening hours">
+            <div><strong>Mon-Thu:</strong> 11am - 10pm</div>
+            <div><strong>Fri-Sat:</strong> 11am - 11pm</div>
+            <div><strong>Sun:</strong> 11am - 10pm</div>
+          </div>
+          <div class="divider"></div>
+          <div class="quick-actions">
+            <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
+            <a class="chip" href="tel:+17869638203">Call</a>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <h2>Pickup and delivery</h2>
+          <p class="muted">Order directly from your favorite platform.</p>
+          <div class="divider"></div>
+          <div class="quick-actions">
+            <a class="chip" href="https://www.ubereats.com/store/haagen-dazs-1809-ne-123rd-st/cd4obpE9WISsEicGQHkGtQ" target="_blank" rel="noopener noreferrer">Uber Eats</a>
+            <a class="chip" href="https://www.doordash.com/store/h%C3%A4agen-dazs-north-miami-27990014/33915947/" target="_blank" rel="noopener noreferrer">DoorDash</a>
+            <a class="chip" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer">Yelp</a>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <h2>Planning a celebration?</h2>
+          <p class="muted">Perfect for birthdays, family get-togethers, and small events. Use Cakes for ideas or contact us for help.</p>
+          <div class="divider"></div>
+          <div class="quick-actions">
+            <a class="chip" href="/cakes">Cakes</a>
+            <a class="chip" href="/contact">Contact us</a>
+          </div>
+        </div>
+
+        <div class="card pad" aria-label="Featured video">
+          <h2>Featured video (9:16)</h2>
+          <div class="video-slot" aria-label="9 by 16 video embed slot">
+            <div class="video-head">
+              <div class="label">Video embed</div>
+            </div>
+            <div class="video-frame">
+              Add a 9:16 embed here later (Instagram Reel, TikTok, YouTube Shorts).
+              <br><br>
+              Replace with an iframe or video tag.
+            </div>
+          </div>
+          <p class="muted" style="margin-top:10px;">When you have the video link, I can wire up the exact embed code.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
   </main>
-
   <div id="siteFooter"></div>
-
   <script>
     (function () {
       function loadInto(id, url) {
@@ -552,14 +880,61 @@
           .catch(function () { el.innerHTML = ""; });
       }
 
-      var docLang = document.documentElement.getAttribute("lang") || "en";
-      var isEs = docLang.toLowerCase().indexOf("es") === 0;
+      loadInto("siteHeader", "/assets/includes/header.html");
+      loadInto("siteFooter", "/assets/includes/footer.html");
+    })();
+  </script>
+  <script>
+    (function () {
+      var slides = Array.prototype.slice.call(document.querySelectorAll(".g-slide"));
+      var dots = [document.getElementById("gDot0"), document.getElementById("gDot1"), document.getElementById("gDot2")];
+      var prevBtn = document.getElementById("gPrev");
+      var nextBtn = document.getElementById("gNext");
 
-      var headerUrl = isEs ? "/assets/includes/header-es.html" : "/assets/includes/header.html";
-      var footerUrl = isEs ? "/assets/includes/footer-es.html" : "/assets/includes/footer.html";
+      var idx = 0;
+      var timer = null;
+      var intervalMs = 3500;
 
-      loadInto("siteHeader", headerUrl);
-      loadInto("siteFooter", footerUrl);
+      function setActive(nextIdx) {
+        idx = nextIdx;
+        for (var i = 0; i < slides.length; i++) {
+          var active = i === idx;
+          slides[i].classList.toggle("is-active", active);
+          slides[i].setAttribute("aria-hidden", active ? "false" : "true");
+          if (dots[i]) dots[i].classList.toggle("is-active", active);
+        }
+      }
+
+      function next() { setActive((idx + 1) % slides.length); }
+      function prev() { setActive((idx - 1 + slides.length) % slides.length); }
+
+      function start() {
+        stop();
+        timer = window.setInterval(next, intervalMs);
+      }
+
+      function stop() {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+      }
+
+      if (nextBtn) nextBtn.addEventListener("click", function () { stop(); next(); start(); });
+      if (prevBtn) prevBtn.addEventListener("click", function () { stop(); prev(); start(); });
+
+      if (dots[0]) dots[0].addEventListener("click", function () { stop(); setActive(0); start(); });
+      if (dots[1]) dots[1].addEventListener("click", function () { stop(); setActive(1); start(); });
+      if (dots[2]) dots[2].addEventListener("click", function () { stop(); setActive(2); start(); });
+
+      var gallery = document.querySelector(".gallery");
+      if (gallery) {
+        gallery.addEventListener("mouseenter", stop);
+        gallery.addEventListener("mouseleave", start);
+        gallery.addEventListener("focusin", stop);
+        gallery.addEventListener("focusout", start);
+      }
+
+      setActive(0);
+      start();
     })();
   </script>
 </body>
