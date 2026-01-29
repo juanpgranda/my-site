@@ -73,25 +73,26 @@
   <style>
     :root {
       --container: 1120px;
-      --radius-lg: 0;
-      --radius-md: 0;
+      --radius-lg: 18px;
+      --radius-md: 14px;
       --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
       --border-soft: 1px solid rgba(0,0,0,0.08);
       --text-muted: rgba(101, 11, 50, 0.72);
-      --panel: var(--band-gold-bg);
-      --ink: var(--hd-burgundy);
+      --panel: rgba(249, 230, 195, 0.45);
+      --ink: #1f1b1c;
     }
 
     * { box-sizing: border-box; }
 
     body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--ink);
     }
 
     .container {
       max-width: var(--container);
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 var(--container-pad);
     }
 
     .skip-link {
@@ -101,7 +102,7 @@
       background: var(--hd-burgundy);
       color: var(--hd-white);
       padding: 10px 12px;
-      border-radius: 0;
+      border-radius: 10px;
       z-index: 9999;
       text-decoration: none;
       font-weight: 700;
@@ -111,7 +112,7 @@
     #siteHeader, #siteFooter { margin: 0; padding: 0; }
 
     .page-hero {
-      background: #ffffff;
+      background: linear-gradient(180deg, rgba(249,230,195,0.55), rgba(255,255,255,1));
       border-top: 1px solid rgba(0,0,0,0.06);
       border-bottom: 1px solid rgba(0,0,0,0.06);
       padding: 18px 0 16px;
@@ -156,7 +157,7 @@
       align-items: center;
       gap: 10px;
       padding: 10px 12px;
-      border-radius: var(--radius-btn);
+      border-radius: 999px;
       border: 1px solid rgba(101, 11, 50, 0.18);
       background: rgba(255,255,255,0.88);
       color: var(--hd-burgundy);
@@ -168,7 +169,7 @@
     }
 
     .chip:hover,
-    .chip:focus { outline: none; background: rgba(249, 230, 195, 0.55); }
+    .chip:focus { outline: none; background: rgba(249, 230, 195, 0.90); }
 
     .chip.primary {
       background: var(--hd-burgundy);
@@ -179,12 +180,7 @@
     .chip.primary:hover,
     .chip.primary:focus { background: rgba(101, 11, 50, 0.92); }
 
-    .section {
-      background: var(--band-gold-bg);
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      padding: 14px 0 34px;
-    }
+    .section { padding: 14px 0 34px; }
 
     .layout {
       display: grid;
@@ -198,7 +194,7 @@
 
     .card {
       border: var(--border-soft);
-      border-radius: 0;
+      border-radius: var(--radius-lg);
       background: var(--hd-white);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       overflow: hidden;
@@ -229,7 +225,7 @@
 
     .hero-card {
       border: var(--border-soft);
-      border-radius: 0;
+      border-radius: var(--radius-lg);
       background: rgba(255,255,255,0.92);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       overflow: hidden;
@@ -270,8 +266,8 @@
       display: inline-flex;
       align-items: center;
       padding: 8px 10px;
-      border-radius: var(--radius-btn);
-      background: var(--band-gold-bg);
+      border-radius: 999px;
+      background: rgba(249, 230, 195, 0.55);
       border: 1px solid rgba(101, 11, 50, 0.16);
       color: rgba(101, 11, 50, 0.92);
       font-weight: 900;
@@ -289,7 +285,7 @@
 
     .gallery {
       position: relative;
-      border-radius: 0;
+      border-radius: var(--radius-lg);
       overflow: hidden;
       background: #000;
       border: var(--border-soft);
@@ -299,7 +295,7 @@
     .gallery-viewport {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 3 / 4;
       height: auto;
     }
 
@@ -340,7 +336,7 @@
     .g-dot {
       width: 10px;
       height: 10px;
-      border-radius: 999px !important;
+      border-radius: 999px;
       border: 2px solid rgba(255,255,255,0.95);
       background: transparent;
       cursor: pointer;
@@ -354,7 +350,7 @@
     .g-btn {
       width: 42px;
       height: 42px;
-      border-radius: 999px !important;
+      border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.35);
       background: rgba(255,255,255,0.16);
       color: #fff;
@@ -375,7 +371,7 @@
     .map-wrap {
       border: 1px solid rgba(0,0,0,0.10);
       background: rgba(249, 230, 195, 0.20);
-      border-radius: 0;
+      border-radius: 14px;
       overflow: hidden;
       margin-top: 12px;
     }
@@ -417,7 +413,7 @@
 
     .info-box {
       border: 1px solid rgba(0,0,0,0.10);
-      border-radius: 0;
+      border-radius: 14px;
       background: rgba(249, 230, 195, 0.22);
       padding: 12px;
     }
@@ -443,7 +439,7 @@
 
     details.faq-item {
       border: 1px solid rgba(0,0,0,0.10);
-      border-radius: 0;
+      border-radius: 14px;
       background: rgba(255,255,255,0.88);
       padding: 12px;
     }
@@ -506,7 +502,7 @@
       justify-content: center;
       width: 44px;
       height: 44px;
-      border-radius: 0;
+      border-radius: 12px;
       border: 1px solid rgba(101, 11, 50, 0.14);
       background: rgba(255,255,255,0.65);
       text-decoration: none;
@@ -573,7 +569,7 @@
 
     .video-slot {
       border: var(--border-soft);
-      border-radius: 0;
+      border-radius: var(--radius-lg);
       background: rgba(249,230,195,0.25);
       box-shadow: var(--shadow-soft);
       overflow: hidden;
@@ -606,7 +602,6 @@
       .info-grid { grid-template-columns: 1fr; }
       .map-frame { height: 240px; }
       .map-frame iframe { height: 240px; }
-      .gallery-viewport { aspect-ratio: 16 / 10; }
     }
 
     @media (max-width: 640px) {
@@ -615,7 +610,6 @@
       .icon-link, .delivery-icon { width: 42px; height: 42px; }
       .delivery-icon.is-dd img,
       .delivery-icon.is-yelp img { width: 26px; height: 26px; }
-      .gallery-viewport { aspect-ratio: 4 / 3; }
     }
   </style>
 </head>
@@ -651,7 +645,7 @@
     <div class="layout">
 
       <div class="stack">
-        <div class="card photo-card" aria-label="Photo highlights">
+        <div class="card photo-card" id="nmPhotoCard" aria-label="Photo highlights">
           <h2>Photo highlights</h2>
 
           <div class="gallery" aria-label="North Miami image carousel">
@@ -679,7 +673,7 @@
           </div>
         </div>
 
-        <div class="card pad" aria-label="Store details">
+        <div class="card pad" id="nmStoreCard" aria-label="Store details">
           <h2>Store details</h2>
           <p class="muted" style="margin:0;">
             <strong style="color: var(--hd-burgundy);">Address:</strong> 1809 NE 123rd St, North Miami, FL 33181<br>
@@ -791,7 +785,7 @@
       </div>
 
       <aside class="sidebar" aria-label="North Miami sidebar">
-        <div class="hero-card" aria-label="North Miami at a glance">
+        <div class="hero-card" id="nmHeroCard" aria-label="North Miami at a glance">
           <div class="img">
             <img src="/assets/images/pages/locations/north-miami/hd_locations_nm_01.jpg" alt="North Miami storefront placeholder image">
           </div>
@@ -811,7 +805,7 @@
           </div>
         </div>
 
-        <div class="card pad">
+        <div class="card pad" id="nmHoursCard">
           <h2>Hours</h2>
           <p class="muted">Plan your stop for dessert, pickup, or a quick family treat.</p>
           <div class="divider"></div>
@@ -827,7 +821,7 @@
           </div>
         </div>
 
-        <div class="card pad">
+        <div class="card pad" id="nmPickupCard">
           <h2>Pickup and delivery</h2>
           <p class="muted">Order directly from your favorite platform.</p>
           <div class="divider"></div>
@@ -838,7 +832,7 @@
           </div>
         </div>
 
-        <div class="card pad">
+        <div class="card pad" id="nmCelebrationCard">
           <h2>Planning a celebration?</h2>
           <p class="muted">Perfect for birthdays, family get-togethers, and small events. Use Cakes for ideas or contact us for help.</p>
           <div class="divider"></div>
@@ -848,7 +842,7 @@
           </div>
         </div>
 
-        <div class="card pad" aria-label="Featured video">
+        <div class="card pad" id="nmVideoCard" aria-label="Featured video">
           <h2>Featured video (9:16)</h2>
           <div class="video-slot" aria-label="9 by 16 video embed slot">
             <div class="video-head">
@@ -884,6 +878,55 @@
       loadInto("siteFooter", "/assets/includes/footer.html");
     })();
   </script>
+
+  <script>
+    (function () {
+      function isMobile() {
+        return window.matchMedia("(max-width: 980px)").matches;
+      }
+
+      function applyMobileFlow() {
+        if (!isMobile()) return;
+
+        var stack = document.querySelector(".stack");
+        var sidebar = document.querySelector(".sidebar");
+        if (!stack) return;
+
+        var ids = [
+          "nmHeroCard",
+          "nmHoursCard",
+          "nmPhotoCard",
+          "nmPickupCard",
+          "nmCelebrationCard",
+          "nmStoreCard",
+          "nmVideoCard"
+        ];
+
+        for (var i = 0; i < ids.length; i++) {
+          var el = document.getElementById(ids[i]);
+          if (el) stack.appendChild(el);
+        }
+
+        if (sidebar) sidebar.style.display = "none";
+      }
+
+      var wasMobile = isMobile();
+      window.addEventListener("resize", function () {
+        var nowMobile = isMobile();
+        if (nowMobile !== wasMobile) {
+          // Keep desktop layout intact by reloading when crossing the breakpoint.
+          window.location.reload();
+        }
+      });
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", applyMobileFlow);
+      } else {
+        applyMobileFlow();
+      }
+    })();
+  </script>
+
   <script>
     (function () {
       var slides = Array.prototype.slice.call(document.querySelectorAll(".g-slide"));
