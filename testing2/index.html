@@ -295,7 +295,7 @@
     .gallery-viewport {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 3 / 4;
       height: auto;
     }
 
@@ -602,7 +602,6 @@
       .info-grid { grid-template-columns: 1fr; }
       .map-frame { height: 240px; }
       .map-frame iframe { height: 240px; }
-      .gallery-viewport { aspect-ratio: 16 / 10; }
     }
 
     @media (max-width: 640px) {
@@ -611,7 +610,6 @@
       .icon-link, .delivery-icon { width: 42px; height: 42px; }
       .delivery-icon.is-dd img,
       .delivery-icon.is-yelp img { width: 26px; height: 26px; }
-      .gallery-viewport { aspect-ratio: 4 / 3; }
     }
   </style>
 </head>
@@ -880,6 +878,55 @@
       loadInto("siteFooter", "/assets/includes/footer.html");
     })();
   </script>
+
+  <script>
+    (function () {
+      function isMobile() {
+        return window.matchMedia("(max-width: 980px)").matches;
+      }
+
+      function applyMobileFlow() {
+        if (!isMobile()) return;
+
+        var stack = document.querySelector(".stack");
+        var sidebar = document.querySelector(".sidebar");
+        if (!stack) return;
+
+        var ids = [
+          "nmHeroCard",
+          "nmHoursCard",
+          "nmPhotoCard",
+          "nmPickupCard",
+          "nmCelebrationCard",
+          "nmStoreCard",
+          "nmVideoCard"
+        ];
+
+        for (var i = 0; i < ids.length; i++) {
+          var el = document.getElementById(ids[i]);
+          if (el) stack.appendChild(el);
+        }
+
+        if (sidebar) sidebar.style.display = "none";
+      }
+
+      var wasMobile = isMobile();
+      window.addEventListener("resize", function () {
+        var nowMobile = isMobile();
+        if (nowMobile !== wasMobile) {
+          // Keep desktop layout intact by reloading when crossing the breakpoint.
+          window.location.reload();
+        }
+      });
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", applyMobileFlow);
+      } else {
+        applyMobileFlow();
+      }
+    })();
+  </script>
+
   <script>
     (function () {
       var slides = Array.prototype.slice.call(document.querySelectorAll(".g-slide"));
