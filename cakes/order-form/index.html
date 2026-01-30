@@ -424,10 +424,10 @@ select::-ms-expand { display: none; }
       <div class="container">
         <div class="kicker">Pickup info</div>
         <div class="info-card" id="pickupInfo">
-          Orders placed require <strong>2 day(s)</strong> processing.<br>
+          Orders placed require <strong>2 day(s)</strong> for processing.<br>
           Earliest pickup: <strong id="earliestPickupText">Calculating...</strong>.<br>
-          If needing sooner, contact store for inventory availability <a href="/locations" class="pickup-link">Locations</a><br>
-          All flavors are Kosher from factory<br>
+          If needed sooner, please contact shop for current inventory availability <a href="/locations" class="pickup-link">Locations</a><br>
+          All flavors are manufactured Kosher from factory<br>
           Cakes are assembled and decorated in the shop<br>
           GF = Gluten Free
         </div>
@@ -547,14 +547,14 @@ select::-ms-expand { display: none; }
               <select id="pickupMinute" aria-label="Pickup minutes" required></select>
             </div>
             <input id="pickupTime" name="pickup_time" type="hidden" required>
-            <div class="help">Available 11:15 AM to 7:45 PM. Choose hour, then minutes in 15-minute steps.</div>
+            <div class="help">Pick up available: 11:00 AM until closing time. Please check store hours in <a href="/locations" class="pickup-link">Locations</a></div>
           </div>
 
           <div class="field full">
             <label for="pickupLocation">Pick Up Location</label>
             <select id="pickupLocation" name="pickup_location" required>
               <option value="" selected disabled>Select pickup location</option>
-              <option>Haagen-Dazs North Miami (Causeway Square)</option>
+              <option>Haagen-Dazs North Miami (Causeway Square/1809 NE 123rd Street)</option>
               <option>Haagen-Dazs North Beach (6978 Collins Ave)</option>
             </select>
           </div>
@@ -566,7 +566,7 @@ select::-ms-expand { display: none; }
               <option>Happy Birthday</option>
               <option>Custom - write in Special Instructions</option>
             </select>
-            <div class="help" id="messageHelp">If you choose Custom, write the exact message in Special Instructions.</div>
+            <div class="help" id="messageHelp">If you choose Custom, write on "Custom Message on the Cake."</div>
           </div>
 
           <div class="field full" id="customMessageWrap" style="display:none;">
