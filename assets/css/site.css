@@ -59,10 +59,8 @@
 
   --font-body: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
-  /* Unified light gold band */
   --band-gold-bg: rgba(249, 230, 195, 0.35);
 
-  /* Container padding (site-wide, keeps mobile from feeling stretched) */
   --container-pad: 20px;
   --container-max: 1120px;
 }
@@ -89,4 +87,100 @@ body {
 
 .band-gold.band-pad {
   padding: 22px 0 14px;
+}
+
+/* ==========================================================================
+   Sitewide Button System (canonical Cakes style)
+   ========================================================================== */
+
+:root {
+  --radius-btn: 12px;
+}
+
+.btn,
+a.btn,
+button.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  font-weight: 900;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-body);
+  background: var(--hd-burgundy);
+  color: var(--hd-white);
+  box-shadow: var(--hd-shadow-soft);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.btn:hover,
+.btn:focus,
+a.btn:hover,
+a.btn:focus,
+button.btn:hover,
+button.btn:focus {
+  outline: none;
+  background: rgba(101, 11, 50, 0.92);
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: var(--radius-btn);
+  font-weight: 900;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-body);
+  background: var(--hd-burgundy);
+  color: var(--hd-white);
+  box-shadow: var(--hd-shadow-soft);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+button:hover,
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus {
+  outline: none;
+  background: rgba(101, 11, 50, 0.92);
+}
+
+.order-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 14px;
+  color: var(--hd-white);
+  padding: 12px 18px;
+  border-radius: var(--radius-btn);
+  border: 0;
+  background: var(--hd-burgundy);
+  box-shadow: var(--hd-shadow-soft);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.order-link:hover,
+.order-link:focus {
+  outline: none;
+  background: rgba(101, 11, 50, 0.92);
 }
