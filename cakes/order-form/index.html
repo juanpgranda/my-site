@@ -851,7 +851,7 @@ select::-ms-expand { display: none; }
 
         /* Default to 11:15 AM */
         pickupHour.value = String(MIN_HOUR_24);
-        pickupMinute.value = "15";
+        pickupMinute.value = "00";
         syncHiddenTime();
         enforceTimeBounds();
       }
@@ -865,14 +865,6 @@ select::-ms-expand { display: none; }
           var opt = pickupMinute.options[i];
           if (!opt || !opt.value) continue;
           opt.disabled = false;
-        }
-
-        if (h === 11) {
-          for (var j = 0; j < pickupMinute.options.length; j++) {
-            var o = pickupMinute.options[j];
-            if (o && o.value === "00") o.disabled = true;
-          }
-          if (m === "00") pickupMinute.value = "15";
         }
 
         /* Latest is 7:45 PM, and our minute list stops at :45 so nothing else needed */
