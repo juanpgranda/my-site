@@ -1,732 +1,883 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Cloud Forest Retreat | Eco-Luxury Mountain Stay in Ecuador</title>
-  <meta name="description" content="A scenic bed and breakfast in Ecuador’s mountains with breathtaking views. Eco-luxury comfort, wellness, nature, and unforgettable stays in the cloud forest." />
-  <meta name="robots" content="index,follow" />
-  <!-- Canonical + hreflang (PRODUCTION URLs) -->
-  <link rel="canonical" href="https://thecloudforestretreat.com/" />
-  <link rel="alternate" hreflang="en" href="https://thecloudforestretreat.com/" />
-  <link rel="alternate" hreflang="es" href="https://thecloudforestretreat.com/es/" />
-  <link rel="alternate" hreflang="x-default" href="https://thecloudforestretreat.com/" />
-  <!-- Open Graph (PRODUCTION URLs) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="The Cloud Forest Retreat" />
-  <meta property="og:title" content="The Cloud Forest Retreat | Eco-Luxury Mountain Stay in Ecuador" />
-  <meta property="og:description" content="A scenic bed and breakfast in Ecuador’s mountains with breathtaking views. Eco-luxury comfort, wellness, nature, and unforgettable stays in the cloud forest." />
-  <meta property="og:url" content="https://thecloudforestretreat.com/" />
-  <meta property="og:image" content="https://thecloudforestretreat.com/og-tcfr.jpg" />
-  <meta property="og:image:secure_url" content="https://thecloudforestretreat.com/og-tcfr.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="The Cloud Forest Retreat mountain view" />
-  <!-- Twitter (PRODUCTION URLs) -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Cloud Forest Retreat | Eco-Luxury Mountain Stay in Ecuador" />
-  <meta name="twitter:description" content="A scenic bed and breakfast in Ecuador’s mountains with breathtaking views. Eco-luxury comfort, wellness, nature, and unforgettable stays in the cloud forest." />
-  <meta name="twitter:image" content="https://thecloudforestretreat.com/og-tcfr.jpg" />
-  <!-- Favicons (approved root paths) -->
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#0D5925" />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Global / shared CSS -->
-  <link rel="stylesheet" href="/assets/css/site.css" />
-  <link rel="stylesheet" href="/assets/css/header.css?v=3" />
-  <!-- Head-only JS -->
-  <script src="/assets/js/head.js?v=1" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Celebrate with Cake | Haagen-Dazs</title>
+  <meta name="description" content="Order a Haagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
+  <link rel="canonical" href="https://www.hdicecream.com/cakes/order-form/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Haagen-Dazs">
+  <meta property="og:title" content="Celebrate with Cake | Haagen-Dazs">
+  <meta property="og:description" content="Order a Haagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
+  <meta property="og:url" content="https://www.hdicecream.com/cakes/order-form/">
+  <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
+  <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Haagen-Dazs cake order form for pickup.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Celebrate with Cake | Haagen-Dazs">
+  <meta name="twitter:description" content="Order a Haagen-Dazs ice cream cake for pickup. Choose your cake design, flavors, and pickup time, and we will confirm your order details.">
+  <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/images/site.webmanifest">
+  <meta name="theme-color" content="#650B32">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ3XB37TBM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-JJ3XB37TBM");
+  </script>
   <style>
-    :root{
-      --bg: #A1BFAA;
-      --forest: #0D5925;
-      --forest-2: #0B2B12;
-      --beige: #F5F5DC;
-      --orange: #E0643A;
-      --line: rgba(13,89,37,.18);
-      --card: rgba(245,245,220,.55);
-      --card2: rgba(245,245,220,.72);
-      --shadow: 0 18px 55px rgba(0,0,0,.14);
-      --r: 22px;
-      --max: 1180px;
-      --font-head: "Playfair Display", serif;
-      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    :root {
+      --container: 920px;
+      --radius-lg: 18px;
+      --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+      --border-soft: 1px solid rgba(0,0,0,0.10);
+      --text-muted: rgba(101, 11, 50, 0.72);
     }
-
-    *{ box-sizing:border-box; }
-    
-    html{ overflow-x:hidden; }
-body{
-margin:0;
-      background: var(--bg);
-      color: var(--forest-2);
-      font-family: var(--font-body);
-      overflow-x:hidden;
-    }
-
-    a{ color: inherit; text-decoration: none; }
-    img{ max-width:100%; display:block; }
-
-    .wrap{
-      max-width: var(--max);
+    * { box-sizing: border-box; }
+    .container {
+      max-width: var(--container);
       margin: 0 auto;
-      padding: 18px 16px 64px;
+      padding: 0 var(--container-pad);
     }
-
-    .hero{
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 16px;
-      align-items: stretch;
-      margin-top: 10px;
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+      padding: 10px 12px;
+      border-radius: 0;
+      z-index: 9999;
+      text-decoration: none;
+      font-weight: 700;
     }
-
-    .heroMedia{
-      border-radius: var(--r);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.10);
-      min-height: 420px;
-      position: relative;
+    .skip-link:focus { left: 10px; }
+    #siteHeader, #siteFooter { margin: 0; padding: 0; }
+    .page-hero {
+      background: var(--hd-white);
+      padding: 26px 0 10px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
-
-    .heroMedia img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.01);
-    }
-
-    .heroOverlay{
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.34));
-      pointer-events:none;
-    }
-
-    .heroCopy{
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(13,89,37,.18);
-      background: var(--card2);
-      padding: 18px;
-      display:flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 420px;
-    }
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      font-weight: 800;
-      font-size: 12px;
-      letter-spacing: 0.10em;
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(13,89,37,.92);
-    }
-
-    .h1{
-      margin: 10px 0 10px;
-      font-family: var(--font-head);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.02;
-      font-size: clamp(32px, 3.9vw, 50px);
-      color: var(--forest-2);
-    }
-
-    .sub{
-      margin: 0;
-      font-size: 15.8px;
-      line-height: 1.78;
-      color: rgba(13,89,37,.96);
-      max-width: 62ch;
-      font-weight: 600;
-    }
-
-    .pillRow{
-      margin-top: 14px;
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-    }
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(13,89,37,.20);
-      background: rgba(255,255,255,.62);
-      color: var(--forest-2);
-      font-weight: 800;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    .heroCtas{
-      margin-top: 16px;
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      align-items:center;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 14px;
-      border-radius: 999px;
-      font-weight: 900;
-      border: 1px solid rgba(13,89,37,.18);
-      box-shadow: 0 14px 30px rgba(0,0,0,.12);
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .btn.primary{
-      background: var(--orange);
-      color: #fff;
-      border-color: rgba(0,0,0,.10);
-      box-shadow: 0 14px 30px rgba(224,100,58,.26);
-    }
-
-    .btn.secondary{
-      background: rgba(255,255,255,.64);
-      color: var(--forest-2);
-    }
-
-    .btn.ghost{
-      background: transparent;
-      color: var(--forest-2);
-      border-color: rgba(13,89,37,.18);
-      box-shadow: none;
-    }
-
-    /* Google Reviews trust block (homepage) */
-    .tcfr-google-reviews{
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.45);
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .tcfr-google-reviews-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .tcfr-google-left{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      flex-wrap:nowrap;
-      min-width:0;
-    }
-
-    .tcfr-google-logo{
-      width:34px;
-      height:34px;
-      flex: 0 0 auto;
-    }
-
-    .tcfr-google-rating{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      flex-wrap:wrap;
-      min-width:0;
-      font-size:14px;
-    }
-
-    .tcfr-rating-score{
-      font-weight:700;
-      color:#1f3d2b;
-    }
-
-    .tcfr-stars{
-      color:#FBBC05;
-      letter-spacing:1px;
-      font-size:15px;
-      line-height:1;
-    }
-
-    .tcfr-review-count{
-      color:#4b6b5a;
-    }
-
-    .tcfr-google-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-
-    .tcfr-google-actions a{
-      white-space: normal;
-      text-align: center;
-    }
-
-    @media (max-width: 900px){
-      .tcfr-google-reviews-inner{
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .tcfr-google-left,
-      .tcfr-google-rating{
-        width: 100%;
-      }
-      .tcfr-google-actions{
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-      .tcfr-google-actions a{
-        width: 100%;
-        justify-content: center;
-        font-size: 14px;
-        padding: 12px 12px;
-      }
-    }
-
-    @media (max-width: 380px){
-      .tcfr-google-actions a{
-        font-size: 13px;
-        padding: 11px 10px;
-      }
-    }
-
-    .trustRow{
-      margin-top: 14px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .trustCard{
-      border-radius: 16px;
-      background: rgba(255,255,255,.60);
-      border: 1px solid rgba(13,89,37,.16);
-      padding: 12px;
-      box-shadow: 0 14px 30px rgba(0,0,0,.10);
-      min-width: 0;
-    }
-
-    .trustTitle{
-      margin: 0 0 6px;
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      font-size: 13.8px;
-      color: var(--forest-2);
-    }
-
-    .trustText{
-      margin: 0;
-      color: rgba(13,89,37,.92);
-      font-size: 13px;
-      line-height: 1.55;
-      font-weight: 600;
-    }
-
-    .section{
-      margin-top: 18px;
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(13,89,37,.18);
-      background: var(--card);
-      padding: 18px;
-    }
-
-    .sectionHead{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap: wrap;
+      font-size: 12px;
+      color: rgba(101, 11, 50, 0.75);
       margin-bottom: 10px;
     }
-
-    .h2{
+    h1 {
+      margin: 0 0 8px;
+      font-size: 42px;
+      line-height: 1.08;
+      color: var(--hd-burgundy);
+    }
+    .sublead {
       margin: 0;
-      font-family: var(--font-head);
-      font-size: 22px;
-      letter-spacing: -0.02em;
-      color: var(--forest-2);
-      font-weight: 900;
-    }
-
-    .hint{
-      margin: 0;
-      color: rgba(13,89,37,.92);
-      font-size: 13.2px;
-      line-height: 1.55;
-      max-width: 90ch;
-      font-weight: 600;
-    }
-
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      align-items: stretch;
-    }
-
-    .tile{
-      border-radius: 18px;
-      border: 1px solid rgba(13,89,37,.16);
-      background: rgba(255,255,255,.60);
-      box-shadow: 0 14px 30px rgba(0,0,0,.10);
-      padding: 14px;
-      min-height: 132px;
-      display:flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 10px;
-      color: var(--forest-2);
-    }
-
-    .tileTitle{
-      margin: 0;
-      font-weight: 900;
-      letter-spacing: -0.01em;
+      color: var(--text-muted);
       font-size: 16px;
-      color: var(--forest-2);
+      line-height: 1.55;
+      max-width: 85ch;
     }
-
-    .tileText{
-      margin: 0;
-      color: rgba(13,89,37,.94);
-      font-size: 13.5px;
-      line-height: 1.65;
-      font-weight: 600;
+    .info-card {
+      margin-top: 14px;
+      background: rgba(249, 230, 195, 0.30);
+      border: 1px solid rgba(101, 11, 50, 0.14);
+      border-radius: 0;
+      padding: 12px 12px;
+      color: rgba(101, 11, 50, 0.90);
+      font-size: 13px;
+      line-height: 1.55;
     }
-
-    .tileMeta{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-      color: rgba(13,89,37,.92);
+    .info-card strong { color: var(--hd-burgundy); }
+    .info-card a {
+      color: var(--hd-burgundy);
+      text-decoration: underline;
       font-weight: 800;
-      font-size: 12.5px;
+    }
+    .info-card a:hover,
+    .info-card a:focus {
+      outline: none;
+      text-decoration-thickness: 2px;
     }
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(13,89,37,.16);
-      background: rgba(255,255,255,.60);
+    .pickup-link {
+      color: var(--hd-burgundy);
+      text-decoration: underline;
+      font-weight: 800;
+    }
+
+    .pickup-link:hover,
+    .pickup-link:focus {
+      outline: none;
+      text-decoration-thickness: 2px;
+    }
+    .section {
+      padding: 18px 0 34px;
+      background: var(--band-gold-bg);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .form-card {
+      background: var(--hd-white);
+      border: var(--border-soft);
+      border-radius: 0;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+    .form-head {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      background: rgba(249, 230, 195, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .form-head .title {
       font-weight: 900;
-      font-size: 12.2px;
-      color: var(--forest-2);
+      color: var(--hd-burgundy);
+      letter-spacing: 0.02em;
+    }
+    .form-head .right {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+    .help {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .view-cakes-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 12px;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: rgba(255,255,255,0.78);
+      color: var(--hd-burgundy);
       white-space: nowrap;
     }
-
-    .photoStrip{
-      margin-top: 12px;
-      display:grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
+    .view-cakes-btn:hover,
+    .view-cakes-btn:focus {
+      outline: none;
+      background: rgba(249, 230, 195, 0.75);
+      border-color: rgba(101, 11, 50, 0.26);
+    }
+    form { padding: 16px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 12px;
+      align-items: start;
     }
-
-    .photoCard{
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(13,89,37,.16);
-      background: rgba(255,255,255,.60);
-      box-shadow: 0 14px 30px rgba(0,0,0,.10);
-      min-height: 220px;
-      position: relative;
+    .field {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
     }
-
-    .photoCard img{
+    label {
+      font-size: 12px;
+      font-weight: 800;
+      color: rgba(101, 11, 50, 0.85);
+    }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      border-radius: 0;
+      padding: 11px 12px;
+      font-size: 14px;
+      color: rgba(31, 27, 28, 0.95);
+      background: #fff;
+      outline: none;
+      font-family: var(--font-body);
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(101, 11, 50, 0.38);
+      box-shadow: 0 0 0 3px rgba(210, 153, 55, 0.18);
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    .full { grid-column: 1 / -1; }
+    .inline-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .counter {
+      font-size: 12px;
+      color: rgba(101, 11, 50, 0.70);
+      font-weight: 800;
+    }
+    .actions {
+      display: grid;
+      justify-content: center;
+      padding: 18px 16px 18px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      background: rgba(249, 230, 195, 0.14);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: var(--radius-btn);
+      text-decoration: none;
+      font-weight: 900;
+      border: 0;
+      cursor: pointer;
+      user-select: none;
+      font-family: var(--font-body);
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+      box-shadow: var(--shadow-soft);
+      min-width: 220px;
+    }
+    .btn:hover, .btn:focus {
+      outline: none;
+      background: rgba(101, 11, 50, 0.92);
+    }
+    .status {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(101, 11, 50, 0.80);
+    }
+    .status.ok { color: rgba(14, 96, 45, 0.95); }
+    .status.err { color: rgba(150, 20, 40, 0.95); }
+    .design-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .preview-card {
+      border: 1px solid rgba(101, 11, 50, 0.14);
+      background: rgba(249, 230, 195, 0.16);
+      border-radius: 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+    }
+    .preview-img {
+      width: 120px;
+      aspect-ratio: 1 / 1;
+      background: #efe8db;
+      border-radius: 0;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .preview-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
-
-    .photoCap{
-      position:absolute;
-      left: 10px;
-      bottom: 10px;
-      right: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(245,245,220,.90);
-      border: 1px solid rgba(13,89,37,.16);
-      color: var(--forest-2);
+    .preview-meta {
+      display: grid;
+      gap: 6px;
+      align-content: center;
+      min-width: 0;
+    }
+    .preview-label {
+      font-size: 11px;
       font-weight: 900;
-      letter-spacing: -0.01em;
-      font-size: 13px;
-      box-shadow: 0 14px 30px rgba(0,0,0,.12);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(101, 11, 50, 0.70);
     }
-
-    .band{
-      margin-top: 18px;
-      border-radius: var(--r);
-      border: 1px solid rgba(13,89,37,.18);
-      box-shadow: var(--shadow);
-      background: rgba(245,245,220,.76);
-      padding: 16px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .bandTitle{
-      margin: 0 0 6px;
-      font-family: var(--font-head);
+    .preview-name {
       font-weight: 900;
-      letter-spacing: -0.02em;
-      font-size: 20px;
-      color: var(--forest-2);
+      color: var(--hd-burgundy);
+      font-size: 14px;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-
-    .bandText{
-      margin: 0;
-      color: rgba(13,89,37,.94);
-      line-height: 1.6;
-      font-size: 13.8px;
-      max-width: 80ch;
-      font-weight: 600;
-    }
-
-    .bandActions{
-      display:flex;
+    .preview-links {
+      display: inline-flex;
       gap: 10px;
       flex-wrap: wrap;
-      align-items:center;
+      align-items: center;
     }
-
-    @media (max-width: 900px){
-      .wrap{ padding: 10px 14px 54px; }
-
-      .hero{ grid-template-columns: 1fr; gap: 12px; }
-      .heroMedia{ min-height: 290px; }
-      .heroCopy{ min-height: 0; }
-
-      .pillRow{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-      }
-      .pill{ width: 100%; }
-      .pillRow .pill:nth-child(4){
-        grid-column: 1 / -1;
-      }
-
-      .heroCtas{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-      .heroCtas .btn{ width: 100%; }
-      .heroCtas .btn.ghost{
-        grid-column: 1 / -1;
-      }
-
-      .trustRow{ grid-template-columns: 1fr; }
-      .grid3{ grid-template-columns: 1fr; }
-      .photoStrip{ grid-template-columns: 1fr; }
-      .photoCard{ min-height: 210px; }
+    .preview-link {
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--hd-burgundy);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(101, 11, 50, 0.25);
+      padding-bottom: 1px;
+      line-height: 1.1;
     }
-
-    @media (min-width: 901px){
-      .heroMedia{ min-height: 520px; }
-      .heroCopy{ min-height: 520px; }
+    .preview-link:hover,
+    .preview-link:focus {
+      outline: none;
+      border-bottom-color: rgba(101, 11, 50, 0.65);
+    }
+    .preview-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+    /* UX FIX 1: consistent select caret, no "broken" far-right look */
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 44px;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23650B32' d='M7 10l5 5l5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 16px 16px;
+    }
+    select::-ms-expand { display: none; }
+    /* UX FIX 2: pickup time uses two compact selects (hour + minutes) as requested */
+    .time-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+    .time-grid select { min-width: 0; }
+    @media (max-width: 900px) {
+      h1 { font-size: 38px; }
+    }
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 34px; }
+      .btn { width: 100%; min-width: 0; }
+      .form-head { align-items: flex-start; }
+      .form-head .right { flex-direction: column; align-items: flex-end; gap: 6px; }
+      .preview-card { grid-template-columns: 96px 1fr; }
+      .preview-img { width: 96px; }
+      .time-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <div id="siteHeader"></div>
-  <main class="wrap" aria-label="The Cloud Forest Retreat home">
-    <section class="hero" aria-label="Hero">
-      <div class="heroMedia" aria-label="Mountain retreat view">
-        <img src="/assets/images/pages/home/tcfr_images_home_hero-02.jpg" alt="The Cloud Forest Retreat in the mountains of Ecuador" loading="eager" decoding="async" />
-        <div class="heroOverlay" aria-hidden="true"></div>
+  <main id="main">
+    <section class="page-hero" aria-label="Cake order header">
+      <div class="container">
+        <div class="kicker">Pickup info</div>
+        <div class="info-card" id="pickupInfo">
+          Orders placed require <strong>2 day(s)</strong> for processing.<br>
+          Earliest pickup: <strong id="earliestPickupText">Calculating...</strong>.<br>
+          If needed sooner, please contact shop for current inventory availability <a href="/locations" class="pickup-link">Locations</a><br>
+          All flavors are manufactured Kosher from factory<br>
+          Cakes are assembled and decorated in the shop<br>
+          GF = Gluten Free
+        </div>
+        <div style="height:14px;"></div>
+        <h1>Celebrate with Cake</h1>
+        <p class="sublead">
+          Fill out this form and we will confirm your pickup details. If you need a faster pickup, contact the store for inventory availability.
+        </p>
       </div>
-  <div class="heroCopy" aria-label="Welcome message">
-    <div>
-      <div class="kicker">Eco-luxury mountain retreat</div>
-      <h1 class="h1">Welcome to The Cloud Forest Retreat</h1>
-
-      <p class="sub">
-        Wake up above the valley with breathtaking views, fresh mountain air, and calm mornings.
-        A scenic bed and breakfast designed for slow travel, nature, and comfort in Ecuador’s cloud forest.
-      </p>
-
-      <div class="pillRow" aria-label="Highlights">
-        <span class="pill">Birdwatching</span>
-        <span class="pill">Waterfalls</span>
-        <span class="pill">Wilderness</span>
-        <span class="pill">Wellness</span>
-      </div>
-
-      <div class="heroCtas" aria-label="Primary actions">
-        <a class="btn primary" href="/booking/">Book Your Stay</a>
-        <a class="btn secondary" href="/rooms/">Explore Rooms</a>
-<a class="btn ghost" href="/features/">See Features</a>
-      </div>
-      </div>
-
-      <section class="tcfr-google-reviews" aria-label="Google reviews">
-        <div class="tcfr-google-reviews-inner">
-          <div class="tcfr-google-left" aria-label="Google rating badge">
-            <img src="/assets/images/icons/tcfr_logo_google_reviews.png" alt="Google Reviews" class="tcfr-google-logo" loading="lazy" decoding="async" />
-            <div class="tcfr-google-rating">
-              <span class="tcfr-rating-score">5.0</span>
-              <span class="tcfr-stars" aria-label="5 out of 5 stars">★★★★★</span>
-              <span class="tcfr-review-count">(9 reviews)</span>
+    </section>
+    <section class="section" aria-label="Cake order form section">
+      <div class="container">
+        <div class="form-card" role="region" aria-label="Cake order form card">
+          <div class="form-head">
+            <div class="title">Cake Order Form</div>
+            <div class="right">
+              <a class="view-cakes-btn" href="/cakes" target="_blank" rel="noopener noreferrer">View Cakes</a>
+              <div class="help" id="minDateHint"></div>
             </div>
           </div>
-
-          <div class="tcfr-google-actions" aria-label="Google review actions">
-            <a class="btn secondary" href="https://g.page/r/CQq5wBqKgv0DEAE" target="_blank" rel="noopener">Read reviews</a>
-            <a class="btn primary" href="https://g.page/r/CQq5wBqKgv0DEAE/review" target="_blank" rel="noopener">Write a review</a>
-          </div>
+          <form id="cakeOrderForm" novalidate>
+            <div class="grid">
+              <div class="field">
+                <label for="firstName">First Name</label>
+                <input id="firstName" name="first_name" type="text" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" name="last_name" type="text" autocomplete="family-name" required>
+              </div>
+              <div class="field">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(786) 555-1212" required>
+              </div>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field full">
+                <div class="design-row">
+                  <div class="field" style="margin:0;">
+                    <label for="cakeDesign">Cake Design</label>
+                    <select id="cakeDesign" name="cake_design" required>
+                      <option value="" selected disabled>Select a cake design</option>
+                      <option>Ribbon Cake</option>
+                      <option>Dulce de Leche Cake</option>
+                      <option>Coffee Crunch Cake</option>
+                      <option>Rose's Birthday Cake</option>
+                      <option>Reuben's Birthday Cake</option>
+                      <option>Cookies &amp; Cream Cake</option>
+                      <option>Triple Chocolate Cake</option>
+                      <option>Just Because Cake</option>
+                    </select>
+                  </div>
+                  <div class="preview-card" aria-label="Selected cake preview" id="cakePreviewCard">
+                    <div class="preview-img" aria-hidden="true">
+                      <img id="cakePreviewImg" src="/assets/images/cakes/RibbonCake_Whole_041725.jpg" alt="">
+                    </div>
+                    <div class="preview-meta">
+                      <div class="preview-label">Selected cake</div>
+                      <div class="preview-name" id="cakePreviewName">Choose a cake design to preview</div>
+                      <div class="preview-links">
+                        <a class="preview-link" href="/cakes" target="_blank" rel="noopener noreferrer">View all cakes</a>
+                      </div>
+                      <div class="preview-hint">Preview updates when you change the Cake Design.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label for="cakeSize">Cake Size</label>
+                <select id="cakeSize" name="cake_size" required>
+                  <option value="" selected disabled>Select a cake size</option>
+                  <option>2x6 (serves 6-8)</option>
+                  <option>3x6 (serves 9-12)</option>
+                  <option>2x8 (serves 12-16)</option>
+                  <option>3x8 (serves 16-20)</option>
+                  <option>2x10 (serves 20-24)</option>
+                  <option>3x10 (serves 24-32)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="flavorDistribution">Flavor Distribution</label>
+                <select id="flavorDistribution" name="flavor_distribution" required>
+                  <option selected>Layered</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="firstFlavor">First Flavor</label>
+                <select id="firstFlavor" name="first_flavor" required></select>
+              </div>
+              <div class="field">
+                <label for="secondFlavor">Second Flavor</label>
+                <select id="secondFlavor" name="second_flavor" required></select>
+              </div>
+              <div class="field">
+                <label for="pickupDate">Pick Up Date</label>
+                <input id="pickupDate" name="pickup_date" type="date" required>
+                <div class="help">Earliest available date is auto-set.</div>
+              </div>
+              <div class="field">
+                <label for="pickupHour">Pick Up Time</label>
+                <div class="time-grid" aria-label="Pickup time selectors">
+                  <select id="pickupHour" aria-label="Pickup hour" required></select>
+                  <select id="pickupMinute" aria-label="Pickup minutes" required></select>
+                </div>
+                <input id="pickupTime" name="pickup_time" type="hidden" required>
+               <div class="help">Pick up available: 11:00 AM until closing time. Please check store hours in <a href="/locations" class="pickup-link">Locations</a></div>
+              </div>
+              <div class="field full">
+                <label for="pickupLocation">Pick Up Location</label>
+                <select id="pickupLocation" name="pickup_location" required>
+                  <option value="" selected disabled>Select pickup location</option>
+                  <option>Haagen-Dazs North Miami (Causeway Square/1809 NE 123rd Street)</option>
+                  <option>Haagen-Dazs North Beach (6978 Collins Ave)</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="messageChoice">Message on the Cake</label>
+                <select id="messageChoice" name="message_on_cake_choice" required>
+                  <option value="" selected disabled>Select a message</option>
+                  <option>Happy Birthday</option>
+                  <option>Custom - write in Special Instructions</option>
+                </select>
+                <div class="help" id="messageHelp">If you choose Custom, write on "Custom Message on the Cake."</div>
+              </div>
+              <div class="field full" id="customMessageWrap" style="display:none;">
+                <label for="customMessage">Custom Message on the Cake</label>
+                <input id="customMessage" name="custom_message_on_cake" type="text" placeholder="Example: Congrats Maria">
+                <div class="help">Optional. You can also write this in Special Instructions.</div>
+              </div>
+              <div class="field full">
+                <div class="inline-row">
+                  <label for="specialInstructions">Special Instructions</label>
+                  <div class="counter" id="charCounter">0 / 500</div>
+                </div>
+                <textarea id="specialInstructions" name="special_instructions" maxlength="500" placeholder="Allergies, custom message, pickup notes, decorations, etc."></textarea>
+                <div class="help">500 character limit.</div>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn" type="submit" id="submitBtn">Submit Form</button>
+              <div class="status" id="statusMsg" aria-live="polite"></div>
+            </div>
+          </form>
         </div>
-      </section>
-
-      <div class="trustRow" aria-label="Trust and quick info">
-
-      <div class="trustCard">
-        <p class="trustTitle">Easy planning</p>
-        <p class="trustText">Clear check-in details, local guidance, and help planning activities.</p>
       </div>
-      <div class="trustCard">
-        <p class="trustTitle">Unforgettable views</p>
-        <p class="trustText">Sunrise coffee, cloud forest panoramas, and quiet nights under the stars.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-label="Experiences">
-  <div class="sectionHead">
-    <h2 class="h2">Experience the cloud forest</h2>
-    <p class="hint">Choose your pace. Fill your days with nature, wellness, and stunning scenery.</p>
-  </div>
-
-  <div class="grid3" aria-label="Experience tiles">
-    <a class="tile" href="/features/activities/" aria-label="Birdwatching">
-      <div>
-        <p class="tileTitle">Birdwatching</p>
-        <p class="tileText">Spot hummingbirds, toucans, and cloud forest specialties with local guidance.</p>
-      </div>
-      <div class="tileMeta">
-        <span class="badge">Best at sunrise</span>
-        <span>Explore</span>
-      </div>
-    </a>
-
-    <a class="tile" href="/features/activities/" aria-label="Waterfalls">
-      <div>
-        <p class="tileTitle">Waterfalls</p>
-        <p class="tileText">Short hikes to misty falls and viewpoints perfect for photos and cooling off.</p>
-      </div>
-      <div class="tileMeta">
-        <span class="badge">Scenic trails</span>
-        <span>Explore</span>
-      </div>
-    </a>
-
-    <a class="tile" href="/features/amenities/" aria-label="Amenities and wellness">
-      <div>
-        <p class="tileTitle">Wellness</p>
-        <p class="tileText">Slow mornings, nourishing comfort, and space to reset with nature all around you.</p>
-      </div>
-      <div class="tileMeta">
-        <span class="badge">Recharge</span>
-        <span>Explore</span>
-      </div>
-    </a>
-  </div>
-
-  <div class="photoStrip" aria-label="Photo strip">
-    <div class="photoCard">
-      <img src="/assets/images/pages/home/tcfr_images_home_01.jpg" alt="Panoramic mountain view near the retreat" loading="lazy" decoding="async" />
-      <div class="photoCap">Mountain views that feel unreal</div>
-    </div>
-    <div class="photoCard">
-      <img src="/assets/images/pages/home/tcfr_images_home_02.jpg" alt="Cloud forest greenery and trails" loading="lazy" decoding="async" />
-      <div class="photoCap">Cloud forest trails nearby</div>
-    </div>
-    <div class="photoCard">
-      <img src="/assets/images/pages/home/tcfr_images_home_03.jpg" alt="Cozy eco-luxury room interior" loading="lazy" decoding="async" />
-      <div class="photoCap">Curated for calm</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" aria-label="Rooms">
-  <div class="sectionHead">
-    <h2 class="h2">Accommodations crafted for calm</h2>
-    <p class="hint">Quiet nights, cozy details, and views you will want to wake up to.</p>
-  </div>
-
-  <div class="grid3" aria-label="Room tiles">
-    <a class="tile" href="/rooms/panoramic-suite/" aria-label="Panoramic Suite">
-      <div>
-        <p class="tileTitle">Panoramic Suite</p>
-        <p class="tileText">More space, elevated comfort, and the best angles for sunrise views.</p>
-      </div>
-      <div class="tileMeta"><span class="badge">Premium</span><span>View</span></div>
-    </a>
-
-    <a class="tile" href="/rooms/sunrise-room/" aria-label="Sunrise Room">
-      <div>
-        <p class="tileTitle">Sunrise Room</p>
-        <p class="tileText">Warm, peaceful, and designed for slow mornings and mountain air.</p>
-      </div>
-      <div class="tileMeta"><span class="badge">Cozy</span><span>View</span></div>
-    </a>
-
-    <a class="tile" href="/rooms/sunset-room/" aria-label="Sunset Room">
-      <div>
-        <p class="tileTitle">Sunset Room</p>
-        <p class="tileText">A calm retreat for couples and quiet getaways, with soft evening light.</p>
-      </div>
-      <div class="tileMeta"><span class="badge">Relax</span><span>View</span></div>
-    </a>
-  </div>
-</section>
-
-<section class="band" aria-label="Booking call to action">
-  <div>
-    <p class="bandTitle">Ready for your mountain stay?</p>
-    <p class="bandText">
-      Check availability, choose your dates, and book in minutes. If you have questions, contact us and we will help you plan.
-    </p>
-  </div>
-
-  <div class="bandActions" aria-label="Booking actions">
-    <a class="btn primary" href="/booking/">Book Your Stay</a>
-    <a class="btn secondary" href="/contact/">Contact</a>
-  </div>
-</section>
+    </section>
   </main>
   <div id="siteFooter"></div>
-  <script src="/assets/js/site.js?v=3"></script>
+  <script>
+    (function () {
+      function loadInto(id, url) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        fetch(url, { cache: "no-cache" })
+          .then(function (r) { return r.text(); })
+          .then(function (html) { el.innerHTML = html; })
+          .catch(function () { el.innerHTML = ""; });
+      }
+      loadInto("siteHeader", "/assets/includes/header.html");
+      loadInto("siteFooter", "/assets/includes/footer.html");
+    })();
+  </script>
+  <script>
+    (function () {
+      var WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0iumR07OyUWmmkdjcRPRaqqSGBJ-wHGdyP4lPPYCjxOppbJFXnkyzOjVbFRU49QwY/exec";
+      var PROCESSING_DAYS = 2;
+      /* Flavors from your CSV only, in that exact order.
+         Label adds two spaces then (GF) when gf = true. */
+      var flavors = [
+        { name: "Cookies n' Cream", gf: false },
+        { name: "Midnight Cookies n' Cream", gf: false },
+        { name: "Chocolate", gf: true },
+        { name: "Belgian Chocolate", gf: true },
+        { name: "Vanilla", gf: true },
+        { name: "Vanilla Choc Chip", gf: true },
+        { name: "Dulce de Leche", gf: true },
+        { name: "Cookie Dough Choc Chip", gf: false },
+        { name: "Rocky Road", gf: true },
+        { name: "Brownies a la Mode", gf: false },
+        { name: "Coffee", gf: true },
+        { name: "Coffee Chip", gf: true },
+        { name: "Pralines n' Cream", gf: false },
+        { name: "(Vanilla Caramel Pecan)", gf: false },
+        { name: "Strawberry", gf: true },
+        { name: "NY Strawberry Cheesecake", gf: false },
+        { name: "Pistachio", gf: true },
+        { name: "Butter Pecan", gf: true },
+        { name: "Irish Cream Brownie", gf: false },
+        { name: "Mint Chip", gf: true },
+        { name: "Caramel Cone", gf: false },
+        { name: "Pinneaple Cononut", gf: true },
+        { name: "Rum Raisin", gf: true },
+        { name: "Mango Sorbet", gf: true },
+        { name: "Strawberry Sorbet", gf: true },
+        { name: "Raspberry Sorbet", gf: true },
+        { name: "Blueberry Lemon Sorbet", gf: true },
+        { name: "White Choc Raspberry Truffle", gf: true },
+        { name: "Salted Brown Butter Cookie", gf: false }
+      ];
+      var firstFlavor = document.getElementById("firstFlavor");
+      var secondFlavor = document.getElementById("secondFlavor");
+      var pickupDate = document.getElementById("pickupDate");
+      var earliestPickupText = document.getElementById("earliestPickupText");
+      var minDateHint = document.getElementById("minDateHint");
+      var pickupHour = document.getElementById("pickupHour");
+      var pickupMinute = document.getElementById("pickupMinute");
+      var pickupTimeHidden = document.getElementById("pickupTime");
+      var firstName = document.getElementById("firstName");
+      var lastName = document.getElementById("lastName");
+      var phone = document.getElementById("phone");
+      var messageChoice = document.getElementById("messageChoice");
+      var customMessageWrap = document.getElementById("customMessageWrap");
+      var specialInstructions = document.getElementById("specialInstructions");
+      var charCounter = document.getElementById("charCounter");
+      var cakeDesign = document.getElementById("cakeDesign");
+      var cakePreviewImg = document.getElementById("cakePreviewImg");
+      var cakePreviewName = document.getElementById("cakePreviewName");
+      var form = document.getElementById("cakeOrderForm");
+      var statusMsg = document.getElementById("statusMsg");
+      var submitBtn = document.getElementById("submitBtn");
+      /* Requested time rules */
+      var MIN_HOUR_24 = 11;  /* 11 AM */
+      var MAX_HOUR_24 = 19;  /* 7 PM */
+      var MINUTE_OPTIONS = ["00", "15", "30", "45"];
+      function pad2(n) { return (n < 10 ? "0" : "") + n; }
+      function addDays(d, days) {
+        var x = new Date(d.getTime());
+        x.setDate(x.getDate() + days);
+        return x;
+      }
+      function formatLongDate(d) {
+        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        return days[d.getDay()] + ", " + months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+      }
+      function formatISODate(d) {
+        return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+      }
+      function hourLabel(h24) {
+        var ampm = (h24 >= 12) ? "PM" : "AM";
+        var h12 = h24 % 12;
+        if (h12 === 0) h12 = 12;
+        return h12 + " " + ampm;
+      }
+      function setEarliestPickup() {
+        var today = new Date();
+        var earliest = addDays(today, PROCESSING_DAYS);
+        var iso = formatISODate(earliest);
+        pickupDate.min = iso;
+        if (!pickupDate.value) pickupDate.value = iso;
+        earliestPickupText.textContent = formatLongDate(earliest);
+        minDateHint.textContent = "Earliest pickup date: " + iso;
+      }
+      function fillFlavorSelect(selectEl) {
+        selectEl.innerHTML = "";
+        var opt0 = document.createElement("option");
+        opt0.value = "";
+        opt0.textContent = "Select a flavor";
+        opt0.disabled = true;
+        opt0.selected = true;
+        selectEl.appendChild(opt0);
+        for (var i = 0; i < flavors.length; i++) {
+          var item = flavors[i] || {};
+          var name = String(item.name || "").trim();
+          if (!name) continue;
+          var label = name + (item.gf ? "  (GF)" : "");
+          var opt = document.createElement("option");
+          opt.value = name;
+          opt.textContent = label;
+          selectEl.appendChild(opt);
+        }
+      }
+      function capFirst(s) {
+        s = String(s || "").trim();
+        if (!s) return "";
+        return s.charAt(0).toUpperCase() + s.slice(1);
+      }
+      function formatPhone(value) {
+        var digits = String(value || "").replace(/\D/g, "").slice(0, 10);
+        if (digits.length === 0) return "";
+        if (digits.length < 4) return "(" + digits;
+        if (digits.length < 7) return "(" + digits.slice(0,3) + ") " + digits.slice(3);
+        return "(" + digits.slice(0,3) + ") " + digits.slice(3,6) + "-" + digits.slice(6);
+      }
+      function setStatus(text, kind) {
+        statusMsg.textContent = text || "";
+        statusMsg.className = "status" + (kind ? " " + kind : "");
+      }
+      function toggleCustomMessage() {
+        var v = messageChoice.value || "";
+        if (v.indexOf("Custom") === 0) {
+          customMessageWrap.style.display = "grid";
+        } else {
+          customMessageWrap.style.display = "none";
+        }
+      }
+      function updateCounter() {
+        var n = (specialInstructions.value || "").length;
+        charCounter.textContent = n + " / 500";
+      }
+      function normalizeKey(s) {
+        return String(s || "")
+          .trim()
+          .replace(/\u2019/g, "'")
+          .replace(/\u2018/g, "'")
+          .replace(/\s+/g, " ");
+      }
+      function getCakeImageUrl(cakeName) {
+        var key = normalizeKey(cakeName);
+        var map = {
+          "Ribbon Cake": "/assets/images/cakes/RibbonCake_Whole_041725.jpg",
+          "Dulce de Leche Cake": "/assets/images/cakes/DulcedeLecheCake_Whole_041725.jpg",
+          "Coffee Crunch Cake": "/assets/images/cakes/CoffeeCrunchCake_Whole_041725.jpg",
+          "Rose's Birthday Cake": "/assets/images/cakes/RosesBirthdayCake_Whole_041725.jpg",
+          "Reuben's Birthday Cake": "/assets/images/cakes/ReubensBirthdayCake_Whole_041725.jpg",
+          "Cookies & Cream Cake": "/assets/images/cakes/CookiesAndCreamCake_Whole_041725.jpg",
+          "Triple Chocolate Cake": "/assets/images/cakes/TripleChocolateCake_Whole_041725.jpg",
+          "Just Because Cake": "/assets/images/cakes/JustBecauseCake_Whole_041725.jpg"
+        };
+        return map[key] || "/assets/images/placeholders/hd_cakes_01.png";
+      }
+      function updateCakePreview() {
+        var selected = (cakeDesign.value || "").trim();
+        if (!selected) {
+          cakePreviewName.textContent = "Choose a cake design to preview";
+          cakePreviewImg.src = "/assets/images/placeholders/hd_cakes_01.png";
+          cakePreviewImg.alt = "";
+          return;
+        }
+        cakePreviewName.textContent = selected;
+        var img = getCakeImageUrl(selected);
+        cakePreviewImg.src = img;
+        cakePreviewImg.alt = selected;
+      }
+      function fillTimeSelectors() {
+        if (!pickupHour || !pickupMinute) return;
+        pickupHour.innerHTML = "";
+        pickupMinute.innerHTML = "";
+        var h0 = document.createElement("option");
+        h0.value = "";
+        h0.textContent = "Hour";
+        h0.disabled = true;
+        h0.selected = true;
+        pickupHour.appendChild(h0);
+        for (var h = MIN_HOUR_24; h <= MAX_HOUR_24; h++) {
+          var optH = document.createElement("option");
+          optH.value = String(h);
+          optH.textContent = hourLabel(h);
+          pickupHour.appendChild(optH);
+        }
+        var m0 = document.createElement("option");
+        m0.value = "";
+        m0.textContent = "Min";
+        m0.disabled = true;
+        m0.selected = true;
+        pickupMinute.appendChild(m0);
+        for (var i = 0; i < MINUTE_OPTIONS.length; i++) {
+          var mm = MINUTE_OPTIONS[i];
+          var optM = document.createElement("option");
+          optM.value = mm;
+          optM.textContent = ":" + mm;
+          pickupMinute.appendChild(optM);
+        }
+        /* Default to 11:15 AM */
+        pickupHour.value = String(MIN_HOUR_24);
+        pickupMinute.value = "15";
+        syncHiddenTime();
+        enforceTimeBounds();
+      }
+      function enforceTimeBounds() {
+        var h = parseInt(pickupHour.value || "0", 10);
+        var m = pickupMinute.value || "";
+        /* Disable :00 for 11 AM (because earliest is 11:15) */
+        for (var i = 0; i < pickupMinute.options.length; i++) {
+          var opt = pickupMinute.options[i];
+          if (!opt || !opt.value) continue;
+          opt.disabled = false;
+        }
+        if (h === 11) {
+          for (var j = 0; j < pickupMinute.options.length; j++) {
+            var o = pickupMinute.options[j];
+            if (o && o.value === "00") o.disabled = true;
+          }
+          if (m === "00") pickupMinute.value = "15";
+        }
+        /* Latest is 7:45 PM, and our minute list stops at :45 so nothing else needed */
+        if (h === 19) {
+          /* keep :00, :15, :30, :45 all allowed (<= 7:45) */
+        }
+        syncHiddenTime();
+      }
+      function syncHiddenTime() {
+        var h = parseInt(pickupHour.value || "0", 10);
+        var m = pickupMinute.value || "";
+        if (!h || !m) {
+          pickupTimeHidden.value = "";
+          return;
+        }
+        pickupTimeHidden.value = pad2(h) + ":" + m;
+      }
+      fillFlavorSelect(firstFlavor);
+      fillFlavorSelect(secondFlavor);
+      setEarliestPickup();
+      fillTimeSelectors();
+      toggleCustomMessage();
+      updateCounter();
+      updateCakePreview();
+      firstName.addEventListener("blur", function () { firstName.value = capFirst(firstName.value); });
+      lastName.addEventListener("blur", function () { lastName.value = capFirst(lastName.value); });
+      phone.addEventListener("input", function () {
+        phone.value = formatPhone(phone.value);
+      });
+      pickupHour.addEventListener("change", enforceTimeBounds);
+      pickupMinute.addEventListener("change", enforceTimeBounds);
+      messageChoice.addEventListener("change", toggleCustomMessage);
+      specialInstructions.addEventListener("input", updateCounter);
+      cakeDesign.addEventListener("change", updateCakePreview);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        setStatus("", "");
+        syncHiddenTime();
+        var data = {
+          first_name: (document.getElementById("firstName").value || "").trim(),
+          last_name: (document.getElementById("lastName").value || "").trim(),
+          phone: (document.getElementById("phone").value || "").trim(),
+          email: (document.getElementById("email").value || "").trim(),
+          cake_design: (document.getElementById("cakeDesign").value || "").trim(),
+          cake_size: (document.getElementById("cakeSize").value || "").trim(),
+          first_flavor: (document.getElementById("firstFlavor").value || "").trim(),
+          second_flavor: (document.getElementById("secondFlavor").value || "").trim(),
+          flavor_distribution: (document.getElementById("flavorDistribution").value || "").trim(),
+          pickup_date: (document.getElementById("pickupDate").value || "").trim(),
+          pickup_time: (document.getElementById("pickupTime").value || "").trim(),
+          pickup_location: (document.getElementById("pickupLocation").value || "").trim(),
+          message_on_cake_choice: (document.getElementById("messageChoice").value || "").trim(),
+          custom_message_on_cake: (document.getElementById("customMessage").value || "").trim(),
+          special_instructions: (document.getElementById("specialInstructions").value || "").trim()
+        };
+        var required = [
+          "first_name","last_name","phone","email","cake_design","cake_size",
+          "first_flavor","second_flavor","flavor_distribution",
+          "pickup_date","pickup_time","pickup_location","message_on_cake_choice"
+        ];
+        var missing = [];
+        for (var i = 0; i < required.length; i++) {
+          if (!String(data[required[i]] || "").trim()) missing.push(required[i]);
+        }
+        if (missing.length) {
+          setStatus("Please complete all required fields before submitting.", "err");
+          return;
+        }
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Submitting...";
+        setStatus("Submitting your order request...", "");
+        fetch(WEB_APP_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res && res.ok) {
+            setStatus("Success. Your order request was received. A confirmation email was sent.", "ok");
+            form.reset();
+            fillFlavorSelect(firstFlavor);
+            fillFlavorSelect(secondFlavor);
+            setEarliestPickup();
+            fillTimeSelectors();
+            toggleCustomMessage();
+            updateCounter();
+            updateCakePreview();
+          } else {
+            setStatus("Could not submit. " + (res && res.error ? res.error : "Please try again."), "err");
+          }
+        })
+        .catch(function () {
+          setStatus("Network error. Please try again.", "err");
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit Form";
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
