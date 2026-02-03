@@ -757,16 +757,26 @@
           optM.textContent = ":" + mm;
           pickupMinute.appendChild(optM);
         }
-        /* Default to 11:00 AM */
+        /* Default to 11:15 AM */
         pickupHour.value = String(MIN_HOUR_24);
-        pickupMinute.value = "00";
+        pickupMinute.value = "15";
         syncHiddenTime();
         enforceTimeBounds();
       }
       function enforceTimeBounds() {
         var h = parseInt(pickupHour.value || "0", 10);
         var m = pickupMinute.value || "";
-        /* Earliest pickup is 11:00 AM, so all minute options are allowed at 11 AM. */
+        /* Disable :00 for 11 AM (because earliest is 11:15) */
+        for (var i = 0; i < pickupMinute.options.length; i++) {
+          var opt = pickupMinute.options[i];
+          if (!opt || !opt.value) continue;
+          opt.disabled = false;
+        }
+        if (h === 11) {
+          for (var j = 0; j < pickupMinute.options.length; j++) {
+            var o = pickupMinute.options[j];
+            if (o && o.value === "00") o.disabled = true;
+          }
           if (m === "00") pickupMinute.value = "15";
         }
         /* Latest is 7:45 PM, and our minute list stops at :45 so nothing else needed */
