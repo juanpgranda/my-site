@@ -296,29 +296,21 @@
     }
 
     .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 10px;
-      border-radius: var(--radius-btn);
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(101, 11, 50, 0.14);
-      color: rgba(101, 11, 50, 0.92);
-      font-weight: 900;
-      font-size: 12px;
-      line-height: 1;
-      white-space: nowrap;
-      min-width: 0;
-    }
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 0;
+  background: rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.12);
+  color: rgba(0,0,0,0.75);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
 
-    .chip .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px !important;
-      background: var(--hd-gold-medium);
-      box-shadow: 0 0 0 2px rgba(210, 153, 55, 0.18);
-      flex: 0 0 auto;
-    }
+
+    .chip .dot { display: none; }
 
     .snap-card { padding: 0; overflow: hidden; }
 
@@ -538,7 +530,23 @@
       .micro-head { flex-direction: column; align-items: flex-start; }
       .btn-line1, .btn-line2 { white-space: normal; }
     }
-  </style>
+  
+/* Reviews: Guest highlight tags should look like neutral labels (not buttons) */
+.micro-block .chips .chip {
+  background: rgba(0,0,0,0.03) !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  color: var(--hd-burgundy) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 6px 10px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  min-height: 0 !important;
+  cursor: default !important;
+}
+
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -583,12 +591,12 @@
               <div class="micro-sub">Common themes across both locations</div>
             </div>
             <div class="chips" aria-label="Guest highlights">
-              <span class="chip"><span class="dot" aria-hidden="true"></span>Friendly staff</span>
-              <span class="chip"><span class="dot" aria-hidden="true"></span>Clean shop</span>
-              <span class="chip"><span class="dot" aria-hidden="true"></span>Great flavors</span>
-              <span class="chip"><span class="dot" aria-hidden="true"></span>Ice cream cakes</span>
-              <span class="chip"><span class="dot" aria-hidden="true"></span>Family friendly</span>
-              <span class="chip"><span class="dot" aria-hidden="true"></span>Quick pickup</span>
+              <span class="chip">Friendly staff</span>
+              <span class="chip">Clean shop</span>
+              <span class="chip">Great flavors</span>
+              <span class="chip">Ice cream cakes</span>
+              <span class="chip">Family friendly</span>
+              <span class="chip">Quick pickup</span>
             </div>
           </div>
 
