@@ -388,8 +388,8 @@
       <div class="container">
         <div class="kicker">Pickup info</div>
         <div class="info-card" id="pickupInfo">
-          Orders placed require <strong>2 day(s)</strong> for processing.<br>
-          Earliest pickup: <strong id="earliestPickupText">Calculating...</strong>.<br>
+          Orders placed require <strong>2 day(s)</strong> for processing<br>
+          Earliest pickup: <strong id="earliestPickupText">Calculating...</strong><br>
           If needed sooner, please contact shop for current inventory availability <a href="/locations" class="pickup-link">Locations</a><br>
           All flavors are manufactured Kosher from factory<br>
           Cakes are assembled and decorated in the shop<br>
@@ -424,7 +424,7 @@
               </div>
               <div class="field">
                 <label for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(786) 555-1212" required>
+                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(XXX) XXX-XXXX" required>
               </div>
               <div class="field">
                 <label for="email">Email Address</label>
@@ -757,34 +757,17 @@
           optM.textContent = ":" + mm;
           pickupMinute.appendChild(optM);
         }
-        /* Default to 11:15 AM */
+        /* Default to 11:00 AM */
         pickupHour.value = String(MIN_HOUR_24);
-        pickupMinute.value = "15";
+        pickupMinute.value = "00";
         syncHiddenTime();
         enforceTimeBounds();
       }
       function enforceTimeBounds() {
-        var h = parseInt(pickupHour.value || "0", 10);
-        var m = pickupMinute.value || "";
-        /* Disable :00 for 11 AM (because earliest is 11:15) */
-        for (var i = 0; i < pickupMinute.options.length; i++) {
-          var opt = pickupMinute.options[i];
-          if (!opt || !opt.value) continue;
-          opt.disabled = false;
-        }
-        if (h === 11) {
-          for (var j = 0; j < pickupMinute.options.length; j++) {
-            var o = pickupMinute.options[j];
-            if (o && o.value === "00") o.disabled = true;
-          }
-          if (m === "00") pickupMinute.value = "15";
-        }
-        /* Latest is 7:45 PM, and our minute list stops at :45 so nothing else needed */
-        if (h === 19) {
-          /* keep :00, :15, :30, :45 all allowed (<= 7:45) */
-        }
+        // With earliest pickup at 11:00 AM, no minute disabling is needed.
         syncHiddenTime();
       }
+
       function syncHiddenTime() {
         var h = parseInt(pickupHour.value || "0", 10);
         var m = pickupMinute.value || "";
