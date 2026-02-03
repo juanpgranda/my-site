@@ -102,7 +102,7 @@ body {
   /* Corners */
   --hd-radius-card: 0px;
   --hd-radius-field: 0px;
-  --hd-radius-button: 12px;
+  --hd-radius-button: 14px;
 
   /* Button colors (defaults) */
   --hd-btn-bg: var(--hd-burgundy);
@@ -166,7 +166,9 @@ a.btn,
 .btn-pill,
 .btn-primary,
 .btn-secondary,
-.btn-outline {
+.btn-outline,
+.chip
+ {
   appearance: none;
   -webkit-appearance: none;
   border-radius: var(--hd-radius-button) !important;
@@ -176,7 +178,7 @@ a.btn,
   font-weight: 900;
   text-decoration: none;
   line-height: 1;
-  padding: 12px 18px;
+  padding: 12px 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -196,7 +198,9 @@ a.btn:hover,
 .btn-pill:hover,
 .btn-primary:hover,
 .btn-secondary:hover,
-.btn-outline:hover {
+.btn-outline:hover,
+.chip:hover {
+
   background: var(--hd-btn-bg-hover) !important;
 }
 
@@ -206,7 +210,9 @@ input[type='submit']:focus,
 input[type='reset']:focus,
 a.btn:focus,
 .btn:focus,
-.button:focus {
+.button:focus,
+.chip:focus {
+
   outline: 3px solid rgba(101, 11, 50, 0.18);
   outline-offset: 2px;
 }
