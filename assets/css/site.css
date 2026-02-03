@@ -105,11 +105,11 @@ body {
   --hd-radius-button: 999px;
 
   /* Button colors (defaults) */
-  --hd-btn-bg: rgba(249, 240, 224, 0.85);
-  --hd-btn-border: rgba(101, 11, 50, 0.25);
-  --hd-btn-text: var(--hd-burgundy);
-  --hd-btn-bg-hover: rgba(249, 240, 224, 1);
-  --hd-btn-border-hover: rgba(101, 11, 50, 0.35);
+  --hd-btn-bg: var(--hd-burgundy);
+  --hd-btn-border: var(--hd-burgundy);
+  --hd-btn-text: var(--hd-white);
+  --hd-btn-bg-hover: rgba(101, 11, 50, 0.92);
+  --hd-btn-border-hover: rgba(101, 11, 50, 0.92);
 }
 
 /* Square cards (site-wide) */
@@ -171,7 +171,7 @@ a.btn,
   -webkit-appearance: none;
   border-radius: var(--hd-radius-button) !important;
   background: var(--hd-btn-bg) !important;
-  border: 2px solid var(--hd-btn-border) !important;
+  border: 0 !important;
   color: var(--hd-btn-text) !important;
   font-weight: 800;
   text-decoration: none;
@@ -197,7 +197,6 @@ a.btn:hover,
 .btn-secondary:hover,
 .btn-outline:hover {
   background: var(--hd-btn-bg-hover) !important;
-  border-color: var(--hd-btn-border-hover) !important;
 }
 
 button:focus,
