@@ -102,7 +102,7 @@ body {
   /* Corners */
   --hd-radius-card: 0px;
   --hd-radius-field: 0px;
-  --hd-radius-button: 999px;
+  --hd-radius-button: 12px;
 
   /* Button colors (defaults) */
   --hd-btn-bg: var(--hd-burgundy);
@@ -173,7 +173,7 @@ a.btn,
   background: var(--hd-btn-bg) !important;
   border: 0 !important;
   color: var(--hd-btn-text) !important;
-  font-weight: 800;
+  font-weight: 900;
   text-decoration: none;
   line-height: 1;
   padding: 12px 18px;
@@ -182,7 +182,8 @@ a.btn,
   justify-content: center;
   gap: 10px;
   cursor: pointer;
-  box-shadow: none !important;
+  font-family: var(--font-body);
+  box-shadow: var(--hd-shadow-soft) !important;
 }
 
 button:hover,
