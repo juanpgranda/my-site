@@ -530,7 +530,23 @@
       .micro-head { flex-direction: column; align-items: flex-start; }
       .btn-line1, .btn-line2 { white-space: normal; }
     }
-  </style>
+  
+/* Reviews: Guest highlight tags should look like neutral labels (not buttons) */
+.micro-block .chips .chip {
+  background: rgba(0,0,0,0.03) !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  color: rgba(0,0,0,0.75) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 6px 10px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  min-height: 0 !important;
+  cursor: default !important;
+}
+
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -584,7 +600,7 @@
             </div>
           </div>
 
-          <div class="note">Ratings and review counts are based on Google Business Profiles</div>
+          <div class="note">Ratings and review counts are based on Google Business Profiles.</div>
         </div>
 
         <div class="panel snap-card" aria-label="Locations at a glance">
@@ -606,7 +622,7 @@
                   <div class="count">151 reviews</div>
                 </div>
               </div>
-              <a class="btn btn-soft" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer">Write a North Miami review.</a>
+              <a class="btn btn-soft" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer">Write a North Miami review</a>
             </div>
 
             <div class="loc-block" aria-label="North Beach snapshot">
