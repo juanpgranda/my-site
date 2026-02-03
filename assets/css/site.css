@@ -59,8 +59,10 @@
 
   --font-body: "HurmeGeometric", "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
+  /* Unified light gold band */
   --band-gold-bg: rgba(249, 230, 195, 0.35);
 
+  /* Container padding (site-wide, keeps mobile from feeling stretched) */
   --container-pad: 20px;
   --container-max: 1120px;
 }
@@ -90,97 +92,148 @@ body {
 }
 
 /* ==========================================================================
-   Sitewide Button System (canonical Cakes style)
+   Global UI overrides (site-wide)
+   - Square cards + square form fields
+   - Unified button style (matches your reference button)
+   Edit these variables to tweak later.
    ========================================================================== */
 
 :root {
-  --radius-btn: 12px;
+  /* Corners */
+  --hd-radius-card: 0px;
+  --hd-radius-field: 0px;
+  --hd-radius-button: 999px;
+
+  /* Button colors (defaults) */
+  --hd-btn-bg: rgba(249, 240, 224, 0.85);
+  --hd-btn-border: rgba(101, 11, 50, 0.25);
+  --hd-btn-text: var(--hd-burgundy);
+  --hd-btn-bg-hover: rgba(249, 240, 224, 1);
+  --hd-btn-border-hover: rgba(101, 11, 50, 0.35);
 }
 
-.btn,
-a.btn,
-button.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 18px;
-  border-radius: var(--radius-btn);
-  text-decoration: none;
-  font-weight: 900;
-  border: 0;
-  cursor: pointer;
-  user-select: none;
-  font-family: var(--font-body);
-  background: var(--hd-burgundy);
-  color: var(--hd-white);
-  box-shadow: var(--hd-shadow-soft);
-  line-height: 1;
-  white-space: nowrap;
+/* Square cards (site-wide) */
+.card,
+.hd-card,
+.panel,
+.box,
+.section-card,
+.location-card,
+.info-card,
+.form-card,
+.faq-card,
+.tile,
+.module,
+.surface,
+.elevated,
+[class*='card'],
+[class*='panel'] {
+  border-radius: var(--hd-radius-card) !important;
 }
 
-.btn:hover,
-.btn:focus,
-a.btn:hover,
-a.btn:focus,
-button.btn:hover,
-button.btn:focus {
-  outline: none;
-  background: rgba(101, 11, 50, 0.92);
+/* If images are meant to be flush with square cards */
+.card img,
+.hd-card img,
+.location-card img,
+.info-card img {
+  border-radius: 0 !important;
 }
 
+/* Square form fields (site-wide) */
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='number'],
+input[type='date'],
+input[type='time'],
+input[type='search'],
+input[type='url'],
+select,
+textarea {
+  border-radius: var(--hd-radius-field) !important;
+}
+
+/* Unified button style (matches your reference button)
+   Applies to buttons, submit inputs, and anchor buttons.
+*/
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+a.btn,
+.btn,
+.button,
+.btn-pill,
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: var(--hd-radius-button) !important;
+  background: var(--hd-btn-bg) !important;
+  border: 2px solid var(--hd-btn-border) !important;
+  color: var(--hd-btn-text) !important;
+  font-weight: 800;
+  text-decoration: none;
+  line-height: 1;
+  padding: 12px 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 18px;
-  border-radius: var(--radius-btn);
-  font-weight: 900;
-  border: 0;
+  gap: 10px;
   cursor: pointer;
-  user-select: none;
-  font-family: var(--font-body);
-  background: var(--hd-burgundy);
-  color: var(--hd-white);
-  box-shadow: var(--hd-shadow-soft);
-  line-height: 1;
-  white-space: nowrap;
+  box-shadow: none !important;
 }
 
 button:hover,
+input[type='button']:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+a.btn:hover,
+.btn:hover,
+.button:hover,
+.btn-pill:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-outline:hover {
+  background: var(--hd-btn-bg-hover) !important;
+  border-color: var(--hd-btn-border-hover) !important;
+}
+
 button:focus,
-input[type="button"]:hover,
-input[type="button"]:focus,
-input[type="submit"]:hover,
-input[type="submit"]:focus,
-input[type="reset"]:hover,
-input[type="reset"]:focus {
-  outline: none;
-  background: rgba(101, 11, 50, 0.92);
+input[type='button']:focus,
+input[type='submit']:focus,
+input[type='reset']:focus,
+a.btn:focus,
+.btn:focus,
+.button:focus {
+  outline: 3px solid rgba(101, 11, 50, 0.18);
+  outline-offset: 2px;
 }
 
-.order-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 14px;
-  color: var(--hd-white);
-  padding: 12px 18px;
-  border-radius: var(--radius-btn);
-  border: 0;
-  background: var(--hd-burgundy);
-  box-shadow: var(--hd-shadow-soft);
-  line-height: 1;
-  white-space: nowrap;
+button:disabled,
+input[type='button']:disabled,
+input[type='submit']:disabled,
+input[type='reset']:disabled,
+.btn.disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.order-link:hover,
-.order-link:focus {
-  outline: none;
-  background: rgba(101, 11, 50, 0.92);
+/* Remove rounding on any elements that were previously overly rounded */
+.rounded,
+.rounded-lg,
+.rounded-xl,
+.rounded-2xl {
+  border-radius: var(--hd-radius-card) !important;
+}
+
+/* Keep hamburger button from inheriting pill styling if you want it square.
+   If you prefer the hamburger to remain as-is, leave this block.
+*/
+.hamburger,
+.menu-toggle,
+.hd-menu-toggle {
+  border-radius: 14px !important;
 }
