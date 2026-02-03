@@ -73,10 +73,7 @@
 
   <style>
     :root {
-      --container: 1120px;
-      --radius-lg: 0;
-      --radius-md: 0;
-      --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+      --container: 1120px;      --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
       --border-soft: 1px solid rgba(0,0,0,0.08);
       --text-muted: rgba(101, 11, 50, 0.72);
       --panel: rgba(249, 230, 195, 0.45);
@@ -113,7 +110,7 @@
     #siteHeader, #siteFooter { margin: 0; padding: 0; }
 
     .page-hero {
-      background: #ffffff;
+      background: var(--band-gold-bg, #ffffff);
       border-top: 1px solid rgba(0,0,0,0.06);
       border-bottom: 1px solid rgba(0,0,0,0.06);
       padding: 18px 0 16px;
@@ -195,7 +192,7 @@
 
     .card {
       border: var(--border-soft);
-      border-radius: 0;
+      border-radius: var(--radius-card);
       background: var(--hd-white);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       overflow: hidden;
@@ -226,7 +223,7 @@
 
     .hero-card {
       border: var(--border-soft);
-      border-radius: 0;
+      border-radius: var(--radius-card);
       background: rgba(255,255,255,0.92);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
       overflow: hidden;
@@ -286,7 +283,7 @@
 
     .gallery {
       position: relative;
-      border-radius: 0;
+      border-radius: var(--radius-card);
       overflow: hidden;
       background: #000;
       border: var(--border-soft);
@@ -372,7 +369,7 @@
     .map-wrap {
       border: 1px solid rgba(0,0,0,0.10);
       background: rgba(249, 230, 195, 0.20);
-      border-radius: 0;
+      border-radius: var(--radius-card);
       overflow: hidden;
       margin-top: 12px;
     }
@@ -414,7 +411,7 @@
 
     .info-box {
       border: 1px solid rgba(0,0,0,0.10);
-      border-radius: 0;
+      border-radius: var(--radius-card);
       background: rgba(249, 230, 195, 0.22);
       padding: 12px;
     }
@@ -440,7 +437,7 @@
 
     details.faq-item {
       border: 1px solid rgba(0,0,0,0.10);
-      border-radius: 0;
+      border-radius: var(--radius-card);
       background: rgba(255,255,255,0.88);
       padding: 12px;
     }
@@ -570,7 +567,7 @@
 
     .video-slot {
       border: var(--border-soft);
-      border-radius: 0;
+      border-radius: var(--radius-card);
       background: rgba(249,230,195,0.25);
       box-shadow: var(--shadow-soft);
       overflow: hidden;
