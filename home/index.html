@@ -45,7 +45,7 @@
     * { box-sizing: border-box; }
 
     /* Override site-wide cream background for this page */
-    body { background: #ffffff; }
+    body { background: var(--band-gold-bg); }
 
     .container {
       max-width: var(--container);
@@ -352,24 +352,6 @@
       margin-top: 14px;
     }
 
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 999px !important;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      background: var(--band-gold-bg);
-      color: var(--hd-burgundy);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 1;
-    }
-
-    .chip:hover,
-    .chip:focus { background: rgba(249, 230, 195, 0.78); outline: none; }
-
     .icon-block {
       margin-top: 16px;
       border-top: 1px solid rgba(0,0,0,0.08);
@@ -576,8 +558,8 @@
               </div>
 
               <div class="actions">
-                <a class="chip" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
-                <a class="chip" href="tel:+17869638203">Call</a>
+                <a class="btn" href="https://maps.app.goo.gl/QsDxzKYF9mttgKL28" target="_blank" rel="noopener noreferrer">Directions</a>
+                <a class="btn" href="tel:+17869638203">Call</a>
               </div>
 
               <div class="icon-block">
@@ -635,8 +617,8 @@
               </div>
 
               <div class="actions">
-                <a class="chip" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Directions</a>
-                <a class="chip" href="tel:+17866336485">Call</a>
+                <a class="btn" href="https://maps.app.goo.gl/PiaAZmepMMh9CRV7A" target="_blank" rel="noopener noreferrer">Directions</a>
+                <a class="btn" href="tel:+17866336485">Call</a>
               </div>
 
               <div class="icon-block">
