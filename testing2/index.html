@@ -175,17 +175,15 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 18px;
+      gap: 10px;
+      padding: 10px 12px;
       border-radius: var(--radius-btn);
-      text-decoration: none;
-      font-weight: 900;
       border: 1px solid rgba(101, 11, 50, 0.18);
-      cursor: pointer;
-      user-select: none;
-      font-family: var(--font-body);
-      background: var(--hd-card-bg);
+      background: var(--band-gold-bg);
       color: var(--hd-burgundy);
-      box-shadow: var(--hd-shadow-soft);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
       line-height: 1;
       white-space: nowrap;
     }
@@ -193,22 +191,16 @@
     .chip.primary {
       background: var(--hd-burgundy);
       color: var(--hd-white);
-      border-color: var(--hd-burgundy);
-      font-weight: 900;
+      border-color: transparent;
+      font-weight: 800;
     }
 
     .chip:hover,
-    .chip:focus {
-      outline: none;
-      background: rgba(249, 230, 195, 0.55);
-    }
+    .chip:focus { background: rgba(249, 230, 195, 0.55); outline: none; }
 
     .chip.primary:hover,
-    .chip.primary:focus {
-      outline: none;
-      background: rgba(101, 11, 50, 0.92);
-      border-color: rgba(101, 11, 50, 0.92);
-    }
+    .chip.primary:focus { background: rgba(101, 11, 50, 0.92); }
+
     /* MAP */
     .map-wrap {
       border: 1px solid rgba(0,0,0,0.10);
