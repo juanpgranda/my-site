@@ -4,595 +4,498 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reviews | Häagen-Dazs</title>
-  <meta name="description" content="Read real guest reviews for our North Miami and Collins North Beach Häagen-Dazs shops. See ratings, highlights, and write a review in minutes.">
+  <meta name="description" content="Read what guests say about our North Miami and North Beach shops and leave a quick Google review for the location you visited.">
   <link rel="canonical" href="https://www.hdicecream.com/reviews/">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Häagen-Dazs">
   <meta property="og:title" content="Reviews | Häagen-Dazs">
-  <meta property="og:description" content="Read real guest reviews for our North Miami and Collins North Beach Häagen-Dazs shops. See ratings, highlights, and write a review in minutes.">
+  <meta property="og:description" content="Read what guests say about our North Miami and North Beach shops and leave a quick Google review for the location you visited.">
   <meta property="og:url" content="https://www.hdicecream.com/reviews/">
   <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Häagen-Dazs reviews and ratings for North Miami and Collins North Beach.">
+  <meta property="og:image:alt" content="Häagen-Dazs reviews for North Miami and North Beach.">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Reviews | Häagen-Dazs">
-  <meta name="twitter:description" content="Read real guest reviews for our North Miami and Collins North Beach Häagen-Dazs shops. See ratings, highlights, and write a review in minutes.">
+  <meta name="twitter:description" content="Read what guests say about our North Miami and North Beach shops and leave a quick Google review for the location you visited.">
   <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
+
   <link rel="icon" href="/assets/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   <link rel="manifest" href="/assets/images/site.webmanifest">
   <meta name="theme-color" content="#650B32">
+
   <link rel="stylesheet" href="/assets/css/site.css">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ3XB37TBM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-JJ3XB37TBM");
-  </script>
-
   <style>
-  :root{
-    --container: 1120px;
-    --shadow: 0 10px 30px rgba(0,0,0,0.08);
-    --line: 1px solid rgba(0,0,0,0.10);
-    --muted: rgba(101, 11, 50, 0.72);
-    --cream-1: rgba(249,230,195,0.22);
-    --cream-2: rgba(249,230,195,0.36);
-    --cream-3: rgba(249,230,195,0.55);
-  }
+    :root{
+      --container: 1120px;
+      --text-muted: rgba(101, 11, 50, 0.72);
+      --panel: var(--band-gold-bg);
+      --card: var(--hd-card-bg);
+      --line: rgba(0,0,0,0.08);
+    }
 
-  *{ box-sizing:border-box; }
+    *{ box-sizing: border-box; }
 
-  .container{
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+    .container{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-  .skip-link{
-    position:absolute;
-    left:-9999px;
-    top:10px;
-    background: var(--hd-burgundy);
-    color: var(--hd-white);
-    padding:10px 12px;
-    border-radius:0;
-    z-index:9999;
-    text-decoration:none;
-    font-weight:800;
-  }
-  .skip-link:focus{ left:10px; }
+    .skip-link{
+      position:absolute;
+      left:-9999px;
+      top:10px;
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+      padding:10px 12px;
+      z-index:9999;
+      text-decoration:none;
+      font-weight:800;
+      border-radius:0;
+    }
+    .skip-link:focus{ left:10px; }
 
-  #siteHeader, #siteFooter{ margin:0; padding:0; }
+    #siteHeader, #siteFooter{ margin:0; padding:0; }
 
-  .hero{
-    background: var(--hd-white);
-    padding: 26px 0 18px;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
+    /* HERO */
+    .page-hero{
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+    }
+    .kicker{
+      display:inline-block;
+      font-weight:900;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      font-size:12px;
+      color: rgba(101, 11, 50, 0.55);
+      margin: 0 0 10px;
+    }
+    .page-hero h1{
+      margin: 0 0 10px;
+      font-size: 58px;
+      line-height: 1.06;
+      color: var(--hd-burgundy);
+      font-weight: 700;
+    }
+    .page-hero p{
+      margin: 0;
+      font-size: 20px;
+      color: var(--text-muted);
+      max-width: 84ch;
+      line-height: 1.55;
+      font-weight: 400;
+    }
 
-  .kicker{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    font-weight:900;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    font-size:12px;
-    color: rgba(101, 11, 50, 0.75);
-    margin-bottom: 10px;
-  }
+    /* TOP TRUST STRIP */
+    .trust{
+      margin-top: 14px;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .trustScore{
+      display:flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .trustScore .score{
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--hd-burgundy);
+      line-height: 1;
+    }
+    .trustScore .stars{
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: rgba(189, 131, 36, 0.95);
+      font-weight: 900;
+    }
+    .trustScore .meta{
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
 
-  .hero h1{
-    margin:0 0 10px;
-    font-size:64px;
-    line-height:1.06;
-    color: var(--hd-burgundy);
-    letter-spacing:-0.02em;
-  }
+    .quickJump{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-  .lead{
-    margin:0;
-    color: var(--muted);
-    font-size:22px;
-    line-height:1.6;
-    max-width: 90ch;
-  }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--radius-btn);
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      background: rgba(255,255,255,0.65);
+      color: var(--hd-burgundy);
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .chip.primary{
+      background: var(--hd-burgundy);
+      color: var(--hd-white);
+      border-color: transparent;
+      font-weight: 900;
+    }
+    .chip:hover,
+    .chip:focus{
+      outline:none;
+      background: rgba(249, 230, 195, 0.55);
+    }
+    .chip.primary:hover,
+    .chip.primary:focus{
+      background: rgba(101, 11, 50, 0.92);
+    }
 
-  .deck{
-    padding: 16px 0 26px;
-    background: var(--hd-white);
-  }
+    /* PANEL */
+    .section-panel{
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 26px 0 34px;
+    }
 
-  .grid-2{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    align-items: start;
-  }
+    /* LOCATION GRID */
+    .locGrid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+      align-items: start;
+    }
 
-  .card{
-    background:#fff;
-    border: var(--line);
-    border-radius:0;
-    box-shadow: var(--shadow);
-    overflow:hidden;
-    min-width:0;
-  }
+    .locCard{
+      background: var(--card);
+      border: var(--hd-border-soft);
+      border-radius: 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      overflow: hidden;
+      display:grid;
+    }
 
-  .cardHead{
-    padding: 14px 16px;
-    background: var(--cream-1);
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    display:flex;
-    align-items:flex-start;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+    .locBody{
+      padding: 18px;
+      display:grid;
+      gap: 12px;
+    }
 
-  .cardTitle{
-    margin:0;
-    font-size:16px;
-    font-weight:900;
-    color: var(--hd-burgundy);
-    line-height:1.2;
-  }
+    .locName{
+      margin: 0;
+      font-size: 22px;
+      color: var(--hd-burgundy);
+      line-height: 1.2;
+      font-weight: 900;
+    }
 
-  .cardSub{
-    margin:6px 0 0;
-    color: var(--muted);
-    font-size:13px;
-    line-height:1.45;
-    font-weight:800;
-  }
+    .locSub{
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
 
-  .cardBody{
-    padding: 14px 16px 16px;
-    display:grid;
-    gap: 12px;
-    min-width:0;
-  }
+    .ratingLine{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 10px 12px;
+      border: 1px solid rgba(101, 11, 50, 0.12);
+      background: rgba(255,255,255,0.60);
+      border-radius: 0;
+    }
 
-  .ratingRow{
-    display:flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
+    .ratingLine .stars{
+      letter-spacing: 1px;
+      color: rgba(189, 131, 36, 0.95);
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 1;
+    }
 
-  .score{
-    display:flex;
-    align-items: baseline;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+    .ratingLine .score{
+      font-weight: 900;
+      color: var(--hd-burgundy);
+      font-size: 16px;
+      line-height: 1;
+    }
 
-  .scoreNum{
-    font-weight: 900;
-    font-size: 40px;
-    line-height: 1;
-    color: var(--hd-burgundy);
-    letter-spacing:-0.02em;
-  }
+    .ratingLine .count{
+      font-weight: 800;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
 
-  .stars{
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: var(--hd-gold);
-    font-weight: 900;
-    white-space: nowrap;
-    line-height:1;
-  }
+    .ctaRow{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 2px;
+    }
 
-  .count{
-    color: var(--muted);
-    font-weight: 800;
-    font-size: 12px;
-    white-space: nowrap;
-  }
+    .secondaryLink{
+      font-weight: 900;
+      color: var(--hd-burgundy);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-size: 13px;
+      margin-left: 6px;
+      white-space: nowrap;
+    }
 
-  .actions{
-    display:flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+    .alsoOn{
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .alsoOn a{
+      color: var(--hd-burgundy);
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
-  /* Local button system to avoid collisions with site.css .btn */
-  .rbtn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding: 12px 14px;
-    border-radius: 12px;
-    text-decoration:none;
-    font-weight: 900;
-    border: 1px solid transparent;
-    cursor:pointer;
-    user-select:none;
-    font-family: var(--font-body);
-    text-align:center;
-    line-height:1.15;
-  }
+    /* HIGHLIGHTS */
+    .highlights{
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 12px;
+      display:grid;
+      gap: 10px;
+    }
 
-  .rbtnPrimary{
-    background: var(--hd-burgundy);
-    color: var(--hd-white);
-    border-color: rgba(101, 11, 50, 0.18);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.10);
-  }
-  .rbtnPrimary:hover,
-  .rbtnPrimary:focus{
-    outline:none;
-    background: rgba(101, 11, 50, 0.92);
-    border-color: rgba(101, 11, 50, 0.26);
-  }
+    .hlTitle{
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(101, 11, 50, 0.68);
+      margin: 0;
+    }
 
-  .rbtnSoft{
-    background: var(--cream-2);
-    color: var(--hd-burgundy);
-    border-color: rgba(101, 11, 50, 0.14);
-    box-shadow:none;
-  }
-  .rbtnSoft:hover,
-  .rbtnSoft:focus{
-    outline:none;
-    background: var(--cream-3);
-    border-color: rgba(101, 11, 50, 0.22);
-  }
+    .hlGrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
 
-  .chips{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    align-items:center;
-  }
+    .hl{
+      border: 1px solid rgba(101, 11, 50, 0.12);
+      background: rgba(255,255,255,0.60);
+      border-radius: 0;
+      padding: 12px;
+      display:grid;
+      gap: 6px;
+    }
 
-  .chip{
-    display:inline-flex;
-    align-items:center;
-    padding: 6px 10px;
-    border-radius:0;
-    background: rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.12);
-    color: rgba(0,0,0,0.75);
-    font-weight:700;
-    font-size:12px;
-    line-height:1;
-    white-space:nowrap;
-  }
+    .hlTop{
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-  .note{
-    color: rgba(101, 11, 50, 0.68);
-    font-size: 12px;
-    line-height: 1.5;
-  }
+    .hlTop .label{
+      font-weight: 900;
+      color: rgba(101, 11, 50, 0.75);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
 
-  .band{
-    background: var(--band-gold-bg);
-    border-top: 1px solid rgba(0,0,0,0.06);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    padding: 22px 0 38px;
-  }
+    .hlTop .stars{
+      letter-spacing: 1px;
+      color: rgba(189, 131, 36, 0.95);
+      font-weight: 900;
+      font-size: 12px;
+    }
 
-  .sectionHead{
-    display:flex;
-    align-items:flex-end;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
-  }
+    .hlText{
+      margin: 0;
+      color: rgba(101, 11, 50, 0.78);
+      font-size: 13px;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
-  .sectionHead h2{
-    margin:0;
-    color: var(--hd-burgundy);
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 1.2;
-  }
+    .note{
+      margin-top: 18px;
+      color: rgba(101, 11, 50, 0.60);
+      font-size: 12px;
+      line-height: 1.6;
+    }
 
-  .sectionHead p{
-    margin:0;
-    color: var(--muted);
-    font-weight: 800;
-    font-size: 13px;
-    line-height: 1.4;
-  }
+    @media (max-width: 960px){
+      .locGrid{ grid-template-columns: 1fr; }
+      .page-hero h1{ font-size: 38px; }
+      .page-hero p{ font-size: 18px; }
+      .trustScore .score{ font-size: 36px; }
+    }
 
-  .reviews{
-    display:grid;
-    gap: 12px;
-  }
-
-  .review{
-    border: 1px solid rgba(101, 11, 50, 0.14);
-    border-radius:0;
-    background: rgba(249, 230, 195, 0.18);
-    padding: 14px;
-  }
-
-  .reviewTop{
-    display:flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  .reviewer{
-    font-weight: 900;
-    color: var(--hd-burgundy);
-    font-size: 13px;
-  }
-
-  .reviewDate{
-    color: rgba(101, 11, 50, 0.70);
-    font-weight: 800;
-    font-size: 12px;
-    white-space: nowrap;
-  }
-
-  .reviewStars{
-    margin-top: 6px;
-    color: var(--hd-gold);
-    font-size: 14px;
-    letter-spacing: 1px;
-    line-height: 1;
-    font-weight: 900;
-  }
-
-  .reviewText{
-    margin-top: 8px;
-    color: rgba(101, 11, 50, 0.82);
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  .moreRow{
-    margin-top: 12px;
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .moreLink{
-    font-size: 12px;
-    font-weight: 900;
-    color: var(--hd-burgundy);
-    text-decoration:none;
-    border-bottom: 1px solid rgba(101, 11, 50, 0.25);
-    padding-bottom: 1px;
-    line-height: 1.1;
-  }
-  .moreLink:hover,
-  .moreLink:focus{
-    outline:none;
-    border-bottom-color: rgba(101, 11, 50, 0.70);
-  }
-
-  /* Mobile */
-  @media (max-width: 980px){
-    .hero h1{ font-size: 40px; }
-    .lead{ font-size: 18px; }
-    .grid-2{ grid-template-columns: 1fr; }
-  }
-
-  @media (max-width: 640px){
-    .hero h1{ font-size: 34px; }
-    .scoreNum{ font-size: 34px; }
-    .actions{ display:grid; grid-template-columns: 1fr; }
-    .rbtn{ width:100%; }
-  }
-</style>
+    @media (max-width: 640px){
+      .page-hero{ padding: 18px 0; }
+      .page-hero h1{ font-size: 34px; }
+      .trust{ gap: 10px; }
+      .chip{ width: 100%; justify-content: center; }
+      .quickJump{ width: 100%; }
+      .ctaRow .chip{ width: 100%; }
+      .secondaryLink{ margin-left: 0; }
+      .ratingLine{ justify-content: space-between; }
+    }
+  </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+
   <div id="siteHeader"></div>
 
   <main id="main">
-    <section class="hero" aria-label="Reviews header">
+    <section class="page-hero" aria-label="Reviews intro">
       <div class="container">
         <div class="kicker">Reviews</div>
         <h1>Trusted by local dessert lovers</h1>
-        <p class="lead">
-          A quick snapshot of Google ratings for both shops, plus a few recent highlights.
-          Writing a review takes about a minute.
+        <p>
+          Two locations, two review profiles. Choose the shop you visited to leave a quick Google review,
+          or browse recent highlights below.
         </p>
+
+        <div class="trust" aria-label="Overall rating summary">
+          <div class="trustScore">
+            <div class="score">4.8</div>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <div class="meta">from 220+ local guests across North Miami and North Beach</div>
+          </div>
+
+          <div class="quickJump" aria-label="Jump to a location">
+            <a class="chip" href="#north-miami">North Miami</a>
+            <a class="chip" href="#north-beach">North Beach</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="deck" aria-label="Write a review">
+    <section class="section-panel" aria-label="Reviews by location">
       <div class="container">
-        <div class="grid-2" aria-label="Review call to action cards">
+        <div class="locGrid">
 
-          <article class="card" aria-label="North Miami review card">
-            <div class="cardHead">
-              <div>
-                <div class="cardTitle">North Miami</div>
-                <div class="cardSub">Causeway Square</div>
-              </div>
-              <div class="count">Google</div>
-            </div>
+          <!-- NORTH MIAMI -->
+          <article class="locCard" id="north-miami" aria-label="Reviews for North Miami">
+            <div class="locBody">
+              <h2 class="locName">North Miami (Causeway Square)</h2>
+              <p class="locSub">1809 NE 123rd St, North Miami, FL 33181</p>
 
-            <div class="cardBody">
-              <div class="ratingRow" aria-label="North Miami rating">
-                <div class="score">
-                  <div class="scoreNum">4.9</div>
-                  <div class="stars" aria-hidden="true">★★★★★</div>
-                  <div class="count">(Google)</div>
-                </div>
-                <a class="moreLink" href="#nm-highlights">See highlights</a>
+              <div class="ratingLine" aria-label="North Miami Google rating">
+                <span class="score">4.9</span>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="count">153 Google reviews</span>
               </div>
 
-              <div class="actions" aria-label="North Miami actions">
-                <a class="rbtn rbtnPrimary" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer">Write on Google</a>
-                <a class="rbtn rbtnSoft" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer">Write on Yelp</a>
+              <div class="ctaRow" aria-label="North Miami actions">
+                <a class="chip primary" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer">Write a Google review</a>
+                <a class="secondaryLink" href="https://www.google.com/search?q=H%C3%A4agen-Dazs+North+Miami+(Causeway+Square)+reviews" target="_blank" rel="noopener noreferrer">Read recent reviews</a>
               </div>
 
-              <div class="chips" aria-label="North Miami highlight tags">
-                <span class="chip">Friendly staff</span>
-                <span class="chip">Clean shop</span>
-                <span class="chip">Great flavors</span>
-                <span class="chip">Ice cream cakes</span>
+              <div class="alsoOn">
+                Also on <a href="https://www.yelp.com/biz/h%C3%A4agen-dazs-north-miami" target="_blank" rel="noopener noreferrer">Yelp</a>
               </div>
 
-              <div class="note">Tip: mention what you ordered and whether it was dine in, pickup, or delivery.</div>
-            </div>
-          </article>
-
-          <article class="card" aria-label="North Beach review card">
-            <div class="cardHead">
-              <div>
-                <div class="cardTitle">North Beach</div>
-                <div class="cardSub">6978 Collins Ave</div>
-              </div>
-              <div class="count">Google</div>
-            </div>
-
-            <div class="cardBody">
-              <div class="ratingRow" aria-label="North Beach rating">
-                <div class="score">
-                  <div class="scoreNum">4.9</div>
-                  <div class="stars" aria-hidden="true">★★★★★</div>
-                  <div class="count">(Google)</div>
-                </div>
-                <a class="moreLink" href="#nb-highlights">See highlights</a>
-              </div>
-
-              <div class="actions" aria-label="North Beach actions">
-                <a class="rbtn rbtnPrimary" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer">Write on Google</a>
-                <a class="rbtn rbtnSoft" href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer">Write on Yelp</a>
-              </div>
-
-              <div class="chips" aria-label="North Beach highlight tags">
-                <span class="chip">Beach area</span>
-                <span class="chip">Great service</span>
-                <span class="chip">Delicious</span>
-                <span class="chip">Cakes</span>
-              </div>
-
-              <div class="note">Tip: if you celebrated, mention the occasion. It helps other guests decide.</div>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="note" style="margin-top:12px;">Ratings and review counts are based on Google Business Profiles.</div>
-      </div>
-    </section>
-
-    <section class="band" aria-label="Review highlights">
-      <div class="container">
-        <div class="sectionHead">
-          <h2>Recent highlights</h2>
-          <p>Real comments from recent Google reviews</p>
-        </div>
-
-        <div class="grid-2" aria-label="Highlights grid">
-
-          <article class="card" id="nm-highlights" aria-label="North Miami highlights">
-            <div class="cardHead">
-              <div>
-                <div class="cardTitle">North Miami highlights</div>
-                <div class="cardSub">A few guest favorites from recent Google reviews</div>
-              </div>
-              <a class="moreLink" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer">View on Google</a>
-            </div>
-
-            <div class="cardBody">
-              <div class="reviews">
-                <div class="review">
-                  <div class="reviewTop">
-                    <div class="reviewer">Emery C</div>
-                    <div class="reviewDate">Apr 16, 2024</div>
+              <div class="highlights" aria-label="North Miami highlights">
+                <p class="hlTitle">Highlights</p>
+                <div class="hlGrid">
+                  <div class="hl" aria-label="North Miami highlight 1">
+                    <div class="hlTop">
+                      <div class="label">Sample highlight</div>
+                      <div class="stars" aria-hidden="true">★★★★★</div>
+                    </div>
+                    <p class="hlText">Replace this text with a short excerpt from a real Google review for North Miami.</p>
                   </div>
-                  <div class="reviewStars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <div class="reviewText">Best Haagen Dazs in Miami. The customer service is amazing. Everyone here always greets you with a smile and makes you feel welcomed. Highly recommend.</div>
-                </div>
-
-                <div class="review">
-                  <div class="reviewTop">
-                    <div class="reviewer">Ray Bermudez</div>
-                    <div class="reviewDate">Feb 06, 2024</div>
+                  <div class="hl" aria-label="North Miami highlight 2">
+                    <div class="hlTop">
+                      <div class="label">Sample highlight</div>
+                      <div class="stars" aria-hidden="true">★★★★★</div>
+                    </div>
+                    <p class="hlText">Replace this text with a second short excerpt. Keep it to two highlights max.</p>
                   </div>
-                  <div class="reviewStars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <div class="reviewText">We had a great time with the whole family. Staff helped us order and choose options. Ice cream was incredible.</div>
                 </div>
-
-                <div class="review">
-                  <div class="reviewTop">
-                    <div class="reviewer">Liza Andres</div>
-                    <div class="reviewDate">May 02, 2024</div>
-                  </div>
-                  <div class="reviewStars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <div class="reviewText">Amazing service and the cakes are great. Staff is always ready to help.</div>
-                </div>
-              </div>
-
-              <div class="moreRow">
-                <div class="note">Want to read more?</div>
-                <a class="moreLink" href="https://g.page/r/Cco4KOe1cZNIEAE/review" target="_blank" rel="noopener noreferrer">See all on Google</a>
               </div>
             </div>
           </article>
 
-          <article class="card" id="nb-highlights" aria-label="North Beach highlights">
-            <div class="cardHead">
-              <div>
-                <div class="cardTitle">North Beach highlights</div>
-                <div class="cardSub">A few guest favorites from recent Google reviews</div>
-              </div>
-              <a class="moreLink" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer">View on Google</a>
-            </div>
+          <!-- NORTH BEACH -->
+          <article class="locCard" id="north-beach" aria-label="Reviews for North Beach">
+            <div class="locBody">
+              <h2 class="locName">North Beach (6978 Collins Ave)</h2>
+              <p class="locSub">6978 Collins Ave, Miami Beach, FL 33141</p>
 
-            <div class="cardBody">
-              <div class="reviews">
-                <div class="review">
-                  <div class="reviewTop">
-                    <div class="reviewer">Iliana Arriola</div>
-                    <div class="reviewDate">May 23, 2024</div>
-                  </div>
-                  <div class="reviewStars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <div class="reviewText">Excelente experiencia, muy rico todo. La atencion excelente.</div>
-                </div>
-
-                <div class="review">
-                  <div class="reviewTop">
-                    <div class="reviewer">Cornelia B</div>
-                    <div class="reviewDate">Mar 06, 2024</div>
-                  </div>
-                  <div class="reviewStars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <div class="reviewText">Always delicious ice cream and friendly service.</div>
-                </div>
-
-                <div class="review">
-                  <div class="reviewTop">
-                    <div class="reviewer">Denise Lobo</div>
-                    <div class="reviewDate">Mar 04, 2024</div>
-                  </div>
-                  <div class="reviewStars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <div class="reviewText">Best ice cream in Miami. Also great ice cream cakes for birthdays or special events.</div>
-                </div>
+              <div class="ratingLine" aria-label="North Beach Google rating">
+                <span class="score">4.7</span>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="count">68 Google reviews</span>
               </div>
 
-              <div class="moreRow">
-                <div class="note">Want to read more?</div>
-                <a class="moreLink" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer">See all on Google</a>
+              <div class="ctaRow" aria-label="North Beach actions">
+                <a class="chip primary" href="https://g.page/r/Caisdp9bgHnWEAE/review" target="_blank" rel="noopener noreferrer">Write a Google review</a>
+                <a class="secondaryLink" href="https://www.google.com/search?q=H%C3%A4agen-Dazs+North+Beach+(6978+Collins+Ave)+reviews" target="_blank" rel="noopener noreferrer">Read recent reviews</a>
               </div>
+
+              <div class="alsoOn">
+                Also on <a href="https://www.yelp.com/biz/h%C3%A4agen-dazs-miami-beach-19" target="_blank" rel="noopener noreferrer">Yelp</a>
+              </div>
+
+              <div class="highlights" aria-label="North Beach highlights">
+                <p class="hlTitle">Highlights</p>
+                <div class="hlGrid">
+                  <div class="hl" aria-label="North Beach highlight 1">
+                    <div class="hlTop">
+                      <div class="label">Sample highlight</div>
+                      <div class="stars" aria-hidden="true">★★★★★</div>
+                    </div>
+                    <p class="hlText">Replace this text with a short excerpt from a real Google review for North Beach.</p>
+                  </div>
+                  <div class="hl" aria-label="North Beach highlight 2">
+                    <div class="hlTop">
+                      <div class="label">Sample highlight</div>
+                      <div class="stars" aria-hidden="true">★★★★★</div>
+                    </div>
+                    <p class="hlText">Replace this text with a second short excerpt. Keep it to two highlights max.</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </article>
 
         </div>
+
+        <p class="note">
+          Note: Ratings and review counts are based on Google Business Profiles and may change over time.
+        </p>
       </div>
     </section>
   </main>
@@ -609,8 +512,15 @@
           .then(function (html) { el.innerHTML = html; })
           .catch(function () { el.innerHTML = ""; });
       }
-      loadInto("siteHeader", "/assets/includes/header.html");
-      loadInto("siteFooter", "/assets/includes/footer.html");
+
+      var docLang = document.documentElement.getAttribute("lang") || "en";
+      var isEs = docLang.toLowerCase().indexOf("es") === 0;
+
+      var headerUrl = isEs ? "/assets/includes/header-es.html" : "/assets/includes/header.html";
+      var footerUrl = isEs ? "/assets/includes/footer-es.html" : "/assets/includes/footer.html";
+
+      loadInto("siteHeader", headerUrl);
+      loadInto("siteFooter", footerUrl);
     })();
   </script>
 </body>
