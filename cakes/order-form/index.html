@@ -505,8 +505,8 @@
                 <label for="pickupLocation">Pick Up Location</label>
                 <select id="pickupLocation" name="pickup_location" required>
                   <option value="" selected disabled>Select pickup location</option>
-                  <option value="north_miami">Haagen-Dazs North Miami (Causeway Square/1809 NE 123rd Street)</option>
-                  <option value="north_beach">Haagen-Dazs North Beach (6978 Collins Ave)</option>
+                  <option>Haagen-Dazs North Miami (Causeway Square/1809 NE 123rd Street)</option>
+                  <option>Haagen-Dazs North Beach (6978 Collins Ave)</option>
                 </select>
               </div>
               <div class="field full">
@@ -578,13 +578,14 @@
         { name: "Pralines n' Cream", gf: false },
         { name: "(Vanilla Caramel Pecan)", gf: false },
         { name: "Strawberry", gf: true },
+        { name: "Dark Cherry Truffle", gf: false },
         { name: "NY Strawberry Cheesecake", gf: false },
         { name: "Pistachio", gf: true },
         { name: "Butter Pecan", gf: true },
         { name: "Irish Cream Brownie", gf: false },
         { name: "Mint Chip", gf: true },
         { name: "Caramel Cone", gf: false },
-        { name: "Pinneaple Cononut", gf: true },
+        { name: "Pineapple Coconut", gf: true },
         { name: "Rum Raisin", gf: true },
         { name: "Mango Sorbet", gf: true },
         { name: "Strawberry Sorbet", gf: true },
@@ -592,7 +593,6 @@
         { name: "Blueberry Lemon Sorbet", gf: true },
         { name: "White Choc Raspberry Truffle", gf: true },
         { name: "Salted Brown Butter Cookie", gf: false }
-        { name: "Dark Cherry Truffle", gf: false }
       ];
       var firstFlavor = document.getElementById("firstFlavor");
       var secondFlavor = document.getElementById("secondFlavor");
@@ -615,15 +615,9 @@
       var form = document.getElementById("cakeOrderForm");
       var statusMsg = document.getElementById("statusMsg");
       var submitBtn = document.getElementById("submitBtn");
-      /* Store hours (24h clock) */
-      const STORE_HOURS = {
-        north_miami: { open: 11, close: 22 },
-        north_beach: { open: 11, close: 22 }
-      };
-      
-      /* Default (fallback) time rules */
+      /* Requested time rules */
       var MIN_HOUR_24 = 11;  /* 11 AM */
-      var MAX_HOUR_24 = 22;  /* 10 PM */
+      var MAX_HOUR_24 = 19;  /* 7 PM */
       var MINUTE_OPTIONS = ["00", "15", "30", "45"];
       function pad2(n) { return (n < 10 ? "0" : "") + n; }
       function addDays(d, days) {
@@ -737,34 +731,26 @@
       }
       function fillTimeSelectors() {
         if (!pickupHour || !pickupMinute) return;
-
-        var loc = pickupLocation.value;
-        var hours = STORE_HOURS[loc] || { open: MIN_HOUR_24, close: MAX_HOUR_24 };
-
         pickupHour.innerHTML = "";
         pickupMinute.innerHTML = "";
-
         var h0 = document.createElement("option");
         h0.value = "";
         h0.textContent = "Hour";
         h0.disabled = true;
         h0.selected = true;
         pickupHour.appendChild(h0);
-
-        for (var h = hours.open; h <= hours.close; h++) {
+        for (var h = MIN_HOUR_24; h <= MAX_HOUR_24; h++) {
           var optH = document.createElement("option");
           optH.value = String(h);
           optH.textContent = hourLabel(h);
           pickupHour.appendChild(optH);
         }
-
         var m0 = document.createElement("option");
         m0.value = "";
         m0.textContent = "Min";
         m0.disabled = true;
         m0.selected = true;
         pickupMinute.appendChild(m0);
-
         for (var i = 0; i < MINUTE_OPTIONS.length; i++) {
           var mm = MINUTE_OPTIONS[i];
           var optM = document.createElement("option");
@@ -772,10 +758,11 @@
           optM.textContent = ":" + mm;
           pickupMinute.appendChild(optM);
         }
-
-        pickupHour.value = String(hours.open);
+        /* Default to 11:00 AM */
+        pickupHour.value = String(MIN_HOUR_24);
         pickupMinute.value = "00";
         syncHiddenTime();
+        enforceTimeBounds();
       }
       function enforceTimeBounds() {
         // With earliest pickup at 11:00 AM, no minute disabling is needed.
@@ -803,8 +790,7 @@
       phone.addEventListener("input", function () {
         phone.value = formatPhone(phone.value);
       });
-      pickupHour.addEventListener("change", syncHiddenTime);
-      pickupLocation.addEventListener("change", fillTimeSelectors);
+      pickupHour.addEventListener("change", enforceTimeBounds);
       pickupMinute.addEventListener("change", enforceTimeBounds);
       messageChoice.addEventListener("change", toggleCustomMessage);
       specialInstructions.addEventListener("input", updateCounter);
