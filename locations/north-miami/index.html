@@ -78,8 +78,8 @@
       --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
       --border-soft: 1px solid rgba(0,0,0,0.08);
       --text-muted: rgba(101, 11, 50, 0.72);
-      --panel: rgba(249, 230, 195, 0.45);
-      --ink: #1f1b1c;
+      --panel: var(--band-gold-bg);
+      --ink: var(--hd-burgundy);
     }
 
     * { box-sizing: border-box; }
@@ -101,7 +101,7 @@
       background: var(--hd-burgundy);
       color: var(--hd-white);
       padding: 10px 12px;
-      border-radius: 0px;
+      border-radius: 0;
       z-index: 9999;
       text-decoration: none;
       font-weight: 700;
@@ -156,7 +156,7 @@
       align-items: center;
       gap: 10px;
       padding: 10px 12px;
-      border-radius: 999px;
+      border-radius: var(--radius-btn);
       border: 1px solid rgba(101, 11, 50, 0.18);
       background: rgba(255,255,255,0.88);
       color: var(--hd-burgundy);
@@ -168,7 +168,7 @@
     }
 
     .chip:hover,
-    .chip:focus { outline: none; background: rgba(249, 230, 195, 0.90); }
+    .chip:focus { outline: none; background: rgba(249, 230, 195, 0.55); }
 
     .chip.primary {
       background: var(--hd-burgundy);
@@ -194,7 +194,12 @@
     }
 
     .stack { display: grid; gap: 16px; }
-    .sidebar { display: grid; gap: 16px; align-content: start; }
+
+    .sidebar {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
 
     .card {
       border: var(--border-soft);
@@ -270,7 +275,7 @@
       display: inline-flex;
       align-items: center;
       padding: 8px 10px;
-      border-radius:  var(--radius-btn);
+      border-radius: var(--radius-btn);
       background: var(--band-gold-bg);
       border: 1px solid rgba(101, 11, 50, 0.16);
       color: rgba(101, 11, 50, 0.92);
@@ -340,7 +345,7 @@
     .g-dot {
       width: 10px;
       height: 10px;
-      border-radius: 999px;
+      border-radius: 999px !important;
       border: 2px solid rgba(255,255,255,0.95);
       background: transparent;
       cursor: pointer;
@@ -354,7 +359,7 @@
     .g-btn {
       width: 42px;
       height: 42px;
-      border-radius: 999px;
+      border-radius: 999px !important;
       border: 1px solid rgba(255,255,255,0.35);
       background: rgba(255,255,255,0.16);
       color: #fff;
@@ -551,13 +556,6 @@
       object-fit: contain;
     }
 
-    .brand-icon {
-      width: 24px;
-      height: 24px;
-      display: block;
-      object-fit: contain;
-    }
-
     .delivery-icon img {
       width: 24px;
       height: 24px;
@@ -566,8 +564,7 @@
     }
 
     .delivery-icon.is-dd img,
-    .delivery-icon.is-yelp img,
-    .delivery-icon.is-order img { width: 26px; height: 26px; }
+    .delivery-icon.is-yelp img { width: 26px; height: 26px; }
 
     .hours {
       display: grid;
@@ -621,8 +618,7 @@
       .g-btn { width: 40px; height: 40px; }
       .icon-link, .delivery-icon { width: 42px; height: 42px; }
       .delivery-icon.is-dd img,
-      .delivery-icon.is-yelp img,
-      .delivery-icon.is-order img { width: 26px; height: 26px; }
+      .delivery-icon.is-yelp img { width: 26px; height: 26px; }
     }
   </style>
 </head>
