@@ -338,7 +338,19 @@
       .posRow{ grid-template-columns: 1fr; }
       .removeBtn{ width: 100%; }
     }
-  </style>
+  
+/* --- Join page alignment + capitalization helpers --- */
+.form-grid input,
+.form-grid select{
+  height: 48px;
+}
+.form-grid textarea{
+  min-height: 140px;
+}
+.form-grid .help{
+  min-height: 16px;
+}
+</style>
 </head>
 
 <body>
@@ -873,6 +885,54 @@
         return v.slice(0, 2);
       }
 
+      function titleCaseWords(s){
+        s = String(s || "").trim();
+        if(!s) return "";
+        return s
+          .toLowerCase()
+          .split(/\s+/)
+          .map(function(w){
+            // keep common short words lowercased when not first (optional)
+            return w.split("-").map(function(part){
+              if(!part) return part;
+              return part.charAt(0).toUpperCase() + part.slice(1);
+            }).join("-");
+          })
+          .join(" ");
+      }
+
+      function wireAutoCapitalize(){
+        var scope = document.getElementById("joinForm") || document;
+        var fields = Array.from(scope.querySelectorAll('input[type="text"], textarea'));
+        fields.forEach(function(el){
+          var id = (el.id || "").toLowerCase();
+          // Skip fields that should not be title-cased
+          if(id === "state" || id === "zip") return;
+          if(el.getAttribute("inputmode") === "numeric") return;
+
+          // Better mobile keyboards (iOS)
+          el.setAttribute("autocapitalize", "words");
+
+          el.addEventListener("blur", function(){
+            // Do not touch empty values
+            var v = String(el.value || "");
+            if(!v.trim()) return;
+
+            // Address can still be title-cased safely; leave numbers as-is
+            el.value = titleCaseWords(v);
+          });
+        });
+
+        // State should be uppercase
+        var st = document.getElementById("state");
+        if(st){
+          st.setAttribute("autocapitalize", "characters");
+          st.addEventListener("blur", function(){
+            st.value = normalizeState(st.value);
+          });
+        }
+      }
+
       function submitPayload(payload){
         if(!APPS_SCRIPT_URL){
           throw new Error("Apps Script URL is not set yet. Paste it into APPS_SCRIPT_URL in this page.");
@@ -883,6 +943,8 @@
           body: JSON.stringify(payload)
         }).then(function(r){ return r.json ? r.json() : r.text(); });
       }
+
+            wireAutoCapitalize();
 
       var form = document.getElementById("joinForm");
       if(form){
