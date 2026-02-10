@@ -1,704 +1,648 @@
-<!doctype html>
-<html lang="en" data-lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Join Our Team | Häagen-Dazs</title>
-  <meta name="description" content="Apply to join the team at Häagen-Dazs North Miami and North Beach. Submit your application online and we will follow up soon.">
-  <link rel="canonical" href="https://www.hdicecream.com/join/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Häagen-Dazs">
-  <meta property="og:title" content="Join Our Team | Häagen-Dazs">
-  <meta property="og:description" content="Apply to join the team at Häagen-Dazs North Miami and North Beach. Submit your application online and we will follow up soon.">
-  <meta property="og:url" content="https://www.hdicecream.com/join/">
-  <meta property="og:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
-  <meta property="og:image:secure_url" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Apply to work at Häagen-Dazs North Miami and North Beach.">
+  <title>About Us | Mindo Bird Watching</title>
+  <meta name="description" content="Meet Mindo Bird Watching. Expert local guiding, personalized tours, and the best cloud forest birding routes in Mindo, Ecuador for all experience levels." />
+  <link rel="canonical" href="https://mindobirdwatching.com/about-us/" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Join Our Team | Häagen-Dazs">
-  <meta name="twitter:description" content="Apply to join the team at Häagen-Dazs North Miami and North Beach. Submit your application online and we will follow up soon.">
-  <meta name="twitter:image" content="https://www.hdicecream.com/assets/images/hd_og_image.jpg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindo Bird Watching" />
+  <meta property="og:title" content="About Us | Mindo Bird Watching" />
+  <meta property="og:description" content="Meet Mindo Bird Watching. Expert local guiding, personalized tours, and the best cloud forest birding routes in Mindo, Ecuador for all experience levels." />
+  <meta property="og:url" content="https://mindobirdwatching.com/about-us/" />
+  <meta property="og:image" content="https://mindobirdwatching.com/MBW-Assets-OG-Image.jpg" />
+  <meta property="og:image:secure_url" content="https://mindobirdwatching.com/MBW-Assets-OG-Image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mindo Bird Watching - cloud forest birding tours in Mindo, Ecuador" />
 
-  <link rel="icon" href="/assets/images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="/assets/images/site.webmanifest">
-  <meta name="theme-color" content="#650B32">
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us | Mindo Bird Watching" />
+  <meta name="twitter:description" content="Meet Mindo Bird Watching. Expert local guiding, personalized tours, and the best cloud forest birding routes in Mindo, Ecuador for all experience levels." />
+  <meta name="twitter:image" content="https://mindobirdwatching.com/MBW-Assets-OG-Image.jpg" />
 
+  <link rel="alternate" hreflang="en" href="/about-us/" />
+  <link rel="alternate" hreflang="es" href="/es/sobre-nosotros/" />
+  <link rel="alternate" hreflang="x-default" href="/about-us/" />
+
+  <!-- Favicons (approved root paths) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#034EA2">
+
+  <!-- Global / shared CSS -->
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/header.css?v=1">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ3XB37TBM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-JJ3XB37TBM");
-  </script>
+  <!-- Head-only JS -->
+  <script src="/assets/js/head.js" defer></script>
 
   <style>
-    :root{
-      --container: 980px;
-      --text-muted: rgba(101, 11, 50, 0.72);
+/* Page-only styles */
+    .page{ margin-top:18px; padding:26px; }
+    .page.card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
     }
 
-    *{ box-sizing:border-box; }
-
-    body{ background: var(--hd-bg); }
-
-    .container{
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 20px;
+    /* Two-column layout: content left, vertical image right */
+    .aboutLayout{
+      margin-top: 10px;
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items:start;
     }
 
-    .skip-link{
+    .copy{
+      max-width: 82ch;
+      margin: 0;
+    }
+    .copy p{ margin:0 0 12px; }
+
+    .sideImage{
+      position: relative;
+      border-radius: var(--r);
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.65);
+      box-shadow: var(--shadow);
+      min-height: 520px;
+    }
+
+    .sideImage img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      transform: scale(1.01);
+    }
+
+    .sideImage::after{
+      content:"";
       position:absolute;
-      left:-9999px;
-      top:10px;
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
-      padding: 10px 12px;
-      z-index: 9999;
-      text-decoration:none;
-      font-weight: 800;
-    }
-    .skip-link:focus{ left:10px; }
-
-    #siteHeader, #siteFooter{ margin:0; padding:0; }
-
-    .page-hero{
-      background: var(--hd-card-bg);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      padding: 22px 0;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.05), rgba(0,0,0,0.22));
+      pointer-events:none;
     }
 
-    .page-hero h1{
-      margin:0 0 10px;
-      font-size: 52px;
-      line-height: 1.08;
-      color: var(--hd-burgundy);
+    .sideImageCaption{
+      position:absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 12px;
+      color: #fff;
+      z-index: 1;
       font-weight: 800;
       letter-spacing: -0.02em;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      line-height: 1.2;
+    }
+    .sideImageCaption span{
+      display:block;
+      margin-top: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      opacity: 0.92;
+      letter-spacing: 0;
+      line-height: 1.35;
+      max-width: 48ch;
     }
 
-    .page-hero p{
-      margin:0;
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 85ch;
-      line-height: 1.6;
+    /* Left-column fill cards */
+    .leftFill{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      max-width: 82ch;
     }
 
-    .panel{
-      padding: 22px 0 34px;
-      background: var(--band-gold-bg);
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+    .fillCard{
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.65);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      padding: 14px;
     }
 
-    .card{
-      background: rgba(255,255,255,0.85);
-      border: 1px solid rgba(101, 11, 50, 0.14);
-      border-radius: 18px;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.06);
-      overflow: hidden;
-    }
-
-    .card-body{
-      padding: 18px;
-      display: grid;
-      gap: 16px;
-    }
-
-    .form{
-      display: grid;
-      gap: 16px;
-    }
-
-    .section{
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 16px;
-      background: rgba(255,255,255,0.70);
-      padding: 16px;
-    }
-
-    .section h2{
+    .fillTitle{
       margin: 0 0 10px;
-      font-size: 14px;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      color: rgba(101, 11, 50, 0.72);
+      font-family: var(--font-head);
+      color: var(--forest);
+      letter-spacing: -0.02em;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    /* Traveler Highlight: NOT bold */
+    .quote{
+      margin: 0;
+      color: var(--ink);
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    .quoteMeta{
+      margin-top: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .stars{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      color: var(--ink);
       font-weight: 900;
+    }
+    .stars .starRow{ letter-spacing: 1px; }
+    .stars .who{ font-weight: 800; color: var(--ink); }
+
+    .reviewLink{
+      color: var(--ink);
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      white-space:nowrap;
+    }
+
+    /* -----------------------------
+       SOCIAL CARD (FIXED DESKTOP)
+       - No split columns (prevents cropping)
+       - Buttons are normal "site pills"
+       - Icons are 1.5x
+       ----------------------------- */
+
+    .socialTop{ display:block; }
+
+    .socialKicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      font-weight: 900;
+      font-size: 12px;
+      color: var(--ink);
+      white-space:nowrap;
+    }
+
+    .socialCopy{
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 68ch;
+    }
+
+    /* ICON PATHS (swap here later) */
+    :root{
+      --mbw-icon-ig: url("/assets/images/icons/mbw_ig.png");
+      --mbw-icon-fb: url("/assets/images/icons/mbw_fb.png");
+      --mbw-icon-tt: url("/assets/images/icons/mbw_tt.png");
+      --mbw-icon-yt: url("/assets/images/icons/mbw_yt.png");
+      --mbw-icon-cc: url("/assets/images/icons/mbw_chicho.png");
+      --mbw-icon-gs: url("/assets/images/icons/mbw_shop.png");
+    }
+
+    .socialGrid{
+      margin-top: 12px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      align-items:start;
+    }
+
+    /*
+      Keep site consistency:
+      anchors already have "btn secondary"
+      We ONLY align icon + label and prevent overflow.
+    */
+    .socialBtn{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 0;
+      text-decoration:none;
+      justify-content:flex-start;
+    }
+
+    .socialBtn .ico{
+      width: 27px;  /* 1.5x */
+      height: 27px; /* 1.5x */
+      display:inline-block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.10));
+      flex: 0 0 auto;
+    }
+
+    .socialBtn .label{
+      min-width: 0;
+      overflow:hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display:block;
+      line-height: 1.1;
+    }
+
+    .ico.ig{ background-image: var(--mbw-icon-ig); }
+    .ico.fb{ background-image: var(--mbw-icon-fb); }
+    .ico.tt{ background-image: var(--mbw-icon-tt); }
+    .ico.yt{ background-image: var(--mbw-icon-yt); }
+    .ico.cc{ background-image: var(--mbw-icon-cc); }
+    .ico.gs{ background-image: var(--mbw-icon-gs); }
+
+    /* If the left column gets tight, switch to 2 columns automatically */
+    @media (max-width: 1200px){
+      .socialGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    /* Mobile: full-width stacked (your screenshot 2 is good) */
+    @media (max-width: 900px){
+      .socialGrid{ grid-template-columns: 1fr; }
+      .socialGrid a{ width: 100%; justify-content:center; }
     }
 
     .grid{
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 12px;
+      margin-top:16px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
     }
 
-    .field{
-      grid-column: span 12;
-      display: grid;
-      gap: 6px;
+    .mini{
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      background:rgba(255,255,255,.65);
     }
 
-    .field.col-6{ grid-column: span 6; }
-    .field.col-4{ grid-column: span 4; }
-    .field.col-3{ grid-column: span 3; }
-    .field.col-8{ grid-column: span 8; }
-    .field.col-2{ grid-column: span 2; }
-
-    label{
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--hd-burgundy);
+    .mini h2{
+      margin:0 0 6px;
+      font-size:16px;
+      font-family:var(--font-head);
+      color:var(--forest);
+      letter-spacing:-0.02em;
     }
 
-    input, select, textarea{
-      width: 100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      background: rgba(255,255,255,0.88);
-      color: rgba(30, 20, 22, 0.95);
-      font: inherit;
-      outline: none;
-    }
+    .mini p{ margin:0; }
 
-    textarea{
-      min-height: 110px;
-      resize: vertical;
-      line-height: 1.5;
-    }
-
-    input:focus, select:focus, textarea:focus{
-      border-color: rgba(101, 11, 50, 0.42);
-      box-shadow: 0 0 0 3px rgba(101, 11, 50, 0.10);
-    }
-
-    .help{
-      font-size: 12px;
-      color: rgba(101, 11, 50, 0.70);
-      line-height: 1.45;
-    }
-
-    .row-actions{
+    .ctaRow{
+      margin-top:16px;
       display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .btnRow{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .btnLocal{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(101, 11, 50, 0.18);
-      background: rgba(255,255,255,0.86);
-      color: var(--hd-burgundy);
-      font-weight: 900;
-      text-decoration: none;
-      cursor: pointer;
-      user-select:none;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .btnLocal.primary{
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
-      border-color: transparent;
-    }
-
-    .btnLocal:hover, .btnLocal:focus{
-      outline: none;
-      background: rgba(249,230,195,0.70);
-    }
-    .btnLocal.primary:hover, .btnLocal.primary:focus{
-      background: rgba(101,11,50,0.92);
-    }
-
-    .miniBtn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px dashed rgba(101, 11, 50, 0.26);
-      background: rgba(249,230,195,0.45);
-      color: var(--hd-burgundy);
-      font-weight: 900;
-      cursor: pointer;
-      user-select:none;
-      line-height: 1;
-    }
-
-    .miniBtn:hover, .miniBtn:focus{
-      outline:none;
-      background: rgba(249,230,195,0.70);
-      border-color: rgba(101, 11, 50, 0.36);
-    }
-
-    .pillRow{
-      display:flex;
+      gap:12px;
       flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(101,11,50,0.16);
-      background: rgba(255,255,255,0.75);
-      color: rgba(101,11,50,0.92);
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    .pill input{ width:auto; margin:0; }
-
-    .positions{
-      display: grid;
-      gap: 10px;
-    }
-
-    .posRow{
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px;
-      align-items: end;
-    }
-
-    .posRow .field{ margin:0; }
-
-    .removeBtn{
-      height: 44px;
-      min-width: 44px;
-      border-radius: 14px;
-      border: 1px solid rgba(101,11,50,0.18);
-      background: rgba(255,255,255,0.80);
-      color: rgba(101,11,50,0.95);
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .removeBtn:hover, .removeBtn:focus{
-      outline:none;
-      background: rgba(249,230,195,0.70);
-    }
-
-    .status{
-      display:none;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(0,0,0,0.10);
-      background: rgba(255,255,255,0.86);
-      color: rgba(30,20,22,0.95);
-      font-weight: 700;
-      line-height: 1.45;
-    }
-    .status.ok{
-      border-color: rgba(17, 119, 54, 0.22);
-      background: rgba(225, 250, 232, 0.85);
-    }
-    .status.bad{
-      border-color: rgba(165, 21, 21, 0.22);
-      background: rgba(255, 232, 232, 0.85);
     }
 
     @media (max-width: 900px){
-      .page-hero h1{ font-size: 38px; }
-      .grid{ grid-template-columns: repeat(6, minmax(0, 1fr)); }
-      .field.col-6{ grid-column: span 6; }
-      .field.col-4{ grid-column: span 6; }
-      .field.col-3{ grid-column: span 6; }
-      .field.col-8{ grid-column: span 6; }
-      .field.col-2{ grid-column: span 6; }
-      .posRow{ grid-template-columns: 1fr; }
-      .removeBtn{ width: 100%; }
+      .aboutLayout{ grid-template-columns: 1fr; }
+      .sideImage{ min-height: 260px; }
+      .grid{ grid-template-columns:1fr; }
+      .leftFill{ max-width: none; }
     }
   
-/* --- Join page alignment + capitalization helpers --- */
-.form-grid input,
-.form-grid select{
-  height: 48px;
-}
-.form-grid textarea{
-  min-height: 140px;
-}
-.form-grid .help{
-  min-height: 16px;
+
+/* --- About page layout refresh (partners row) --- */
+.aboutHeroNew{
+  display:grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 6px;
 }
 
-/* --- Force square corners for date & month inputs (From / To) --- */
-input[type="date"],
-input[type="month"]{
-  border-radius: 0 !important;
+.aboutHeroNew .aboutLeft{
+  min-width: 0;
 }
 
-</style>
+.aboutHeroNew .aboutRight{
+  min-width: 0;
+}
+
+.aboutHeroNew .aboutRight .sideImage{
+  height: 100%;
+}
+
+.aboutHeroNew .aboutRight .sideImage img{
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+}
+
+.partnerRow{
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.partnerHead{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.partnerHead h2{
+  margin: 0;
+  font-size: 24px;
+}
+
+.partnerHead p{
+  margin: 0;
+  color: rgba(0,0,0,0.65);
+  max-width: 520px;
+  font-size: 14px;
+}
+
+.partnerGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.partnerCard{
+  display:grid;
+  grid-template-columns: 120px 1fr;
+  gap: 14px;
+  align-items: center;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.partnerMedia{
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.partnerMedia img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.partnerKicker{
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.55);
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.partnerBody h3{
+  margin: 0 0 6px 0;
+  font-size: 18px;
+}
+
+.partnerBody p{
+  margin: 0 0 10px 0;
+  color: rgba(0,0,0,0.7);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.partnerActions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.partnerNote{
+  margin: 10px 0 0 0;
+  color: rgba(0,0,0,0.55);
+  font-size: 12px;
+}
+
+@media (max-width: 980px){
+  .aboutHeroNew{
+    grid-template-columns: 1fr;
+  }
+  .aboutHeroNew .aboutRight .sideImage img{
+    min-height: 360px;
+  }
+  .partnerHead{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .partnerGrid{
+    grid-template-columns: 1fr;
+  }
+  .partnerCard{
+    grid-template-columns: 96px 1fr;
+  }
+  .partnerMedia{
+    width: 96px;
+  }
+}
+
+    .introCard h1{ margin:0 0 10px; }
+    .introCard p{ margin:0 0 10px; }
+    .introCard p:last-child{ margin-bottom:0; }
+
+    /* Partner cards: keep square images and consistent sizing */
+    .partnerMedia{ width:140px; height:140px; }
+    .partnerMedia img{ width:100%; height:100%; object-fit:cover; }
+  </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <div id="siteHeader"></div>
+  <div class="container">
+    <div id="siteHeader"></div>
 
-  <main id="main">
-    <section class="page-hero" aria-label="Join intro">
-      <div class="container">
-        <h1>Join Our Team</h1>
-        <p>Use this application to apply for roles at Häagen-Dazs North Miami and North Beach. After you submit, you will receive a confirmation email and the team will review your application.</p>
-      </div>
-    </section>
+    <main class="page" id="mainContent">
+  <div class="wrap">
+    <section class="aboutHeroNew" aria-label="About Mindo Bird Watching">
+      <div class="aboutLeft">
+          <section class="fillCard introCard" aria-label="About us overview">
+            <h1>About Us</h1>
+            <p>
+              At Mindo Bird Watching, we are passionate about sharing the breathtaking beauty of Ecuador's cloud forest and its incredible birdlife.
+              With years of experience as a birdwatching guide, I specialize in helping visitors discover the vibrant world of toucans, hummingbirds,
+              tanagers, and countless other species that call Mindo home.
+            </p><p>
+              Our tours are designed to provide a unique and immersive experience, whether you're a seasoned birder or a first-time nature enthusiast.
+              With expert guidance, personalized attention, and access to some of the best birding spots in the region, we ensure every moment is unforgettable.
+            </p><p>
+              Join us to explore the wonders of Mindo and create memories surrounded by the songs and colors of nature.
+            </p>
+          </section>
 
-    <section class="panel" aria-label="Application form">
-      <div class="container">
-        <div class="card">
-          <div class="card-body">
-            <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+          <section class="fillCard" aria-label="Testimonial">
+              <h2 class="fillTitle">Traveler Highlight</h2>
 
-            <form id="joinForm" class="form" novalidate>
+              <p class="quote">
+                "Incredible experience! I didn't realize how much I would enjoy this. Looking back on my trip to Ecuador this was definitely one of my highlights. Unforgettable experience and the tour guide is so friendly and knowledgeable."
+              </p>
 
-              <div class="section" aria-label="Personal information">
-                <h2>Personal information</h2>
-                <div class="grid">
-                  <div class="field col-6">
-                    <label for="first_name">First name</label>
-                    <input id="first_name" name="first_name" type="text" autocomplete="given-name" required>
-                  </div>
-                  <div class="field col-6">
-                    <label for="last_name">Last name</label>
-                    <input id="last_name" name="last_name" type="text" autocomplete="family-name" required>
-                  </div>
-
-                  <div class="field col-4">
-                    <label for="dob">Date of birth</label>
-                    <input id="dob" name="dob" type="date" required>
-                  </div>
-
-                  <div class="field col-4">
-                    <label for="phone">Phone</label>
-                    <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(XXX) XXX-XXXX" autocomplete="tel" required>
-</div>
-
-                  <div class="field col-4">
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required>
-                  </div>
-
-                  <div class="field col-8">
-                    <label for="address">Address</label>
-                    <input id="address" name="address" type="text" autocomplete="street-address" required>
-                  </div>
-
-                  <div class="field col-4">
-                    <label for="city">City</label>
-                    <input id="city" name="city" type="text" autocomplete="address-level2" required>
-                  </div>
-
-                  <div class="field col-3">
-                    <label for="state">State</label>
-                    <input id="state" name="state" type="text" maxlength="2" placeholder="FL" autocomplete="address-level1" required>
-                  </div>
-
-                  <div class="field col-3">
-                    <label for="zip">Zip</label>
-                    <input id="zip" name="zip" type="text" inputmode="numeric" maxlength="10" placeholder="" autocomplete="postal-code" required>
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="location_preference">Preferred location</label>
-                    <select id="location_preference" name="location_preference" required>
-                      <option value="" selected disabled>Select</option>
-                      <option value="north_miami">North Miami</option>
-                      <option value="north_beach">North Beach</option>
-                      <option value="either">Either location</option>
-                    </select>
-                  </div>
+              <div class="quoteMeta" aria-label="Review metadata">
+                <div class="stars" aria-label="5 star rating">
+                  <span class="starRow" aria-hidden="true">★★★★★</span>
+                  <span class="who">Abigail, USA</span>
                 </div>
+                <a class="reviewLink" href="https://maps.app.goo.gl/eBu55MP1F5mZJWtt9" target="_blank" rel="noopener">Read on Google</a>
+              </div>
+            </section>
+        <section class="fillCard" aria-label="Our guide snippet and social follow">
+              <!-- ICONS LIVE HERE (easy swap later):
+                   IG: /assets/images/icons/mbw_ig.png
+                   FB: /assets/images/icons/mbw_fb.png
+                   TikTok: /assets/images/icons/mbw_tt.png
+                   YouTube: /assets/images/icons/mbw_yt.png
+                   Chicho: /assets/images/icons/mbw_chicho.png
+                   GiftShop: /assets/images/icons/mbw_shop.png
+                   Or replace CSS vars above: --mbw-icon-ig / fb / tt / yt
+              -->
+              <div class="socialTop">
+                <div class="socialKicker">Meet the guide + follow along</div>
+                <p class="socialCopy">
+                  Want the full story, guiding style, and what to expect on a birding morning? Start here, then follow our latest sightings and reels.
+                </p>
               </div>
 
-              <div class="section" aria-label="Position and availability">
-                <h2>Position and availability</h2>
+              <div class="socialGrid" aria-label="Social links">
+                <a class="btn secondary socialBtn" href="/our-guide/" aria-label="Read Our Guide">
+                  <span class="ico cc" aria-hidden="true"></span>
+                  <span class="label">Our Guide</span>
+                </a>
 
+                <a class="btn secondary socialBtn" href="https://instagram.com/mindobirdwatching/" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+                  <span class="ico ig" aria-hidden="true"></span>
+                  <span class="label">Instagram</span>
+                </a>
+
+                <a class="btn secondary socialBtn" href="https://facebook.com/profile.php?id=61577783327957" target="_blank" rel="noopener" aria-label="Follow on Facebook">
+                  <span class="ico fb" aria-hidden="true"></span>
+                  <span class="label">Facebook</span>
+                </a>
+
+                <a class="btn secondary socialBtn" href="https://tiktok.com/@mindobirdwatching" target="_blank" rel="noopener" aria-label="Follow on TikTok">
+                  <span class="ico tt" aria-hidden="true"></span>
+                  <span class="label">TikTok</span>
+                </a>
                 
-              <div class="positions" id="positionsWrap">
-                <div class="field col-12">
-                  <label>Position</label>
-                  <input class="input" type="text" value="Team Member" readonly aria-label="Position applied for">
-                </div>
+                <a class="btn secondary socialBtn" href="https://youtube.com/@MindoBirdWatching" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
+                  <span class="ico yt" aria-hidden="true"></span>
+                  <span class="label">YouTube</span>
+                </a>
+
+                <a class="btn secondary socialBtn" href="https://shop.MindoBirdWatching.com" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
+                  <span class="ico gs" aria-hidden="true"></span>
+                  <span class="label">Gift Shop</span>
+                </a>
               </div>
+            </section>
+      </div>
 
-              <div style="height:10px"></div>
-
-                <div class="grid">
-<div class="field col-4">
-                    <label for="date_available">Date available</label>
-                    <input id="date_available" name="date_available" type="date" required>
-                  </div>
-
-                  
-<div class="field col-4">
-                    <label for="work_eligible">Legally eligible to work in the US?</label>
-                    <select id="work_eligible" name="work_eligible" required>
-                      <option value="" selected disabled>Select</option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                    </select>
-                  </div>
-
-
-<div class="field col-12">
-                    <label for="availability">Availability <span class="muted">(open late 7 days a week, including holidays)</span></label>
-                    <textarea class="input" id="availability" name="availability" placeholder="Tell us your availability (days and times)." required></textarea>
-                  </div>
-                </div>
-
-<div class="section" aria-label="Work history">
-                <h2>Work history</h2>
-                <div class="help">List your two most recent jobs.</div>
-
-                <div class="grid" aria-label="Job 1">
-                  <div class="field col-6">
-                    <label for="job1_company">Company</label>
-                    <input id="job1_company" name="job1_company" type="text" required>
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="job1_title">Position</label>
-                    <input id="job1_title" name="job1_title" type="text" required>
-                  </div>
-
-                  <div class="field col-3">
-                    <label for="job1_from">From</label>
-                    <input id="job1_from" name="job1_from" type="month" required>
-                  </div>
-
-                  <div class="field col-3">
-                    <label for="job1_to">To</label>
-                    <input id="job1_to" name="job1_to" type="month" required>
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="job1_phone">Phone</label>
-                    <input id="job1_phone" name="job1_phone" type="tel" inputmode="tel" placeholder="(XXX) XXX-XXXX">
-                  </div>
-
-                  <div class="field col-4">
-                    <label for="job1_city">City</label>
-                    <input id="job1_city" name="job1_city" type="text">
-                  </div>
-
-                  <div class="field col-2">
-                    <label for="job1_state">State</label>
-                    <input id="job1_state" name="job1_state" type="text" maxlength="2" placeholder="FL">
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="job1_supervisor">Supervisor</label>
-                    <input id="job1_supervisor" name="job1_supervisor" type="text">
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="job1_duties">Duties</label>
-                    <textarea id="job1_duties" name="job1_duties"></textarea>
-                  </div>
-                </div>
-
-                <div style="height:14px"></div>
-
-                <div class="grid" aria-label="Job 2">
-                  <div class="field col-6">
-                    <label for="job2_company">Company</label>
-                    <input id="job2_company" name="job2_company" type="text">
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="job2_title">Position</label>
-                    <input id="job2_title" name="job2_title" type="text">
-                  </div>
-
-                  <div class="field col-3">
-                    <label for="job2_from">From</label>
-                    <input id="job2_from" name="job2_from" type="month">
-                  </div>
-
-                  <div class="field col-3">
-                    <label for="job2_to">To</label>
-                    <input id="job2_to" name="job2_to" type="month">
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="job2_phone">Phone</label>
-                    <input id="job2_phone" name="job2_phone" type="tel" inputmode="tel" placeholder="(XXX) XXX-XXXX">
-                  </div>
-
-                  <div class="field col-4">
-                    <label for="job2_city">City</label>
-                    <input id="job2_city" name="job2_city" type="text">
-                  </div>
-
-                  <div class="field col-2">
-                    <label for="job2_state">State</label>
-                    <input id="job2_state" name="job2_state" type="text" maxlength="2" placeholder="FL">
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="job2_supervisor">Supervisor</label>
-                    <input id="job2_supervisor" name="job2_supervisor" type="text">
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="job2_duties">Duties</label>
-                    <textarea id="job2_duties" name="job2_duties"></textarea>
-                  </div>
-                </div>
-              </div>
-
-              <div class="section" aria-label="References">
-                <h2>References</h2>
-                <div class="help">Provide two references (not relatives).</div>
-
-                <div class="grid" aria-label="Reference 1">
-                  <div class="field col-6">
-                    <label for="ref1_name">Reference name</label>
-                    <input id="ref1_name" name="ref1_name" type="text" required>
-                  </div>
-                  <div class="field col-6">
-                    <label for="ref1_relationship">Relationship</label>
-                    <input id="ref1_relationship" name="ref1_relationship" type="text" required>
-                  </div>
-                  <div class="field col-6">
-                    <label for="ref1_company">Company</label>
-                    <input id="ref1_company" name="ref1_company" type="text">
-                  </div>
-                  <div class="field col-6">
-                    <label for="ref1_phone">Phone</label>
-                    <input id="ref1_phone" name="ref1_phone" type="tel" inputmode="tel" placeholder="(XXX) XXX-XXXX" required>
-                  </div>
-                </div>
-
-                <div style="height:14px"></div>
-
-                <div class="grid" aria-label="Reference 2">
-                  <div class="field col-6">
-                    <label for="ref2_name">Reference name</label>
-                    <input id="ref2_name" name="ref2_name" type="text" required>
-                  </div>
-                  <div class="field col-6">
-                    <label for="ref2_relationship">Relationship</label>
-                    <input id="ref2_relationship" name="ref2_relationship" type="text" required>
-                  </div>
-                  <div class="field col-6">
-                    <label for="ref2_company">Company</label>
-                    <input id="ref2_company" name="ref2_company" type="text">
-                  </div>
-                  <div class="field col-6">
-                    <label for="ref2_phone">Phone</label>
-                    <input id="ref2_phone" name="ref2_phone" type="tel" inputmode="tel" placeholder="(XXX) XXX-XXXX" required>
-                  </div>
-                </div>
-              </div>
-<div class="btnRow">
-                  <button class="btnLocal" type="reset">Reset</button>
-                  <button class="btnLocal primary" type="submit">Submit application</button>
-                </div>
-              </div>
-
-            </form>
+      <div class="aboutRight">
+        <aside class="sideImage" aria-label="Cloud forest image">
+          <img src="/assets/images/pages/MBW-Assets-93-AboutUs.jpg" alt="Mindo cloud forest scenery in Ecuador" />
+          <div class="sideImageCaption">
+            Cloud forest, close-up.
+            <span>Quiet trails, hummingbirds, and the best birding routes in Mindo.</span>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
-  </main>
 
-  <div id="siteFooter"></div>
+    <section class="partnerRow" aria-label="Extend your journey">
+      <header class="partnerHead">
+        <h2>Extend your journey</h2>
+        <p>If you are flying into Quito, here are two easy ways to add more value to your Ecuador trip.</p>
+      </header>
 
-  <script>
-    (function () {
-      function loadInto(id, url) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        fetch(url, { cache: "no-cache" })
-          .then(function (r) { return r.text(); })
-          .then(function (html) { el.innerHTML = html; })
-          .catch(function () { el.innerHTML = ""; });
-      }
+      <div class="partnerGrid">
+        <article class="partnerCard" aria-label="The Cloud Forest Retreat">
+          <div class="partnerMedia">
+            <img src="assets/images/promos/mbw_promo_tcfr_001.jpg" alt="The Cloud Forest Retreat - mountain view" loading="lazy" />
+          </div>
+          <div class="partnerBody">
+            <div class="partnerKicker">Suggested stay near Quito</div>
+            <h3>The Cloud Forest Retreat</h3>
+            <p>A calm 1 to 3 night reset before or after Mindo. About 1.5 to 2 hours from Mindo - perfect for decompressing, scenic views, and slow mornings.</p>
+            <div class="partnerActions">
+              <a class="btn primary" href="https://www.thecloudforestretreat.com/" target="_blank" rel="noopener">Explore the retreat</a>
+              <a class="btn secondary" href="/contact/">Ask us how to combine</a>
+            </div>
+          </div>
+        </article>
 
-      var docLang = document.documentElement.getAttribute("lang") || "en";
-      var isEs = docLang.toLowerCase().indexOf("es") === 0;
+        <article class="partnerCard" aria-label="Experience Ecuador">
+          <div class="partnerMedia">
+            <img src="assets/images/pages/birding/mbw_birding_toucans_hero_02.jpg" alt="Experience Ecuador - travel highlights" loading="lazy" />
+          </div>
+          <div class="partnerBody">
+            <div class="partnerKicker">More ideas for your trip</div>
+            <h3>Experience Ecuador</h3>
+            <p>Looking for other destinations and experiences while you are in Ecuador? Browse hand-picked itineraries and inspiration beyond Mindo.</p>
+            <div class="partnerActions">
+              <a class="btn primary" href="https://www.experienceecuador.com/" target="_blank" rel="noopener">Browse ideas</a>
+              <a class="btn secondary" href="/contact/">Tell us your dates</a>
+            </div>
+          </div>
+        </article>
+      </div>
 
-      var headerUrl = isEs ? "/assets/includes/header-es.html" : "/assets/includes/header.html";
-      var footerUrl = isEs ? "/assets/includes/footer-es.html" : "/assets/includes/footer.html";
+      <p class="partnerNote">Tip: replace the partner images with your preferred photos. Square images recommended (2048x2048).</p>
+    </section>
 
-      loadInto("siteHeader", headerUrl);
-      loadInto("siteFooter", footerUrl);
-    })();
-  </script>
+    <div class="grid" aria-label="Key points">
+      <div class="mini">
+        <h2>Local Guide</h2>
+        <p>Years of experience guiding birders through Mindo's cloud forest.</p>
+      </div>
+      <div class="mini">
+        <h2>Personalized Tours</h2>
+        <p>Great for both experienced birders and first-time nature lovers.</p>
+      </div>
+      <div class="mini">
+        <h2>Best Birding Spots</h2>
+        <p>Access to some of the strongest routes and habitats in the region.</p>
+      </div>
+    </div>
 
-  <script>
-    (function(){
-      var APPS_SCRIPT_URL = ""; // paste your Apps Script Web App URL here
+    <div class="ctaRow">
+      <a class="btn primary" href="/book-tour/">Book A Tour</a>
+      <a class="btn secondary" href="/tours/">Explore Tours</a>
+    </div>
+  </div>
+</main>
 
-      function setStatus(kind, msg){
-        var el = document.getElementById("formStatus");
-        if(!el) return;
-        el.className = "status" + (kind ? (" " + kind) : "");
-        el.textContent = msg || "";
-        el.style.display = msg ? "block" : "none";
-      }
+    <div id="siteFooter"></div>
+  </div>
 
-      function onlyDigits(s){ return String(s || "").replace(/\D/g, ""); }
-
-      function formatPhone(v){
-        var d = onlyDigits(v).slice(0, 10);
-        if(d.length === 0) return "";
-        if(d.length < 4) return "(" + d;
-        if(d.length < 7) return "(" + d.slice(0,3) + ") " + d.slice(3);
-        return "(" + d.slice(0,3) + ") " + d.slice(3,6) + "-" + d.slice(6);
-      }
-
-      function attachPhoneMask(id){
-        var el = document.getElementById(id);
-        if(!el) return;
-        el.addEventListener("input", function(){
-          var start = el.selectionStart || 0;
-          var before = el.value;
-          el.value = formatPhone(el.value);
-          if(before !== el.value){
-            try{ el.setSelectionRange(start, start); }catch(e){}
-          }
-        });
-        el.addEventListener("blur", function(){
-          el.value = formatPhone(el.value);
-        });
-      }
-
-      ["phone","job1_phone","job2_phone","ref1_phone","ref2_phone"].forEach(attachPhoneMask);
-
-      function collectPositions(){
-        return ["Team Member"];
-      }
-
-
+  <!-- Include injector + header behavior -->
+  <script src="/assets/js/includes.js?v=1" defer></script>
+  <script src="/assets/js/site.js?v=1" defer></script>
+</body>
+</html>
