@@ -264,20 +264,19 @@
     }
 
     .pill{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:0;
-  border:0;
-  background:transparent;
-  box-shadow:none;
-  border-radius:0;
-  color:var(--ink);
-  font-weight:800;
-  user-select:none;
-}
-.pill:hover{ text-decoration: underline; text-underline-offset:3px; }
-.pill input{ width:auto; margin:0; }
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(101,11,50,0.16);
+      background: rgba(255,255,255,0.75);
+      color: rgba(101,11,50,0.92);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .pill input{ width:auto; margin:0; }
 
     .positions{
       display: grid;
@@ -351,8 +350,6 @@
 .form-grid .help{
   min-height: 16px;
 }
-
-input[type="date"], input[type="month"]{ border-radius:0 !important; }
 </style>
 </head>
 
@@ -396,7 +393,7 @@ input[type="date"], input[type="month"]{ border-radius:0 !important; }
                   <div class="field col-4">
                     <label for="phone">Phone</label>
                     <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(XXX) XXX-XXXX" autocomplete="tel" required>
-                  </div>
+</div>
 
                   <div class="field col-4">
                     <label for="email">Email</label>
@@ -438,49 +435,24 @@ input[type="date"], input[type="month"]{ border-radius:0 !important; }
               <div class="section" aria-label="Position and availability">
                 <h2>Position and availability</h2>
 
-                <div class="positions" id="positionsWrap" aria-label="Positions applied for">
-                  <div class="posRow">
-                    <div class="field">
-                      <label>Position applied for</label>
-                      <select name="position_0" required>
-                        <option value="" selected disabled>Select a position</option>
-                        <option value="Team Member">Team Member</option>
-                        <option value="Shift Lead">Shift Lead</option>
-                        <option value="Cake Decorator">Cake Decorator</option>
-                        <option value="Assistant Manager">Assistant Manager</option>
-                        <option value="Store Manager">Store Manager</option>
-                        <option value="Other">Other</option>
-                      </select>
-                      <div class="help">Use "Add another job" if you want to be considered for multiple roles.</div>
-                    </div>
-                    <button class="removeBtn" type="button" aria-label="Remove position" style="display:none">Remove</button>
-                  </div>
+                
+              <div class="positions" id="positionsWrap">
+                <div class="field col-12">
+                  <label>Position</label>
+                  <input class="input" type="text" value="Team Member" readonly aria-label="Position applied for">
                 </div>
+              </div>
 
-                <div class="row-actions">
-                  <button id="addJobBtn" class="miniBtn" type="button">Add another job</button>
-                </div>
-
-                <div style="height:10px"></div>
+              <div style="height:10px"></div>
 
                 <div class="grid">
-                  <div class="field col-4">
+<div class="field col-4">
                     <label for="date_available">Date available</label>
                     <input id="date_available" name="date_available" type="date" required>
                   </div>
 
-                  <div class="field col-4">
-                    <label for="availability">Availability</label>
-                    <select id="availability" name="availability" required>
-                      <option value="" selected disabled>Select</option>
-                      <option value="Weekdays">Weekdays</option>
-                      <option value="Weekends">Weekends</option>
-                      <option value="Evenings">Evenings</option>
-                      <option value="Open availability">Open availability</option>
-                    </select>
-                  </div>
-
-                  <div class="field col-4">
+                  
+<div class="field col-4">
                     <label for="work_eligible">Legally eligible to work in the US?</label>
                     <select id="work_eligible" name="work_eligible" required>
                       <option value="" selected disabled>Select</option>
@@ -489,93 +461,14 @@ input[type="date"], input[type="month"]{ border-radius:0 !important; }
                     </select>
                   </div>
 
-                  <div class="field col-12">
-                    <label for="availability_notes">Availability notes</label>
-                    <textarea id="availability_notes" name="availability_notes" placeholder="Optional notes about schedule, days, or start date."></textarea>
-                  </div>
-                </div>
-              </div>
 
-              <div class="section" aria-label="Education">
-                <h2>Education</h2>
-
-                <div class="grid">
-                  <div class="field col-8">
-                    <label for="hs_name">High school name</label>
-                    <input id="hs_name" name="hs_name" type="text" required>
-                  </div>
-
-                  <div class="field col-4">
-                    <label for="hs_graduated">Graduated?</label>
-                    <select id="hs_graduated" name="hs_graduated" required>
-                      <option value="" selected disabled>Select</option>
-                      <option value="Yes">Yes</option>
-                      <option value="No">No</option>
-                      <option value="In progress">In progress</option>
-                    </select>
-                  </div>
-
-                  <div class="field col-12">
-                    <label for="hs_address">High school address</label>
-                    <input id="hs_address" name="hs_address" type="text" required>
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="hs_major">Course of study</label>
-                    <input id="hs_major" name="hs_major" type="text">
-                  </div>
-
-                  <div class="field col-6">
-                    <label for="hs_degree">Diploma or degree</label>
-                    <input id="hs_degree" name="hs_degree" type="text">
+<div class="field col-12">
+                    <label for="availability">Availability <span class="muted">(open late 7 days a week, including holidays)</span></label>
+                    <textarea class="input" id="availability" name="availability" placeholder="Tell us your availability (days and times)." required></textarea>
                   </div>
                 </div>
 
-                <div style="height:12px"></div>
-
-                <div class="row-actions">
-                  <div class="pill">
-                    <input id="toggle_college" type="checkbox">
-                    <label for="toggle_college" style="font-weight:900;color:rgba(101,11,50,0.92);font-size:13px">Add college details (optional)</label>
-                  </div>
-                </div>
-
-                <div id="collegeWrap" style="display:none;margin-top:12px">
-                  <div class="grid">
-                    <div class="field col-8">
-                      <label for="college_name">College name</label>
-                      <input id="college_name" name="college_name" type="text">
-                    </div>
-
-                    <div class="field col-4">
-                      <label for="college_graduated">Graduated?</label>
-                      <select id="college_graduated" name="college_graduated">
-                        <option value="" selected>Select</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                        <option value="In progress">In progress</option>
-                      </select>
-                    </div>
-
-                    <div class="field col-12">
-                      <label for="college_address">College address</label>
-                      <input id="college_address" name="college_address" type="text">
-                    </div>
-
-                    <div class="field col-6">
-                      <label for="college_major">Course of study</label>
-                      <input id="college_major" name="college_major" type="text">
-                    </div>
-
-                    <div class="field col-6">
-                      <label for="college_degree">Degree</label>
-                      <input id="college_degree" name="college_degree" type="text">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="section" aria-label="Work history">
+<div class="section" aria-label="Work history">
                 <h2>Work history</h2>
                 <div class="help">List your two most recent jobs.</div>
 
@@ -720,10 +613,7 @@ input[type="date"], input[type="month"]{ border-radius:0 !important; }
                   </div>
                 </div>
               </div>
-
-              <div class="row-actions">
-                <div class="help">By submitting, you confirm the information is accurate to the best of your knowledge.</div>
-                <div class="btnRow">
+<div class="btnRow">
                   <button class="btnLocal" type="reset">Reset</button>
                   <button class="btnLocal primary" type="submit">Submit application</button>
                 </div>
@@ -800,255 +690,8 @@ input[type="date"], input[type="month"]{ border-radius:0 !important; }
 
       ["phone","job1_phone","job2_phone","ref1_phone","ref2_phone"].forEach(attachPhoneMask);
 
-      function positionRow(index){
-        var wrap = document.createElement("div");
-        wrap.className = "posRow";
-
-        var field = document.createElement("div");
-        field.className = "field";
-        field.innerHTML =
-          "<label>Position applied for</label>" +
-          "<select name=\"position_" + index + "\" required>" +
-            "<option value=\"\" selected disabled>Select a position</option>" +
-            "<option value=\"Team Member\">Team Member</option>" +
-            "<option value=\"Shift Lead\">Shift Lead</option>" +
-            "<option value=\"Cake Decorator\">Cake Decorator</option>" +
-            "<option value=\"Assistant Manager\">Assistant Manager</option>" +
-            "<option value=\"Store Manager\">Store Manager</option>" +
-            "<option value=\"Other\">Other</option>" +
-          "</select>";
-
-        var remove = document.createElement("button");
-        remove.type = "button";
-        remove.className = "removeBtn";
-        remove.textContent = "Remove";
-        remove.addEventListener("click", function(){
-          wrap.parentNode.removeChild(wrap);
-          updateRemoveButtons();
-        });
-
-        wrap.appendChild(field);
-        wrap.appendChild(remove);
-        return wrap;
-      }
-
-      function updateRemoveButtons(){
-        var wrap = document.getElementById("positionsWrap");
-        if(!wrap) return;
-        var rows = wrap.querySelectorAll(".posRow");
-        rows.forEach(function(row, i){
-          var btn = row.querySelector(".removeBtn");
-          if(!btn) return;
-          btn.style.display = (rows.length > 1) ? "inline-flex" : "none";
-        });
-      }
-
-      var addBtn = document.getElementById("addJobBtn");
-      if(addBtn){
-        addBtn.addEventListener("click", function(){
-          var wrap = document.getElementById("positionsWrap");
-          if(!wrap) return;
-          var index = wrap.querySelectorAll(".posRow").length;
-          wrap.appendChild(positionRow(index));
-          updateRemoveButtons();
-        });
-      }
-      updateRemoveButtons();
-
-      var toggleCollege = document.getElementById("toggle_college");
-      var collegeWrap = document.getElementById("collegeWrap");
-      if(toggleCollege && collegeWrap){
-        toggleCollege.addEventListener("change", function(){
-          collegeWrap.style.display = toggleCollege.checked ? "block" : "none";
-        });
-      }
-
       function collectPositions(){
-        var wrap = document.getElementById("positionsWrap");
-        if(!wrap) return [];
-        var selects = Array.from(wrap.querySelectorAll("select"));
-        return selects.map(function(sel){ return String(sel.value || "").trim(); }).filter(Boolean);
+        return ["Team Member"];
       }
 
-      function getVal(id){
-        var el = document.getElementById(id);
-        return el ? String(el.value || "").trim() : "";
-      }
 
-      function requireField(id, label){
-        var v = getVal(id);
-        if(!v) throw new Error("Missing required field: " + label);
-        return v;
-      }
-
-      function normalizeState(v){
-        v = String(v || "").trim().toUpperCase();
-        return v.slice(0, 2);
-      }
-
-      function titleCaseWords(s){
-        s = String(s || "").trim();
-        if(!s) return "";
-        return s
-          .toLowerCase()
-          .split(/\s+/)
-          .map(function(w){
-            // keep common short words lowercased when not first (optional)
-            return w.split("-").map(function(part){
-              if(!part) return part;
-              return part.charAt(0).toUpperCase() + part.slice(1);
-            }).join("-");
-          })
-          .join(" ");
-      }
-
-      function wireAutoCapitalize(){
-        var scope = document.getElementById("joinForm") || document;
-        var fields = Array.from(scope.querySelectorAll('input[type="text"], textarea'));
-        fields.forEach(function(el){
-          var id = (el.id || "").toLowerCase();
-          // Skip fields that should not be title-cased
-          if(id === "state" || id === "zip") return;
-          if(el.getAttribute("inputmode") === "numeric") return;
-
-          // Better mobile keyboards (iOS)
-          el.setAttribute("autocapitalize", "words");
-
-          el.addEventListener("blur", function(){
-            // Do not touch empty values
-            var v = String(el.value || "");
-            if(!v.trim()) return;
-
-            // Address can still be title-cased safely; leave numbers as-is
-            el.value = titleCaseWords(v);
-          });
-        });
-
-        // State should be uppercase
-        var st = document.getElementById("state");
-        if(st){
-          st.setAttribute("autocapitalize", "characters");
-          st.addEventListener("blur", function(){
-            st.value = normalizeState(st.value);
-          });
-        }
-      }
-
-      function submitPayload(payload){
-        if(!APPS_SCRIPT_URL){
-          throw new Error("Apps Script URL is not set yet. Paste it into APPS_SCRIPT_URL in this page.");
-        }
-        return fetch(APPS_SCRIPT_URL, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(payload)
-        }).then(function(r){ return r.json ? r.json() : r.text(); });
-      }
-
-            wireAutoCapitalize();
-
-      var form = document.getElementById("joinForm");
-      if(form){
-        form.addEventListener("submit", function(e){
-          e.preventDefault();
-          setStatus("", "");
-
-          try{
-            var positions = collectPositions();
-            if(positions.length === 0) throw new Error("Please select at least one position.");
-
-            var payload = {
-              timestamp_utc: new Date().toISOString(),
-              first_name: requireField("first_name", "First name"),
-              last_name: requireField("last_name", "Last name"),
-              dob: requireField("dob", "Date of birth"),
-              phone: requireField("phone", "Phone"),
-              email: requireField("email", "Email"),
-              address: requireField("address", "Address"),
-              city: requireField("city", "City"),
-              state: normalizeState(requireField("state", "State")),
-              zip: requireField("zip", "Zip"),
-              location_preference: requireField("location_preference", "Preferred location"),
-              positions: positions,
-              date_available: requireField("date_available", "Date available"),
-              availability: requireField("availability", "Availability"),
-              work_eligible: requireField("work_eligible", "Work eligibility"),
-              availability_notes: getVal("availability_notes"),
-
-              hs_name: requireField("hs_name", "High school name"),
-              hs_address: requireField("hs_address", "High school address"),
-              hs_graduated: requireField("hs_graduated", "High school graduated"),
-              hs_major: getVal("hs_major"),
-              hs_degree: getVal("hs_degree"),
-
-              college_name: toggleCollege && toggleCollege.checked ? getVal("college_name") : "",
-              college_address: toggleCollege && toggleCollege.checked ? getVal("college_address") : "",
-              college_graduated: toggleCollege && toggleCollege.checked ? getVal("college_graduated") : "",
-              college_major: toggleCollege && toggleCollege.checked ? getVal("college_major") : "",
-              college_degree: toggleCollege && toggleCollege.checked ? getVal("college_degree") : "",
-
-              job1_company: requireField("job1_company", "Job 1 company"),
-              job1_title: requireField("job1_title", "Job 1 position"),
-              job1_from: requireField("job1_from", "Job 1 from"),
-              job1_to: requireField("job1_to", "Job 1 to"),
-              job1_phone: getVal("job1_phone"),
-              job1_city: getVal("job1_city"),
-              job1_state: normalizeState(getVal("job1_state")),
-              job1_supervisor: getVal("job1_supervisor"),
-              job1_duties: getVal("job1_duties"),
-
-              job2_company: getVal("job2_company"),
-              job2_title: getVal("job2_title"),
-              job2_from: getVal("job2_from"),
-              job2_to: getVal("job2_to"),
-              job2_phone: getVal("job2_phone"),
-              job2_city: getVal("job2_city"),
-              job2_state: normalizeState(getVal("job2_state")),
-              job2_supervisor: getVal("job2_supervisor"),
-              job2_duties: getVal("job2_duties"),
-
-              ref1_name: requireField("ref1_name", "Reference 1 name"),
-              ref1_relationship: requireField("ref1_relationship", "Reference 1 relationship"),
-              ref1_company: getVal("ref1_company"),
-              ref1_phone: requireField("ref1_phone", "Reference 1 phone"),
-
-              ref2_name: requireField("ref2_name", "Reference 2 name"),
-              ref2_relationship: requireField("ref2_relationship", "Reference 2 relationship"),
-              ref2_company: getVal("ref2_company"),
-              ref2_phone: requireField("ref2_phone", "Reference 2 phone")
-            };
-
-            setStatus("", "Submitting your application...");
-            submitPayload(payload).then(function(resp){
-              if(resp && resp.ok){
-                setStatus("ok", "Application submitted. Check your email for confirmation.");
-                form.reset();
-                if(toggleCollege && collegeWrap){
-                  toggleCollege.checked = false;
-                  collegeWrap.style.display = "none";
-                }
-                var wrap = document.getElementById("positionsWrap");
-                if(wrap){
-                  var rows = wrap.querySelectorAll(".posRow");
-                  rows.forEach(function(r, i){ if(i > 0) r.parentNode.removeChild(r); });
-                  var firstSel = wrap.querySelector("select");
-                  if(firstSel) firstSel.value = "";
-                  updateRemoveButtons();
-                }
-              }else{
-                var msg = (resp && resp.error) ? resp.error : "Something went wrong. Please try again.";
-                setStatus("bad", msg);
-              }
-            }).catch(function(err){
-              setStatus("bad", String(err && err.message ? err.message : err));
-            });
-
-          }catch(err){
-            setStatus("bad", String(err && err.message ? err.message : err));
-          }
-        });
-      }
-    })();
-  </script>
-</body>
-</html>
