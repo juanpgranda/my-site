@@ -323,6 +323,20 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
+      display:inline-flex;
+      align-items: baseline;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    /* Review date: NOT bold, slightly muted, with consistent spacing from name */
+    .review-date{
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      color: rgba(101, 11, 50, 0.55);
+      margin-left: 12px;
+      white-space: nowrap;
     }
 
     .hlTop .stars{
@@ -337,12 +351,10 @@
       color: rgba(101, 11, 50, 0.78);
       font-size: 13px;
       line-height: 1.5;
-      /* Show full highlight text (no truncation) */
       white-space: pre-line;
     }
 
-    /* Equal-height columns so both location blocks align at the bottom.
-       The shorter column will naturally keep whitespace under its last review. */
+    /* Equal-height columns so both location blocks align at the bottom */
     .locCard{
       display: flex;
       flex-direction: column;
@@ -388,6 +400,7 @@
       .ctaRow .chip{ width: 100%; }
       .secondaryLink{ margin-left: 0; }
       .ratingLine{ justify-content: space-between; }
+      .review-date{ margin-left: 10px; }
     }
   </style>
 </head>
@@ -452,7 +465,7 @@
                 <div class="hlGrid">
                   <div class="hl" aria-label="North Miami highlight 1">
                     <div class="hlTop">
-                      <div class="label">Khalid J.</div>
+                      <div class="label">Khalid J.<span class="review-date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12/2025</span></div>
                       <div class="stars" aria-hidden="true">★★★★★</div>
                     </div>
                     <p class="hlText">Best ice cream in the area, hands down. The shop is spotless, the vibe is great, and the flavors are on another level. But the real highlight is Cathy - she's always welcoming, patient, and treats every customer like family.
@@ -460,17 +473,17 @@ The ice cream tastes fresh and high-quality, the portions are generous, and the 
                   </div>
                   <div class="hl" aria-label="North Miami highlight 2">
                     <div class="hlTop">
-                      <div class="label">Kris S.</div>
+                      <div class="label">Kris S.<span class="review-date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12/2025</span></div>
                       <div class="stars" aria-hidden="true">★★★★★</div>
                     </div>
                     <p class="hlText">This location is superb! Friendly staff and clean business. Can't go wrong with Haagen-Dazs when you want quality ice cream! I tried their ice cream cake for my son's birthday and it was absolutely delicious too!</p>
                   </div>
                   <div class="hl" aria-label="North Miami highlight 3">
                     <div class="hlTop">
-                      <div class="label">Sharon G.</div>
+                      <div class="label">Sharon G.<span class="review-date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12/2025</span></div>
                       <div class="stars" aria-hidden="true">★★★★★</div>
                     </div>
-                    <p class="hlText">So happy haagen dazs opened up by causeway square! Amazing service! I ordered cakes last minute and the owner Gaby was so sweet and accommodating. The cakes were delicious, and her kindness keeps me coming back. Highly recommend this Miami Häagen-Dazs!</p>
+                    <p class="hlText">So happy haagen dazs opened up by causeway square! Amazing service! I ordered cakes last minute and the owner Gabay was so sweet and accommodating. The cakes were delicious, and her kindness keeps me coming back. Highly recommend this Miami Häagen-Dazs!</p>
                   </div>
                 </div>
               </div>
@@ -503,7 +516,7 @@ The ice cream tastes fresh and high-quality, the portions are generous, and the 
                 <div class="hlGrid">
                   <div class="hl" aria-label="North Beach highlight 1">
                     <div class="hlTop">
-                      <div class="label">Gaby G.</div>
+                      <div class="label">Gaby G.<span class="review-date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1/2026</span></div>
                       <div class="stars" aria-hidden="true">★★★★★</div>
                     </div>
                     <p class="hlText">So happy to finally have a Haagen Dazs in the North Beach area of Miami Beach. Ordered a pint of cookies and cream for delivery through UberEats for a family event, it came quicker than expected and the cookies and cream was creamy and fresh and great quality. I've stopped by in-store before a couple of times and the customer service was always great.
@@ -511,14 +524,14 @@ Gonna order another pint today for a potluck with friends. Thank you to the enti
                   </div>
                   <div class="hl" aria-label="North Beach highlight 2">
                     <div class="hlTop">
-                      <div class="label">Abhi</div>
+                      <div class="label">Abhi<span class="review-date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12/2025</span></div>
                       <div class="stars" aria-hidden="true">★★★★★</div>
                     </div>
                     <p class="hlText">Delicious ice-cream, excellent customer service, super clean store. Gabby the owner was super kind & friendly. A must visit location if you are in South Miami Beach</p>
                   </div>
                   <div class="hl" aria-label="North Beach highlight 3">
                     <div class="hlTop">
-                      <div class="label">Haydee</div>
+                      <div class="label">Haydee<span class="review-date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1/2026</span></div>
                       <div class="stars" aria-hidden="true">★★★★★</div>
                     </div>
                     <p class="hlText">great place, amazing service and the place sooo cleannn!!!</p>
