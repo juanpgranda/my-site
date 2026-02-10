@@ -361,6 +361,60 @@ input[type="date"] {
   justify-content: flex-start;
   margin-top: 16px;
 }
+
+
+/* Match Contact page layout styles */
+.page-hero {
+      background: var(--hd-white);
+      padding: 26px 0 10px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+.section {
+      padding: 18px 0 34px;
+      background: var(--band-gold-bg);
+    }
+.form-card {
+      background: var(--hd-white);
+      border: var(--border-soft);
+      border-radius: 0;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+.form-head {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      background: rgba(249, 230, 195, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+.grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+.field {
+      display: grid;
+      gap: 6px;
+    }
+input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(101, 11, 50, 0.18);
+      border-radius: 0;
+      padding: 11px 12px;
+      font-size: 14px;
+      color: rgba(31, 27, 28, 0.95);
+      background: #fff;
+      outline: none;
+      font-family: var(--font-body);
+    }
+
+
+
+
 </style>
 </head>
 
@@ -376,10 +430,15 @@ input[type="date"] {
       </div>
     </section>
 
-    <section class="panel" aria-label="Application form">
+    <section class="section" aria-label="Application form">
       <div class="container">
-        <div class="card">
-          <div class="card-body">
+        <div class="form-card">
+          
+          <div class="form-head">
+            <div class="form-title">Application Form</div>
+            <div class="form-note">All fields required unless marked optional.</div>
+          </div>
+<div class="form-body">
             <div id="formStatus" class="status" role="status" aria-live="polite"></div>
 
             <form id="joinForm" class="form" novalidate>
