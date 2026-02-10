@@ -475,7 +475,42 @@ input[type="month"]{
                   </div>
                 </div>
 
-<div class="section" aria-label="Work history">
+
+      <div class="section" aria-label="Education">
+        <h2 class="section-title">Education</h2>
+
+        <div class="grid cols-2">
+          <div class="field">
+            <label for="school_name">College/School name</label>
+            <input id="school_name" name="high_school_name" type="text" placeholder="" autocomplete="organization" />
+          </div>
+
+          <div class="field">
+            <label for="graduated">Graduated?</label>
+            <select id="graduated" name="high_school_graduated">
+              <option value="" selected disabled>Select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+              <option value="In progress">In progress</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid cols-2">
+          <div class="field">
+            <label for="course_of_study">Course of study</label>
+            <input id="course_of_study" name="high_school_course" type="text" />
+          </div>
+
+          <div class="field">
+            <label for="diploma_degree">Diploma or degree</label>
+            <input id="diploma_degree" name="high_school_degree" type="text" />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="section" aria-label="Work history">
                 <h2>Work history</h2>
                 <div class="help">List your two most recent jobs.</div>
 
