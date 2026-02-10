@@ -9,351 +9,234 @@
       background: var(--hd-white);
       border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-/* Tapestry band (GLOBAL) */
-.hd-header .tapestry {
-  background-image: url("/assets/images/pages/hd_tapestry_39.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-  border-bottom: 0;
-}
 
-.hd-header .tapestry-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 var(--container-pad);
-  min-height: 76px;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
+    .hd-header .tapestry {
+      background-image: url("/assets/images/pages/hd_tapestry_39.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      line-height: 0;
+    }
 
-/* Centered logo (GLOBAL) */
-.hd-header .logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
+    .hd-header .tapestry-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+      min-height: 76px;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
 
-.hd-header .logo img {
-  height: 108px;
-  width: auto;
-  max-width: min(520px, 92vw);
-  display: block;
-}
+    .hd-header .logo img {
+      height: 108px;
+      max-width: min(520px, 92vw);
+      display: block;
+    }
 
-/* Desktop nav row under tapestry */
-.hd-header .bar {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 10px var(--container-pad) 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .hd-header .bar {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px var(--container-pad) 12px;
+      display: flex;
+      justify-content: center;
+    }
 
-.hd-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
+    .hd-nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
 
-/* =========================================================
-   DESKTOP NAV: BLACK DEFAULT, BURGUNDY ON HOVER, NO PILL
-   (hard override to kill any legacy pill/background styles)
-   ========================================================= */
+    .hd-nav a,
+    .hd-nav .has-sub > a {
+      text-decoration: none !important;
+      color: #111111 !important;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      padding: 10px 2px;
+      background: transparent !important;
+      border: 0 !important;
+    }
 
-.hd-nav a,
-.hd-nav .has-sub > a {
-  text-decoration: none !important;
-  color: #111111 !important;
-  font-weight: 900;
-  font-size: 13px;
-  letter-spacing: 0.02em;
-  padding: 10px 2px;
-  line-height: 1;
-  white-space: nowrap;
+    .hd-nav a:hover,
+    .hd-nav .has-sub > a:hover {
+      color: var(--hd-burgundy) !important;
+    }
 
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
+    .hd-nav .has-sub {
+      position: relative;
+    }
 
-.hd-nav a:hover,
-.hd-nav a:focus,
-.hd-nav .has-sub > a:hover,
-.hd-nav .has-sub > a:focus {
-  color: var(--hd-burgundy) !important;
-  background: transparent !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
+    .hd-nav .caret {
+      font-size: 10px;
+      margin-left: 6px;
+    }
 
-/* Kill any pseudo-element "pill" effects */
-.hd-nav a::before,
-.hd-nav a::after,
-.hd-nav .has-sub > a::before,
-.hd-nav .has-sub > a::after {
-  content: none !important;
-}
+    .hd-nav .submenu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 240px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      padding: 8px;
+      display: none;
+      z-index: 9999;
+      margin-top: 8px;
+    }
 
-/* Desktop dropdown for Locations */
-.hd-nav .has-sub {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
+    .hd-nav .submenu a {
+      display: block;
+      padding: 10px 12px;
+      font-weight: 900;
+      border-radius: 12px;
+      background: rgba(249,230,195,0.2);
+    }
 
-.hd-nav .has-sub > a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
+    .hd-nav .submenu a:hover {
+      background: rgba(249,230,195,0.35);
+      color: var(--hd-burgundy);
+    }
 
-.hd-nav .caret {
-  font-size: 10px;
-  line-height: 1;
-  opacity: 0.85;
-  color: currentColor;
-}
+    .hd-nav .has-sub:hover .submenu {
+      display: block;
+    }
 
-/* IMPORTANT: remove hover gap by aligning submenu to the bottom edge of the trigger */
-.hd-nav .submenu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 240px;
-  background: var(--hd-white);
-  border: 1px solid rgba(0,0,0,0.10);
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  padding: 8px;
-  display: none;
-  z-index: 9999;
-  margin-top: 8px;
-}
+    /* Mobile */
+    .hd-mobile-row {
+      display: none;
+      justify-content: center;
+      padding: 10px var(--container-pad) 12px;
+    }
 
-/* Hover bridge: keeps hover active while moving to submenu */
-.hd-nav .has-sub::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  height: 12px;
-  display: none;
-}
+    .hd-burger {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(101,11,50,0.18);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* Submenu links */
-.hd-nav .submenu a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-weight: 900;
-  color: #111111 !important;
-  background: rgba(249, 230, 195, 0.20);
-  text-align: left;
-  text-decoration: none !important;
-}
+    .hd-burger span,
+    .hd-burger span::before,
+    .hd-burger span::after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--hd-burgundy);
+      position: relative;
+    }
 
-.hd-nav .submenu a:hover,
-.hd-nav .submenu a:focus {
-  color: var(--hd-burgundy) !important;
-  background: rgba(249, 230, 195, 0.35);
-  outline: none;
-}
+    .hd-burger span::before { top: -6px; position: absolute; }
+    .hd-burger span::after { top: 6px; position: absolute; }
 
-.hd-nav .has-sub:hover .submenu,
-.hd-nav .has-sub:focus-within .submenu {
-  display: block;
-}
+    .hd-mobile-toggle {
+      display: none;
+    }
 
-.hd-nav .has-sub:hover::after,
-.hd-nav .has-sub:focus-within::after {
-  display: block;
-}
+    .hd-mobile-panel {
+      display: none;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
 
-/* Mobile: logo centered, hamburger below tapestry */
-.hd-mobile-row {
-  display: none;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 10px var(--container-pad) 12px;
-  align-items: center;
-  justify-content: center;
-}
+    .hd-mobile-panel .inner {
+      padding: 12px 20px 18px;
+    }
 
-.hd-mobile-toggle {
-  display: none;
-}
+    .hd-mobile-panel nav a {
+      display: block;
+      font-weight: 900;
+      padding: 12px 0;
+      text-decoration: none;
+      color: #111;
+    }
 
-.hd-burger {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  border: 1px solid rgba(101, 11, 50, 0.18);
-  background: var(--hd-white);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-}
+    .hd-mobile-panel nav a:hover {
+      color: var(--hd-burgundy);
+    }
 
-.hd-burger span {
-  width: 18px;
-  height: 2px;
-  background: var(--hd-burgundy);
-  display: block;
-  position: relative;
-}
+    .hd-mobile-toggle:checked ~ .hd-mobile-panel {
+      display: block;
+    }
 
-.hd-burger span::before,
-.hd-burger span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 18px;
-  height: 2px;
-  background: var(--hd-burgundy);
-}
-
-.hd-burger span::before { top: -6px; }
-.hd-burger span::after { top: 6px; }
-
-.hd-mobile-panel {
-  display: none;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  background: var(--hd-white);
-}
-
-.hd-mobile-panel .inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 12px 20px 18px;
-}
-
-.hd-mobile-panel nav {
-  display: grid;
-  gap: 8px;
-}
-
-/* Mobile links: black default, burgundy hover (no pill) */
-.hd-mobile-panel a {
-  text-decoration: none;
-  color: #111111;
-  font-weight: 900;
-  padding: 12px 2px;
-  border-radius: 0;
-  background: transparent;
-}
-
-.hd-mobile-panel a:hover,
-.hd-mobile-panel a:focus {
-  outline: none;
-  color: var(--hd-burgundy);
-  background: transparent;
-}
-
-.hd-mobile-toggle:checked ~ .hd-mobile-panel {
-  display: block;
-}
-
-/* Responsive sizing */
-@media (max-width: 960px) {
-  .hd-header .tapestry-inner {
-    min-height: 68px;
-  }
-
-  .hd-header .logo img {
-    height: 62px;
-  }
-
-  .hd-header .bar {
-    display: none;
-  }
-
-  .hd-mobile-row {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .hd-header .tapestry-inner {
-    min-height: 76px;
-  }
-
-  .hd-header .logo img {
-    height: 56px;
-  }
-}
+    @media (max-width: 960px) {
+      .hd-header .bar { display: none; }
+      .hd-mobile-row { display: flex; }
+      .hd-header .logo img { height: 62px; }
+    }
   </style>
 </head>
+
 <body>
-  <header class="hd-header" aria-label="Site header">
-    <div class="tapestry" aria-hidden="true">
-      <div class="tapestry-inner">
-        <a class="logo" href="/" aria-label="Home">
-          <img src="/assets/images/pages/hd_logo_transparent_01.png" alt="Haagen-Dazs">
-        </a>
-      </div>
-    </div>
-<!-- Desktop nav -->
-<div class="bar" aria-label="Primary navigation bar">
-  <nav class="hd-nav" aria-label="Primary navigation">
-    <a href="/">HOME</a>
-
-    <div class="has-sub">
-      <a href="/locations" aria-haspopup="true" aria-expanded="false">
-        LOCATIONS <span class="caret">&#9662;</span>
+<header class="hd-header">
+  <div class="tapestry">
+    <div class="tapestry-inner">
+      <a class="logo" href="/">
+        <img src="/assets/images/pages/hd_logo_transparent_01.png" alt="Haagen-Dazs">
       </a>
-      <div class="submenu" role="menu" aria-label="Locations submenu">
-        <a href="/locations" role="menuitem">ALL LOCATIONS</a>
-        <a href="/locations/north-miami" role="menuitem">NORTH MIAMI</a>
-        <a href="/locations/north-beach" role="menuitem">NORTH BEACH</a>
-      </div>
     </div>
+  </div>
 
-    <a href="/menu">MENU</a>
-    <a href="/cakes">CAKES</a>
-    <a href="/reviews">REVIEWS</a>
-    <a href="/contact">CONTACT</a>
-  </nav>
-</div>
-
-<!-- Mobile hamburger -->
-<div class="hd-mobile-row" aria-label="Mobile navigation bar">
-  <label class="hd-burger" for="hdMobileToggle" aria-label="Open menu">
-    <span></span>
-  </label>
-</div>
-
-<input class="hd-mobile-toggle" type="checkbox" id="hdMobileToggle" aria-hidden="true">
-
-<div class="hd-mobile-panel" aria-label="Mobile menu">
-  <div class="inner">
-    <nav aria-label="Mobile navigation">
+  <!-- Desktop Nav -->
+  <div class="bar">
+    <nav class="hd-nav">
       <a href="/">HOME</a>
-      <a href="/locations">LOCATIONS</a>
-      <a href="/locations/north-miami">NORTH MIAMI</a>
-      <a href="/locations/north-beach">NORTH BEACH</a>
+
+      <div class="has-sub">
+        <a href="/locations">LOCATIONS <span class="caret">&#9662;</span></a>
+        <div class="submenu">
+          <a href="/locations">ALL LOCATIONS</a>
+          <a href="/locations/north-miami">NORTH MIAMI</a>
+          <a href="/locations/north-beach">NORTH BEACH</a>
+        </div>
+      </div>
+
       <a href="/menu">MENU</a>
       <a href="/cakes">CAKES</a>
       <a href="/reviews">REVIEWS</a>
-      <a href="/contact">CONTACT</a>
+
+      <div class="has-sub">
+        <a href="/contact">CONTACT <span class="caret">&#9662;</span></a>
+        <div class="submenu">
+          <a href="/contact">SEND US A MESSAGE</a>
+          <a href="/join">JOIN THE TEAM</a>
+        </div>
+      </div>
     </nav>
   </div>
-</div>
-  </header>
+
+  <!-- Mobile -->
+  <div class="hd-mobile-row">
+    <label class="hd-burger" for="hdMobileToggle"><span></span></label>
+  </div>
+
+  <input type="checkbox" id="hdMobileToggle" class="hd-mobile-toggle">
+
+  <div class="hd-mobile-panel">
+    <div class="inner">
+      <nav>
+        <a href="/">HOME</a>
+        <a href="/locations">LOCATIONS</a>
+        <a href="/locations/north-miami">NORTH MIAMI</a>
+        <a href="/locations/north-beach">NORTH BEACH</a>
+        <a href="/menu">MENU</a>
+        <a href="/cakes">CAKES</a>
+        <a href="/reviews">REVIEWS</a>
+        <a href="/contact">SEND US A MESSAGE</a>
+        <a href="/join">JOIN THE TEAM</a>
+      </nav>
+    </div>
+  </div>
+</header>
 </body>
 </html>
