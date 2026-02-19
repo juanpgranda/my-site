@@ -267,7 +267,28 @@
       min-width: 220px;
     }
     }
-  </style>
+  /* Button size lock: prevent visual jump on submit/disabled */
+.actions .btn,
+.actions button.btn {
+  height: 52px !important;
+  min-height: 52px !important;
+  line-height: 52px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.actions .btn.btnWide,
+.actions button.btn.btnWide {
+  width: 100% !important;
+  max-width: 560px !important;
+}
+.actions .btn:disabled,
+.actions button.btn:disabled {
+  opacity: 0.85;
+}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
