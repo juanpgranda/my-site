@@ -288,6 +288,19 @@
 .actions button.btn:disabled {
   opacity: 0.85;
 }
+/* Layout lock: prevent grid stretch when status message appears */
+.actions {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+#statusMsg {
+  width: min(560px, 100%) !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
 </style>
 </head>
 <body>
