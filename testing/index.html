@@ -661,33 +661,33 @@
 
           <div class="gallery" aria-label="North Beach image carousel">
             <div class="gallery-viewport" id="galleryViewport">
-              <div class="g-slide is-active" data-index="0" aria-hidden="false">
-                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_004.jpg" alt="North Beach photo placeholder 1">
+                            <div class="g-slide is-active" data-index="0" aria-hidden="false">
+                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_004.jpg" alt="Haagen-Dazs North Beach photo 1">
               </div>
               <div class="g-slide" data-index="1" aria-hidden="true">
-                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_005.jpg" alt="North Beach photo placeholder 2">
-              </div>
-              </div>
-              <div class="g-slide" data-index="1" aria-hidden="true">
-                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_006.jpg" alt="North Beach photo placeholder 2">
-              </div>
-              </div>
-              <div class="g-slide" data-index="1" aria-hidden="true">
-                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_007.jpg" alt="North Beach photo placeholder 2">
+                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_005.jpg" alt="Haagen-Dazs North Beach photo 2">
               </div>
               <div class="g-slide" data-index="2" aria-hidden="true">
-                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_03.jpg" alt="North Beach photo placeholder 3">
+                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_006.jpg" alt="Haagen-Dazs North Beach photo 3">
               </div>
+              <div class="g-slide" data-index="3" aria-hidden="true">
+                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_007.jpg" alt="Haagen-Dazs North Beach photo 4">
+              </div>
+              <div class="g-slide" data-index="4" aria-hidden="true">
+                <img src="/assets/images/pages/locations/north-beach/hd_nb_3x4_03.jpg" alt="Haagen-Dazs North Beach photo 5">
+              </div>
+
             </div>
 
             <div class="g-controls">
               <button class="g-btn" type="button" aria-label="Previous photo" id="gPrev">&#8249;</button>
               <div class="g-dots" role="tablist" aria-label="Photo pagination">
-                <button class="g-dot is-active" type="button" aria-label="Go to photo 1" id="gDot0"></button>
-                <button class="g-dot" type="button" aria-label="Go to photo 2" id="gDot1"></button>
-                <button class="g-dot" type="button" aria-label="Go to photo 3" id="gDot1"></button>
-                <button class="g-dot" type="button" aria-label="Go to photo 4" id="gDot1"></button>
-                <button class="g-dot" type="button" aria-label="Go to photo 5" id="gDot2"></button>
+                                <button class="g-dot is-active" type="button" data-index="0" aria-label="Go to photo 1"></button>
+                <button class="g-dot" type="button" data-index="1" aria-label="Go to photo 2"></button>
+                <button class="g-dot" type="button" data-index="2" aria-label="Go to photo 3"></button>
+                <button class="g-dot" type="button" data-index="3" aria-label="Go to photo 4"></button>
+                <button class="g-dot" type="button" data-index="4" aria-label="Go to photo 5"></button>
+
               </div>
               <button class="g-btn" type="button" aria-label="Next photo" id="gNext">&#8250;</button>
             </div>
@@ -1010,10 +1010,10 @@
     })();
   </script>
 
-  <script>
+    <script>
     (function () {
       var slides = Array.prototype.slice.call(document.querySelectorAll(".g-slide"));
-      var dots = [document.getElementById("gDot0"), document.getElementById("gDot1"), document.getElementById("gDot2")];
+      var dots = Array.prototype.slice.call(document.querySelectorAll(".g-dot"));
       var prevBtn = document.getElementById("gPrev");
       var nextBtn = document.getElementById("gNext");
 
@@ -1021,22 +1021,32 @@
       var timer = null;
       var intervalMs = 3500;
 
+      function clampIndex(n) {
+        var len = slides.length;
+        if (!len) return 0;
+        return ((n % len) + len) % len;
+      }
+
       function setActive(nextIdx) {
-        idx = nextIdx;
+        idx = clampIndex(nextIdx);
         for (var i = 0; i < slides.length; i++) {
           var active = i === idx;
           slides[i].classList.toggle("is-active", active);
           slides[i].setAttribute("aria-hidden", active ? "false" : "true");
-          if (dots[i]) dots[i].classList.toggle("is-active", active);
+        }
+        for (var j = 0; j < dots.length; j++) {
+          dots[j].classList.toggle("is-active", j === idx);
         }
       }
 
-      function next() { setActive((idx + 1) % slides.length); }
-      function prev() { setActive((idx - 1 + slides.length) % slides.length); }
+      function next() { setActive(idx + 1); }
+      function prev() { setActive(idx - 1); }
 
       function start() {
         stop();
-        timer = window.setInterval(next, intervalMs);
+        if (slides.length > 1) {
+          timer = window.setInterval(next, intervalMs);
+        }
       }
 
       function stop() {
@@ -1047,9 +1057,16 @@
       if (nextBtn) nextBtn.addEventListener("click", function () { stop(); next(); start(); });
       if (prevBtn) prevBtn.addEventListener("click", function () { stop(); prev(); start(); });
 
-      if (dots[0]) dots[0].addEventListener("click", function () { stop(); setActive(0); start(); });
-      if (dots[1]) dots[1].addEventListener("click", function () { stop(); setActive(1); start(); });
-      if (dots[2]) dots[2].addEventListener("click", function () { stop(); setActive(2); start(); });
+      for (var k = 0; k < dots.length; k++) {
+        (function (btn) {
+          btn.addEventListener("click", function () {
+            var n = parseInt(btn.getAttribute("data-index") || "0", 10);
+            stop();
+            setActive(n);
+            start();
+          });
+        })(dots[k]);
+      }
 
       var gallery = document.querySelector(".gallery");
       if (gallery) {
@@ -1063,5 +1080,6 @@
       start();
     })();
   </script>
+
 </body>
 </html>
