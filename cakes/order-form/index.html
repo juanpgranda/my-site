@@ -43,163 +43,60 @@
       --text-muted: rgba(101, 11, 50, 0.72);
     }
     * { box-sizing: border-box; }
-    .container {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 var(--container-pad);
-    }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--container-pad); }
     .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 10px;
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
-      padding: 10px 12px;
-      border-radius: 0;
-      z-index: 9999;
-      text-decoration: none;
-      font-weight: 700;
+      position: absolute; left: -9999px; top: 10px;
+      background: var(--hd-burgundy); color: var(--hd-white);
+      padding: 10px 12px; border-radius: 0; z-index: 9999;
+      text-decoration: none; font-weight: 700;
     }
     .skip-link:focus { left: 10px; }
     #siteHeader, #siteFooter { margin: 0; padding: 0; }
-    .page-hero {
-      background: var(--hd-white);
-      padding: 26px 0 10px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
+    .page-hero { background: var(--hd-white); padding: 26px 0 10px; border-bottom: 1px solid rgba(0,0,0,0.06); }
     .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: rgba(101, 11, 50, 0.75);
-      margin-bottom: 10px;
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase;
+      font-size: 12px; color: rgba(101, 11, 50, 0.75); margin-bottom: 10px;
     }
-    h1 {
-      margin: 0 0 8px;
-      font-size: 42px;
-      line-height: 1.08;
-      color: var(--hd-burgundy);
-    }
-    .sublead {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 16px;
-      line-height: 1.55;
-      max-width: 85ch;
-    }
+    h1 { margin: 0 0 8px; font-size: 42px; line-height: 1.08; color: var(--hd-burgundy); }
+    .sublead { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.55; max-width: 85ch; }
     .info-card {
-      margin-top: 14px;
-      background: rgba(249, 230, 195, 0.30);
+      margin-top: 14px; background: rgba(249, 230, 195, 0.30);
       border: 1px solid rgba(101, 11, 50, 0.14);
-      border-radius: 0;
-      padding: 12px 12px;
+      border-radius: 0; padding: 12px 12px;
       color: rgba(101, 11, 50, 0.90);
-      font-size: 13px;
-      line-height: 1.55;
+      font-size: 13px; line-height: 1.55;
     }
     .info-card strong { color: var(--hd-burgundy); }
-    .info-card a {
-      color: var(--hd-burgundy);
-      text-decoration: underline;
-      font-weight: 800;
-    }
-    .info-card a:hover,
-    .info-card a:focus {
-      outline: none;
-      text-decoration-thickness: 2px;
-    }
-
-    .pickup-link {
-      color: var(--hd-burgundy);
-      text-decoration: underline;
-      font-weight: 800;
-    }
-
-    .pickup-link:hover,
-    .pickup-link:focus {
-      outline: none;
-      text-decoration-thickness: 2px;
-    }
-    .section {
-      padding: 18px 0 34px;
-      background: var(--band-gold-bg);
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-    .form-card {
-      background: var(--hd-white);
-      border: var(--border-soft);
-      border-radius: 0;
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
+    .info-card a { color: var(--hd-burgundy); text-decoration: underline; font-weight: 800; }
+    .info-card a:hover, .info-card a:focus { outline: none; text-decoration-thickness: 2px; }
+    .pickup-link { color: var(--hd-burgundy); text-decoration: underline; font-weight: 800; }
+    .pickup-link:hover, .pickup-link:focus { outline: none; text-decoration-thickness: 2px; }
+    .section { padding: 18px 0 34px; background: var(--band-gold-bg); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .form-card { background: var(--hd-white); border: var(--border-soft); border-radius: 0; box-shadow: var(--shadow-soft); overflow: hidden; }
     .form-head {
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,0.08);
       background: rgba(249, 230, 195, 0.22);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
     }
-    .form-head .title {
-      font-weight: 900;
-      color: var(--hd-burgundy);
-      letter-spacing: 0.02em;
-    }
-    .form-head .right {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      flex: 0 0 auto;
-    }
-    .help {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
+    .form-head .title { font-weight: 900; color: var(--hd-burgundy); letter-spacing: 0.02em; }
+    .form-head .right { display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+    .help { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
     .view-cakes-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 9px 12px;
-      border-radius: var(--radius-btn);
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 12px;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 9px 12px; border-radius: var(--radius-btn);
+      text-decoration: none; font-weight: 900; font-size: 12px;
       letter-spacing: 0.02em;
       border: 1px solid rgba(101, 11, 50, 0.18);
       background: rgba(255,255,255,0.78);
       color: var(--hd-burgundy);
       white-space: nowrap;
     }
-    .view-cakes-btn:hover,
-    .view-cakes-btn:focus {
-      outline: none;
-      background: rgba(249, 230, 195, 0.75);
-      border-color: rgba(101, 11, 50, 0.26);
-    }
+    .view-cakes-btn:hover, .view-cakes-btn:focus { outline: none; background: rgba(249, 230, 195, 0.75); border-color: rgba(101, 11, 50, 0.26); }
     form { padding: 16px; }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      align-items: start;
-    }
-    .field {
-      display: grid;
-      gap: 6px;
-      min-width: 0;
-    }
-    label {
-      font-size: 12px;
-      font-weight: 800;
-      color: rgba(101, 11, 50, 0.85);
-    }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+    .field { display: grid; gap: 6px; min-width: 0; }
+    label { font-size: 12px; font-weight: 800; color: rgba(101, 11, 50, 0.85); }
     input, select, textarea {
       width: 100%;
       border: 1px solid rgba(101, 11, 50, 0.18);
@@ -211,67 +108,33 @@
       outline: none;
       font-family: var(--font-body);
     }
-    input:focus, select:focus, textarea:focus {
-      border-color: rgba(101, 11, 50, 0.38);
-      box-shadow: 0 0 0 3px rgba(210, 153, 55, 0.18);
-    }
-    textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
+    input:focus, select:focus, textarea:focus { border-color: rgba(101, 11, 50, 0.38); box-shadow: 0 0 0 3px rgba(210, 153, 55, 0.18); }
+    textarea { min-height: 110px; resize: vertical; }
     .full { grid-column: 1 / -1; }
-    .inline-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .counter {
-      font-size: 12px;
-      color: rgba(101, 11, 50, 0.70);
-      font-weight: 800;
-    }
+    .inline-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .counter { font-size: 12px; color: rgba(101, 11, 50, 0.70); font-weight: 800; }
     .actions {
-      display: grid;
-      justify-content: center;
+      display: grid; justify-content: center;
       padding: 18px 16px 18px;
       border-top: 1px solid rgba(0,0,0,0.08);
       background: rgba(249, 230, 195, 0.14);
     }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-flex; align-items: center; justify-content: center;
       padding: 12px 16px;
       border-radius: var(--radius-btn);
-      text-decoration: none;
-      font-weight: 900;
-      border: 0;
-      cursor: pointer;
-      user-select: none;
+      text-decoration: none; font-weight: 900;
+      border: 0; cursor: pointer; user-select: none;
       font-family: var(--font-body);
-      background: var(--hd-burgundy);
-      color: var(--hd-white);
+      background: var(--hd-burgundy); color: var(--hd-white);
       box-shadow: var(--shadow-soft);
       min-width: 220px;
     }
-    .btn:hover, .btn:focus {
-      outline: none;
-      background: rgba(101, 11, 50, 0.92);
-    }
-    .status {
-      margin-top: 12px;
-      text-align: center;
-      font-size: 13px;
-      color: rgba(101, 11, 50, 0.80);
-    }
+    .btn:hover, .btn:focus { outline: none; background: rgba(101, 11, 50, 0.92); }
+    .status { margin-top: 12px; text-align: center; font-size: 13px; color: rgba(101, 11, 50, 0.80); }
     .status.ok { color: rgba(14, 96, 45, 0.95); }
     .status.err { color: rgba(150, 20, 40, 0.95); }
-    .design-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
+    .design-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
     .preview-card {
       border: 1px solid rgba(101, 11, 50, 0.14);
       background: rgba(249, 230, 195, 0.16);
@@ -291,64 +154,23 @@
       overflow: hidden;
       border: 1px solid rgba(0,0,0,0.08);
     }
-    .preview-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .preview-meta {
-      display: grid;
-      gap: 6px;
-      align-content: center;
-      min-width: 0;
-    }
-    .preview-label {
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(101, 11, 50, 0.70);
-    }
-    .preview-name {
-      font-weight: 900;
-      color: var(--hd-burgundy);
-      font-size: 14px;
-      line-height: 1.25;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .preview-links {
-      display: inline-flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+    .preview-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .preview-meta { display: grid; gap: 6px; align-content: center; min-width: 0; }
+    .preview-label { font-size: 11px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(101, 11, 50, 0.70); }
+    .preview-name { font-weight: 900; color: var(--hd-burgundy); font-size: 14px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .preview-links { display: inline-flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     .preview-link {
-      font-size: 12px;
-      font-weight: 900;
+      font-size: 12px; font-weight: 900;
       color: var(--hd-burgundy);
       text-decoration: none;
       border-bottom: 1px solid rgba(101, 11, 50, 0.25);
       padding-bottom: 1px;
       line-height: 1.1;
     }
-    .preview-link:hover,
-    .preview-link:focus {
-      outline: none;
-      border-bottom-color: rgba(101, 11, 50, 0.65);
-    }
-    .preview-hint {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.35;
-    }
-    /* UX FIX 1: consistent select caret, no "broken" far-right look */
+    .preview-link:hover, .preview-link:focus { outline: none; border-bottom-color: rgba(101, 11, 50, 0.65); }
+    .preview-hint { font-size: 12px; color: var(--text-muted); line-height: 1.35; }
     select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+      -webkit-appearance: none; -moz-appearance: none; appearance: none;
       padding-right: 44px;
       background-color: #fff;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23650B32' d='M7 10l5 5l5-5z'/%3E%3C/svg%3E");
@@ -357,17 +179,9 @@
       background-size: 16px 16px;
     }
     select::-ms-expand { display: none; }
-    /* UX FIX 2: pickup time uses two compact selects (hour + minutes) as requested */
-    .time-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      align-items: center;
-    }
+    .time-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: center; }
     .time-grid select { min-width: 0; }
-    @media (max-width: 900px) {
-      h1 { font-size: 38px; }
-    }
+    @media (max-width: 900px) { h1 { font-size: 38px; } }
     @media (max-width: 720px) {
       .grid { grid-template-columns: 1fr; }
       h1 { font-size: 34px; }
@@ -402,144 +216,163 @@
         </p>
       </div>
     </section>
-    <section class="section" aria-label="Cake order form section">
-      <div class="container">
-        <div class="form-card" role="region" aria-label="Cake order form card">
-          <div class="form-head">
-            <div class="title">Cake Order Form</div>
-            <div class="right">
-              <a class="view-cakes-btn" href="/cakes" target="_blank" rel="noopener noreferrer">View Cakes</a>
-              <div class="help" id="minDateHint"></div>
-            </div>
-          </div>
-          <form id="cakeOrderForm" novalidate>
-            <div class="grid">
-              <div class="field">
-                <label for="firstName">First Name</label>
-                <input id="firstName" name="first_name" type="text" autocomplete="given-name" required>
-              </div>
-              <div class="field">
-                <label for="lastName">Last Name</label>
-                <input id="lastName" name="last_name" type="text" autocomplete="family-name" required>
-              </div>
-              <div class="field">
-                <label for="phone">Phone Number</label>
-                <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(XXX) XXX-XXXX" required>
-              </div>
-              <div class="field">
-                <label for="email">Email Address</label>
-                <input id="email" name="email" type="email" autocomplete="email" required>
-              </div>
-              <div class="field full">
-                <div class="design-row">
-                  <div class="field" style="margin:0;">
-                    <label for="cakeDesign">Cake Design</label>
-                    <select id="cakeDesign" name="cake_design" required>
-                      <option value="" selected disabled>Select a cake design</option>
-                      <option>Ribbon Cake</option>
-                      <option>Dulce de Leche Cake</option>
-                      <option>Coffee Crunch Cake</option>
-                      <option>Rose's Birthday Cake</option>
-                      <option>Reuben's Birthday Cake</option>
-                      <option>Cookies &amp; Cream Cake</option>
-                      <option>Triple Chocolate Cake</option>
-                      <option>Just Because Cake</option>
-                    </select>
-                  </div>
-                  <div class="preview-card" aria-label="Selected cake preview" id="cakePreviewCard">
-                    <div class="preview-img" aria-hidden="true">
-                      <img id="cakePreviewImg" src="/assets/images/cakes/RibbonCake_Whole_041725.jpg" alt="">
-                    </div>
-                    <div class="preview-meta">
-                      <div class="preview-label">Selected cake</div>
-                      <div class="preview-name" id="cakePreviewName">Choose a cake design to preview</div>
-                      <div class="preview-links">
-                        <a class="preview-link" href="/cakes" target="_blank" rel="noopener noreferrer">View all cakes</a>
-                      </div>
-                      <div class="preview-hint">Preview updates when you change the Cake Design.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="field">
-                <label for="cakeSize">Cake Size</label>
-                <select id="cakeSize" name="cake_size" required>
-                  <option value="" selected disabled>Select a cake size</option>
-                  <option>6x2 (serves 6-8)</option>
-                  <option>6x3 (serves 9-12)</option>
-                  <option>8x2 (serves 12-16)</option>
-                  <option>8x3 (serves 16-20)</option>
-                  <option>10x2 (serves 20-24)</option>
-                  <option>10x3 (serves 24-32)</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="flavorDistribution">Flavor Distribution</label>
-                <select id="flavorDistribution" name="flavor_distribution" required>
-                  <option selected>Layered</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="firstFlavor">First Flavor</label>
-                <select id="firstFlavor" name="first_flavor" required></select>
-              </div>
-              <div class="field">
-                <label for="secondFlavor">Second Flavor</label>
-                <select id="secondFlavor" name="second_flavor" required></select>
-              </div>
-              <div class="field">
-                <label for="pickupDate">Pick Up Date</label>
-                <input id="pickupDate" name="pickup_date" type="date" required>
-                <div class="help">Earliest available date is auto-set.</div>
-              </div>
-              <div class="field">
-                <label for="pickupHour">Pick Up Time</label>
-                <div class="time-grid" aria-label="Pickup time selectors">
-                  <select id="pickupHour" aria-label="Pickup hour" required></select>
-                  <select id="pickupMinute" aria-label="Pickup minutes" required></select>
-                </div>
-                <input id="pickupTime" name="pickup_time" type="hidden" required>
-               <div class="help">Pick up available: 11:00 AM until closing time. Please check store hours in <a href="/locations" class="pickup-link">Locations</a></div>
-              </div>
-              <div class="field full">
-                <label for="pickupLocation">Pick Up Location</label>
-                <select id="pickupLocation" name="pickup_location" required>
-                  <option value="" selected disabled>Select pickup location</option>
-                  <option>Haagen-Dazs North Miami (Causeway Square/1809 NE 123rd Street)</option>
-                  <option>Haagen-Dazs North Beach (6978 Collins Ave)</option>
-                </select>
-              </div>
-              <div class="field full">
-                <label for="messageChoice">Message on the Cake</label>
-                <select id="messageChoice" name="message_on_cake_choice" required>
-                  <option value="" selected disabled>Select a message</option>
-                  <option>Happy Birthday</option>
-                  <option>Custom - write in Special Instructions</option>
-                </select>
-                <div class="help" id="messageHelp">If you choose Custom, write on "Custom Message on the Cake."</div>
-              </div>
-              <div class="field full" id="customMessageWrap" style="display:none;">
-                <label for="customMessage">Custom Message on the Cake</label>
-                <input id="customMessage" name="custom_message_on_cake" type="text" placeholder="Example: Congrats Maria">
-                <div class="help">Optional. You can also write this in Special Instructions.</div>
-              </div>
-              <div class="field full">
-                <div class="inline-row">
-                  <label for="specialInstructions">Special Instructions</label>
-                  <div class="counter" id="charCounter">0 / 500</div>
-                </div>
-                <textarea id="specialInstructions" name="special_instructions" maxlength="500" placeholder="Allergies, custom message, pickup notes, decorations, etc."></textarea>
-                <div class="help">500 character limit.</div>
-              </div>
-            </div>
-            <div class="actions">
-              <button class="btn" type="submit" id="submitBtn">Submit Form</button>
-              <div class="status" id="statusMsg" aria-live="polite"></div>
-            </div>
-          </form>
+<section class="section" aria-label="Cake order form section">
+  <div class="container">
+    <div class="form-card" role="region" aria-label="Cake order form card">
+      <div class="form-head">
+        <div class="title">Cake Order Form</div>
+        <div class="right">
+          <a class="view-cakes-btn" href="/cakes" target="_blank" rel="noopener noreferrer">View Cakes</a>
+          <div class="help" id="minDateHint"></div>
         </div>
       </div>
-    </section>
+
+      <form id="cakeOrderForm" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="first_name" type="text" autocomplete="given-name" required>
+          </div>
+
+          <div class="field">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="last_name" type="text" autocomplete="family-name" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(XXX) XXX-XXXX" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="field full">
+            <div class="design-row">
+              <div class="field" style="margin:0;">
+                <label for="cakeDesign">Cake Design</label>
+                <select id="cakeDesign" name="cake_design" required>
+                  <option value="" selected disabled>Select a cake design</option>
+                  <option>Ribbon Cake</option>
+                  <option>Dulce de Leche Cake</option>
+                  <option>Coffee Crunch Cake</option>
+                  <option>Rose's Birthday Cake</option>
+                  <option>Reuben's Birthday Cake</option>
+                  <option>Cookies &amp; Cream Cake</option>
+                  <option>Triple Chocolate Cake</option>
+                  <option>Just Because Cake</option>
+                </select>
+              </div>
+
+              <div class="preview-card" aria-label="Selected cake preview" id="cakePreviewCard">
+                <div class="preview-img" aria-hidden="true">
+                  <img id="cakePreviewImg" src="/assets/images/cakes/RibbonCake_Whole_041725.jpg" alt="">
+                </div>
+                <div class="preview-meta">
+                  <div class="preview-label">Selected cake</div>
+                  <div class="preview-name" id="cakePreviewName">Choose a cake design to preview</div>
+                  <div class="preview-links">
+                    <a class="preview-link" href="/cakes" target="_blank" rel="noopener noreferrer">View all cakes</a>
+                  </div>
+                  <div class="preview-hint">Preview updates when you change the Cake Design.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="cakeSize">Cake Size</label>
+            <select id="cakeSize" name="cake_size" required>
+              <option value="" selected disabled>Select a cake size</option>
+              <option>6x2 (serves 6-8)</option>
+              <option>6x3 (serves 9-12)</option>
+              <option>8x2 (serves 12-16)</option>
+              <option>8x3 (serves 16-20)</option>
+              <option>10x2 (serves 20-24)</option>
+              <option>10x3 (serves 24-32)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="flavorDistribution">Flavor Distribution</label>
+            <select id="flavorDistribution" name="flavor_distribution" required>
+              <option selected>Layered</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="firstFlavor">First Flavor</label>
+            <select id="firstFlavor" name="first_flavor" required></select>
+          </div>
+
+          <div class="field">
+            <label for="secondFlavor">Second Flavor</label>
+            <select id="secondFlavor" name="second_flavor" required></select>
+          </div>
+
+          <div class="field">
+            <label for="pickupDate">Pick Up Date</label>
+            <input id="pickupDate" name="pickup_date" type="date" required>
+            <div class="help">Earliest available date is auto-set.</div>
+          </div>
+
+          <div class="field">
+            <label for="pickupHour">Pick Up Time</label>
+            <div class="time-grid" aria-label="Pickup time selectors">
+              <select id="pickupHour" aria-label="Pickup hour" required></select>
+              <select id="pickupMinute" aria-label="Pickup minutes" required></select>
+            </div>
+            <input id="pickupTime" name="pickup_time" type="hidden" required>
+            <div class="help">Pick up available: 11:00 AM until closing time. Please check store hours in <a href="/locations" class="pickup-link">Locations</a></div>
+          </div>
+
+          <div class="field full">
+            <label for="pickupLocation">Pick Up Location</label>
+            <select id="pickupLocation" name="pickup_location" required>
+              <option value="" selected disabled>Select pickup location</option>
+              <option>Haagen-Dazs North Miami (Causeway Square/1809 NE 123rd Street)</option>
+              <option>Haagen-Dazs North Beach (6978 Collins Ave)</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="messageChoice">Message on the Cake</label>
+            <select id="messageChoice" name="message_on_cake_choice" required>
+              <option value="" selected disabled>Select a message</option>
+              <option>Happy Birthday</option>
+              <option>Custom - write in Special Instructions</option>
+            </select>
+            <div class="help" id="messageHelp">If you choose Custom, write on "Custom Message on the Cake."</div>
+          </div>
+
+          <div class="field full" id="customMessageWrap" style="display:none;">
+            <label for="customMessage">Custom Message on the Cake</label>
+            <input id="customMessage" name="custom_message_on_cake" type="text" placeholder="Example: Congrats Maria">
+            <div class="help">Optional. You can also write this in Special Instructions.</div>
+          </div>
+
+          <div class="field full">
+            <div class="inline-row">
+              <label for="specialInstructions">Special Instructions</label>
+              <div class="counter" id="charCounter">0 / 500</div>
+            </div>
+            <textarea id="specialInstructions" name="special_instructions" maxlength="500" placeholder="Allergies, custom message, pickup notes, decorations, etc."></textarea>
+            <div class="help">500 character limit.</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit" id="submitBtn">Submit Form</button>
+          <div class="status" id="statusMsg" aria-live="polite"></div>
+        </div>
+      </form>
+
+      <iframe id="submitFrame" name="submitFrame" style="display:none;" title="Submission frame"></iframe>
+    </div>
+  </div>
+</section>
   </main>
   <div id="siteFooter"></div>
   <script>
@@ -560,8 +393,7 @@
     (function () {
       var WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0iumR07OyUWmmkdjcRPRaqqSGBJ-wHGdyP4lPPYCjxOppbJFXnkyzOjVbFRU49QwY/exec";
       var PROCESSING_DAYS = 2;
-      /* Flavors from your CSV only, in that exact order.
-         Label adds two spaces then (GF) when gf = true. */
+
       var flavors = [
         { name: "Cookies n' Cream", gf: false },
         { name: "Midnight Cookies n' Cream", gf: false },
@@ -594,6 +426,11 @@
         { name: "White Choc Raspberry Truffle", gf: true },
         { name: "Salted Brown Butter Cookie", gf: false }
       ];
+
+      var form = document.getElementById("cakeOrderForm");
+      var statusMsg = document.getElementById("statusMsg");
+      var submitBtn = document.getElementById("submitBtn");
+
       var firstFlavor = document.getElementById("firstFlavor");
       var secondFlavor = document.getElementById("secondFlavor");
       var pickupDate = document.getElementById("pickupDate");
@@ -612,33 +449,26 @@
       var cakeDesign = document.getElementById("cakeDesign");
       var cakePreviewImg = document.getElementById("cakePreviewImg");
       var cakePreviewName = document.getElementById("cakePreviewName");
-      var form = document.getElementById("cakeOrderForm");
-      var statusMsg = document.getElementById("statusMsg");
-      var submitBtn = document.getElementById("submitBtn");
-      /* Requested time rules */
-      var MIN_HOUR_24 = 11;  /* 11 AM */
-      var MAX_HOUR_24 = 19;  /* 7 PM */
+
+      var MIN_HOUR_24 = 11;
+      var MAX_HOUR_24 = 19;
       var MINUTE_OPTIONS = ["00", "15", "30", "45"];
+
       function pad2(n) { return (n < 10 ? "0" : "") + n; }
-      function addDays(d, days) {
-        var x = new Date(d.getTime());
-        x.setDate(x.getDate() + days);
-        return x;
-      }
+      function addDays(d, days) { var x = new Date(d.getTime()); x.setDate(x.getDate() + days); return x; }
       function formatLongDate(d) {
         var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
         return days[d.getDay()] + ", " + months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
       }
-      function formatISODate(d) {
-        return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+      function formatISODate(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
+      function hourLabel(h24) { var ampm = (h24 >= 12) ? "PM" : "AM"; var h12 = h24 % 12; if (h12 === 0) h12 = 12; return h12 + " " + ampm; }
+
+      function setStatus(text, kind) {
+        statusMsg.textContent = text || "";
+        statusMsg.className = "status" + (kind ? " " + kind : "");
       }
-      function hourLabel(h24) {
-        var ampm = (h24 >= 12) ? "PM" : "AM";
-        var h12 = h24 % 12;
-        if (h12 === 0) h12 = 12;
-        return h12 + " " + ampm;
-      }
+
       function setEarliestPickup() {
         var today = new Date();
         var earliest = addDays(today, PROCESSING_DAYS);
@@ -648,6 +478,7 @@
         earliestPickupText.textContent = formatLongDate(earliest);
         minDateHint.textContent = "Earliest pickup date: " + iso;
       }
+
       function fillFlavorSelect(selectEl) {
         selectEl.innerHTML = "";
         var opt0 = document.createElement("option");
@@ -656,6 +487,7 @@
         opt0.disabled = true;
         opt0.selected = true;
         selectEl.appendChild(opt0);
+
         for (var i = 0; i < flavors.length; i++) {
           var item = flavors[i] || {};
           var name = String(item.name || "").trim();
@@ -667,11 +499,9 @@
           selectEl.appendChild(opt);
         }
       }
-      function capFirst(s) {
-        s = String(s || "").trim();
-        if (!s) return "";
-        return s.charAt(0).toUpperCase() + s.slice(1);
-      }
+
+      function capFirst(s) { s = String(s || "").trim(); if (!s) return ""; return s.charAt(0).toUpperCase() + s.slice(1); }
+
       function formatPhone(value) {
         var digits = String(value || "").replace(/\D/g, "").slice(0, 10);
         if (digits.length === 0) return "";
@@ -679,29 +509,22 @@
         if (digits.length < 7) return "(" + digits.slice(0,3) + ") " + digits.slice(3);
         return "(" + digits.slice(0,3) + ") " + digits.slice(3,6) + "-" + digits.slice(6);
       }
-      function setStatus(text, kind) {
-        statusMsg.textContent = text || "";
-        statusMsg.className = "status" + (kind ? " " + kind : "");
-      }
+
       function toggleCustomMessage() {
         var v = messageChoice.value || "";
-        if (v.indexOf("Custom") === 0) {
-          customMessageWrap.style.display = "grid";
-        } else {
-          customMessageWrap.style.display = "none";
-        }
+        if (v.indexOf("Custom") === 0) customMessageWrap.style.display = "grid";
+        else customMessageWrap.style.display = "none";
       }
+
       function updateCounter() {
         var n = (specialInstructions.value || "").length;
         charCounter.textContent = n + " / 500";
       }
+
       function normalizeKey(s) {
-        return String(s || "")
-          .trim()
-          .replace(/\u2019/g, "'")
-          .replace(/\u2018/g, "'")
-          .replace(/\s+/g, " ");
+        return String(s || "").trim().replace(/\u2019/g, "'").replace(/\u2018/g, "'").replace(/\s+/g, " ");
       }
+
       function getCakeImageUrl(cakeName) {
         var key = normalizeKey(cakeName);
         var map = {
@@ -716,6 +539,7 @@
         };
         return map[key] || "/assets/images/placeholders/hd_cakes_01.png";
       }
+
       function updateCakePreview() {
         var selected = (cakeDesign.value || "").trim();
         if (!selected) {
@@ -725,32 +549,35 @@
           return;
         }
         cakePreviewName.textContent = selected;
-        var img = getCakeImageUrl(selected);
-        cakePreviewImg.src = img;
+        cakePreviewImg.src = getCakeImageUrl(selected);
         cakePreviewImg.alt = selected;
       }
+
       function fillTimeSelectors() {
-        if (!pickupHour || !pickupMinute) return;
         pickupHour.innerHTML = "";
         pickupMinute.innerHTML = "";
+
         var h0 = document.createElement("option");
         h0.value = "";
         h0.textContent = "Hour";
         h0.disabled = true;
         h0.selected = true;
         pickupHour.appendChild(h0);
+
         for (var h = MIN_HOUR_24; h <= MAX_HOUR_24; h++) {
           var optH = document.createElement("option");
           optH.value = String(h);
           optH.textContent = hourLabel(h);
           pickupHour.appendChild(optH);
         }
+
         var m0 = document.createElement("option");
         m0.value = "";
         m0.textContent = "Min";
         m0.disabled = true;
         m0.selected = true;
         pickupMinute.appendChild(m0);
+
         for (var i = 0; i < MINUTE_OPTIONS.length; i++) {
           var mm = MINUTE_OPTIONS[i];
           var optM = document.createElement("option");
@@ -758,26 +585,19 @@
           optM.textContent = ":" + mm;
           pickupMinute.appendChild(optM);
         }
-        /* Default to 11:00 AM */
+
         pickupHour.value = String(MIN_HOUR_24);
         pickupMinute.value = "00";
-        syncHiddenTime();
-        enforceTimeBounds();
-      }
-      function enforceTimeBounds() {
-        // With earliest pickup at 11:00 AM, no minute disabling is needed.
         syncHiddenTime();
       }
 
       function syncHiddenTime() {
         var h = parseInt(pickupHour.value || "0", 10);
         var m = pickupMinute.value || "";
-        if (!h || !m) {
-          pickupTimeHidden.value = "";
-          return;
-        }
+        if (!h || !m) { pickupTimeHidden.value = ""; return; }
         pickupTimeHidden.value = pad2(h) + ":" + m;
       }
+
       fillFlavorSelect(firstFlavor);
       fillFlavorSelect(secondFlavor);
       setEarliestPickup();
@@ -785,81 +605,75 @@
       toggleCustomMessage();
       updateCounter();
       updateCakePreview();
+
       firstName.addEventListener("blur", function () { firstName.value = capFirst(firstName.value); });
       lastName.addEventListener("blur", function () { lastName.value = capFirst(lastName.value); });
-      phone.addEventListener("input", function () {
-        phone.value = formatPhone(phone.value);
-      });
-      pickupHour.addEventListener("change", enforceTimeBounds);
-      pickupMinute.addEventListener("change", enforceTimeBounds);
+      phone.addEventListener("input", function () { phone.value = formatPhone(phone.value); });
       messageChoice.addEventListener("change", toggleCustomMessage);
       specialInstructions.addEventListener("input", updateCounter);
       cakeDesign.addEventListener("change", updateCakePreview);
+      pickupHour.addEventListener("change", syncHiddenTime);
+      pickupMinute.addEventListener("change", syncHiddenTime);
+
+      var submitFrame = document.getElementById("submitFrame");
+      var pending = false;
+      var pendingTimer = null;
+
+      submitFrame.addEventListener("load", function () {
+        if (!pending) return;
+        pending = false;
+        if (pendingTimer) { clearTimeout(pendingTimer); pendingTimer = null; }
+        setStatus("Success. Your order request was received. A confirmation email was sent.", "ok");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Form";
+        form.reset();
+        fillFlavorSelect(firstFlavor);
+        fillFlavorSelect(secondFlavor);
+        setEarliestPickup();
+        fillTimeSelectors();
+        toggleCustomMessage();
+        updateCounter();
+        updateCakePreview();
+      });
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         setStatus("", "");
         syncHiddenTime();
-        var data = {
-          first_name: (document.getElementById("firstName").value || "").trim(),
-          last_name: (document.getElementById("lastName").value || "").trim(),
-          phone: (document.getElementById("phone").value || "").trim(),
-          email: (document.getElementById("email").value || "").trim(),
-          cake_design: (document.getElementById("cakeDesign").value || "").trim(),
-          cake_size: (document.getElementById("cakeSize").value || "").trim(),
-          first_flavor: (document.getElementById("firstFlavor").value || "").trim(),
-          second_flavor: (document.getElementById("secondFlavor").value || "").trim(),
-          flavor_distribution: (document.getElementById("flavorDistribution").value || "").trim(),
-          pickup_date: (document.getElementById("pickupDate").value || "").trim(),
-          pickup_time: (document.getElementById("pickupTime").value || "").trim(),
-          pickup_location: (document.getElementById("pickupLocation").value || "").trim(),
-          message_on_cake_choice: (document.getElementById("messageChoice").value || "").trim(),
-          custom_message_on_cake: (document.getElementById("customMessage").value || "").trim(),
-          special_instructions: (document.getElementById("specialInstructions").value || "").trim()
-        };
-        var required = [
-          "first_name","last_name","phone","email","cake_design","cake_size",
-          "first_flavor","second_flavor","flavor_distribution",
-          "pickup_date","pickup_time","pickup_location","message_on_cake_choice"
+
+        var requiredIds = [
+          "firstName","lastName","phone","email","cakeDesign","cakeSize",
+          "firstFlavor","secondFlavor","flavorDistribution",
+          "pickupDate","pickupTime","pickupLocation","messageChoice"
         ];
-        var missing = [];
-        for (var i = 0; i < required.length; i++) {
-          if (!String(data[required[i]] || "").trim()) missing.push(required[i]);
+
+        for (var i = 0; i < requiredIds.length; i++) {
+          var el = document.getElementById(requiredIds[i]);
+          if (!el) continue;
+          if (!String(el.value || "").trim()) {
+            setStatus("Please complete all required fields before submitting.", "err");
+            return;
+          }
         }
-        if (missing.length) {
-          setStatus("Please complete all required fields before submitting.", "err");
-          return;
-        }
+
+        pending = true;
+        if (pendingTimer) clearTimeout(pendingTimer);
+        pendingTimer = setTimeout(function () {
+          if (!pending) return;
+          pending = false;
+          setStatus("Submitted. If you do not receive a confirmation email, please contact the store.", "ok");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit Form";
+        }, 12000);
+
         submitBtn.disabled = true;
         submitBtn.textContent = "Submitting...";
         setStatus("Submitting your order request...", "");
-        fetch(WEB_APP_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        })
-        .then(function (r) { return r.json(); })
-        .then(function (res) {
-          if (res && res.ok) {
-            setStatus("Success. Your order request was received. A confirmation email was sent.", "ok");
-            form.reset();
-            fillFlavorSelect(firstFlavor);
-            fillFlavorSelect(secondFlavor);
-            setEarliestPickup();
-            fillTimeSelectors();
-            toggleCustomMessage();
-            updateCounter();
-            updateCakePreview();
-          } else {
-            setStatus("Could not submit. " + (res && res.error ? res.error : "Please try again."), "err");
-          }
-        })
-        .catch(function () {
-          setStatus("Network error. Please try again.", "err");
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit Form";
-        });
+
+        form.action = WEB_APP_URL;
+        form.method = "POST";
+        form.target = "submitFrame";
+        form.submit();
       });
     })();
   </script>
