@@ -114,7 +114,10 @@
     .inline-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
     .counter { font-size: 12px; color: rgba(101, 11, 50, 0.70); font-weight: 800; }
     .actions {
-      display: grid; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
       padding: 18px 16px 18px;
       border-top: 1px solid rgba(0,0,0,0.08);
       background: rgba(249, 230, 195, 0.14);
@@ -131,7 +134,14 @@
       min-width: 220px;
     }
     .btn:hover, .btn:focus { outline: none; background: rgba(101, 11, 50, 0.92); }
-    .status { margin-top: 12px; text-align: center; font-size: 13px; color: rgba(101, 11, 50, 0.80); }
+    .status {
+      margin-top: 0;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.4;
+      color: rgba(101, 11, 50, 0.80);
+      max-width: 520px;
+    }
     .status.ok { color: rgba(14, 96, 45, 0.95); }
     .status.err { color: rgba(150, 20, 40, 0.95); }
     .design-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
